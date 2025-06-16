@@ -1,32 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuojghgo6alvw"]
+[gd_scene load_steps=4 format=3 uid="uid://cuojghgo6alvw"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_rlkm5"]
 [ext_resource type="PackedScene" uid="uid://dedwl18kckfdd" path="res://prefabs/player.tscn" id="2_n77mx"]
-[ext_resource type="PackedScene" uid="uid://boobpj10lfiqa" path="res://prefabs/basic_bumper.tscn" id="3_n77mx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(128, 128)
 
 [node name="Node2D" type="Node2D"]
-metadata/_edit_vertical_guides_ = [-1655.0]
-
-[node name="Ground3" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground3"]
-rotation = 8.47668e-05
-scale = Vector2(26.5599, 1.00178)
-skew = 0.0596415
-texture = ExtResource("1_rlkm5")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
-scale = Vector2(26.56, 1)
-shape = SubResource("RectangleShape2D_cguwc")
-debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
 [node name="Ground2" type="Node2D" parent="."]
-position = Vector2(1173, 878)
+position = Vector2(707, -68)
 rotation = -0.481746
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground2"]
@@ -43,7 +26,7 @@ shape = SubResource("RectangleShape2D_cguwc")
 debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
 [node name="Ground" type="Node2D" parent="."]
-position = Vector2(-1103, 1066)
+position = Vector2(-464, 151)
 rotation = 0.372041
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
@@ -59,13 +42,9 @@ scale = Vector2(26.56, 1)
 shape = SubResource("RectangleShape2D_cguwc")
 debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.17, 0.17)
-
 [node name="Player" parent="." instance=ExtResource("2_n77mx")]
 mass = 0.1
 minLaunchPower = 53.475
 maxLaunchPower = 250.0
 
-[node name="BasicBumper" parent="." instance=ExtResource("3_n77mx")]
-position = Vector2(-1196, -375)
+[node name="Camera2D" type="Camera2D" parent="Player"]
