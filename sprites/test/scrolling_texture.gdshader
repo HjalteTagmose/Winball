@@ -7,8 +7,11 @@ uniform vec2 direction = vec2(1.0, 1.0);
 uniform float speed = 1.0;
 uniform float rotation = 0.0;
 uniform float scale = 1.0;
+uniform float color_blend = 0.5;
+uniform float scroll_texture_alpha = 0.5;
 
-vec2 rotated(vec2 a, float angle) {
+vec2 rotated(vec2 a, float angle)
+{
 	float s = sin(angle);
 	float c = cos(angle);
 	vec2 res = a - 0.5;
@@ -19,8 +22,10 @@ vec2 rotated(vec2 a, float angle) {
 	return res + 0.5;
 }
 
-void fragment() {
-	if (COLOR == replace_color)
+void fragment()
+{
+	float dist = length(COLOR.rgba - replace_color.rgba);
+	if (dist < 0.001)
 	{
 		vec2 newUV = (UV - 0.5) * scale + 0.5;
 		newUV = rotated(newUV, rotation);
@@ -28,6 +33,10 @@ void fragment() {
         newUV += direction * TIME * speed;
 
 		newUV = fract(newUV);
-		COLOR = texture(scroll_texture, newUV);
+		vec4 color = texture(scroll_texture, newUV);
+		vec4 test = replace_color;
+		test.a  = scroll_texture_alpha;
+		color = test * color;
+		COLOR = color;
 	}
 }
