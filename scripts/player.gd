@@ -1,4 +1,6 @@
 extends RigidBody2D
+class_name Player
+
 @export var launchPower : float = 100
 @export var killVelocityBeforeLaunch : bool = true
 

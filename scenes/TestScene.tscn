@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuojghgo6alvw"]
+[gd_scene load_steps=7 format=3 uid="uid://cuojghgo6alvw"]
 
 [ext_resource type="PackedScene" uid="uid://dedwl18kckfdd" path="res://prefabs/player.tscn" id="1_cguwc"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_mncer"]
+[ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="3_n77mx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(128, 128)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n77mx"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n77mx"]
+radius = 65.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -48,3 +55,19 @@ zoom = Vector2(0.17, 0.17)
 [node name="Player" parent="." instance=ExtResource("1_cguwc")]
 position = Vector2(379, -225)
 mass = 0.1
+
+[node name="TestBumper" type="StaticBody2D" parent="."]
+position = Vector2(-609, 194)
+scale = Vector2(3, 3)
+collision_layer = 0
+script = ExtResource("3_n77mx")
+Power = 700.0
+
+[node name="Sprite2D" type="Sprite2D" parent="TestBumper"]
+position = Vector2(0, 1)
+texture = SubResource("PlaceholderTexture2D_n77mx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestBumper"]
+shape = SubResource("CircleShape2D_n77mx")
+one_way_collision_margin = 0.0
+debug_color = Color(0.154625, 0.191333, 1, 0.42)
