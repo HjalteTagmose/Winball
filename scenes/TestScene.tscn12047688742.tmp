@@ -8,21 +8,6 @@ size = Vector2(128, 128)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Ground3" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground3"]
-rotation = 8.47668e-05
-scale = Vector2(26.5599, 1.00178)
-skew = 0.0596415
-texture = ExtResource("1_rlkm5")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
-scale = Vector2(26.56, 1)
-shape = SubResource("RectangleShape2D_cguwc")
-debug_color = Color(0, 0.6, 0.701961, 0.294118)
-
 [node name="Ground2" type="Node2D" parent="."]
 position = Vector2(1173, 878)
 rotation = -0.481746
@@ -61,6 +46,9 @@ debug_color = Color(0, 0.6, 0.701961, 0.294118)
 zoom = Vector2(0.17, 0.17)
 
 [node name="Player" parent="." instance=ExtResource("2_n77mx")]
+position = Vector2(379, -225)
 mass = 0.1
-minLaunchPower = 53.475
-maxLaunchPower = 250.0
+minLaunchPower = null
+maxLaunchPower = null
+launchChargeDuration = null
+killVelocityBeforeLaunch = null
