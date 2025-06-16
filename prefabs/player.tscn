@@ -9,7 +9,6 @@
 radius = 16.15
 
 [node name="Player" type="RigidBody2D"]
-position = Vector2(-2, 1)
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_onrkg")
@@ -23,6 +22,7 @@ shape = SubResource("CircleShape2D_mncer")
 debug_color = Color(0.9833, 0, 0.358624, 0.301961)
 
 [node name="Gun" type="Sprite2D" parent="." node_paths=PackedStringArray("playerRef")]
+z_index = 100
 position = Vector2(30, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_4flbx")
