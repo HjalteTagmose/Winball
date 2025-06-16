@@ -1,5 +1,11 @@
 extends RigidBody2D
-@export var launchPower : float = 100
+
+class_name Player
+
+@export var minLaunchPower : float = 100
+@export var maxLaunchPower : float = 1000
+@export var launchChargeDuration : float = 1
+
 @export var killVelocityBeforeLaunch : bool = true
 
 # Called when the node enters the scene tree for the first time.
@@ -11,14 +17,37 @@ func _getInputDirection() -> Vector2:
 	return Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down").normalized()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+var _launchClickTime : float
+
+func handleLaunch() -> void:
+	
+	var timeNow = Time.get_unix_time_from_system()
 	
 	if(Input.is_action_just_pressed("launch")):
-		var direction = _getInputDirection()
-		if(direction.length() < 1):
-			direction = Vector2.UP
+		_launchClickTime = timeNow
+		
+	var difference = timeNow - _launchClickTime
+	var percent = clamp(difference / launchChargeDuration, 0, 1)
+	var currentPower = lerp(minLaunchPower, maxLaunchPower, percent)		
+
+	if(Input.is_action_just_released("launch")):		
+		
+		print("============== LAUNCHING ==============")
+		print("difference ", difference)
+		print("percent ", percent)
+		print("currentPower ", currentPower)
+		print("=======================================")
+		#PARTICLE
+		var direction = (global_position - get_global_mouse_position())
+		
+		direction = direction.normalized();
 		if(killVelocityBeforeLaunch):
 			linear_velocity = Vector2.ZERO
-		apply_impulse(direction * launchPower)
+		var impulse = direction * currentPower
+		apply_central_impulse(impulse)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	handleLaunch()	
 	pass
