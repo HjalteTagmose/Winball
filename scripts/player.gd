@@ -1,4 +1,7 @@
 extends RigidBody2D
+
+class_name Player
+
 @export var minLaunchPower : float = 100
 @export var maxLaunchPower : float = 1000
 @export var launchChargeDuration : float = 1
@@ -25,8 +28,7 @@ func handleLaunch() -> void:
 		
 	var difference = timeNow - _launchClickTime
 	var percent = clamp(difference / launchChargeDuration, 0, 1)
-	var currentPower = lerp(minLaunchPower, maxLaunchPower, percent)
-		
+	var currentPower = lerp(minLaunchPower, maxLaunchPower, percent)		
 
 	if(Input.is_action_just_released("launch")):		
 		
@@ -36,7 +38,6 @@ func handleLaunch() -> void:
 		print("currentPower ", currentPower)
 		print("=======================================")
 		#PARTICLE
-		var mouse_pos = get_viewport().get_mouse_position()
 		var direction = (global_position - get_global_mouse_position())
 		
 		direction = direction.normalized();
