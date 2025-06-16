@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd3yybuk7l3no"]
+[gd_scene load_steps=7 format=3 uid="uid://bqtf3fd27126f"]
 
-[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_vmxit"]
-[ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/room.gd" id="1_yg100"]
-[ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/room_exit.gd" id="3_p3u21"]
+[ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/room.gd" id="1_2usvj"]
+[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_okf7h"]
+[ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/room_exit.gd" id="3_2r5dy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
 size = Vector2(319, 26)
@@ -13,8 +13,8 @@ size = Vector2(4.81928, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y72nq"]
 size = Vector2(80, 20)
 
-[node name="Room1" type="Node2D" node_paths=PackedStringArray("roomExit")]
-script = ExtResource("1_yg100")
+[node name="Room2" type="Node2D" node_paths=PackedStringArray("roomExit")]
+script = ExtResource("1_2usvj")
 roomExit = NodePath("Exit")
 metadata/_custom_type_script = "uid://bi5omso1g5t0g"
 
@@ -25,7 +25,7 @@ rotation = 1.5708
 [node name="Sprite2D" type="Sprite2D" parent="RightWall"]
 rotation = 8.47668e-05
 scale = Vector2(2.5, 0.2)
-texture = ExtResource("1_vmxit")
+texture = ExtResource("2_okf7h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RightWall"]
 
@@ -40,7 +40,7 @@ rotation = 1.5708
 [node name="Sprite2D" type="Sprite2D" parent="LeftWall"]
 rotation = 8.47668e-05
 scale = Vector2(2.5, 0.2)
-texture = ExtResource("1_vmxit")
+texture = ExtResource("2_okf7h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LeftWall"]
 
@@ -57,7 +57,7 @@ position = Vector2(100, 0)
 [node name="Sprite2D" type="Sprite2D" parent="TopWall/WallPiece2"]
 rotation = 8.47668e-05
 scale = Vector2(1, 0.15)
-texture = ExtResource("1_vmxit")
+texture = ExtResource("2_okf7h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TopWall/WallPiece2"]
 
@@ -72,7 +72,7 @@ position = Vector2(-100, 0)
 [node name="Sprite2D" type="Sprite2D" parent="TopWall/WallPiece"]
 rotation = 8.47668e-05
 scale = Vector2(1, 0.15)
-texture = ExtResource("1_vmxit")
+texture = ExtResource("2_okf7h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TopWall/WallPiece"]
 
@@ -90,7 +90,7 @@ position = Vector2(100, 0)
 [node name="Sprite2D" type="Sprite2D" parent="BottomWall/WallPiece2"]
 rotation = 8.47668e-05
 scale = Vector2(1, 0.15)
-texture = ExtResource("1_vmxit")
+texture = ExtResource("2_okf7h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BottomWall/WallPiece2"]
 
@@ -105,7 +105,7 @@ position = Vector2(-100, 0)
 [node name="Sprite2D" type="Sprite2D" parent="BottomWall/WallPiece"]
 rotation = 8.47668e-05
 scale = Vector2(1, 0.15)
-texture = ExtResource("1_vmxit")
+texture = ExtResource("2_okf7h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BottomWall/WallPiece"]
 
@@ -122,7 +122,7 @@ rotation = 1.5708
 [node name="Sprite2D" type="Sprite2D" parent="LeftWall2"]
 rotation = 8.47668e-05
 scale = Vector2(2.5, 0.2)
-texture = ExtResource("1_vmxit")
+texture = ExtResource("2_okf7h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LeftWall2"]
 
@@ -132,8 +132,16 @@ shape = SubResource("RectangleShape2D_vmxit")
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2(0, -300)
-script = ExtResource("3_p3u21")
+script = ExtResource("3_2r5dy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+shape = SubResource("RectangleShape2D_y72nq")
+debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
+
+[node name="Exit" type="Area2D" parent="Exit"]
+position = Vector2(0, -300)
+script = ExtResource("3_2r5dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Exit"]
 shape = SubResource("RectangleShape2D_y72nq")
 debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
