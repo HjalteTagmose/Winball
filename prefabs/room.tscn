@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd3yybuk7l3no"]
+
+[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_vmxit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
+size = Vector2(128, 128)
+
+[node name="Room" type="Node2D"]
+
+[node name="TopWall" type="Node2D" parent="."]
+position = Vector2(0, -1620)
+
+[node name="Sprite2D" type="Sprite2D" parent="TopWall"]
+rotation = 8.47668e-05
+scale = Vector2(26.5599, 1.00178)
+skew = 0.0596415
+texture = ExtResource("1_vmxit")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TopWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall/StaticBody2D"]
+scale = Vector2(26.56, 1)
+shape = SubResource("RectangleShape2D_cguwc")
+debug_color = Color(0, 0.6, 0.701961, 0.294118)
+
+[node name="BottomWall" type="Node2D" parent="."]
+position = Vector2(1680, 0)
+rotation = 1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomWall"]
+rotation = 8.47668e-05
+scale = Vector2(26.5599, 1.00178)
+skew = 0.0596415
+texture = ExtResource("1_vmxit")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BottomWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall/StaticBody2D"]
+scale = Vector2(26.56, 1)
+shape = SubResource("RectangleShape2D_cguwc")
+debug_color = Color(0, 0.6, 0.701961, 0.294118)
+
+[node name="LeftWall" type="Node2D" parent="."]
+position = Vector2(-1681, 0)
+rotation = 1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftWall"]
+rotation = 8.47668e-05
+scale = Vector2(26.5599, 1.00178)
+skew = 0.0596415
+texture = ExtResource("1_vmxit")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LeftWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall/StaticBody2D"]
+scale = Vector2(26.56, 1)
+shape = SubResource("RectangleShape2D_cguwc")
+debug_color = Color(0, 0.6, 0.701961, 0.294118)
+
+[node name="RightWall" type="Node2D" parent="."]
+position = Vector2(0, 1633)
+
+[node name="Sprite2D" type="Sprite2D" parent="RightWall"]
+rotation = 8.47668e-05
+scale = Vector2(26.5599, 1.00178)
+skew = 0.0596415
+texture = ExtResource("1_vmxit")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RightWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall/StaticBody2D"]
+scale = Vector2(26.56, 1)
+shape = SubResource("RectangleShape2D_cguwc")
+debug_color = Color(0, 0.6, 0.701961, 0.294118)

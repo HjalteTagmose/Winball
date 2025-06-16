@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuojghgo6alvw"]
+[gd_scene load_steps=6 format=3 uid="uid://cuojghgo6alvw"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_rlkm5"]
 [ext_resource type="PackedScene" uid="uid://dedwl18kckfdd" path="res://prefabs/player.tscn" id="2_n77mx"]
+[ext_resource type="PackedScene" uid="uid://cd3yybuk7l3no" path="res://prefabs/room.tscn" id="3_n77mx"]
+[ext_resource type="Script" uid="uid://byy3f8w3lbg2t" path="res://scripts/room_loader.gd" id="4_nb1wl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(128, 128)
@@ -57,10 +59,14 @@ scale = Vector2(26.56, 1)
 shape = SubResource("RectangleShape2D_cguwc")
 debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.17, 0.17)
-
 [node name="Player" parent="." instance=ExtResource("2_n77mx")]
 mass = 0.1
 minLaunchPower = 53.475
 maxLaunchPower = 250.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.17, 0.17)
+
+[node name="RoomLoader" type="Node2D" parent="."]
+script = ExtResource("4_nb1wl")
+roomToSpawn = ExtResource("3_n77mx")
