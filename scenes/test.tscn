@@ -1,18 +1,19 @@
 [gd_scene load_steps=10 format=3 uid="uid://bd1d2ff04wjul"]
 
 [ext_resource type="Shader" uid="uid://d1wxs38in1tt7" path="res://sprites/test/scrolling_texture.gdshader" id="1_bl13t"]
-[ext_resource type="Texture2D" uid="uid://dd6ns6y03fnal" path="res://sprites/test/test_flipper.png" id="1_errlg"]
-[ext_resource type="Texture2D" uid="uid://8uverxmiu3hn" path="res://sprites/test/test_pattern.png" id="2_bl13t"]
+[ext_resource type="Texture2D" uid="uid://c4cglduo8u6ui" path="res://sprites/test/1974-03-30-uk-evening_argus-03.jpg" id="2_74lek"]
+[ext_resource type="Texture2D" uid="uid://bv45f70qsuxfa" path="res://sprites/test/ph_boom_vfx.png" id="3_74lek"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://sprites/test/flipper_animation.gd" id="4_74lek"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iyx0m"]
 shader = ExtResource("1_bl13t")
-shader_parameter/scroll_texture = ExtResource("2_bl13t")
-shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/scroll_texture = ExtResource("2_74lek")
+shader_parameter/replace_color = Color(0.933333, 0.866667, 0.227451, 1)
+shader_parameter/tiling = Vector2(0.93, 1)
 shader_parameter/direction = Vector2(1, 1)
-shader_parameter/speed = 0.2
+shader_parameter/speed = 0.1
 shader_parameter/rotation = 0.0
-shader_parameter/scale = 1.0
+shader_parameter/scale = 0.3
 
 [sub_resource type="Curve" id="Curve_74lek"]
 _limits = [0.0, 2.0, 0.0, 0.25]
@@ -35,12 +36,12 @@ point_count = 3
 
 [node name="Test" type="Node2D"]
 
-[node name="Flipper" type="Sprite2D" parent="."]
+[node name="Boom" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_iyx0m")
 position = Vector2(250, 184)
 scale = Vector2(3, 3)
-texture = ExtResource("1_errlg")
+texture = ExtResource("3_74lek")
 script = ExtResource("4_74lek")
 scale_curve = SubResource("Curve_74lek")
 texture_speed_curve = SubResource("Curve_j5jx5")

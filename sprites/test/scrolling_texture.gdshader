@@ -1,6 +1,7 @@
 shader_type canvas_item;
 
 uniform sampler2D scroll_texture: filter_nearest;
+uniform vec4 replace_color : source_color;
 uniform vec2 tiling = vec2(1.0, 1.0);
 uniform vec2 direction = vec2(1.0, 1.0);
 uniform float speed = 1.0;
@@ -19,7 +20,7 @@ vec2 rotated(vec2 a, float angle) {
 }
 
 void fragment() {
-	if (COLOR == vec4(0,0,1,1))
+	if (COLOR == replace_color)
 	{
 		vec2 newUV = (UV - 0.5) * scale + 0.5;
 		newUV = rotated(newUV, rotation);
