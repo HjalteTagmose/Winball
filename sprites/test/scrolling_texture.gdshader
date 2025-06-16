@@ -8,23 +8,23 @@ uniform float rotation = 0.0;
 uniform float scale = 1.0;
 
 vec2 rotated(vec2 a, float angle) {
-  float s = sin(angle);
-  float c = cos(angle);
-  vec2 res = a;
+	float s = sin(angle);
+	float c = cos(angle);
+	vec2 res = a - 0.5;
 
-  res.x = a.x * c - a.y * s;
-  res.y = a.x * s + a.y * c;
+	res.x = a.x * c - a.y * s;
+	res.y = a.x * s + a.y * c;
 
-  return res;
+	return res + 0.5;
 }
 
 void fragment() {
 	if (COLOR == vec4(0,0,1,1))
 	{
-		vec2 newUV = UV * scale;
+		vec2 newUV = (UV - 0.5) * scale + 0.5;
+		newUV = rotated(newUV, rotation);
 	    newUV *= tiling;
         newUV += direction * TIME * speed;
-		newUV = rotated(newUV, rotation);
 
 		newUV = fract(newUV);
 		COLOR = texture(scroll_texture, newUV);

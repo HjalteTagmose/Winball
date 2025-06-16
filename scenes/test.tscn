@@ -1,23 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd1d2ff04wjul"]
+[gd_scene load_steps=10 format=3 uid="uid://bd1d2ff04wjul"]
 
 [ext_resource type="Shader" uid="uid://d1wxs38in1tt7" path="res://sprites/test/scrolling_texture.gdshader" id="1_bl13t"]
 [ext_resource type="Texture2D" uid="uid://dd6ns6y03fnal" path="res://sprites/test/test_flipper.png" id="1_errlg"]
 [ext_resource type="Texture2D" uid="uid://8uverxmiu3hn" path="res://sprites/test/test_pattern.png" id="2_bl13t"]
+[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://sprites/test/flipper_animation.gd" id="4_74lek"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iyx0m"]
 shader = ExtResource("1_bl13t")
 shader_parameter/scroll_texture = ExtResource("2_bl13t")
 shader_parameter/tiling = Vector2(1, 1)
 shader_parameter/direction = Vector2(1, 1)
-shader_parameter/speed = 0.1
-shader_parameter/rotation = 1.0
+shader_parameter/speed = 0.2
+shader_parameter/rotation = 0.0
 shader_parameter/scale = 1.0
+
+[sub_resource type="Curve" id="Curve_74lek"]
+_limits = [0.0, 2.0, 0.0, 0.25]
+_data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0, 0.0, 0, 0, Vector2(0.21281, 1.0031), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_j5jx5"]
+_limits = [0.08, 0.1, 0.0, 0.25]
+_data = [Vector2(0, 0.0968477), 0.0, -0.0963304, 0, 0, Vector2(0.0707645, 0.0955693), 0.0, 0.0, 0, 0, Vector2(0.25, 0.0968477), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_lpvoh"]
+_limits = [0.0, 2.0, 0.0, 0.5]
+_data = [Vector2(0, 1.0031), 0.0, -4.30036, 0, 0, Vector2(0.136364, 0.680868), 0.0, 0.0, 0, 0, Vector2(0.422521, 1.02324), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_at5dv"]
+_data = [Vector2(0.00206612, 0), 0.0, 1.27627, 0, 0, Vector2(0.00413223, 0.264911), 1.92919, 1.92919, 0, 0, Vector2(0.549587, 0), -0.155448, 0.0, 0, 0]
+point_count = 3
 
 [node name="Test" type="Node2D"]
 
 [node name="Flipper" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_iyx0m")
-position = Vector2(100, 100)
+position = Vector2(250, 184)
 scale = Vector2(3, 3)
 texture = ExtResource("1_errlg")
+script = ExtResource("4_74lek")
+scale_curve = SubResource("Curve_74lek")
+texture_speed_curve = SubResource("Curve_j5jx5")
+texture_scale_curve = SubResource("Curve_lpvoh")
+texture_rotate_curve = SubResource("Curve_at5dv")
