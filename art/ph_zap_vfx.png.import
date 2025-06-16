@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqqb3cxcbqmja"
-path="res://.godot/imported/ph_zap_vfx.png-541ccd989cf215420a4e853f670c0c73.ctex"
+path="res://.godot/imported/ph_zap_vfx.png-c1c6e2e839232c2d1c2ced4f02ae338e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/test/ph_zap_vfx.png"
-dest_files=["res://.godot/imported/ph_zap_vfx.png-541ccd989cf215420a4e853f670c0c73.ctex"]
+source_file="res://art/ph_zap_vfx.png"
+dest_files=["res://.godot/imported/ph_zap_vfx.png-c1c6e2e839232c2d1c2ced4f02ae338e.ctex"]
 
 [params]
 

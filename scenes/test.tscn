@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bd1d2ff04wjul"]
 
 [ext_resource type="Shader" uid="uid://d1wxs38in1tt7" path="res://sprites/test/scrolling_texture.gdshader" id="1_bl13t"]
-[ext_resource type="Texture2D" uid="uid://c4cglduo8u6ui" path="res://sprites/test/1974-03-30-uk-evening_argus-03.jpg" id="2_74lek"]
-[ext_resource type="Texture2D" uid="uid://bv45f70qsuxfa" path="res://sprites/test/ph_boom_vfx.png" id="3_74lek"]
+[ext_resource type="Texture2D" uid="uid://c4cglduo8u6ui" path="res://art/1974-03-30-uk-evening_argus-03.jpg" id="2_74lek"]
+[ext_resource type="Texture2D" uid="uid://bv45f70qsuxfa" path="res://art/ph_boom_vfx.png" id="3_74lek"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://sprites/test/flipper_animation.gd" id="4_74lek"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iyx0m"]
