@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://8b3hfhqgnwil"]
+
+[ext_resource type="Script" uid="uid://bagx158bqhie" path="res://scripts/Storm.gd" id="1_hmgbu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nb1wl"]
+size = Vector2(360, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n77mx"]
+
+[node name="Storm" type="Area2D" node_paths=PackedStringArray("CollisionArea", "Graphic", "CameraRef")]
+script = ExtResource("1_hmgbu")
+CollisionArea = NodePath("CollisionShape2D")
+Graphic = NodePath("Sprite2D")
+CameraRef = NodePath("")
+Speed = 48.0
+metadata/_custom_type_script = "uid://bagx158bqhie"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0.141176, 0.0941176)
+texture = SubResource("PlaceholderTexture2D_nb1wl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n77mx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_enter"]
+[connection signal="body_exited" from="." to="." method="_on_body_exit"]
