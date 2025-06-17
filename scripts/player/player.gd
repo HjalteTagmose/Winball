@@ -15,6 +15,12 @@ var _launchClickTime : float
 
 var _isCharging : bool
 
+func _ready() -> void:
+	Global.game_over.connect(onGameOver)
+	
+func onGameOver() -> void:
+	queue_free()
+
 func handleLaunch() -> void:
 	
 	var timeNow: float = Time.get_unix_time_from_system()

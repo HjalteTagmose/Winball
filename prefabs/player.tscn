@@ -18,10 +18,8 @@ physics_material_override = SubResource("PhysicsMaterial_1txc5")
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_onrkg")
-minLaunchPower = null
 maxLaunchPower = 100.0
 launchChargeDuration = 0.0
-killVelocityBeforeLaunch = null
 moveAwayFromPlayer = false
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]

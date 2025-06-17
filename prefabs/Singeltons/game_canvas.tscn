@@ -4,10 +4,15 @@
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
 [ext_resource type="Script" uid="uid://d8ji1yq2j061" path="res://scripts/ui/score_display.gd" id="3_ig5ml"]
 
-[node name="GameCanvas" type="CanvasLayer"]
+[node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
 script = ExtResource("1_oe5df")
+gameplay_canvas = NodePath("GameplayGroup")
+game_over_canvas = NodePath("GameOverCanvas")
 
-[node name="AmmoDisplay" type="RichTextLabel" parent="."]
+[node name="GameplayGroup" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="AmmoDisplay" type="RichTextLabel" parent="GameplayGroup"]
 offset_left = 965.0
 offset_top = 610.0
 offset_right = 1150.0
@@ -16,8 +21,21 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Test"
 script = ExtResource("2_ig5ml")
 
-[node name="ScoreDisplay" type="RichTextLabel" parent="."]
+[node name="ScoreDisplay" type="RichTextLabel" parent="GameplayGroup"]
 offset_right = 202.0
 offset_bottom = 40.0
 text = "Score"
 script = ExtResource("3_ig5ml")
+
+[node name="GameOverCanvas" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameOverCanvas"]
+offset_left = 288.0
+offset_top = 253.0
+offset_right = 773.0
+offset_bottom = 467.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Game Over
+
+Press R To Restart"
