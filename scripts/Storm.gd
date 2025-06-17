@@ -25,7 +25,8 @@ func _process(delta: float) -> void:
 		currentTIme += delta
 
 		if currentTIme >= TimeToKill:
-			print("player DEAAAAD");
+			# print("player DEAAAAD");
+			pass
 
 	else:
 		currentTIme = 0.0

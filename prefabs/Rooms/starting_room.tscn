@@ -188,5 +188,4 @@ position = Vector2(9, -396)
 [node name="BasicBumper10" parent="Props" instance=ExtResource("5_3bafk")]
 position = Vector2(669, -947)
 
-[editable path="Props/BasicBumper"]
 [editable path="Props/FlatBumper Walls5"]

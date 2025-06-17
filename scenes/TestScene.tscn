@@ -18,6 +18,7 @@ scale = Vector2(1.01255, 1.04547)
 
 [node name="RoomLoader" type="Node2D" parent="."]
 script = ExtResource("4_nb1wl")
+roomCount = 1
 firstRoom = ExtResource("3_m5dm6")
 roomToSpawns = Array[PackedScene]([ExtResource("3_m5dm6")])
 

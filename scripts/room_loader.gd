@@ -2,6 +2,7 @@ extends Node2D
 
 class_name RoomLoader
 
+@export var roomCount : int = 10
 @export var firstRoom : PackedScene
 @export var roomToSpawns : Array[PackedScene] = []
 
@@ -11,7 +12,7 @@ var _nextSpawnPoint : Vector2 = Vector2.ZERO
 func _ready() -> void:
 	spawnRoom(firstRoom, 0)
 	
-	for n in range(1, 10):
+	for n in range(1, roomCount):
 		spawnRoom(roomToSpawns.pick_random(), n)
 	pass # Replace with function body.
 
