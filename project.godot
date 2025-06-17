@@ -57,8 +57,8 @@ aim_down={
 
 [physics]
 
-common/physics_ticks_per_second=100
-common/max_physics_steps_per_frame=14
+common/physics_ticks_per_second=160
+common/max_physics_steps_per_frame=28
 
 [rendering]
 
