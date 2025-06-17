@@ -1,0 +1,189 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgcnmju2c0r7w"]
+
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_n3c57"]
+[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_n6cen"]
+[ext_resource type="Script" path="res://scripts/room_exit.gd" id="3_84dyx"]
+[ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_hg5bj"]
+[ext_resource type="PackedScene" uid="uid://boobpj10lfiqa" path="res://prefabs/Room props/basic_bumper.tscn" id="5_3bafk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
+size = Vector2(319, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
+size = Vector2(4.81928, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6cen"]
+size = Vector2(10.6551, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njsij"]
+size = Vector2(80, 20)
+
+[node name="StartRoom" type="Node2D" node_paths=PackedStringArray("roomExit")]
+script = ExtResource("1_n3c57")
+roomExit = NodePath("Walls/Exit")
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="LeftWall" type="Node2D" parent="Walls"]
+position = Vector2(-1000, -558)
+rotation = 1.5708
+scale = Vector2(3.61066, 0.999985)
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWall"]
+rotation = 8.47668e-05
+scale = Vector2(2.5, 0.2)
+texture = ExtResource("1_n6cen")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/LeftWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall/StaticBody2D"]
+position = Vector2(0.5, -4.57764e-05)
+shape = SubResource("RectangleShape2D_vmxit")
+
+[node name="RightWall" type="Node2D" parent="Walls"]
+position = Vector2(1000, -541)
+rotation = 1.5708
+scale = Vector2(3.61066, 0.999985)
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWall"]
+rotation = 8.47668e-05
+scale = Vector2(2.5, 0.2)
+texture = ExtResource("1_n6cen")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/RightWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall/StaticBody2D"]
+position = Vector2(0.5, -4.57764e-05)
+shape = SubResource("RectangleShape2D_vmxit")
+
+[node name="TopWall" type="Node2D" parent="Walls"]
+position = Vector2(0, -1064)
+
+[node name="WallPiece2" type="Node2D" parent="Walls/TopWall"]
+position = Vector2(560, -1)
+scale = Vector2(6.87159, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/TopWall/WallPiece2"]
+rotation = 8.47668e-05
+scale = Vector2(1, 0.15)
+texture = ExtResource("1_n6cen")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/TopWall/WallPiece2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall/WallPiece2/StaticBody2D"]
+scale = Vector2(26.56, 1)
+shape = SubResource("RectangleShape2D_cguwc")
+debug_color = Color(0, 0.6, 0.701961, 0.294118)
+
+[node name="WallPiece3" type="Node2D" parent="Walls/TopWall"]
+position = Vector2(-560, -1)
+scale = Vector2(6.87159, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/TopWall/WallPiece3"]
+rotation = 8.47668e-05
+scale = Vector2(1, 0.15)
+texture = ExtResource("1_n6cen")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/TopWall/WallPiece3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall/WallPiece3/StaticBody2D"]
+scale = Vector2(26.56, 1)
+shape = SubResource("RectangleShape2D_cguwc")
+debug_color = Color(0, 0.6, 0.701961, 0.294118)
+
+[node name="BottomWall" type="Node2D" parent="Walls"]
+scale = Vector2(7.85437, 1.59801)
+
+[node name="WallPiece" type="Node2D" parent="Walls/BottomWall"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/BottomWall/WallPiece"]
+rotation = 8.47668e-05
+scale = Vector2(2, 0.15)
+texture = ExtResource("1_n6cen")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/BottomWall/WallPiece"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall/WallPiece/StaticBody2D"]
+position = Vector2(2, 0)
+scale = Vector2(26.56, 1)
+shape = SubResource("RectangleShape2D_n6cen")
+debug_color = Color(0, 0.6, 0.701961, 0.294118)
+
+[node name="Exit" type="Area2D" parent="Walls"]
+position = Vector2(0, -1064)
+script = ExtResource("3_84dyx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Exit"]
+scale = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_njsij")
+debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
+
+[node name="Props" type="Node" parent="."]
+
+[node name="FlatBumper Walls2" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(-45, 93)
+
+[node name="FlatBumper Walls" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(270, -98)
+rotation = -1.5708
+
+[node name="BasicBumper4" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(198, -630)
+
+[node name="BasicBumper3" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(-687, -877)
+
+[node name="BasicBumper2" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(-340, -730)
+
+[node name="BasicBumper" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(-737, -215)
+
+[node name="BasicBumper5" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(-835, -533)
+
+[node name="BasicBumper7" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(-418, -401)
+
+[node name="BasicBumper6" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(697, -194)
+
+[node name="FlatBumper Walls3" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(-347, 91)
+
+[node name="FlatBumper Walls4" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(539, -99)
+rotation = -1.5708
+
+[node name="FlatBumper Walls5" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(117, -1156)
+rotation = 3.14159
+
+[node name="FlatBumper Walls6" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(-308, -964)
+rotation = 1.5708
+
+[node name="BasicBumper8" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(625, -566)
+
+[node name="FlatBumper Walls7" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(750, -891)
+rotation = 3.14159
+
+[node name="FlatBumper Walls8" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(325, -699)
+rotation = 1.5708
+
+[node name="FlatBumper Walls9" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(497, -275)
+rotation = 0.000135183
+
+[node name="FlatBumper Walls10" parent="Props" instance=ExtResource("4_hg5bj")]
+position = Vector2(947, -460)
+rotation = -1.57066
+
+[node name="BasicBumper9" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(9, -396)
+
+[node name="BasicBumper10" parent="Props" instance=ExtResource("5_3bafk")]
+position = Vector2(669, -947)

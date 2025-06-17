@@ -22,14 +22,13 @@ a = Vector2(0, -65)
 b = Vector2(11, -67)
 
 [node name="FlatBumper Walls" type="StaticBody2D"]
-rotation = -0.247837
 
 [node name="FlatBumper Logic" type="StaticBody2D" parent="." node_paths=PackedStringArray("AudioPlayer")]
 position = Vector2(-45, -146)
 scale = Vector2(1.47, 1.47)
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_y5uss")
-Power = 45.0
+Power = 10.0
 AudioPlayer = NodePath("AudioPlayer")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 

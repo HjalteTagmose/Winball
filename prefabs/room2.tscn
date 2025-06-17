@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqtf3fd27126f"]
 
-[ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/room.gd" id="1_2usvj"]
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_2usvj"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_okf7h"]
-[ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/room_exit.gd" id="3_2r5dy"]
+[ext_resource type="Script" path="res://scripts/room_exit.gd" id="3_2r5dy"]
 [ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="4_okf7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
@@ -17,7 +17,6 @@ size = Vector2(80, 20)
 [node name="Room2" type="Node2D" node_paths=PackedStringArray("roomExit")]
 script = ExtResource("1_2usvj")
 roomExit = NodePath("Exit")
-metadata/_custom_type_script = "uid://bi5omso1g5t0g"
 
 [node name="RightWall" type="Node2D" parent="."]
 position = Vector2(130, -150)
