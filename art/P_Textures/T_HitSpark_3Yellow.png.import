@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv45f70qsuxfa"
-path="res://.godot/imported/ph_boom_vfx.png-31a15bf3a26ea89d21b92b1a4d2b54f8.ctex"
+uid="uid://bnj18x7tulumk"
+path="res://.godot/imported/T_HitSpark_3Yellow.png-b54549aa373cdd1d58b95bda75f0ffd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ph_boom_vfx.png"
-dest_files=["res://.godot/imported/ph_boom_vfx.png-31a15bf3a26ea89d21b92b1a4d2b54f8.ctex"]
+source_file="res://art/P_Textures/T_HitSpark_3Yellow.png"
+dest_files=["res://.godot/imported/T_HitSpark_3Yellow.png-b54549aa373cdd1d58b95bda75f0ffd8.ctex"]
 
 [params]
 

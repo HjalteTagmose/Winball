@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqqb3cxcbqmja"
-path="res://.godot/imported/ph_zap_vfx.png-c1c6e2e839232c2d1c2ced4f02ae338e.ctex"
+uid="uid://bv45f70qsuxfa"
+path="res://.godot/imported/ph_boom_vfx.png-c20351ec8585f1784d071c8bb40e9142.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ph_zap_vfx.png"
-dest_files=["res://.godot/imported/ph_zap_vfx.png-c1c6e2e839232c2d1c2ced4f02ae338e.ctex"]
+source_file="res://art/P_Textures/ph_boom_vfx.png"
+dest_files=["res://.godot/imported/ph_boom_vfx.png-c20351ec8585f1784d071c8bb40e9142.ctex"]
 
 [params]
 
