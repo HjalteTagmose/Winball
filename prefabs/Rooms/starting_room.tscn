@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgcnmju2c0r7w"]
 
-[ext_resource type="Script" path="res://scripts/room.gd" id="1_n3c57"]
+[ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/room.gd" id="1_n3c57"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_n6cen"]
-[ext_resource type="Script" path="res://scripts/room_exit.gd" id="3_84dyx"]
+[ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/room_exit.gd" id="3_84dyx"]
 [ext_resource type="PackedScene" uid="uid://bfqcmx43v4kps" path="res://prefabs/Room props/flat_bumper_ground.tscn" id="4_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_hg5bj"]
 [ext_resource type="PackedScene" uid="uid://boobpj10lfiqa" path="res://prefabs/Room props/basic_bumper.tscn" id="5_3bafk"]
@@ -23,7 +23,7 @@ size = Vector2(80, 20)
 script = ExtResource("1_n3c57")
 roomExit = NodePath("Walls/Exit")
 
-[node name="Walls" type="Node" parent="."]
+[node name="Walls" type="Node2D" parent="."]
 
 [node name="RightWall" type="Node2D" parent="Walls"]
 position = Vector2(781, -892)
@@ -119,9 +119,9 @@ scale = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_njsij")
 debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 
-[node name="Props" type="Node" parent="."]
+[node name="Props" type="Node2D" parent="."]
 
-[node name="GroundBumpers" type="Node" parent="Props"]
+[node name="GroundBumpers" type="Node2D" parent="Props"]
 
 [node name="FlatBumper_Ground" parent="Props/GroundBumpers" instance=ExtResource("4_3bafk")]
 position = Vector2(13, -31)
@@ -132,7 +132,7 @@ position = Vector2(378, -27)
 [node name="FlatBumper_Ground3" parent="Props/GroundBumpers" instance=ExtResource("4_3bafk")]
 position = Vector2(-349, -23)
 
-[node name="Corners" type="Node" parent="Props"]
+[node name="Corners" type="Node2D" parent="Props"]
 
 [node name="FlatBumper Walls" parent="Props/Corners" instance=ExtResource("4_hg5bj")]
 position = Vector2(194, -100)
@@ -152,7 +152,7 @@ scale = Vector2(4, 4)
 
 [node name="FlatBumper Walls8" parent="Props/Corners" instance=ExtResource("4_hg5bj")]
 position = Vector2(-618, -1488)
-rotation = -4.71239
+rotation = 1.5708
 scale = Vector2(4, 4)
 
 [node name="FlatBumper Walls4" parent="Props/Corners" instance=ExtResource("4_hg5bj")]
@@ -168,7 +168,7 @@ rotation = 3.14159
 position = Vector2(-204, -1569)
 rotation = 1.5708
 
-[node name="CornerSquares" type="Node" parent="Props"]
+[node name="CornerSquares" type="Node2D" parent="Props"]
 
 [node name="FlatBumper Walls9" parent="Props/CornerSquares" instance=ExtResource("4_hg5bj")]
 position = Vector2(-200, -500)
@@ -178,7 +178,7 @@ rotation = 0.000135183
 position = Vector2(200, -500)
 rotation = -1.57066
 
-[node name="CircleBumpers" type="Node" parent="Props"]
+[node name="CircleBumpers" type="Node2D" parent="Props"]
 
 [node name="BasicBumper3" parent="Props/CircleBumpers" instance=ExtResource("5_3bafk")]
 position = Vector2(-290, -1170)
@@ -216,7 +216,7 @@ position = Vector2(0, -1350)
 [node name="BasicBumper10" parent="Props/CircleBumpers" instance=ExtResource("5_3bafk")]
 position = Vector2(304, -1160)
 
-[node name="WallCorners" type="Node" parent="Props"]
+[node name="WallCorners" type="Node2D" parent="Props"]
 
 [node name="FlatBumper Walls7" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
 position = Vector2(-694, -671)

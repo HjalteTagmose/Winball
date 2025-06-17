@@ -12,8 +12,8 @@ var _nextSpawnPoint : Vector2 = Vector2.ZERO
 func _ready() -> void:
 	spawnRoom(firstRoom, 0)
 	
-	for n in range(1, roomCount):
-		spawnRoom(roomToSpawns.pick_random(), n)
+	for n in range(0, roomCount):
+		spawnRoom(roomToSpawns.pick_random(), n+1) #+1 because we already spawned a set first room
 	pass # Replace with function body.
 
 

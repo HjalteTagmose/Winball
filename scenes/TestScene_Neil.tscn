@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8b53ln8ex6lj"]
 
 [ext_resource type="PackedScene" uid="uid://cd3yybuk7l3no" path="res://prefabs/room.tscn" id="1_60bj8"]
-[ext_resource type="Script" path="res://scripts/PlayerFollowerCamera.gd" id="1_kpxt2"]
+[ext_resource type="Script" uid="uid://cgl3nhd7yn4pp" path="res://scripts/PlayerFollowerCamera.gd" id="1_kpxt2"]
 [ext_resource type="PackedScene" uid="uid://dedwl18kckfdd" path="res://prefabs/player.tscn" id="2_kpxt2"]
 [ext_resource type="PackedScene" uid="uid://bgcnmju2c0r7w" path="res://prefabs/Rooms/starting_room.tscn" id="3_60bj8"]
-[ext_resource type="Script" path="res://scripts/room_loader.gd" id="3_tsxiv"]
+[ext_resource type="Script" uid="uid://byy3f8w3lbg2t" path="res://scripts/room_loader.gd" id="3_tsxiv"]
 [ext_resource type="PackedScene" uid="uid://bqtf3fd27126f" path="res://prefabs/room2.tscn" id="5_nq86q"]
 
 [node name="Node2D" type="Node2D"]
