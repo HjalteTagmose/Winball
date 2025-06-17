@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqtf3fd27126f"]
+[gd_scene load_steps=8 format=3 uid="uid://bjvxmoyhce1va"]
 
-[ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/room.gd" id="1_2usvj"]
-[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_okf7h"]
-[ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/room_exit.gd" id="3_2r5dy"]
-[ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="4_okf7h"]
+[ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/room.gd" id="1_jul75"]
+[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_k3sg1"]
+[ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/room_exit.gd" id="3_ve5v0"]
+[ext_resource type="PackedScene" uid="uid://boobpj10lfiqa" path="res://prefabs/Room props/basic_bumper.tscn" id="4_jul75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
 size = Vector2(319, 26)
@@ -14,8 +14,9 @@ size = Vector2(4.81928, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y72nq"]
 size = Vector2(80, 20)
 
-[node name="Room2" type="Node2D" node_paths=PackedStringArray("roomExit")]
-script = ExtResource("1_2usvj")
+[node name="Room3" type="Node2D" node_paths=PackedStringArray("roomExit")]
+position = Vector2(0, -63)
+script = ExtResource("1_jul75")
 roomExit = NodePath("Exit")
 metadata/_custom_type_script = "uid://bi5omso1g5t0g"
 
@@ -26,7 +27,7 @@ rotation = 1.5708
 [node name="Sprite2D" type="Sprite2D" parent="RightWall"]
 rotation = 8.47668e-05
 scale = Vector2(2.5, 0.2)
-texture = ExtResource("2_okf7h")
+texture = ExtResource("2_k3sg1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RightWall"]
 
@@ -41,7 +42,7 @@ rotation = 1.5708
 [node name="Sprite2D" type="Sprite2D" parent="LeftWall"]
 rotation = 8.47668e-05
 scale = Vector2(2.5, 0.2)
-texture = ExtResource("2_okf7h")
+texture = ExtResource("2_k3sg1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LeftWall"]
 
@@ -58,7 +59,7 @@ position = Vector2(100, 0)
 [node name="Sprite2D" type="Sprite2D" parent="TopWall/WallPiece2"]
 rotation = 8.47668e-05
 scale = Vector2(1, 0.15)
-texture = ExtResource("2_okf7h")
+texture = ExtResource("2_k3sg1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TopWall/WallPiece2"]
 
@@ -73,7 +74,7 @@ position = Vector2(-100, 0)
 [node name="Sprite2D" type="Sprite2D" parent="TopWall/WallPiece"]
 rotation = 8.47668e-05
 scale = Vector2(1, 0.15)
-texture = ExtResource("2_okf7h")
+texture = ExtResource("2_k3sg1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TopWall/WallPiece"]
 
@@ -91,7 +92,7 @@ position = Vector2(100, 0)
 [node name="Sprite2D" type="Sprite2D" parent="BottomWall/WallPiece2"]
 rotation = 8.47668e-05
 scale = Vector2(1, 0.15)
-texture = ExtResource("2_okf7h")
+texture = ExtResource("2_k3sg1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BottomWall/WallPiece2"]
 
@@ -106,7 +107,7 @@ position = Vector2(-100, 0)
 [node name="Sprite2D" type="Sprite2D" parent="BottomWall/WallPiece"]
 rotation = 8.47668e-05
 scale = Vector2(1, 0.15)
-texture = ExtResource("2_okf7h")
+texture = ExtResource("2_k3sg1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BottomWall/WallPiece"]
 
@@ -123,7 +124,7 @@ rotation = 1.5708
 [node name="Sprite2D" type="Sprite2D" parent="LeftWall2"]
 rotation = 8.47668e-05
 scale = Vector2(2.5, 0.2)
-texture = ExtResource("2_okf7h")
+texture = ExtResource("2_k3sg1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LeftWall2"]
 
@@ -133,7 +134,7 @@ shape = SubResource("RectangleShape2D_vmxit")
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2(0, -300)
-script = ExtResource("3_2r5dy")
+script = ExtResource("3_ve5v0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 shape = SubResource("RectangleShape2D_y72nq")
@@ -141,12 +142,11 @@ debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 
 [node name="Exit" type="Area2D" parent="Exit"]
 position = Vector2(0, -300)
-script = ExtResource("3_2r5dy")
+script = ExtResource("3_ve5v0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Exit"]
 shape = SubResource("RectangleShape2D_y72nq")
 debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 
-[node name="BasicSticker" parent="." instance=ExtResource("4_okf7h")]
-position = Vector2(72, -153)
-scale = Vector2(2.16, 2.16)
+[node name="BasicBumper" parent="." instance=ExtResource("4_jul75")]
+position = Vector2(0, -155)

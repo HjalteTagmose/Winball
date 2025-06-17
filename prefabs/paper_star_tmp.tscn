@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://fvogfumr3qag"]
+
+[ext_resource type="Shader" uid="uid://d1wxs38in1tt7" path="res://sprites/test/scrolling_texture.gdshader" id="1_bmlqb"]
+[ext_resource type="Texture2D" uid="uid://c4cglduo8u6ui" path="res://art/1974-03-30-uk-evening_argus-03.jpg" id="2_qjfrt"]
+[ext_resource type="Texture2D" uid="uid://bv45f70qsuxfa" path="res://art/ph_boom_vfx.png" id="3_w0s08"]
+[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://sprites/test/flipper_animation.gd" id="4_0tdbw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74lek"]
+shader = ExtResource("1_bmlqb")
+shader_parameter/scroll_texture = ExtResource("2_qjfrt")
+shader_parameter/replace_color = Color(0.933333, 0.866667, 0.227451, 1)
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/direction = Vector2(1, 1)
+shader_parameter/speed = 0.1
+shader_parameter/rotation = 0.0
+shader_parameter/scale = 0.3
+shader_parameter/color_blend = 1.0
+shader_parameter/scroll_texture_alpha = 0.5
+
+[sub_resource type="Curve" id="Curve_74lek"]
+_limits = [0.0, 2.0, 0.0, 0.25]
+_data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0, 0.0, 0, 0, Vector2(0.21281, 1.0031), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_j5jx5"]
+_limits = [0.08, 0.1, 0.0, 0.25]
+_data = [Vector2(0, 0.0968477), 0.0, -0.0963304, 0, 0, Vector2(0.0707645, 0.0955693), 0.0, 0.0, 0, 0, Vector2(0.25, 0.0968477), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_lpvoh"]
+_limits = [0.0, 2.0, 0.0, 0.5]
+_data = [Vector2(0, 1.0031), 0.0, -4.30036, 0, 0, Vector2(0.136364, 0.680868), 0.0, 0.0, 0, 0, Vector2(0.422521, 1.02324), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_at5dv"]
+_data = [Vector2(0.00206612, 0), 0.0, 1.27627, 0, 0, Vector2(0.00413223, 0.264911), 1.92919, 1.92919, 0, 0, Vector2(0.549587, 0), -0.155448, 0.0, 0, 0]
+point_count = 3
+
+[node name="PaperStar" type="Sprite2D"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_74lek")
+scale = Vector2(3, 3)
+texture = ExtResource("3_w0s08")
+script = ExtResource("4_0tdbw")
+scale_curve = SubResource("Curve_74lek")
+texture_speed_curve = SubResource("Curve_j5jx5")
+texture_scale_curve = SubResource("Curve_lpvoh")
+texture_rotate_curve = SubResource("Curve_at5dv")

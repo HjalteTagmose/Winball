@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd3yybuk7l3no"]
+[gd_scene load_steps=9 format=3 uid="uid://cd3yybuk7l3no"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_vmxit"]
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/room.gd" id="1_yg100"]
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/room_exit.gd" id="3_p3u21"]
-[ext_resource type="PackedScene" uid="uid://boobpj10lfiqa" path="res://prefabs/basic_bumper.tscn" id="4_p3u21"]
+[ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_p3u21"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p3u21"]
+bounce = 0.15
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
 size = Vector2(319, 26)
@@ -29,6 +32,8 @@ scale = Vector2(2.5, 0.2)
 texture = ExtResource("1_vmxit")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RightWall"]
+scale = Vector2(1.00677, 1.00605)
+physics_material_override = SubResource("PhysicsMaterial_p3u21")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall/StaticBody2D"]
 position = Vector2(0.5, -4.57764e-05)
@@ -139,5 +144,6 @@ script = ExtResource("3_p3u21")
 shape = SubResource("RectangleShape2D_y72nq")
 debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 
-[node name="BasicBumper" parent="." instance=ExtResource("4_p3u21")]
-position = Vector2(-45, -146)
+[node name="FlatBumper Walls" parent="." instance=ExtResource("4_p3u21")]
+position = Vector2(61, -38)
+rotation = -0.577704

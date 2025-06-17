@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dppffrgc2a1uo"]
+
+[ext_resource type="Script" uid="uid://o0wcl8l7p1uy" path="res://scripts/Map props/Sticker.gd" id="1_2smrg"]
+[ext_resource type="PackedScene" uid="uid://fvogfumr3qag" path="res://prefabs/paper_star_tmp.tscn" id="2_ao50h"]
+[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_khal5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r5dy"]
+size = Vector2(32, 64)
+
+[node name="BasicSticker" type="Area2D" node_paths=PackedStringArray("AudioPlayer")]
+script = ExtResource("1_2smrg")
+score = 25
+AudioPlayer = NodePath("audioPlayer")
+metadata/_custom_type_script = "uid://o0wcl8l7p1uy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2r5dy")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.26, 0.54)
+texture = ExtResource("2_khal5")
+
+[node name="PaperStar" parent="." instance=ExtResource("2_ao50h")]
+position = Vector2(0, -12)
+scale = Vector2(0.12, 0.12)
+
+[node name="PaperStar2" parent="." instance=ExtResource("2_ao50h")]
+position = Vector2(0, 18)
+scale = Vector2(0.12, 0.12)
+
+[node name="audioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_enter"]
