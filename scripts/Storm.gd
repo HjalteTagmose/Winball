@@ -34,6 +34,10 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	move_local_y(-Speed * delta)
+
+	if !CameraRef:
+		return
+		
 	position.x = CameraRef.global_position.x
 	pass
 
