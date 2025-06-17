@@ -8,7 +8,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_n77mx")]
-position = Vector2(4, -3)
+position = Vector2(0, -400)
 mass = 0.1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

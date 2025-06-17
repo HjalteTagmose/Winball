@@ -125,15 +125,12 @@ debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 
 [node name="FlatBumper_Ground" parent="Props/GroundBumpers" instance=ExtResource("4_3bafk")]
 position = Vector2(13, -31)
-scale = Vector2(2, 2)
 
 [node name="FlatBumper_Ground2" parent="Props/GroundBumpers" instance=ExtResource("4_3bafk")]
 position = Vector2(378, -27)
-scale = Vector2(2, 2)
 
 [node name="FlatBumper_Ground3" parent="Props/GroundBumpers" instance=ExtResource("4_3bafk")]
 position = Vector2(-349, -23)
-scale = Vector2(2, 2)
 
 [node name="Corners" type="Node" parent="Props"]
 
