@@ -8,7 +8,7 @@ uniform float speed = 1.0;
 uniform float rotation = 0.0;
 uniform float scale = 1.0;
 uniform float color_blend = 0.5;
-uniform float scroll_texture_alpha = 0.5;
+//uniform float scroll_texture_alpha = 0.5;
 
 vec2 rotated(vec2 a, float angle)
 {
@@ -34,9 +34,7 @@ void fragment()
 
 		newUV = fract(newUV);
 		vec4 color = texture(scroll_texture, newUV);
-		vec4 test = replace_color;
-		test.a  = scroll_texture_alpha;
-		color = test * color;
+		color = replace_color * color;
 		COLOR = color;
 	}
 }
