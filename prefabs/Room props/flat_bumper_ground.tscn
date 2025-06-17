@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_ydfnd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
-bounce = 0.6
+bounce = 0.7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubyfy"]
 size = Vector2(9.33967, 65.6587)
@@ -28,9 +28,11 @@ scale = Vector2(2, 2)
 
 [node name="FlatBumper Logic" type="StaticBody2D" parent="." node_paths=PackedStringArray("AudioPlayer")]
 scale = Vector2(1.47, 1.47)
+collision_layer = 4
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_ubyfy")
-Power = 20.0
+Power = 25.0
 AudioPlayer = NodePath("AudioPlayer")
 Bias = Vector2(0, -1)
 BiasPower = 10.0
