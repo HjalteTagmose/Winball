@@ -11,6 +11,9 @@ class_name Player
 @export var moveAwayFromPlayer : bool = true
 @export var showLog : bool = false
 
+@export var shootParticle : PackedScene
+@export var playerGun : Node2D
+
 var _launchClickTime : float
 
 var _isCharging : bool
@@ -57,10 +60,27 @@ func handleLaunch() -> void:
 		var impulse = direction * currentPower
 		if(!moveAwayFromPlayer):
 			impulse = -impulse
+			
 		apply_central_impulse(impulse)
+		handleParticle(direction)
+			
+
+func handleParticle(direction: Vector2):
+	if(shootParticle == null):
+		return
+		
+	if(showLog):
+		print("shooting particle")
+	var instance: ParticleTrigger = shootParticle.instantiate()
+	instance.global_position = playerGun.global_position
+	var globalPoint = instance.to_global(direction)
+	
+	instance.rotation = direction.angle()
+	print("rotation", str(instance.rotation))
+	get_tree().root.add_child(instance)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	handleLaunch()	
+	handleLaunch()
 	pass

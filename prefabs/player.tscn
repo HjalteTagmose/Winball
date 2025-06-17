@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dedwl18kckfdd"]
+[gd_scene load_steps=8 format=3 uid="uid://dedwl18kckfdd"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://b3yk8xjtktkti" path="res://art/ph_pinball.png" id="2_1txc5"]
 [ext_resource type="Script" uid="uid://ctv7yapi47nbu" path="res://scripts/player/gun.gd" id="3_r66lb"]
+[ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="5_ht1c8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1txc5"]
 bounce = 0.2
@@ -11,7 +12,7 @@ bounce = 0.2
 [sub_resource type="CircleShape2D" id="CircleShape2D_mncer"]
 radius = 16.15
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("playerGun")]
 collision_layer = 2
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_1txc5")
@@ -20,7 +21,8 @@ max_contacts_reported = 1
 script = ExtResource("1_onrkg")
 maxLaunchPower = 100.0
 launchChargeDuration = 0.0
-moveAwayFromPlayer = false
+shootParticle = ExtResource("5_ht1c8")
+playerGun = NodePath("Gun")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 rotation = 8.47668e-05
