@@ -15,11 +15,6 @@ class_name Player
 @export var playerGun : Node2D
 var locked : bool = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 func _getInputDirection() -> Vector2:
 	return Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down").normalized()
 

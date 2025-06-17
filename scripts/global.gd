@@ -43,4 +43,3 @@ func trigger_game_over() -> void:
 func AddScore(amount : int) -> void:
 	score += amount
 	print("current score, ", score)
-
