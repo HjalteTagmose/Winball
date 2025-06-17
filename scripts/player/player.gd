@@ -3,6 +3,7 @@ extends RigidBody2D
 class_name Player
 
 
+@export var slowdownPower : float = 0.35
 @export var minLaunchPower : float = 100
 @export var maxLaunchPower : float = 1000
 @export var launchChargeDuration : float = 1
@@ -43,6 +44,11 @@ func handleLaunch() -> void:
 	
 	var percent= clamp(difference / launchChargeDuration, 0, 1)
 	var currentPower = lerp(minLaunchPower, maxLaunchPower, percent)		
+
+	if _isCharging:
+		Engine.time_scale = slowdownPower
+	else:
+		Engine.time_scale = 1.0
 
 	if(Input.is_action_just_released("launch")):
 		
