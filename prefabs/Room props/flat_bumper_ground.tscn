@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpt746t74aua6"]
+[gd_scene load_steps=9 format=3 uid="uid://bfqcmx43v4kps"]
 
-[ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_y5uss"]
-[ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_cd0wh"]
+[ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_ubyfy"]
+[ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_ydfnd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
 bounce = 1.0
@@ -25,20 +25,22 @@ b = Vector2(0, -65)
 a = Vector2(0, -66)
 b = Vector2(12, -66)
 
-[node name="FlatBumper Walls" type="StaticBody2D"]
+[node name="FlatBumper_Ground" type="StaticBody2D"]
+rotation = -0.785398
 scale = Vector2(2, 2)
 
 [node name="FlatBumper Logic" type="StaticBody2D" parent="." node_paths=PackedStringArray("AudioPlayer")]
 scale = Vector2(1.47, 1.47)
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
-script = ExtResource("1_y5uss")
-Power = 50.0
+script = ExtResource("1_ubyfy")
+Power = 25.0
 AudioPlayer = NodePath("AudioPlayer")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]
+self_modulate = Color(0, 1, 1, 1)
 rotation = -3.14159
-texture = ExtResource("2_cd0wh")
+texture = ExtResource("2_ydfnd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlatBumper Logic"]
 shape = SubResource("SegmentShape2D_mlksw")

@@ -10,8 +10,6 @@
 [node name="Player" parent="." instance=ExtResource("2_n77mx")]
 position = Vector2(4, -3)
 mass = 0.1
-minLaunchPower = 36.0
-maxLaunchPower = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 scale = Vector2(1.01255, 1.04547)
