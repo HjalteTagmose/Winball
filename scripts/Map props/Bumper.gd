@@ -7,7 +7,7 @@ class_name BasicBumper
 @export var Score : int = 15
 @export var AudioPlayer : AudioStreamPlayer2D
 @export var SoundOnHIt : AudioStream
-@export var ParticleOnHit : GPUParticles2D
+@export var ParticleOnHit : PackedScene
 @export var Bias : Vector2 = Vector2.ZERO
 @export var BiasPower : float = 15
 
@@ -37,24 +37,37 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	print(Bias.normalized())
 	player.apply_central_impulse(impulse)
 
-	PlayAnimation()
+	PlayAnimation(collisionInfo)
 	AddScore()
 
 	timesHit += 1
-
+	
 	if CanDie && timesHit >= Life:
 		Die()
-
+	
 	AdditionalBumpBehaviour(collisionInfo, player)
 	
+	
+func PlayParticle(collisionInfo: KinematicCollision2D):
+	if(ParticleOnHit == null):
+		return
+		
+	var direction = collisionInfo.get_normal()
+	var impactPoint = collisionInfo.get_position()
+	
+	var instance: ParticleTrigger = ParticleOnHit.instantiate()
+	instance.global_position = impactPoint
+	var globalPoint = instance.to_global(direction)	
+	instance.rotation = direction.angle()
+	
+	get_tree().root.add_child(instance)
 	
 func AdditionalBumpBehaviour(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	return
 
-func PlayAnimation():
+func PlayAnimation(collisionInfo: KinematicCollision2D):
 	AudioPlayer.play()
-	if ParticleOnHit:
-		ParticleOnHit.emitting = true
+	PlayParticle(collisionInfo)
 
 func AddScore():
 	Global.AddScore(Score)

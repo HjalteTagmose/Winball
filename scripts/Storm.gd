@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		currentTIme += delta
 
 		if currentTIme >= TimeToKill:
-			# print("player DEAAAAD");
+			Global.trigger_game_over()
 			pass
 
 	else:

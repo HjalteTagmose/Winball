@@ -1,55 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2nlkgcw21uwb"]
+[gd_scene load_steps=7 format=3 uid="uid://d2nlkgcw21uwb"]
 
+[ext_resource type="Script" uid="uid://cyy17hnp35i0w" path="res://scripts/particle_trigger.gd" id="1_dg3up"]
 [ext_resource type="Texture2D" uid="uid://bnj18x7tulumk" path="res://art/P_Textures/T_HitSpark_3Yellow.png" id="1_umipb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dg3up"]
 
-[sub_resource type="Curve" id="Curve_57njc"]
-_limits = [0.0, 100.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 243.294, 0, 0, Vector2(0.99373, 100), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_b5cvp"]
-curve = SubResource("Curve_57njc")
-
 [sub_resource type="Curve" id="Curve_vhg6f"]
-_data = [Vector2(0.015674, 0), 0.0, 3.58427, 0, 0, Vector2(0.239812, 1), 0.0, 0.0, 0, 0, Vector2(0.456113, 0.610667), 0.0, 0.0, 0, 0, Vector2(0.581505, 0.836851), -4.83418, -4.83418, 0, 0, Vector2(1, 0), -1.25676, 0.0, 0, 0]
+_data = [Vector2(0, 0.053316), 0.0, 0.0, 0, 0, Vector2(0.293548, 1), 0.0, 0.0, 0, 0, Vector2(0.435484, 0.425228), 0.0, 0.0, 0, 0, Vector2(0.654839, 0.678804), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 5
 
 [sub_resource type="CurveTexture" id="CurveTexture_8wr4b"]
 curve = SubResource("Curve_vhg6f")
 
-[sub_resource type="Curve" id="Curve_wgd83"]
-_limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 2.32584), 0.0, 0.0, 0, 0, Vector2(0.865204, 1.2809), -2.62264, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_2q7o2"]
-curve = SubResource("Curve_wgd83")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qiyu7"]
 particle_flag_disable_z = true
-angle_min = 160.0
-angle_max = 210.0
-direction = Vector3(0, 1, 0)
+angle_min = 70.0
+angle_max = 120.0
 spread = 10.0
-initial_velocity_min = 141.75
-initial_velocity_max = 141.75
 gravity = Vector3(0, 0, 0)
-damping_curve = SubResource("CurveTexture_b5cvp")
 scale_min = 1.5
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_8wr4b")
-scale_over_velocity_curve = SubResource("CurveTexture_2q7o2")
 
-[node name="TestParticles" type="Node2D"]
+[node name="ParticleTrigger" type="Node2D"]
+script = ExtResource("1_dg3up")
 
 [node name="Pop" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_dg3up")
 emitting = false
 amount = 1
 texture = ExtResource("1_umipb")
-lifetime = 0.6
+lifetime = 0.28
+one_shot = true
 explosiveness = 1.0
+use_fixed_seed = true
+seed = 299762414
+local_coords = true
 trail_lifetime = 0.01
 process_material = SubResource("ParticleProcessMaterial_qiyu7")

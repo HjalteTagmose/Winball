@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpt746t74aua6"]
+[gd_scene load_steps=10 format=3 uid="uid://cpt746t74aua6"]
 
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_y5uss"]
 [ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_cd0wh"]
+[ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="2_g2cpd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
 bounce = 0.5
@@ -35,6 +36,7 @@ physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_y5uss")
 Power = 60.0
 AudioPlayer = NodePath("AudioPlayer")
+ParticleOnHit = ExtResource("2_g2cpd")
 Bias = Vector2(0, -1)
 BiasPower = 20.0
 metadata/_custom_type_script = "uid://lobwfmlxako"
