@@ -12,6 +12,8 @@ bounce = 0.2
 radius = 16.15
 
 [node name="Player" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_1txc5")
 contact_monitor = true
 max_contacts_reported = 1

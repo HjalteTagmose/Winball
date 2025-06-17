@@ -10,6 +10,8 @@ bounce = 1.0
 radius = 33.0606
 
 [node name="BasicBumper" type="StaticBody2D" node_paths=PackedStringArray("AudioPlayer")]
+collision_layer = 4
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_gbh0v")
 Power = 10.0
