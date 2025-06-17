@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://kcegbygl2qjq"]
 
-[ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/ammoBumper.gd" id="1_51v4h"]
+[ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="1_51v4h"]
 [ext_resource type="Texture2D" uid="uid://drg8puls0marl" path="res://art/ph_bumper_2.png" id="2_et802"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]

@@ -4,5 +4,5 @@
 
 [node name="GlobalNode" type="Node"]
 script = ExtResource("1_a484y")
-maxAmmo = 1
+maxAmmo = 25
 metadata/_custom_type_script = "uid://be4h7kuufm7dl"
