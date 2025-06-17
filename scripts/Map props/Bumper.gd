@@ -25,8 +25,6 @@ func _process(delta):
 		return
 
 	var collisions = move_and_collide(Vector2.ZERO, true)
-	if collisions:
-		print(collisions.get_collider().name)
 
 	if collisions && collisions.get_collider() is Player:
 		BumpPlayer(collisions, collisions.get_collider())
@@ -36,6 +34,7 @@ func _process(delta):
 func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	# var customNormal = (player.global_position - global_position).normalized()
 	var impulse : Vector2 = (collisionInfo.get_normal() * Power) + (Bias.normalized() * BiasPower)
+	print(Bias.normalized())
 	player.apply_impulse(impulse)
 
 	PlayAnimation()
