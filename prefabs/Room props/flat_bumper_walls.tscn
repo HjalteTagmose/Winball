@@ -35,6 +35,7 @@ physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_y5uss")
 Power = 50.0
 AudioPlayer = NodePath("AudioPlayer")
+Bias = Vector2(0, -1)
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]

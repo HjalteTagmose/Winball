@@ -30,8 +30,10 @@ scale = Vector2(2, 2)
 scale = Vector2(1.47, 1.47)
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_ubyfy")
-Power = 25.0
+Power = 20.0
 AudioPlayer = NodePath("AudioPlayer")
+Bias = Vector2(0, -1)
+BiasPower = 10.0
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]
@@ -42,7 +44,6 @@ texture = ExtResource("2_ydfnd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlatBumper Logic"]
 position = Vector2(2.23124, -1.00573)
 rotation = -0.785398
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ubyfy")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="FlatBumper Logic"]
