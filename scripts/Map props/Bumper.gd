@@ -22,7 +22,7 @@ func _process(delta):
 	if currentFrame == Engine.get_physics_frames():
 		return
 
-	var collisions = move_and_collide(Vector2.ZERO, false)
+	var collisions = move_and_collide(Vector2.ZERO, true)
 	if collisions:
 		print(collisions.get_collider().name)
 
