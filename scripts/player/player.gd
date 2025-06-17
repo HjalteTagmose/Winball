@@ -8,15 +8,8 @@ class_name Player
 @export var launchChargeDuration : float = 1
 
 @export var killVelocityBeforeLaunch : bool = true
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-func _getInputDirection() -> Vector2:
-	return Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down").normalized()
-
+@export var moveAwayFromPlayer : bool = true
+@export var showLog : bool = false
 
 var _launchClickTime : float
 
@@ -24,35 +17,40 @@ var _isCharging : bool
 
 func handleLaunch() -> void:
 	
-	var timeNow = Time.get_unix_time_from_system()
+	var timeNow: float = Time.get_unix_time_from_system()
 	
 	if(Input.is_action_just_pressed("launch")):
 		if(Global.currentAmmo > 0):
 			_launchClickTime = timeNow
 			Global.currentAmmo -= 1
-			_isCharging = true		
+			_isCharging = true
 		
-	var difference = timeNow - _launchClickTime
-	var percent = clamp(difference / launchChargeDuration, 0, 1)
+	var difference: float = timeNow - _launchClickTime
+	
+	var percent= clamp(difference / launchChargeDuration, 0, 1)
 	var currentPower = lerp(minLaunchPower, maxLaunchPower, percent)		
 
-	if(Input.is_action_just_released("launch")):		
+	if(Input.is_action_just_released("launch")):
 		
 		if(!_isCharging):
 			return
 		_isCharging = false
-		print("============== LAUNCHING ==============")
-		print("difference ", difference)
-		print("percent ", percent)
-		print("currentPower ", currentPower)
-		print("=======================================")
+		
+		if(showLog):
+			print("============== LAUNCHING ==============")
+			print("difference ", difference)
+			print("percent ", percent)
+			print("currentPower ", currentPower)
+			print("=======================================")
 		#PARTICLE
-		var direction = (global_position - get_global_mouse_position())
+		var direction: Vector2 = (global_position - get_global_mouse_position())
 		
 		direction = direction.normalized();
 		if(killVelocityBeforeLaunch):
 			linear_velocity = Vector2.ZERO
 		var impulse = direction * currentPower
+		if(!moveAwayFromPlayer):
+			impulse = -impulse
 		apply_central_impulse(impulse)
 
 
