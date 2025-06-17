@@ -5,4 +5,5 @@
 [node name="Test" type="Node2D"]
 
 [node name="PaperStar" parent="." instance=ExtResource("1_errlg")]
+visible = false
 position = Vector2(524, 322)

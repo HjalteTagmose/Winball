@@ -7,7 +7,7 @@
 bounce = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5uss"]
-size = Vector2(15.6333, 63.2548)
+size = Vector2(12.6269, 63.2548)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cd0wh"]
 size = Vector2(59.5, 8.5)
@@ -44,7 +44,7 @@ rotation = -3.14159
 texture = ExtResource("2_cd0wh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlatBumper Logic"]
-position = Vector2(-5.96046e-08, 1.02041)
+position = Vector2(1.06292, -0.0425102)
 rotation = -0.785398
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_y5uss")

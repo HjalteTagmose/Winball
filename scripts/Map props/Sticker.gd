@@ -7,25 +7,25 @@ class_name BasicSticker
 @export var InteractionSFX : AudioStream
 @export var ParticleOnHit : GPUParticles2D
 
-
 var hasBeenUsed : bool = false
-
 
 func _ready() -> void:
 	AudioPlayer.stream = InteractionSFX
 
 func _on_body_enter(body:Node2D):
-	if body is Player:
-		Interact()
-
-func Interact():
 	if hasBeenUsed && OneTimeUse:
 		return
 
+	if body is Player:
+		Interact(body)
+	
+	hasBeenUsed = true
+
+func Interact(player : Player):
 	PlayAnimation()
 	Global.score += score
 	print("current score ", Global.score)
-	hasBeenUsed = true
+
 
 func PlayAnimation():
 	AudioPlayer.play()

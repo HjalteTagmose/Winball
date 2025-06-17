@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dty1lc8lqyalq"]
+
+[ext_resource type="Script" uid="uid://c0capew4ahiwh" path="res://scripts/Map props/SpeedSticker.gd" id="1_7acym"]
+[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_bc35r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r5dy"]
+size = Vector2(24.3749, 64.0983)
+
+[node name="Speed Sticker" type="Area2D" node_paths=PackedStringArray("ForwardPoint", "AudioPlayer")]
+rotation = -0.666716
+scale = Vector2(2, 2)
+collision_mask = 2
+script = ExtResource("1_7acym")
+ForwardPoint = NodePath("PointUp")
+Power = 100.0
+OverridesVelocity = true
+AudioPlayer = NodePath("audioPlayer")
+metadata/_custom_type_script = "uid://o0wcl8l7p1uy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.309219, -0.0491486)
+shape = SubResource("RectangleShape2D_2r5dy")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.26, 0.54)
+texture = ExtResource("2_bc35r")
+
+[node name="audioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="PointUp" type="Node2D" parent="."]
+position = Vector2(0, -26)
+
+[connection signal="body_entered" from="." to="." method="_on_body_enter"]
