@@ -11,8 +11,8 @@ a = Vector2(-20.4082, -25.8503)
 b = Vector2(25.8503, 21.0884)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_y72nq"]
-a = Vector2(-87, -108)
-b = Vector2(-5, -108)
+a = Vector2(-38, 39)
+b = Vector2(38, 39)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0dyi5"]
 b = Vector2(-1, -3)
@@ -28,7 +28,6 @@ b = Vector2(12, -66)
 [node name="FlatBumper Walls" type="StaticBody2D"]
 
 [node name="FlatBumper Logic" type="StaticBody2D" parent="." node_paths=PackedStringArray("AudioPlayer")]
-position = Vector2(-45, -146)
 scale = Vector2(1.47, 1.47)
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_y5uss")
@@ -50,13 +49,13 @@ one_way_collision = true
 shape = SubResource("SegmentShape2D_y72nq")
 
 [node name="Bottom wall corner" type="CollisionShape2D" parent="."]
-position = Vector2(-6, -111)
+position = Vector2(37, 34)
 shape = SubResource("SegmentShape2D_0dyi5")
 
 [node name="Side Wall" type="CollisionShape2D" parent="."]
-position = Vector2(-86, -119)
+position = Vector2(-37, 28)
 shape = SubResource("SegmentShape2D_gyfg6")
 
 [node name="Side Wall corner" type="CollisionShape2D" parent="."]
-position = Vector2(-86, -119)
+position = Vector2(-39, 27)
 shape = SubResource("SegmentShape2D_y5uss")

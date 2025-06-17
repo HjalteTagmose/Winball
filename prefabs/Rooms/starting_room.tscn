@@ -121,7 +121,7 @@ debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 [node name="Props" type="Node" parent="."]
 
 [node name="FlatBumper Walls2" parent="Props" instance=ExtResource("4_hg5bj")]
-position = Vector2(-45, 93)
+position = Vector2(-45, -65)
 
 [node name="FlatBumper Walls" parent="Props" instance=ExtResource("4_hg5bj")]
 position = Vector2(270, -98)
@@ -149,14 +149,14 @@ position = Vector2(-418, -401)
 position = Vector2(697, -194)
 
 [node name="FlatBumper Walls3" parent="Props" instance=ExtResource("4_hg5bj")]
-position = Vector2(-347, 91)
+position = Vector2(-347, -66)
 
 [node name="FlatBumper Walls4" parent="Props" instance=ExtResource("4_hg5bj")]
 position = Vector2(539, -99)
 rotation = -1.5708
 
 [node name="FlatBumper Walls5" parent="Props" instance=ExtResource("4_hg5bj")]
-position = Vector2(117, -1156)
+position = Vector2(117, -956)
 rotation = 3.14159
 
 [node name="FlatBumper Walls6" parent="Props" instance=ExtResource("4_hg5bj")]
@@ -167,19 +167,19 @@ rotation = 1.5708
 position = Vector2(625, -566)
 
 [node name="FlatBumper Walls7" parent="Props" instance=ExtResource("4_hg5bj")]
-position = Vector2(750, -891)
+position = Vector2(807, -708)
 rotation = 3.14159
 
 [node name="FlatBumper Walls8" parent="Props" instance=ExtResource("4_hg5bj")]
-position = Vector2(325, -699)
+position = Vector2(438, -720)
 rotation = 1.5708
 
 [node name="FlatBumper Walls9" parent="Props" instance=ExtResource("4_hg5bj")]
-position = Vector2(497, -275)
+position = Vector2(443, -464)
 rotation = 0.000135183
 
 [node name="FlatBumper Walls10" parent="Props" instance=ExtResource("4_hg5bj")]
-position = Vector2(947, -460)
+position = Vector2(815, -460)
 rotation = -1.57066
 
 [node name="BasicBumper9" parent="Props" instance=ExtResource("5_3bafk")]
@@ -189,3 +189,4 @@ position = Vector2(9, -396)
 position = Vector2(669, -947)
 
 [editable path="Props/BasicBumper"]
+[editable path="Props/FlatBumper Walls5"]
