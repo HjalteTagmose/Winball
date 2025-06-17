@@ -1,29 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfqcmx43v4kps"]
+[gd_scene load_steps=9 format=3 uid="uid://cubywxgl8t7t2"]
 
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_ubyfy"]
 [ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_ydfnd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
-bounce = 1.0
+bounce = 0.6
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_mlksw"]
-a = Vector2(-20.4082, -25.8503)
-b = Vector2(25.8503, 21.0884)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubyfy"]
+size = Vector2(9.33967, 65.6587)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_y72nq"]
-a = Vector2(-38, 39)
-b = Vector2(38, 39)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydfnd"]
+size = Vector2(75.3069, 9.8995)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0dyi5"]
-b = Vector2(-1, -3)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pu8ip"]
+radius = 6.29531
+height = 19.5754
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_gyfg6"]
-a = Vector2(0, 10)
-b = Vector2(0, -65)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bod2i"]
+size = Vector2(12.9515, 73.5391)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_y5uss"]
-a = Vector2(0, -66)
-b = Vector2(12, -66)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8ym3"]
+radius = 8.13173
 
 [node name="FlatBumper_Ground" type="StaticBody2D"]
 rotation = -0.785398
@@ -43,22 +40,26 @@ rotation = -3.14159
 texture = ExtResource("2_ydfnd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlatBumper Logic"]
-shape = SubResource("SegmentShape2D_mlksw")
-one_way_collision = true
+position = Vector2(2.23124, -1.00573)
+rotation = -0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ubyfy")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="FlatBumper Logic"]
 
 [node name="Bottom wall" type="CollisionShape2D" parent="."]
-shape = SubResource("SegmentShape2D_y72nq")
+position = Vector2(-2.29809, 35.3553)
+shape = SubResource("RectangleShape2D_ydfnd")
 
 [node name="Bottom wall corner" type="CollisionShape2D" parent="."]
-position = Vector2(37, 34)
-shape = SubResource("SegmentShape2D_0dyi5")
+position = Vector2(33.212, 33.842)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pu8ip")
 
 [node name="Side Wall" type="CollisionShape2D" parent="."]
-position = Vector2(-37, 28)
-shape = SubResource("SegmentShape2D_gyfg6")
+position = Vector2(-33.4758, 1.06067)
+shape = SubResource("RectangleShape2D_bod2i")
 
 [node name="Side Wall corner" type="CollisionShape2D" parent="."]
-position = Vector2(-39, 27)
-shape = SubResource("SegmentShape2D_y5uss")
+position = Vector2(-33.234, -28.2843)
+shape = SubResource("CapsuleShape2D_y8ym3")
