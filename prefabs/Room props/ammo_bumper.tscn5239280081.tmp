@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://kcegbygl2qjq"]
+
+[ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/ammoBumper.gd" id="1_51v4h"]
+[ext_resource type="Texture2D" uid="uid://drg8puls0marl" path="res://art/ph_bumper_2.png" id="2_et802"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
+radius = 33.0606
+
+[node name="AmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer")]
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_gbh0v")
+script = ExtResource("1_51v4h")
+extraVisual = NodePath("Sprite2D/Sprite2D")
+Power = 50.0
+AudioPlayer = NodePath("AudioPlayer")
+metadata/_custom_type_script = "uid://hs0iqsrumsxw"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.98297, 0.989635)
+texture = ExtResource("2_et802")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+scale = Vector2(0.348797, 0.326918)
+texture = ExtResource("2_et802")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nb1wl")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]

@@ -41,6 +41,11 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	timesHit += 1
 	if CanDie && timesHit >= Life:
 		Die()
+	AdditionalBumpBehaviour(collisionInfo, player)
+	
+	
+func AdditionalBumpBehaviour(collisionInfo:KinematicCollision2D, player : Player) -> void:
+	return
 
 func PlayAnimation():
 	AudioPlayer.play()

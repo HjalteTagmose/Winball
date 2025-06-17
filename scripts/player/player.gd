@@ -2,6 +2,7 @@ extends RigidBody2D
 
 class_name Player
 
+
 @export var minLaunchPower : float = 100
 @export var maxLaunchPower : float = 1000
 @export var launchChargeDuration : float = 1
@@ -19,12 +20,17 @@ func _getInputDirection() -> Vector2:
 
 var _launchClickTime : float
 
+var _isCharging : bool
+
 func handleLaunch() -> void:
 	
 	var timeNow = Time.get_unix_time_from_system()
 	
 	if(Input.is_action_just_pressed("launch")):
-		_launchClickTime = timeNow
+		if(Global.currentAmmo > 0):
+			_launchClickTime = timeNow
+			Global.currentAmmo -= 1
+			_isCharging = true		
 		
 	var difference = timeNow - _launchClickTime
 	var percent = clamp(difference / launchChargeDuration, 0, 1)
@@ -32,6 +38,9 @@ func handleLaunch() -> void:
 
 	if(Input.is_action_just_released("launch")):		
 		
+		if(!_isCharging):
+			return
+		_isCharging = false
 		print("============== LAUNCHING ==============")
 		print("difference ", difference)
 		print("percent ", percent)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv1e88epmgpbo"]
+
+[ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/game_canvas.gd" id="1_oe5df"]
+[ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ammo_display.gd" id="2_ig5ml"]
+
+[node name="GameCanvas" type="CanvasLayer"]
+script = ExtResource("1_oe5df")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 965.0
+offset_top = 610.0
+offset_right = 1150.0
+offset_bottom = 645.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Test"
+script = ExtResource("2_ig5ml")

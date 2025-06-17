@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://scripts/global.gd"
+Global="*res://prefabs/Singeltons/global_node.tscn"
+GameCanvas="res://prefabs/Singeltons/game_canvas.tscn"
 
 [input]
 

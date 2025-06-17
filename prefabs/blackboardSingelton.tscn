@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8ykibxjdub81"]
+
+[ext_resource type="Script" path="res://scripts/blackboard.gd" id="1_b1wbp"]
+
+[node name="BlackboardSingelton" type="Node"]
+script = ExtResource("1_b1wbp")

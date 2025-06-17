@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dedwl18kckfdd"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://b3yk8xjtktkti" path="res://art/ph_pinball.png" id="2_1txc5"]
-[ext_resource type="Script" uid="uid://ctv7yapi47nbu" path="res://scripts/gun.gd" id="3_r66lb"]
+[ext_resource type="Script" uid="uid://ctv7yapi47nbu" path="res://scripts/player/gun.gd" id="3_r66lb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1txc5"]
 bounce = 0.2
