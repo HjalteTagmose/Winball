@@ -16,6 +16,8 @@ physics_material_override = SubResource("PhysicsMaterial_1txc5")
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_onrkg")
+minLaunchPower = 300.0
+maxLaunchPower = 300.0
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 rotation = 8.47668e-05

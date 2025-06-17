@@ -31,7 +31,7 @@ b = Vector2(12, -66)
 scale = Vector2(1.47, 1.47)
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_y5uss")
-Power = 10.0
+Power = 50.0
 AudioPlayer = NodePath("AudioPlayer")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 

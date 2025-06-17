@@ -12,7 +12,7 @@ radius = 33.0606
 [node name="BasicBumper" type="StaticBody2D" node_paths=PackedStringArray("AudioPlayer")]
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_gbh0v")
-Power = 10.0
+Power = 50.0
 AudioPlayer = NodePath("AudioPlayer")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
