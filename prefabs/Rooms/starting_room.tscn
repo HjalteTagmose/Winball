@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bgcnmju2c0r7w"]
 
-[ext_resource type="Script" path="res://scripts/room.gd" id="1_n3c57"]
+[ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/room.gd" id="1_n3c57"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_n6cen"]
-[ext_resource type="Script" path="res://scripts/room_exit.gd" id="3_84dyx"]
+[ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/room_exit.gd" id="3_84dyx"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_hg5bj"]
 [ext_resource type="PackedScene" uid="uid://boobpj10lfiqa" path="res://prefabs/Room props/basic_bumper.tscn" id="5_3bafk"]
 
@@ -187,3 +187,5 @@ position = Vector2(9, -396)
 
 [node name="BasicBumper10" parent="Props" instance=ExtResource("5_3bafk")]
 position = Vector2(669, -947)
+
+[editable path="Props/BasicBumper"]
