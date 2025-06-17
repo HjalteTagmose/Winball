@@ -11,13 +11,27 @@ class_name Player
 @export var moveAwayFromPlayer : bool = true
 @export var showLog : bool = false
 
+var locked : bool = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+func _getInputDirection() -> Vector2:
+	return Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down").normalized()
+
+
 var _launchClickTime : float
 
 var _isCharging : bool
 
 func handleLaunch() -> void:
 	
-	var timeNow: float = Time.get_unix_time_from_system()
+	if locked:
+		return
+
+	var timeNow = Time.get_unix_time_from_system()
 	
 	if(Input.is_action_just_pressed("launch")):
 		if(Global.currentAmmo > 0):

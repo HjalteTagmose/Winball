@@ -10,3 +10,7 @@ var currentAmmo : int = 10
 func _ready() -> void:
 	currentAmmo = maxAmmo
 	pass # Replace with function body.
+
+func AddScore(amount : int) -> void:
+	score += amount
+	print("current score, ", score)

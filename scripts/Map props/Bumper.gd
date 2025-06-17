@@ -35,14 +35,16 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	# var customNormal = (player.global_position - global_position).normalized()
 	var impulse : Vector2 = (collisionInfo.get_normal() * Power) + (Bias.normalized() * BiasPower)
 	print(Bias.normalized())
-	player.apply_impulse(impulse)
+	player.apply_central_impulse(impulse)
 
 	PlayAnimation()
 	AddScore()
 
 	timesHit += 1
+
 	if CanDie && timesHit >= Life:
 		Die()
+
 	AdditionalBumpBehaviour(collisionInfo, player)
 	
 	
@@ -55,13 +57,11 @@ func PlayAnimation():
 		ParticleOnHit.emitting = true
 
 func AddScore():
-	Global.score += Score
+	Global.AddScore(Score)
 
 	if isInStrom:
-		Global.score += Score
+		Global.AddScore(Score)
 	
-	print("Current score: ", Global.score, name)
-
 func Die():
 	queue_free()
 	pass
