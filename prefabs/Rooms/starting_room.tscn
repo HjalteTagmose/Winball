@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="3_84dyx"]
 [ext_resource type="PackedScene" uid="uid://cubywxgl8t7t2" path="res://prefabs/Room props/flat_bumper_ground.tscn" id="4_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_hg5bj"]
-[ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/bumper_circle_ammo.tscn" id="12_sjl2v"]
+[ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_sjl2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
 size = Vector2(319, 26)
