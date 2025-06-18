@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://kcegbygl2qjq"]
+[gd_scene load_steps=6 format=3 uid="uid://bgq8uyrtdjs4b"]
 
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="1_51v4h"]
+[ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="2_co61t"]
 [ext_resource type="Texture2D" uid="uid://drg8puls0marl" path="res://art/ph_bumper_2.png" id="2_et802"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
@@ -18,6 +19,7 @@ script = ExtResource("1_51v4h")
 extraVisual = NodePath("Sprite2D/Sprite2D")
 Power = 50.0
 AudioPlayer = NodePath("AudioPlayer")
+ParticleOnHit = ExtResource("2_co61t")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
