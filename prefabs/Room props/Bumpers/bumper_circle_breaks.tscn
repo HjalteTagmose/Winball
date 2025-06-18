@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch14r5gso5mqw"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_qdi00"]
+[ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_f46lv"]
+[ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_3eklx"]
+[ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://sprites/bumpers/round_bumper.png" id="4_nxlrn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
+radius = 33.0606
+
+[node name="CircleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer")]
+collision_layer = 4
+collision_mask = 2
+physics_material_override = ExtResource("1_qdi00")
+script = ExtResource("2_f46lv")
+extraVisual = NodePath("Sprite2D/Sprite2D")
+CanDie = true
+Life = 1
+Power = 40.0
+Score = 50
+AudioPlayer = NodePath("AudioPlayer")
+ParticleOnHit = ExtResource("3_3eklx")
+BiasPower = 0.0
+metadata/_custom_type_script = "uid://hs0iqsrumsxw"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.113725, 0.827451, 0.341176, 1)
+texture = ExtResource("4_nxlrn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+visible = false
+texture = ExtResource("4_nxlrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nb1wl")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
