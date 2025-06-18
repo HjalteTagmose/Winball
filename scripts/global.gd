@@ -1,7 +1,16 @@
 extends Node
 class_name _GlobalNode
 
-var score : int = 0
+var score : int : 
+	get: return _score
+	set(value):
+		if(gameState != GameStateEnum.Gameplay):
+			push_warning("Trying to change score while not in gameplay state")
+			return
+		_score = value
+
+var _score : int = 0
+
 @export var maxAmmo : int = 10
 var currentAmmo : int = 10
 @export var gameplay_scene: PackedScene
@@ -33,10 +42,14 @@ func _ready() -> void:
 func start_game() -> void:
 	if(scene != null):
 		scene.queue_free()
+		
 	gameState = GameStateEnum.Gameplay
 	scene = gameplay_scene.instantiate()
 	add_child(scene)
+	
 	currentAmmo = maxAmmo
+	score = 0
+	
 	game_started.emit()
 	
 func trigger_game_over() -> void:

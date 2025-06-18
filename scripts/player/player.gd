@@ -28,18 +28,14 @@ var _isCharging : bool
 
 func _ready() -> void:
 	body_entered.connect(onBodyEntered)
-	Global.game_over.connect(onGameOver)
 	
 func onBodyEntered(body: Node):
 	print("BUMP")
-	handleBumpParticle()
-
-func onGameOver() -> void:
-	queue_free()
+	handleBumpParticle()	
 
 func handleLaunch() -> void:
 
-	if locked:
+	if locked or Global.gameState == Global.GameStateEnum.GameOver:
 		return
 
 	var timeNow = Time.get_unix_time_from_system()

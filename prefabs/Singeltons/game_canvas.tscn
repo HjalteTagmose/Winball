@@ -30,12 +30,34 @@ script = ExtResource("3_ig5ml")
 [node name="GameOverCanvas" type="CanvasGroup" parent="."]
 visible = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GameOverCanvas"]
-offset_left = 288.0
-offset_top = 253.0
-offset_right = 773.0
-offset_bottom = 467.0
+[node name="GameOver" type="RichTextLabel" parent="GameOverCanvas"]
+offset_left = 369.0
+offset_top = 84.0
+offset_right = 854.0
+offset_bottom = 298.0
 theme_override_font_sizes/normal_font_size = 50
-text = "Game Over
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-Press R To Restart"
+[node name="GameOverScore" type="RichTextLabel" parent="GameOverCanvas"]
+offset_left = 363.0
+offset_top = 248.0
+offset_right = 848.0
+offset_bottom = 415.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ig5ml")
+metadata/_custom_type_script = "uid://d8ji1yq2j061"
+
+[node name="Press R to Restart" type="RichTextLabel" parent="GameOverCanvas"]
+offset_left = 378.0
+offset_top = 423.0
+offset_right = 863.0
+offset_bottom = 536.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Press R To Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
