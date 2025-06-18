@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bf3jqmlffoqv"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_j0kd2"]
-[ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_662cc"]
-[ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_u5ray"]
-[ext_resource type="Texture2D" uid="uid://b1jv5d4t6o8xw" path="res://sprites/bumpers/blue_bumper_wall_triangle_xs.png" id="4_j0kd2"]
-[ext_resource type="Texture2D" uid="uid://2f7p3uyh3h5s" path="res://sprites/bumpers/red_bumper_wall_triangle.png" id="5_j0kd2"]
+[ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_wcu5m"]
+[ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_6wk2o"]
+[ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_gtcum"]
+[ext_resource type="Texture2D" uid="uid://b1jv5d4t6o8xw" path="res://sprites/bumpers/blue_bumper_wall_triangle_xs.png" id="4_6jth1"]
+[ext_resource type="Texture2D" uid="uid://2f7p3uyh3h5s" path="res://sprites/bumpers/red_bumper_wall_triangle.png" id="5_t2r7y"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
 points = PackedVector2Array(30, -90, 37, -88, 37, 88, 30, 90, -37, 10, -37, -10)
@@ -13,21 +13,21 @@ points = PackedVector2Array(30, -90, 37, -88, 37, 88, 30, 90, -37, 10, -37, -10)
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
-physics_material_override = ExtResource("1_j0kd2")
-script = ExtResource("2_662cc")
+physics_material_override = ExtResource("1_wcu5m")
+script = ExtResource("2_6wk2o")
 extraVisual = NodePath("Sprite2D/Sprite2D")
 Power = 40.0
 Score = 30
 AudioPlayer = NodePath("AudioPlayer")
-ParticleOnHit = ExtResource("3_u5ray")
+ParticleOnHit = ExtResource("3_gtcum")
 BiasPower = 0.0
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("4_j0kd2")
+texture = ExtResource("4_6jth1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-texture = ExtResource("5_j0kd2")
+texture = ExtResource("5_t2r7y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("ConvexPolygonShape2D_oegki")
