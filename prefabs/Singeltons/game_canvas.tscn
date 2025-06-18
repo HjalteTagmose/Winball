@@ -23,6 +23,7 @@ text = "Test"
 script = ExtResource("2_ig5ml")
 
 [node name="ScoreDisplay" type="RichTextLabel" parent="GameplayGroup"]
+visible = false
 offset_right = 202.0
 offset_bottom = 40.0
 text = "Score"
