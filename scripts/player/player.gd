@@ -42,7 +42,6 @@ func handleLaunch() -> void:
 	if(Input.is_action_just_pressed("launch")):
 		if(Global.currentAmmo > 0):
 			_launchClickTime = timeNow
-			Global.currentAmmo -= 1
 			_isCharging = true
 		
 	var difference: float = timeNow - _launchClickTime
@@ -60,7 +59,8 @@ func handleLaunch() -> void:
 		if(!_isCharging):
 			return
 		_isCharging = false
-		
+		Global.currentAmmo -= 1
+		Global.bullet_fired.emit()
 		if(showLog):
 			print("============== LAUNCHING ==============")
 			print("difference ", difference)

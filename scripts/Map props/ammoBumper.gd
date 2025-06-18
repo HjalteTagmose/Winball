@@ -10,5 +10,6 @@ func AdditionalBumpBehaviour(_collisionInfo:KinematicCollision2D, _player : Play
 		return
 	
 	Global.currentAmmo = Global.maxAmmo
+	Global.reload.emit()
 	_HasBeenUsed = true
 	extraVisual.queue_free()
