@@ -5,7 +5,9 @@ var score : int = 0
 @export var maxAmmo : int = 10
 var currentAmmo : int = 10
 @export var gameplay_scene: PackedScene
+@export var player_direction: PlayerDirection
 
+enum PlayerDirection { TowardsMouse, AwayFromMouse }
 enum GameStateEnum {Setup, Gameplay, GameOver }
 
 var scene : Node

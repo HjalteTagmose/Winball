@@ -9,7 +9,6 @@ class_name Player
 @export var launchChargeDuration : float = 1
 
 @export var killVelocityBeforeLaunch : bool = true
-@export var moveAwayFromPlayer : bool = true
 @export var showLog : bool = false
 
 @export var shootParticle : PackedScene
@@ -66,13 +65,13 @@ func handleLaunch() -> void:
 			print("currentPower ", currentPower)
 			print("=======================================")
 		#PARTICLE
-		var direction: Vector2 = (global_position - get_global_mouse_position())
+		var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
 		
-		direction = direction.normalized();
 		if(killVelocityBeforeLaunch):
 			linear_velocity = Vector2.ZERO
 		var impulse = direction * currentPower
-		if(!moveAwayFromPlayer):
+		
+		if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
 			impulse = -impulse
 			
 		apply_central_impulse(impulse)
