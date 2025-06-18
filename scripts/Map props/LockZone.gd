@@ -10,6 +10,10 @@ var boundPlayer : Player
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("launch")):
 		Launch()
+		
+	if !boundPlayer:
+		return
+	CenterPlayer()
 
 func _on_body_enter(body:Node2D):
 	if body is Player:

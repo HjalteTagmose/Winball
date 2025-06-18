@@ -1,13 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2nlkgcw21uwb"]
+[gd_scene load_steps=9 format=3 uid="uid://d2nlkgcw21uwb"]
 
 [ext_resource type="Script" uid="uid://cyy17hnp35i0w" path="res://scripts/particle_trigger.gd" id="1_dg3up"]
 [ext_resource type="Texture2D" uid="uid://bnj18x7tulumk" path="res://art/P_Textures/T_HitSpark_3Yellow.png" id="1_umipb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dg3up"]
 
+[sub_resource type="Curve" id="Curve_dg3up"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(0.234177, 0.96091), -4.79346, -4.79346, 0, 0, Vector2(0.504747, 0.164528), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_57njc"]
+curve = SubResource("Curve_dg3up")
+
 [sub_resource type="Curve" id="Curve_vhg6f"]
-_data = [Vector2(0, 0.053316), 0.0, 0.0, 0, 0, Vector2(0.293548, 1), 0.0, 0.0, 0, 0, Vector2(0.435484, 0.425228), 0.0, 0.0, 0, 0, Vector2(0.654839, 0.678804), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 5
+_data = [Vector2(0, 0.053316), 0.0, 0.0, 0, 0, Vector2(0.294304, 1), 0.0, 0.0, 0, 0, Vector2(0.352848, 0.450117), 0.0, 0.0, 0, 0, Vector2(0.47943, 0.442532), 0.0, 0.0, 0, 0, Vector2(0.571203, 0.689032), 0.0, 0.0, 0, 0, Vector2(0.653481, 0.560093), 0.0, 0.0, 0, 0, Vector2(0.708861, 0.632147), 0.0, 0.0, 0, 0, Vector2(0.783228, 0.135356), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 9
 
 [sub_resource type="CurveTexture" id="CurveTexture_8wr4b"]
 curve = SubResource("Curve_vhg6f")
@@ -18,9 +26,10 @@ angle_min = 70.0
 angle_max = 120.0
 spread = 10.0
 gravity = Vector3(0, 0, 0)
-scale_min = 1.5
-scale_max = 2.0
+scale_min = 3.0
+scale_max = 3.0
 scale_curve = SubResource("CurveTexture_8wr4b")
+emission_curve = SubResource("CurveTexture_57njc")
 
 [node name="ParticleTrigger" type="Node2D"]
 script = ExtResource("1_dg3up")
@@ -30,7 +39,7 @@ material = SubResource("CanvasItemMaterial_dg3up")
 emitting = false
 amount = 1
 texture = ExtResource("1_umipb")
-lifetime = 0.28
+lifetime = 0.2
 one_shot = true
 explosiveness = 1.0
 use_fixed_seed = true
