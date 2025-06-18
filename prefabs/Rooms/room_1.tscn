@@ -1,16 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddnxaky5ipt7q"]
+[gd_scene load_steps=16 format=3 uid="uid://ddnxaky5ipt7q"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_pphsx"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_cjjgn"]
-[ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_qropx"]
+[ext_resource type="PackedScene" path="res://prefabs/Room props/wall.tscn" id="2_qropx"]
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="3_2afm3"]
+[ext_resource type="PackedScene" uid="uid://p5c72b14kda" path="res://prefabs/Room props/exit.tscn" id="4_cjjgn"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="5_dnc6s"]
 [ext_resource type="PackedScene" uid="uid://c5clxm8i6clwg" path="res://prefabs/Room props/Bumpers/bumper_diamond_ammo.tscn" id="7_3xq05"]
 [ext_resource type="PackedScene" uid="uid://b54fnp64tfkvf" path="res://prefabs/Room props/slide.tscn" id="7_x47p5"]
 [ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="8_pphsx"]
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="9_cjjgn"]
-[ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="9_efx1w"]
-[ext_resource type="PackedScene" uid="uid://ch14r5gso5mqw" path="res://prefabs/Room props/Bumpers/bumper_circle_breaks.tscn" id="10_cjjgn"]
+[ext_resource type="PackedScene" path="res://prefabs/Room props/lock_zone.tscn" id="9_efx1w"]
+[ext_resource type="PackedScene" path="res://prefabs/Room props/Bumpers/bumper_circle_breaks.tscn" id="10_cjjgn"]
 [ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_esbdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
@@ -19,7 +20,7 @@ size = Vector2(4.81928, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njsij"]
 size = Vector2(80, 20)
 
-[node name="StartRoom" type="Node2D" node_paths=PackedStringArray("roomExit")]
+[node name="StartRoom2" type="Node2D" node_paths=PackedStringArray("roomExit")]
 script = ExtResource("1_pphsx")
 roomExit = NodePath("Walls/Exit")
 
@@ -94,14 +95,8 @@ scale = Vector2(26.56, 1)
 shape = SubResource("RectangleShape2D_cguwc")
 debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
-[node name="Exit" type="Area2D" parent="Walls"]
+[node name="Exit" parent="Walls" instance=ExtResource("4_cjjgn")]
 position = Vector2(0, -2484)
-script = ExtResource("3_2afm3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Exit"]
-scale = Vector2(3, 1)
-shape = SubResource("RectangleShape2D_njsij")
-debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 
 [node name="Entrance" type="Area2D" parent="Walls"]
 script = ExtResource("3_2afm3")

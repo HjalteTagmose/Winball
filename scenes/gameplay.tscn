@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuojghgo6alvw"]
+
+[ext_resource type="PackedScene" uid="uid://dedwl18kckfdd" path="res://prefabs/player.tscn" id="1_ocj2s"]
+[ext_resource type="PackedScene" uid="uid://8b3hfhqgnwil" path="res://prefabs/storm.tscn" id="5_101mb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ocj2s")]
+position = Vector2(0, -400)
+mass = 0.1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(1.01255, 1.04547)
+
+[node name="Storm" parent="." node_paths=PackedStringArray("CameraRef") instance=ExtResource("5_101mb")]
+CameraRef = NodePath("../Player/Camera2D")
