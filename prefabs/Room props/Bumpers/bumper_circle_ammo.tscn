@@ -16,10 +16,9 @@ physics_material_override = ExtResource("1_lmwaj")
 script = ExtResource("2_ochcu")
 extraVisual = NodePath("Sprite2D/Sprite2D")
 Power = 40.0
-Score = 30
+BiasPower = 0.0
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("3_3j6bh")
-BiasPower = 0.0
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,18 +1,24 @@
 class_name BasicBumper extends StaticBody2D
 
+@export_category("Stats")
 @export var CanDie : bool = false
 @export var Life : int = 3
 @export var Power : float = 35
-@export var Score : int = 15
-@export var AudioPlayer : AudioStreamPlayer2D
-@export var SoundOnHIt : AudioStream
-@export var ParticleOnHit : PackedScene
+@export var Score : Array[int] = [100, 50, 10]
+
+
+@export_category("Bias")
 @export var Bias : Vector2 = Vector2.ZERO
 @export var BiasPower : float = 15
 
+@export_category("Setup")
+@export var AudioPlayer : AudioStreamPlayer2D
+@export var SoundOnHIt : AudioStream
+@export var ParticleOnHit : PackedScene
 
 var timesHit : int
 var isInStrom : bool
+var _scoreIndex = 0
 
 func _ready() -> void:
 	AudioPlayer.stream = SoundOnHIt
@@ -65,10 +71,18 @@ func PlayAnimation(collisionInfo: KinematicCollision2D):
 	PlayParticle(collisionInfo)
 
 func AddScore():
-	Global.AddScore(Score)
+	if(Score.size() <= 0):
+		return
+	
+	var scoreIndex = clamp(_scoreIndex, 0, Score.size()-1)
+	var scoreToGive = Score[scoreIndex]
+	
+	_scoreIndex += 1
+	
+	Global.AddScore(scoreToGive)
 
 	if isInStrom:
-		Global.AddScore(Score)
+		Global.AddScore(scoreToGive)
 	
 func Die():
 	queue_free()
