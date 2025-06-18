@@ -1,8 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd3yybuk7l3no"]
+[gd_scene load_steps=7 format=3 uid="uid://cd3yybuk7l3no"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_vmxit"]
-[ext_resource type="Script" path="res://scripts/room.gd" id="1_yg100"]
-[ext_resource type="Script" path="res://scripts/room_exit.gd" id="3_p3u21"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_p3u21"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p3u21"]
@@ -17,9 +15,7 @@ size = Vector2(4.81928, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y72nq"]
 size = Vector2(80, 20)
 
-[node name="Room1" type="Node2D" node_paths=PackedStringArray("roomExit")]
-script = ExtResource("1_yg100")
-roomExit = NodePath("Exit")
+[node name="Room1" type="Node2D"]
 
 [node name="RightWall" type="Node2D" parent="."]
 position = Vector2(130, -150)
@@ -137,7 +133,6 @@ shape = SubResource("RectangleShape2D_vmxit")
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2(0, -300)
-script = ExtResource("3_p3u21")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 shape = SubResource("RectangleShape2D_y72nq")

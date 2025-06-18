@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://5v4vynl4ucq1"]
+[gd_scene load_steps=15 format=3 uid="uid://ddnxaky5ipt7q"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_pphsx"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_cjjgn"]
@@ -251,4 +251,3 @@ position = Vector2(-441, -837)
 
 [node name="AmmoBumper" parent="." instance=ExtResource("12_esbdh")]
 position = Vector2(-467, -211)
-ParticleOnHit = null

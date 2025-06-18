@@ -43,6 +43,8 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	
 	
 func PlayParticle(collisionInfo: KinematicCollision2D):
+	print("KEKEKEKEKEE")
+
 	if(ParticleOnHit == null):
 		return
 		
@@ -51,9 +53,8 @@ func PlayParticle(collisionInfo: KinematicCollision2D):
 	
 	var instance: ParticleTrigger = ParticleOnHit.instantiate()
 	instance.global_position = impactPoint
-	var globalPoint = instance.to_global(direction)	
+	# var globalPoint = instance.to_global(direction)	
 	instance.rotation = direction.angle()
-	
 	get_tree().root.add_child(instance)
 	
 func AdditionalBumpBehaviour(collisionInfo:KinematicCollision2D, player : Player) -> void:
