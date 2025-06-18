@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxhiscfk4buxn"]
+
+[ext_resource type="Script" path="res://scripts/particle_trigger.gd" id="1_tjf00"]
+[ext_resource type="Shader" uid="uid://byqibs40brehw" path="res://Shaders/DistortionShader.gdshader" id="2_idbvt"]
+[ext_resource type="Texture2D" uid="uid://cjoisq0kfq515" path="res://art/P_Textures/Tileable_Noises/Winball_DistortionNRM.png" id="3_n3upq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xr1n"]
+shader = ExtResource("2_idbvt")
+shader_parameter/DistortionNRM = ExtResource("3_n3upq")
+shader_parameter/DistortionIntensity = 0.5
+shader_parameter/offset = 0.0
+shader_parameter/DistortionUV_Size = 0.0
+shader_parameter/Speed = 0.1
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/radius = 0.365
+shader_parameter/softness = 0.159
+
+[sub_resource type="Curve" id="Curve_vhg6f"]
+_data = [Vector2(0, 0.053316), 0.0, 0.0, 0, 0, Vector2(0.194357, 1), 0.0, 0.0, 0, 0, Vector2(0.478056, 0.239875), -0.996066, -0.996066, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_8wr4b"]
+curve = SubResource("Curve_vhg6f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qiyu7"]
+lifetime_randomness = 0.67
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 46.85
+angle_min = 70.0
+angle_max = 120.0
+inherit_velocity_ratio = 0.19
+spread = 10.0
+initial_velocity_min = 18.99
+initial_velocity_max = 36.26
+gravity = Vector3(0, 0, 0)
+scale_min = 165.15
+scale_max = 207.7
+scale_curve = SubResource("CurveTexture_8wr4b")
+
+[node name="ParticleTrigger" type="Node2D"]
+script = ExtResource("1_tjf00")
+
+[node name="Pop" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_2xr1n")
+amount = 3
+lifetime = 1.32
+explosiveness = 1.0
+use_fixed_seed = true
+seed = 299762414
+local_coords = true
+trail_lifetime = 0.01
+process_material = SubResource("ParticleProcessMaterial_qiyu7")
