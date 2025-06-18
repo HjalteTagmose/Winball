@@ -13,7 +13,6 @@ class_name BasicBumper
 
 var timesHit : int
 var isInStrom : bool
-var currentFrame : int = 0
 
 func _ready() -> void:
 	AudioPlayer.stream = SoundOnHIt
@@ -21,20 +20,15 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 
-	if currentFrame == Engine.get_physics_frames():
-		return
-
-	var collisions = move_and_collide(Vector2.ZERO, true)
+	var collisions = move_and_collide(Vector2.UP, true)
 
 	if collisions && collisions.get_collider() is Player:
 		BumpPlayer(collisions, collisions.get_collider())
 
-	currentFrame = Engine.get_physics_frames()
 
 func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	# var customNormal = (player.global_position - global_position).normalized()
 	var impulse : Vector2 = (collisionInfo.get_normal() * Power) + (Bias.normalized() * BiasPower)
-	print(Bias.normalized())
 	player.apply_central_impulse(impulse)
 
 	PlayAnimation(collisionInfo)

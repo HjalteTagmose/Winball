@@ -9,8 +9,9 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
 bounce = 0.7
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubyfy"]
-size = Vector2(9.33967, 65.6587)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydfnd"]
+radius = 4.93197
+height = 73.1292
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydfnd"]
 size = Vector2(75.3069, 9.8995)
@@ -49,9 +50,9 @@ rotation = -3.14159
 texture = ExtResource("2_ydfnd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlatBumper Logic"]
-position = Vector2(2.23124, -1.00573)
+position = Vector2(1.44308, -1.20257)
 rotation = -0.785398
-shape = SubResource("RectangleShape2D_ubyfy")
+shape = SubResource("CapsuleShape2D_ydfnd")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="FlatBumper Logic"]
 
