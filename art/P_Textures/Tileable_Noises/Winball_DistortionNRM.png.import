@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deeglgcfjbxu7"
-path="res://.godot/imported/Winball_CHromaDots.png-461de951a1ba6b60817134abac0da527.ctex"
+uid="uid://cjoisq0kfq515"
+path="res://.godot/imported/Winball_DistortionNRM.png-493183f01e23f2edab738aaffba76f2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/P_Textures/Tileable_Noises/Winball_CHromaDots.png"
-dest_files=["res://.godot/imported/Winball_CHromaDots.png-461de951a1ba6b60817134abac0da527.ctex"]
+source_file="res://art/P_Textures/Tileable_Noises/Winball_DistortionNRM.png"
+dest_files=["res://.godot/imported/Winball_DistortionNRM.png-493183f01e23f2edab738aaffba76f2c.ctex"]
 
 [params]
 

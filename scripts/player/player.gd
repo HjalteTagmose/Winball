@@ -1,6 +1,4 @@
-extends RigidBody2D
-
-class_name Player
+class_name Player extends RigidBody2D
 
 
 @export var slowdownPower : float = 0.35
@@ -9,11 +7,15 @@ class_name Player
 @export var launchChargeDuration : float = 1
 
 @export var killVelocityBeforeLaunch : bool = true
-@export var moveAwayFromPlayer : bool = true
 @export var showLog : bool = false
 
 @export var shootParticle : PackedScene
+@export var bumpAnythingParticle : PackedScene
+
 @export var playerGun : Node2D
+
+
+
 var locked : bool = false
 
 func _getInputDirection() -> Vector2:
@@ -25,8 +27,13 @@ var _launchClickTime : float
 var _isCharging : bool
 
 func _ready() -> void:
+	body_entered.connect(onBodyEntered)
 	Global.game_over.connect(onGameOver)
 	
+func onBodyEntered(body: Node):
+	print("BUMP")
+	handleBumpParticle()
+
 func onGameOver() -> void:
 	queue_free()
 
@@ -66,20 +73,31 @@ func handleLaunch() -> void:
 			print("currentPower ", currentPower)
 			print("=======================================")
 		#PARTICLE
-		var direction: Vector2 = (global_position - get_global_mouse_position())
+		var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
 		
-		direction = direction.normalized();
 		if(killVelocityBeforeLaunch):
 			linear_velocity = Vector2.ZERO
 		var impulse = direction * currentPower
-		if(!moveAwayFromPlayer):
+		
+		if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
 			impulse = -impulse
 			
 		apply_central_impulse(impulse)
-		handleParticle(direction)
+		handleShootParticle(direction)
 			
 
-func handleParticle(direction: Vector2):
+func handleBumpParticle():
+	if(bumpAnythingParticle == null):
+		return
+		
+	if(showLog):
+		print("bumpAnythingParticle particle")
+	
+	var instance: ParticleTrigger = bumpAnythingParticle.instantiate()
+	instance.global_position = global_position
+	get_tree().root.add_child(instance)
+
+func handleShootParticle(direction: Vector2):
 	if(shootParticle == null):
 		return
 		
