@@ -20,6 +20,8 @@ var timesHit : int
 var isInStrom : bool
 var _scoreIndex = 0
 
+var _isDead = false
+
 func _ready() -> void:
 	AudioPlayer.stream = SoundOnHIt
 	timesHit = 0
@@ -81,7 +83,12 @@ func AddScore():
 
 	if isInStrom:
 		Global.AddScore(scoreToGive)
-	
+
 func Die():
-	queue_free()
-	pass
+	if _isDead:
+		return
+	_isDead = true
+	var tween: Tween = create_tween()
+	tween.tween_interval(0.1)
+	tween.tween_callback(queue_free)
+	

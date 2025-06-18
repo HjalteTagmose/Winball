@@ -1,5 +1,4 @@
-extends BasicBumper
-class_name AmmoBumper
+class_name AmmoBumper extends BasicBumper
 
 @export var extraVisual: Node
 
