@@ -25,6 +25,8 @@ var gameState: GameStateEnum = GameStateEnum.Setup
 #signal for gameover
 signal game_over
 signal game_started
+signal bullet_fired
+signal reload
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -40,6 +42,10 @@ func _ready() -> void:
 	start_game()
 
 func start_game() -> void:
+	
+	if gameState == GameStateEnum.Gameplay:
+		return
+		
 	if(scene != null):
 		scene.queue_free()
 		
@@ -53,6 +59,8 @@ func start_game() -> void:
 	game_started.emit()
 	
 func trigger_game_over() -> void:
+	if gameState == GameStateEnum.GameOver:
+		return
 	game_over.emit()
 	gameState = GameStateEnum.GameOver
 	Engine.time_scale = 1.0

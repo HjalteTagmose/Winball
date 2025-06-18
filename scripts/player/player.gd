@@ -30,7 +30,6 @@ func _ready() -> void:
 	body_entered.connect(onBodyEntered)
 	
 func onBodyEntered(_body: Node):
-	print("BUMP")
 	handleBumpParticle()	
 
 func handleLaunch() -> void:
@@ -43,7 +42,6 @@ func handleLaunch() -> void:
 	if(Input.is_action_just_pressed("launch")):
 		if(Global.currentAmmo > 0):
 			_launchClickTime = timeNow
-			Global.currentAmmo -= 1
 			_isCharging = true
 		
 	var difference: float = timeNow - _launchClickTime
@@ -61,7 +59,8 @@ func handleLaunch() -> void:
 		if(!_isCharging):
 			return
 		_isCharging = false
-		
+		Global.currentAmmo -= 1
+		Global.bullet_fired.emit()
 		if(showLog):
 			print("============== LAUNCHING ==============")
 			print("difference ", difference)
@@ -101,10 +100,8 @@ func handleShootParticle(direction: Vector2):
 		print("shooting particle")
 	var instance: ParticleTrigger = shootParticle.instantiate()
 	instance.global_position = playerGun.global_position
-	# var globalPoint = instance.to_global(direction)
 	
 	instance.rotation = direction.angle()
-	print("rotation", str(instance.rotation))
 	get_tree().root.add_child(instance)
 
 

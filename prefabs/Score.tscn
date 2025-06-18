@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp1ekroq3hex3"]
+
+[ext_resource type="Script" uid="uid://dxmj7yby6fhcn" path="res://scripts/ui/score/score.gd" id="1_gdn4j"]
+[ext_resource type="PackedScene" uid="uid://c0mcd5tvrluew" path="res://prefabs/ScoreDigit.tscn" id="2_us2ln"]
+
+[node name="Score" type="Node2D"]
+script = ExtResource("1_gdn4j")
+digit_prefab = ExtResource("2_us2ln")

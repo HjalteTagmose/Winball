@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://p5c72b14kda"]
+
+[ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="1_5dr0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njsij"]
+size = Vector2(80, 20)
+
+[node name="Exit" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_5dr0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_njsij")
+debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)

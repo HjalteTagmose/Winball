@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://fvogfumr3qag"]
 
-[ext_resource type="Shader" uid="uid://d1wxs38in1tt7" path="res://sprites/test/scrolling_texture.gdshader" id="1_bmlqb"]
+[ext_resource type="Shader" uid="uid://d1wxs38in1tt7" path="res://Test/scrolling_texture.gdshader" id="1_bmlqb"]
 [ext_resource type="Texture2D" uid="uid://c4cglduo8u6ui" path="res://art/1974-03-30-uk-evening_argus-03.jpg" id="2_qjfrt"]
 [ext_resource type="Texture2D" uid="uid://bv45f70qsuxfa" path="res://art/P_Textures/ph_boom_vfx.png" id="3_w0s08"]
-[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://sprites/test/flipper_animation.gd" id="4_0tdbw"]
+[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="4_0tdbw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_74lek"]
 shader = ExtResource("1_bmlqb")

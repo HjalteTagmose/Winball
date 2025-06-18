@@ -1,5 +1,4 @@
-extends BasicBumper
-class_name AmmoBumper
+class_name AmmoBumper extends BasicBumper
 
 @export var extraVisual: Node
 
@@ -11,5 +10,6 @@ func AdditionalBumpBehaviour(_collisionInfo:KinematicCollision2D, _player : Play
 		return
 	
 	Global.currentAmmo = Global.maxAmmo
+	Global.reload.emit()
 	_HasBeenUsed = true
 	extraVisual.queue_free()

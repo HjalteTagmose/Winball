@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuojghgo6alvw"]
+
+[ext_resource type="PackedScene" uid="uid://dedwl18kckfdd" path="res://prefabs/player.tscn" id="1_ocj2s"]
+[ext_resource type="Texture2D" uid="uid://dl1e41mj4x5kl" path="res://art/ph_tileable_bg_V2.png" id="3_l1v76"]
+[ext_resource type="PackedScene" uid="uid://8b3hfhqgnwil" path="res://prefabs/storm.tscn" id="5_101mb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 600)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_l1v76")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 600)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = 1274.0
+offset_top = 2.0
+offset_right = 1914.0
+offset_bottom = 602.0
+texture = ExtResource("3_l1v76")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 600)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 2.0
+offset_top = 1200.0
+offset_right = 642.0
+offset_bottom = 1800.0
+texture = ExtResource("3_l1v76")
+
+[node name="Player" parent="." instance=ExtResource("1_ocj2s")]
+position = Vector2(0, -400)
+mass = 0.1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(1.01255, 1.04547)
+
+[node name="Storm" parent="." node_paths=PackedStringArray("CameraRef") instance=ExtResource("5_101mb")]
+CameraRef = NodePath("../Player/Camera2D")
