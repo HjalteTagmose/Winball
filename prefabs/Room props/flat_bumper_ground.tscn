@@ -1,13 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cubywxgl8t7t2"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://chtck5wyxnxds" path="res://Material/Physic/Wall.tres" id="1_bod2i"]
+[ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_pu8ip"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_ubyfy"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="2_pu8ip"]
 [ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_ydfnd"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubyfy"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
-bounce = 0.7
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydfnd"]
 radius = 4.93197
@@ -29,13 +26,13 @@ radius = 8.13173
 [node name="FlatBumper_Ground" type="StaticBody2D"]
 rotation = -0.785398
 scale = Vector2(2, 2)
-physics_material_override = SubResource("PhysicsMaterial_ubyfy")
+physics_material_override = ExtResource("1_bod2i")
 
 [node name="FlatBumper Logic" type="StaticBody2D" parent="." node_paths=PackedStringArray("AudioPlayer")]
 scale = Vector2(1.47, 1.47)
 collision_layer = 4
 collision_mask = 2
-physics_material_override = SubResource("PhysicsMaterial_gbh0v")
+physics_material_override = ExtResource("1_pu8ip")
 script = ExtResource("1_ubyfy")
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("2_pu8ip")
