@@ -143,49 +143,63 @@ points = PackedVector2Array(0, 0, -3, 96, -165, 122, -412, 117, -451, 10, -371, 
 
 [node name="AmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("7_3xq05")]
 position = Vector2(0, -778)
+Score = Array[int]([100, 50, 10])
 
 [node name="AmmoBumper9" parent="Props/AmmoBumpers" instance=ExtResource("7_3xq05")]
 position = Vector2(-685, -662)
+Score = Array[int]([100, 50, 10])
 
 [node name="AmmoBumper_Diamond" parent="Props/AmmoBumpers" instance=ExtResource("8_pphsx")]
 position = Vector2(697, -499)
+Score = Array[int]([100, 50, 10])
 
 [node name="AmmoBumper_Diamond2" parent="Props/AmmoBumpers" instance=ExtResource("8_pphsx")]
 position = Vector2(-864, -392)
 scale = Vector2(-2, 2)
+Score = Array[int]([100, 50, 10])
 
 [node name="FlipperAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("9_cjjgn")]
 position = Vector2(-345, -249)
+Score = Array[int]([100, 50, 10])
 
 [node name="FlipperAmmoBumper3" parent="Props/AmmoBumpers" instance=ExtResource("9_cjjgn")]
 position = Vector2(-874, -240)
+Score = Array[int]([100, 50, 10])
 
 [node name="FlipperAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("9_cjjgn")]
 position = Vector2(-660, -242)
 scale = Vector2(-2, 2)
+Score = Array[int]([100, 50, 10])
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 
 [node name="CircleAmmoBumper" parent="Props/BreakableBumpers" instance=ExtResource("10_cjjgn")]
 position = Vector2(-560, -235)
+Score = Array[int]([100, 50, 10])
 
 [node name="CircleAmmoBumper2" parent="Props/BreakableBumpers" instance=ExtResource("10_cjjgn")]
 position = Vector2(-451, -242)
+Score = Array[int]([100, 50, 10])
 
 [node name="CircleAmmoBumper3" parent="Props/BreakableBumpers" instance=ExtResource("10_cjjgn")]
 position = Vector2(-620, -339)
+Score = Array[int]([100, 50, 10])
 
 [node name="CircleAmmoBumper4" parent="Props/BreakableBumpers" instance=ExtResource("10_cjjgn")]
 position = Vector2(-503, -359)
+Score = Array[int]([100, 50, 10])
 
 [node name="CircleAmmoBumper5" parent="Props/BreakableBumpers" instance=ExtResource("10_cjjgn")]
 position = Vector2(-381, -357)
+Score = Array[int]([100, 50, 10])
 
 [node name="CircleAmmoBumper6" parent="Props/BreakableBumpers" instance=ExtResource("10_cjjgn")]
 position = Vector2(-441, -469)
+Score = Array[int]([100, 50, 10])
 
 [node name="CircleAmmoBumper7" parent="Props/BreakableBumpers" instance=ExtResource("10_cjjgn")]
 position = Vector2(-597, -459)
+Score = Array[int]([100, 50, 10])
 
 [node name="LockZone" parent="." instance=ExtResource("9_efx1w")]
 position = Vector2(-435, -1256)
