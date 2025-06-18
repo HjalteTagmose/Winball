@@ -2,18 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_pphsx"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_cjjgn"]
+[ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_qropx"]
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="3_2afm3"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="5_dnc6s"]
-[ext_resource type="PackedScene" uid="uid://boobpj10lfiqa" path="res://prefabs/Room props/basic_bumper.tscn" id="6_dthqe"]
+[ext_resource type="PackedScene" uid="uid://c5clxm8i6clwg" path="res://prefabs/Room props/Bumpers/bumper_diamond_ammo.tscn" id="7_3xq05"]
 [ext_resource type="PackedScene" uid="uid://b54fnp64tfkvf" path="res://prefabs/Room props/slide.tscn" id="7_x47p5"]
-[ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="8_hrc10"]
+[ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="8_pphsx"]
 [ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="9_efx1w"]
 [ext_resource type="PackedScene" uid="uid://dty1lc8lqyalq" path="res://prefabs/Room props/speed_sticker.tscn" id="10_6b7fw"]
 [ext_resource type="PackedScene" uid="uid://da4jw8s8ebsdu" path="res://prefabs/Room props/score_light.tscn" id="11_nnufr"]
-[ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/bumper_circle_ammo.tscn" id="12_esbdh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
-size = Vector2(319, 26)
+[ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_esbdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(4.81928, 18)
@@ -27,37 +25,18 @@ roomExit = NodePath("Walls/Exit")
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="RightWall" type="Node2D" parent="Walls"]
+[node name="Wall_Right" parent="Walls" instance=ExtResource("2_qropx")]
 position = Vector2(781, -892)
-rotation = 1.5708
-scale = Vector2(5.77066, 0.999985)
 
-[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWall"]
-rotation = 8.47668e-05
-scale = Vector2(2.5, 0.2)
-texture = ExtResource("2_cjjgn")
+[node name="Wall_RightBottom" parent="Walls" instance=ExtResource("2_qropx")]
+position = Vector2(526, -71)
+rotation = 0.0
+scale = Vector2(1.63728, 6.73875)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/RightWall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall/StaticBody2D"]
-position = Vector2(0.5, -4.57764e-05)
-shape = SubResource("RectangleShape2D_vmxit")
-
-[node name="LeftWall" type="Node2D" parent="Walls"]
-position = Vector2(-781, -892)
-rotation = 1.5708
-scale = Vector2(5.77066, 0.999985)
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWall"]
-rotation = 8.47668e-05
-scale = Vector2(2.5, 0.2)
-texture = ExtResource("2_cjjgn")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/LeftWall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall/StaticBody2D"]
-position = Vector2(0.5, -4.57764e-05)
-shape = SubResource("RectangleShape2D_vmxit")
+[node name="Wall_LeftBottom" parent="Walls" instance=ExtResource("2_qropx")]
+position = Vector2(-526, -71)
+rotation = 0.0
+scale = Vector2(1.63728, 6.73875)
 
 [node name="TopWall" type="Node2D" parent="Walls"]
 position = Vector2(0, -1645)
@@ -103,6 +82,14 @@ scale = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_njsij")
 debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 
+[node name="Entrance" type="Area2D" parent="Walls"]
+script = ExtResource("3_2afm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Entrance"]
+scale = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_njsij")
+debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
+
 [node name="Props" type="Node2D" parent="."]
 
 [node name="GroundBumpers" type="Node2D" parent="Props"]
@@ -110,30 +97,11 @@ debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 [node name="Corners" type="Node2D" parent="Props"]
 
 [node name="FlatBumper Walls" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
-position = Vector2(194, -100)
+position = Vector2(199, -69)
 rotation = -1.5708
 
 [node name="FlatBumper Walls2" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
-position = Vector2(-164, -100)
-
-[node name="FlatBumper Walls3" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
-position = Vector2(-615, -158)
-scale = Vector2(4, 4)
-
-[node name="FlatBumper Walls7" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
-position = Vector2(618, -1486)
-rotation = -3.14159
-scale = Vector2(4, 4)
-
-[node name="FlatBumper Walls8" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
-position = Vector2(-618, -1488)
-rotation = 1.5708
-scale = Vector2(4, 4)
-
-[node name="FlatBumper Walls4" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
-position = Vector2(640, -161)
-rotation = -1.5708
-scale = Vector2(4, 4)
+position = Vector2(-205, -70)
 
 [node name="FlatBumper Walls5" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
 position = Vector2(201, -1567)
@@ -155,89 +123,27 @@ rotation = -1.57066
 
 [node name="CircleBumpers" type="Node2D" parent="Props"]
 
-[node name="BasicBumper3" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(-290, -1170)
-
-[node name="BasicBumper7" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(-682, -1148)
-
-[node name="BasicBumper11" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(686, -1159)
-
-[node name="BasicBumper4" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(-347, -664)
-
-[node name="BasicBumper9" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(-120, -889)
-
-[node name="BasicBumper12" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(112, -893)
-
-[node name="BasicBumper13" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(-5, -978)
-
-[node name="BasicBumper6" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(377, -679)
-
-[node name="BasicBumper2" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(585, -436)
-
-[node name="BasicBumper5" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(-529, -451)
-
-[node name="BasicBumper8" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(0, -1350)
-
-[node name="BasicBumper10" parent="Props/CircleBumpers" instance=ExtResource("6_dthqe")]
-position = Vector2(304, -1160)
-
 [node name="WallCorners" type="Node2D" parent="Props"]
-
-[node name="FlatBumper Walls7" parent="Props/WallCorners" instance=ExtResource("5_dnc6s")]
-position = Vector2(-694, -671)
-rotation = 1.5708
 
 [node name="FlatBumper Walls11" parent="Props/WallCorners" instance=ExtResource("5_dnc6s")]
 position = Vector2(81, -729)
 rotation = 1.5708
 
-[node name="FlatBumper Walls8" parent="Props/WallCorners" instance=ExtResource("5_dnc6s")]
-position = Vector2(-694, -839)
-
-[node name="FlatBumper Walls9" parent="Props/WallCorners" instance=ExtResource("5_dnc6s")]
-position = Vector2(684, -694)
-rotation = 3.14159
-
 [node name="FlatBumper Walls12" parent="Props/WallCorners" instance=ExtResource("5_dnc6s")]
 position = Vector2(-79, -728)
 rotation = 3.14159
 
-[node name="FlatBumper Walls10" parent="Props/WallCorners" instance=ExtResource("5_dnc6s")]
-position = Vector2(683, -857)
-rotation = -1.5708
+[node name="Slide" parent="Props" instance=ExtResource("7_x47p5")]
+position = Vector2(-717, -207)
+points = PackedVector2Array(0, 0, -369, -45, -418, -354, -551, -518, -647, -583, -622, -660, -511, -645, -640, -441, -492, -307, -200, -418)
 
-[node name="Slide" parent="." instance=ExtResource("7_x47p5")]
-position = Vector2(-33, -451)
+[node name="AmmoBumpers" type="Node2D" parent="Props"]
 
-[node name="BasicSticker" parent="Slide" instance=ExtResource("8_hrc10")]
-position = Vector2(-319, -582)
-rotation = -1.8483
+[node name="AmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("7_3xq05")]
+position = Vector2(-19, -326)
 
-[node name="BasicSticker2" parent="Slide" instance=ExtResource("8_hrc10")]
-position = Vector2(-57, -663)
-rotation = -1.8483
-
-[node name="BasicSticker3" parent="Slide" instance=ExtResource("8_hrc10")]
-position = Vector2(216, -562)
-rotation = 2.14326
-
-[node name="BasicSticker4" parent="Slide" instance=ExtResource("8_hrc10")]
-position = Vector2(272, -249)
-rotation = 1.03498
-
-[node name="BasicSticker5" parent="Slide" instance=ExtResource("8_hrc10")]
-position = Vector2(110, -116)
-rotation = 0.37001
+[node name="AmmoBumper_Diamond" parent="Props/AmmoBumpers" instance=ExtResource("8_pphsx")]
+position = Vector2(697, -499)
 
 [node name="LockZone" parent="." instance=ExtResource("9_efx1w")]
 position = Vector2(-435, -1256)
@@ -250,4 +156,4 @@ rotation = -4.28827
 position = Vector2(-441, -837)
 
 [node name="AmmoBumper" parent="." instance=ExtResource("12_esbdh")]
-position = Vector2(-467, -211)
+position = Vector2(-551, -398)
