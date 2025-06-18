@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="5_ht1c8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1txc5"]
-bounce = 0.2
+bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mncer"]
 radius = 16.15
@@ -21,7 +21,6 @@ max_contacts_reported = 1
 script = ExtResource("1_onrkg")
 maxLaunchPower = 100.0
 launchChargeDuration = 0.0
-moveAwayFromPlayer = false
 shootParticle = ExtResource("5_ht1c8")
 playerGun = NodePath("Gun")
 

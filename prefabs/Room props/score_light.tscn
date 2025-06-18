@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://da4jw8s8ebsdu"]
 
-[ext_resource type="Script" path="res://scripts/score_lights.gd" id="1_o77rn"]
-[ext_resource type="Script" path="res://scripts/score_light.gd" id="2_2vxxh"]
+[ext_resource type="Script" uid="uid://bj2i2vom5jo3d" path="res://scripts/score_lights.gd" id="1_o77rn"]
+[ext_resource type="Script" uid="uid://denshrkm87h7a" path="res://scripts/score_light.gd" id="2_2vxxh"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="3_3fxyb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3bafk"]
