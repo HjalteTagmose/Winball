@@ -20,7 +20,6 @@ var timesHit : int
 var isInStrom : bool
 var _scoreIndex = 0
 
-var _deathCounter = 0.0
 var _isDead = false
 
 func _ready() -> void:
@@ -86,11 +85,10 @@ func AddScore():
 		Global.AddScore(scoreToGive)
 
 func Die():
-	_isDead = true
-	pass
-	
-func _process(delta: float) -> void:
 	if _isDead:
-		_deathCounter += delta
-		if _deathCounter > 0.1:
-			queue_free()
+		return
+	_isDead = true
+	var tween: Tween = create_tween()
+	tween.tween_interval(0.1)
+	tween.tween_callback(queue_free)
+	
