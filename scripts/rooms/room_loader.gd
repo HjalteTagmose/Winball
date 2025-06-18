@@ -11,12 +11,19 @@ var _spawnedRooms : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_setup()
+	pass # Replace with function body.
+
+func _setup() -> void:
+	
+	# Delete all children nodes
+	for child in get_children():
+		child.queue_free()
+	
 	_spawnRoom(firstRoom)
 	
 	for n in range(0, roomCount):
-		_spawnRoom(roomToSpawns.pick_random()) #+1 because we already spawned a set first room
-	pass # Replace with function body.
-
+		_spawnRoom(roomToSpawns.pick_random())
 
 func _spawnRoom(roomToSpawn: PackedScene) -> void:
 	var spawned : Room = roomToSpawn.instantiate()
