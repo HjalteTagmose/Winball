@@ -20,6 +20,9 @@ var timesHit : int
 var isInStrom : bool
 var _scoreIndex = 0
 
+var _deathCounter = 0.0
+var _isDead = false
+
 func _ready() -> void:
 	AudioPlayer.stream = SoundOnHIt
 	timesHit = 0
@@ -81,7 +84,13 @@ func AddScore():
 
 	if isInStrom:
 		Global.AddScore(scoreToGive)
-	
+
 func Die():
-	queue_free()
+	_isDead = true
 	pass
+	
+func _process(delta: float) -> void:
+	if _isDead:
+		_deathCounter += delta
+		if _deathCounter > 0.1:
+			queue_free()
