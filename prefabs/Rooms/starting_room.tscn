@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="3_84dyx"]
 [ext_resource type="PackedScene" uid="uid://cubywxgl8t7t2" path="res://prefabs/Room props/flat_bumper_ground.tscn" id="4_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_hg5bj"]
-[ext_resource type="PackedScene" uid="uid://kcegbygl2qjq" path="res://prefabs/Room props/ammo_bumper.tscn" id="12_sjl2v"]
+[ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/ammo_bumper.tscn" id="12_sjl2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
 size = Vector2(319, 26)
@@ -278,27 +278,36 @@ rotation = -1.5708
 
 [node name="AmmoBumper" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(148, -346)
+Power = 50.0
 
 [node name="AmmoBumper4" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-165, -346)
+Power = 50.0
 
 [node name="AmmoBumper5" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(388, -634)
+Power = 50.0
 
 [node name="AmmoBumper9" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-400, -625)
+Power = 50.0
 
 [node name="AmmoBumper11" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-317, -1017)
+Power = 50.0
 
 [node name="AmmoBumper12" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(314, -1019)
+Power = 50.0
 
 [node name="AmmoBumper10" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-456, -1412)
+Power = 50.0
 
 [node name="AmmoBumper13" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(478, -1415)
+Power = 50.0
 
 [node name="AmmoBumper8" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-3, -771)
+Power = 50.0

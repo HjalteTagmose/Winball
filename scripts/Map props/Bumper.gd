@@ -19,7 +19,7 @@ func _ready() -> void:
 	AudioPlayer.stream = SoundOnHIt
 	timesHit = 0
 
-func _process(delta):
+func _physics_process(delta: float) -> void:
 
 	if currentFrame == Engine.get_physics_frames():
 		return
