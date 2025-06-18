@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgq8uyrtdjs4b"]
+[gd_scene load_steps=6 format=3 uid="uid://dk2qeftto1xbn"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_lmwaj"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_ochcu"]
@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
 radius = 33.0606
 
-[node name="CircleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer")]
+[node name="AmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -16,9 +16,10 @@ physics_material_override = ExtResource("1_lmwaj")
 script = ExtResource("2_ochcu")
 extraVisual = NodePath("Sprite2D/Sprite2D")
 Power = 40.0
-BiasPower = 0.0
+Score = 30
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("3_3j6bh")
+BiasPower = 0.0
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
