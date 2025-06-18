@@ -17,9 +17,10 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_51v4h")
 extraVisual = NodePath("Sprite2D/Sprite2D")
-Power = 80.0
+Power = 60.0
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("2_co61t")
+BiasPower = 0.0
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
