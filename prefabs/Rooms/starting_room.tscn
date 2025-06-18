@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="3_84dyx"]
 [ext_resource type="PackedScene" uid="uid://cubywxgl8t7t2" path="res://prefabs/Room props/flat_bumper_ground.tscn" id="4_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_hg5bj"]
-[ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/ammo_bumper.tscn" id="12_sjl2v"]
+[ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/bumper_circle_ammo.tscn" id="12_sjl2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
 size = Vector2(319, 26)
@@ -267,7 +267,7 @@ position = Vector2(-694, -770)
 rotation = 1.5708
 
 [node name="FlatBumper Walls11" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
-position = Vector2(76, -1091)
+position = Vector2(76, -1022)
 rotation = 1.5708
 
 [node name="FlatBumper Walls17" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
@@ -285,7 +285,7 @@ rotation = 1.5708
 position = Vector2(-708, -2001)
 
 [node name="FlatBumper Walls13" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
-position = Vector2(75, -1255)
+position = Vector2(75, -1186)
 
 [node name="FlatBumper Walls9" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
 position = Vector2(684, -760)
@@ -296,7 +296,7 @@ position = Vector2(716, -1231)
 rotation = 3.14159
 
 [node name="FlatBumper Walls12" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
-position = Vector2(-85, -1091)
+position = Vector2(-85, -1022)
 rotation = 3.14159
 
 [node name="FlatBumper Walls16" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
@@ -316,7 +316,7 @@ position = Vector2(713, -2005)
 rotation = -1.5708
 
 [node name="FlatBumper Walls14" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
-position = Vector2(-88, -1256)
+position = Vector2(-88, -1187)
 rotation = -1.5708
 
 [node name="FlatBumper Walls18" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
@@ -377,7 +377,7 @@ Score = 15
 BiasPower = 15.0
 
 [node name="AmmoBumper8" parent="." instance=ExtResource("12_sjl2v")]
-position = Vector2(-3, -771)
+position = Vector2(-3, -727)
 Power = 50.0
 Score = 15
 BiasPower = 15.0
