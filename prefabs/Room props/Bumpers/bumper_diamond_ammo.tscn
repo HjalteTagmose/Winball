@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5clxm8i6clwg"]
+[gd_scene load_steps=9 format=3 uid="uid://c5clxm8i6clwg"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_00l2q"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_h7j4w"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_4870c"]
 [ext_resource type="Texture2D" uid="uid://c46t0k0o6mlch" path="res://sprites/bumpers/blue_bumper_diamond_dots.png" id="4_hyyvt"]
+[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://sprites/test/bumper_animation.gd" id="5_h7j4w"]
 [ext_resource type="Texture2D" uid="uid://dv22ptl7yjca6" path="res://sprites/bumpers/red_bumper_diamond.png" id="5_j0ctt"]
+
+[sub_resource type="Curve" id="Curve_h7j4w"]
+_limits = [0.0, 2.0, 0.0, 0.25]
+_data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0, 0.0, 0, 0, Vector2(0.21281, 1.0031), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
 points = PackedVector2Array(0, -40, 62, -8, 62, 8, 0, 40, -62, 8, -62, -8)
@@ -25,6 +31,8 @@ metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("4_hyyvt")
+script = ExtResource("5_h7j4w")
+scale_curve = SubResource("Curve_h7j4w")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
 texture = ExtResource("5_j0ctt")
