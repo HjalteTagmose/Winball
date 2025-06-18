@@ -21,7 +21,7 @@ func _on_body_enter(body:Node2D):
 	
 	hasBeenUsed = true
 
-func Interact(player : Player):
+func Interact(_player : Player):
 	PlayAnimation()
 	Global.score += score
 	print("current score ", Global.score)

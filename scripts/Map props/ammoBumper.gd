@@ -5,7 +5,7 @@ class_name AmmoBumper
 
 var _HasBeenUsed = false;
 
-func AdditionalBumpBehaviour(collisionInfo:KinematicCollision2D, player : Player) -> void:
+func AdditionalBumpBehaviour(_collisionInfo:KinematicCollision2D, _player : Player) -> void:
 	print("Ammo Bumper bumped")
 	if(_HasBeenUsed):
 		return

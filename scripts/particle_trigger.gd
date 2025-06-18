@@ -16,10 +16,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:	
+func _process(_delta: float) -> void:	
 	#wait for fisnished
-	for particles in particles:
-		if particles.emitting:
+	for particle in particles:
+		if particle.emitting:
 			return
 	
 	queue_free()

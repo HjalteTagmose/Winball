@@ -26,5 +26,5 @@ func spawnRoom(roomToSpawn: PackedScene, i: int) -> void:
 	_nextSpawnPoint = exit.global_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
