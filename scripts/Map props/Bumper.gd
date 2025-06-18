@@ -49,8 +49,6 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	
 	
 func PlayParticle(collisionInfo: KinematicCollision2D):
-	print("KEKEKEKEKEE")
-
 	if(ParticleOnHit == null):
 		return
 		

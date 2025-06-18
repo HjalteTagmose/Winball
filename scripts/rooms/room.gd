@@ -1,5 +1,4 @@
-extends Node2D
-class_name Room
+class_name Room extends Node2D
 
 @export var roomExit : RoomExit
 
@@ -11,3 +10,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+	

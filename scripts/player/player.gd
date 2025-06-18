@@ -30,7 +30,6 @@ func _ready() -> void:
 	body_entered.connect(onBodyEntered)
 	
 func onBodyEntered(_body: Node):
-	print("BUMP")
 	handleBumpParticle()	
 
 func handleLaunch() -> void:
@@ -101,10 +100,8 @@ func handleShootParticle(direction: Vector2):
 		print("shooting particle")
 	var instance: ParticleTrigger = shootParticle.instantiate()
 	instance.global_position = playerGun.global_position
-	# var globalPoint = instance.to_global(direction)
 	
 	instance.rotation = direction.angle()
-	print("rotation", str(instance.rotation))
 	get_tree().root.add_child(instance)
 
 
