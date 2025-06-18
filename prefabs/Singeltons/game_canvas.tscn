@@ -14,6 +14,7 @@ game_over_canvas = NodePath("GameOverCanvas")
 [node name="GameplayGroup" type="CanvasGroup" parent="."]
 
 [node name="AmmoDisplay" type="RichTextLabel" parent="GameplayGroup"]
+visible = false
 offset_left = 965.0
 offset_top = 610.0
 offset_right = 1150.0
@@ -23,7 +24,6 @@ text = "Test"
 script = ExtResource("2_ig5ml")
 
 [node name="ScoreDisplay" type="RichTextLabel" parent="GameplayGroup"]
-visible = false
 offset_right = 202.0
 offset_bottom = 40.0
 text = "Score"
