@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgcnmju2c0r7w"]
+[gd_scene load_steps=12 format=3 uid="uid://bgcnmju2c0r7w"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_n3c57"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_n6cen"]
 [ext_resource type="PackedScene" uid="uid://p5c72b14kda" path="res://prefabs/Room props/exit.tscn" id="3_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cubywxgl8t7t2" path="res://prefabs/Room props/flat_bumper_ground.tscn" id="4_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/flat_bumper_walls.tscn" id="4_hg5bj"]
+[ext_resource type="PackedScene" uid="uid://dn1gm8rhu6hy" path="res://prefabs/Room props/Rail.tscn" id="6_p84ie"]
+[ext_resource type="PackedScene" path="res://prefabs/Room props/lock_zone.tscn" id="7_604h0"]
 [ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_sjl2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
@@ -323,6 +325,24 @@ rotation = -1.5708
 [node name="FlatBumper Walls20" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
 position = Vector2(197, -1608)
 rotation = -1.5708
+
+[node name="Rail2" parent="." node_paths=PackedStringArray("RailFollower") instance=ExtResource("6_p84ie")]
+position = Vector2(-195, -784)
+points = PackedVector2Array(0, 0, -288, -15, 22, -132)
+SlideSpeed = 250.0
+RailFollower = NodePath("LockZone")
+
+[node name="LockZone" parent="Rail2" instance=ExtResource("7_604h0")]
+
+[node name="Rail" parent="." node_paths=PackedStringArray("RailFollower") instance=ExtResource("6_p84ie")]
+position = Vector2(212, -760)
+points = PackedVector2Array(0, 0, 341, 1, 123, -149)
+SlideSpeed = 250.0
+RailFollower = NodePath("AmmoBumper")
+
+[node name="AmmoBumper" parent="Rail" instance=ExtResource("12_sjl2v")]
+Power = 50.0
+BiasPower = 15.0
 
 [node name="AmmoBumper" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(148, -346)

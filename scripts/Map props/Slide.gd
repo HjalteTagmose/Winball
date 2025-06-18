@@ -4,6 +4,7 @@ class_name Slide
 @export var SlideSpeed : float = 15
 @export var EndShotPower : float = 1400
 
+
 var boundPlayer : Player
 var currentNode : int
 var currentLerpTime : float = 0
