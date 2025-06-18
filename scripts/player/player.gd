@@ -29,7 +29,7 @@ var _isCharging : bool
 func _ready() -> void:
 	body_entered.connect(onBodyEntered)
 	
-func onBodyEntered(body: Node):
+func onBodyEntered(_body: Node):
 	print("BUMP")
 	handleBumpParticle()	
 
@@ -101,7 +101,7 @@ func handleShootParticle(direction: Vector2):
 		print("shooting particle")
 	var instance: ParticleTrigger = shootParticle.instantiate()
 	instance.global_position = playerGun.global_position
-	var globalPoint = instance.to_global(direction)
+	# var globalPoint = instance.to_global(direction)
 	
 	instance.rotation = direction.angle()
 	print("rotation", str(instance.rotation))
@@ -109,6 +109,6 @@ func handleShootParticle(direction: Vector2):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	handleLaunch()
 	pass

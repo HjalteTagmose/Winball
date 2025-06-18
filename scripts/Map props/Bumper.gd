@@ -24,7 +24,7 @@ func _ready() -> void:
 	AudioPlayer.stream = SoundOnHIt
 	timesHit = 0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 
 	var collisions = move_and_collide(Vector2.UP, true)
 
@@ -63,7 +63,7 @@ func PlayParticle(collisionInfo: KinematicCollision2D):
 	instance.rotation = direction.angle()
 	get_tree().root.add_child(instance)
 	
-func AdditionalBumpBehaviour(collisionInfo:KinematicCollision2D, player : Player) -> void:
+func AdditionalBumpBehaviour(_collisionInfo:KinematicCollision2D, _player : Player) -> void:
 	return
 
 func PlayAnimation(collisionInfo: KinematicCollision2D):

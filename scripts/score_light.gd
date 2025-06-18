@@ -7,7 +7,7 @@ class_name ScoreLight
 @export var offColor : Color
 @export var onColor : Color
 
-var ScoreLightRoot: ScoreLightRoot
+var scoreLightRoot: ScoreLightRoot
 
 var _isOn = false;
 var isOn : bool : 
@@ -19,7 +19,7 @@ func _ready() -> void:
 	sprite.self_modulate = offColor
 	pass # Replace with function body.
 
-func onEnter(body: Node2D):
+func onEnter(_body: Node2D):
 	print("OnEnter")
 	turnOn()
 

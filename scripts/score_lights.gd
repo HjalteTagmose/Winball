@@ -7,12 +7,12 @@ class_name ScoreLightRoot
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for light in lights:
-		light.ScoreLightRoot = self
+		light.scoreLightRoot = self
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	for light in lights:
 		if(!light.isOn):
 			return
