@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=7 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
 [ext_resource type="Script" uid="uid://d8ji1yq2j061" path="res://scripts/ui/score_display.gd" id="3_ig5ml"]
 [ext_resource type="PackedScene" uid="uid://baeyuf6utr2j6" path="res://prefabs/ui/ammo_cartrige.tscn" id="4_8ph68"]
 [ext_resource type="PackedScene" uid="uid://b82knrsfc5qcx" path="res://prefabs/ui/bullet_display.tscn" id="5_hfij3"]
+[ext_resource type="PackedScene" uid="uid://bp1ekroq3hex3" path="res://prefabs/Score.tscn" id="6_1kxbb"]
 
 [node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
 script = ExtResource("1_oe5df")
@@ -12,6 +13,9 @@ gameplay_canvas = NodePath("GameplayGroup")
 game_over_canvas = NodePath("GameOverCanvas")
 
 [node name="GameplayGroup" type="CanvasGroup" parent="."]
+
+[node name="Score" parent="GameplayGroup" instance=ExtResource("6_1kxbb")]
+position = Vector2(34, 49)
 
 [node name="AmmoDisplay" type="RichTextLabel" parent="GameplayGroup"]
 visible = false
@@ -24,6 +28,7 @@ text = "Test"
 script = ExtResource("2_ig5ml")
 
 [node name="ScoreDisplay" type="RichTextLabel" parent="GameplayGroup"]
+visible = false
 offset_right = 202.0
 offset_bottom = 40.0
 text = "Score"
