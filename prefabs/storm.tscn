@@ -1,6 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://8b3hfhqgnwil"]
+[gd_scene load_steps=8 format=3 uid="uid://8b3hfhqgnwil"]
 
 [ext_resource type="Script" uid="uid://bagx158bqhie" path="res://scripts/Storm.gd" id="1_hmgbu"]
+[ext_resource type="Shader" uid="uid://wdakxn55ltkp" path="res://Shaders/storm.gdshader" id="2_fs1pa"]
+[ext_resource type="Texture2D" uid="uid://deeglgcfjbxu7" path="res://art/P_Textures/Tileable_Noises/Winball_CHromaDots.png" id="3_3o5j4"]
+[ext_resource type="Texture2D" uid="uid://c4cglduo8u6ui" path="res://art/1974-03-30-uk-evening_argus-03.jpg" id="3_p1dam"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fs1pa"]
+shader = ExtResource("2_fs1pa")
+shader_parameter/screen_texture = ExtResource("3_3o5j4")
+shader_parameter/paper_texture = ExtResource("3_p1dam")
+shader_parameter/Panning_Speed = Vector2(0.2, 0.2)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nb1wl"]
 size = Vector2(360, 160)
@@ -18,6 +27,7 @@ metadata/_custom_type_script = "uid://bagx158bqhie"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0.141176, 0.0941176)
+material = SubResource("ShaderMaterial_fs1pa")
 texture = SubResource("PlaceholderTexture2D_nb1wl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
