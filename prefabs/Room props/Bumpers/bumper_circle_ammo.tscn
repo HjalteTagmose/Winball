@@ -3,7 +3,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_lmwaj"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_ochcu"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_3j6bh"]
-[ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://sprites/bumpers/round_bumper.png" id="4_66t0e"]
+[ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://art/Bumpers/round_bumper.png" id="4_66t0e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
 radius = 33.0606

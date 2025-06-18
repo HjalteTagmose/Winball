@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kwqeqyw10vt"
-path="res://.godot/imported/blue_bumper_triangle_dots.png-c04ac2f3cfcbfdca8e536aed64356261.ctex"
+uid="uid://gvfk60wqckmo"
+path="res://.godot/imported/score_number_9.png-9bdbbe558e9440c7b8d2163de2942f1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bumpers/blue_bumper_triangle_dots.png"
-dest_files=["res://.godot/imported/blue_bumper_triangle_dots.png-c04ac2f3cfcbfdca8e536aed64356261.ctex"]
+source_file="res://art/Numbers/score_number_9.png"
+dest_files=["res://.godot/imported/score_number_9.png-9bdbbe558e9440c7b8d2163de2942f1d.ctex"]
 
 [params]
 

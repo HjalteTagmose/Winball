@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv22ptl7yjca6"
-path="res://.godot/imported/red_bumper_diamond.png-b1d20b6506943792991ad85c8d55a597.ctex"
+uid="uid://trb2xn5n5p2x"
+path="res://.godot/imported/score_number_4.png-c89acc238a36b5a3b87d3a98cb30a53c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bumpers/red_bumper_diamond.png"
-dest_files=["res://.godot/imported/red_bumper_diamond.png-b1d20b6506943792991ad85c8d55a597.ctex"]
+source_file="res://art/Numbers/score_number_4.png"
+dest_files=["res://.godot/imported/score_number_4.png-c89acc238a36b5a3b87d3a98cb30a53c.ctex"]
 
 [params]
 

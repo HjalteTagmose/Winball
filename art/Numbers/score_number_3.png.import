@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2f7p3uyh3h5s"
-path="res://.godot/imported/red_bumper_wall_triangle.png-92f57325084da2842760a4ee9e326327.ctex"
+uid="uid://bi0r3ln16e1r5"
+path="res://.godot/imported/score_number_3.png-99a81d1b72db9cd1de1a7d5cb8dad58b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bumpers/red_bumper_wall_triangle.png"
-dest_files=["res://.godot/imported/red_bumper_wall_triangle.png-92f57325084da2842760a4ee9e326327.ctex"]
+source_file="res://art/Numbers/score_number_3.png"
+dest_files=["res://.godot/imported/score_number_3.png-99a81d1b72db9cd1de1a7d5cb8dad58b.ctex"]
 
 [params]
 

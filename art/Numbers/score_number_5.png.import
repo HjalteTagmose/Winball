@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd6ns6y03fnal"
-path="res://.godot/imported/test_flipper.png-026708c785694949ad537582d7019ddc.ctex"
+uid="uid://c7llmnbx0v8in"
+path="res://.godot/imported/score_number_5.png-c15876d47f16a780dec735fb9a7fa7a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/test/test_flipper.png"
-dest_files=["res://.godot/imported/test_flipper.png-026708c785694949ad537582d7019ddc.ctex"]
+source_file="res://art/Numbers/score_number_5.png"
+dest_files=["res://.godot/imported/score_number_5.png-c15876d47f16a780dec735fb9a7fa7a3.ctex"]
 
 [params]
 

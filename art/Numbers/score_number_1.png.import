@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfao0qayngj0a"
-path="res://.godot/imported/score_number_7.png-1525f788947e7b9caaa4832b149d291b.ctex"
+uid="uid://crtqirmuxyo0t"
+path="res://.godot/imported/score_number_1.png-63c5bb27eb16e0aa9f4fe890a0554bc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/score_number_7.png"
-dest_files=["res://.godot/imported/score_number_7.png-1525f788947e7b9caaa4832b149d291b.ctex"]
+source_file="res://art/Numbers/score_number_1.png"
+dest_files=["res://.godot/imported/score_number_1.png-63c5bb27eb16e0aa9f4fe890a0554bc0.ctex"]
 
 [params]
 

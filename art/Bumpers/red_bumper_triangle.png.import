@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv0im0grve8ie"
-path="res://.godot/imported/score_number_6.png-ffcb6271e2bf5cd2fbd2863b13dfc900.ctex"
+uid="uid://qvxvfdgeerlt"
+path="res://.godot/imported/red_bumper_triangle.png-ed60a28baf80f87c472f0c60b119a3f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/score_number_6.png"
-dest_files=["res://.godot/imported/score_number_6.png-ffcb6271e2bf5cd2fbd2863b13dfc900.ctex"]
+source_file="res://art/Bumpers/red_bumper_triangle.png"
+dest_files=["res://.godot/imported/red_bumper_triangle.png-ed60a28baf80f87c472f0c60b119a3f1.ctex"]
 
 [params]
 
