@@ -31,7 +31,7 @@ func onGameOver() -> void:
 	queue_free()
 
 func handleLaunch() -> void:
-	
+
 	if locked:
 		return
 

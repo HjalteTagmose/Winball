@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b54fnp64tfkvf"]
+
+[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_rjgnw"]
+[ext_resource type="Script" uid="uid://cbufsxmwng6bt" path="res://scripts/Map props/Slide.gd" id="2_b22ap"]
+[ext_resource type="Texture2D" uid="uid://b3yk8xjtktkti" path="res://art/ph_pinball.png" id="3_mnf72"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_604h0"]
+radius = 16.0
+
+[node name="Slide" type="Line2D"]
+z_index = -1
+points = PackedVector2Array(0, 0, 89, -56, 123, -149, 359, -308, 317, -484, 47, -707, -103, -648, -373, -567, -443, -673, -428, -736)
+width = 24.0
+texture = ExtResource("1_rjgnw")
+texture_mode = 2
+script = ExtResource("2_b22ap")
+SlideSpeed = 1400.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+self_modulate = Color(0.141176, 0.141176, 0, 1)
+texture = ExtResource("3_mnf72")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_604h0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

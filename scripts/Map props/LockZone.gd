@@ -19,7 +19,6 @@ func _on_body_enter(body:Node2D):
         Global.AddScore(Score)
 
 func _on_body_exit(_body:Node2D):
-
     pass
 
 func Launch() -> void:
