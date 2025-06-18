@@ -55,6 +55,8 @@ func start_game() -> void:
 func trigger_game_over() -> void:
 	game_over.emit()
 	gameState = GameStateEnum.GameOver
+	Engine.time_scale = 1.0
+
 func AddScore(amount : int) -> void:
 	score += amount
 	print("current score, ", score)
