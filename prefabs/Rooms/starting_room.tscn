@@ -336,48 +336,40 @@ rotation = -1.5708
 [node name="AmmoBumper" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(148, -346)
 Power = 50.0
-Score = Array[int]([100, 50, 10])
 BiasPower = 15.0
 
 [node name="AmmoBumper4" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-165, -346)
 Power = 50.0
-Score = Array[int]([100, 50, 10])
 BiasPower = 15.0
 
 [node name="AmmoBumper5" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(388, -634)
 Power = 50.0
-Score = Array[int]([100, 50, 10])
 BiasPower = 15.0
 
 [node name="AmmoBumper9" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-400, -625)
 Power = 50.0
-Score = Array[int]([100, 50, 10])
 BiasPower = 15.0
 
 [node name="AmmoBumper11" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-366, -989)
 Power = 50.0
-Score = Array[int]([100, 50, 10])
 BiasPower = 15.0
 
 [node name="AmmoBumper13" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-10, -1960)
 scale = Vector2(4, 4)
 Power = 50.0
-Score = Array[int]([100, 50, 10])
 BiasPower = 15.0
 
 [node name="AmmoBumper12" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(364, -1017)
 Power = 50.0
-Score = Array[int]([100, 50, 10])
 BiasPower = 15.0
 
 [node name="AmmoBumper8" parent="." instance=ExtResource("12_sjl2v")]
 position = Vector2(-3, -727)
 Power = 50.0
-Score = Array[int]([100, 50, 10])
 BiasPower = 15.0
