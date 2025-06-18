@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://drg8puls0marl" path="res://art/ph_bumper_2.png" id="2_et802"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
-bounce = 1.0
+bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
 radius = 33.0606
@@ -17,7 +17,8 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_51v4h")
 extraVisual = NodePath("Sprite2D/Sprite2D")
-Power = 60.0
+Power = 40.0
+Score = 30
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("2_co61t")
 BiasPower = 0.0

@@ -7,7 +7,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubyfy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbh0v"]
-bounce = 0.7
+bounce = 0.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydfnd"]
 radius = 4.93197
@@ -37,11 +37,12 @@ collision_layer = 4
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_gbh0v")
 script = ExtResource("1_ubyfy")
-Power = 40.0
+Power = 30.0
+Score = 10
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("2_pu8ip")
 Bias = Vector2(0, -1)
-BiasPower = 10.0
+BiasPower = 0.0
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]
