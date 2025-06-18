@@ -5,7 +5,7 @@ class_name BasicSticker
 @export var OneTimeUse : bool = true
 @export var AudioPlayer : AudioStreamPlayer2D
 @export var InteractionSFX : AudioStream
-@export var ParticleOnHit : GPUParticles2D
+@export var ParticleOnHit : PackedScene
 
 var hasBeenUsed : bool = false
 
@@ -21,6 +21,9 @@ func _on_body_enter(body:Node2D):
 	
 	hasBeenUsed = true
 
+	if OneTimeUse:
+		Despawn()
+
 func Interact(_player : Player):
 	PlayAnimation()
 	Global.score += score
@@ -29,5 +32,6 @@ func Interact(_player : Player):
 
 func PlayAnimation():
 	AudioPlayer.play()
-	if ParticleOnHit:
-		ParticleOnHit.emitting = true
+
+func Despawn() -> void:
+	pass

@@ -6,7 +6,6 @@ class_name BasicBumper extends StaticBody2D
 @export var Power : float = 35
 @export var Score : Array[int] = [100, 50, 10]
 
-
 @export_category("Bias")
 @export var Bias : Vector2 = Vector2.ZERO
 @export var BiasPower : float = 15
@@ -15,6 +14,9 @@ class_name BasicBumper extends StaticBody2D
 @export var AudioPlayer : AudioStreamPlayer2D
 @export var SoundOnHIt : AudioStream
 @export var ParticleOnHit : PackedScene
+
+@export_category("Helpers")
+@export var CollisionShape : CollisionShape2D
 
 var timesHit : int
 var isInStrom : bool
@@ -33,6 +35,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
+	if player.freeze:
+		return
+		
 	# var customNormal = (player.global_position - global_position).normalized()
 	var impulse : Vector2 = (collisionInfo.get_normal() * Power) + (Bias.normalized() * BiasPower)
 	player.apply_central_impulse(impulse)
@@ -49,8 +54,6 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	
 	
 func PlayParticle(collisionInfo: KinematicCollision2D):
-	print("KEKEKEKEKEE")
-
 	if(ParticleOnHit == null):
 		return
 		
@@ -85,5 +88,5 @@ func AddScore():
 		Global.AddScore(scoreToGive)
 	
 func Die():
-	queue_free()
+	call_deferred("queue_free")
 	pass

@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://sprites/bumpers/round_bumper.png" id="4_66t0e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
-radius = 33.0606
+radius = 33.0
 
-[node name="CircleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer")]
+[node name="CircleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer", "CollisionShape")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -19,6 +19,7 @@ Power = 40.0
 BiasPower = 0.0
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("3_3j6bh")
+CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -29,6 +30,7 @@ texture = ExtResource("4_66t0e")
 texture = ExtResource("4_66t0e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
 shape = SubResource("CircleShape2D_nb1wl")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
