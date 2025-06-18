@@ -21,11 +21,15 @@ func _ready() -> void:
 	position.y = size.y/1.5
 
 func _process(delta: float) -> void:
+	if Global.gameState != Global.GameStateEnum.Gameplay:
+		return
+	
 	if player:
 		currentTIme += delta
 
 		if currentTIme >= TimeToKill:
 			Global.trigger_game_over()
+			currentTIme = 0.0
 			pass
 
 	else:

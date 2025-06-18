@@ -12,10 +12,13 @@ var _spawnedRooms : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_setup()
+	Global.game_started.connect(_setup)
 	pass # Replace with function body.
 
 func _setup() -> void:
 	
+	_spawnedRooms = 0
+	_nextSpawnPoint = Vector2.ZERO
 	# Delete all children nodes
 	for child in get_children():
 		child.queue_free()

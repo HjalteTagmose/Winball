@@ -35,11 +35,9 @@ func HandleLastNode():
 	
 	if(railBehaviour == RailBehaviour.PingPong):
 		# Reverse direction
-		print("before", points)
 		var currentPoints = points
 		currentPoints.reverse()
 		points = currentPoints
-		print("after", points)
 	PrepSlide()
 
 func PrepSlide() -> void:
