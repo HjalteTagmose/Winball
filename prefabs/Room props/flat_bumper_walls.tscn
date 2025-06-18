@@ -40,7 +40,7 @@ Score = 20
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("2_g2cpd")
 Bias = Vector2(0, -1)
-BiasPower = 30.0
+BiasPower = 40.0
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]
