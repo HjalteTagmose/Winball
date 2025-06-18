@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bxhiscfk4buxn"]
 
-[ext_resource type="Script" path="res://scripts/particle_trigger.gd" id="1_tjf00"]
+[ext_resource type="Script" uid="uid://cyy17hnp35i0w" path="res://scripts/particle_trigger.gd" id="1_tjf00"]
 [ext_resource type="Shader" uid="uid://byqibs40brehw" path="res://Shaders/DistortionShader.gdshader" id="2_idbvt"]
 [ext_resource type="Texture2D" uid="uid://cjoisq0kfq515" path="res://art/P_Textures/Tileable_Noises/Winball_DistortionNRM.png" id="3_n3upq"]
 
@@ -43,8 +43,10 @@ script = ExtResource("1_tjf00")
 
 [node name="Pop" type="GPUParticles2D" parent="."]
 material = SubResource("ShaderMaterial_2xr1n")
+emitting = false
 amount = 3
 lifetime = 1.32
+one_shot = true
 explosiveness = 1.0
 use_fixed_seed = true
 seed = 299762414

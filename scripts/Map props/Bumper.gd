@@ -1,5 +1,4 @@
-extends StaticBody2D
-class_name BasicBumper
+class_name BasicBumper extends StaticBody2D
 
 @export var CanDie : bool = false
 @export var Life : int = 3
@@ -10,6 +9,7 @@ class_name BasicBumper
 @export var ParticleOnHit : PackedScene
 @export var Bias : Vector2 = Vector2.ZERO
 @export var BiasPower : float = 15
+
 
 var timesHit : int
 var isInStrom : bool

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dedwl18kckfdd"]
+[gd_scene load_steps=9 format=3 uid="uid://dedwl18kckfdd"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://b3yk8xjtktkti" path="res://art/ph_pinball.png" id="2_1txc5"]
+[ext_resource type="PackedScene" uid="uid://bxhiscfk4buxn" path="res://art/Particles/BumpDistortionParticles.tscn" id="3_g2jcq"]
 [ext_resource type="Script" uid="uid://ctv7yapi47nbu" path="res://scripts/player/gun.gd" id="3_r66lb"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="5_ht1c8"]
 
@@ -17,11 +18,13 @@ collision_layer = 2
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_1txc5")
 can_sleep = false
-max_contacts_reported = 1
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1_onrkg")
 maxLaunchPower = 100.0
 launchChargeDuration = 0.0
 shootParticle = ExtResource("5_ht1c8")
+bumpAnythingParticle = ExtResource("3_g2jcq")
 playerGun = NodePath("Gun")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
