@@ -20,8 +20,11 @@ func _ready() -> void:
 	CollisionArea.shape.size = size
 	position.x = CameraRef.global_position.x
 	position.y = size.y/1.5
-	Line.position.y = position.y + Graphic.texture.size.y/2
+	Line.texture.size.x = size.x
+	Line.position.y = -Graphic.texture.size.y/2
+	Line.position.x = CameraRef.global_position.x
 	
+
 func _process(delta: float) -> void:
 	if Global.gameState != Global.GameStateEnum.Gameplay:
 		return

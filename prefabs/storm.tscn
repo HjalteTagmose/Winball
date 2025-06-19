@@ -19,8 +19,6 @@ shader_parameter/Mult_Color = Vector4(1.5, 0.1, 3, 1)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nb1wl"]
 size = Vector2(360, 160)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n77mx"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p1dam"]
 shader = ExtResource("2_fs1pa")
 shader_parameter/WP_Size = 0.0
@@ -30,6 +28,8 @@ shader_parameter/Mult_Color = Vector4(10, 100, 0, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p1dam"]
 size = Vector2(360, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n77mx"]
 
 [node name="Storm" type="Area2D" node_paths=PackedStringArray("CollisionArea", "Graphic", "Line")]
 z_index = 10
@@ -48,15 +48,16 @@ material = SubResource("ShaderMaterial_fs1pa")
 position = Vector2(1, 0)
 texture = SubResource("PlaceholderTexture2D_nb1wl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_n77mx")
-
 [node name="Line" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_p1dam")
-scale = Vector2(1, 0.0166667)
+position = Vector2(0, -0.874999)
+scale = Vector2(1, 0.0283333)
 texture = SubResource("PlaceholderTexture2D_p1dam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_n77mx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_enter"]
 [connection signal="body_exited" from="." to="." method="_on_body_exit"]
