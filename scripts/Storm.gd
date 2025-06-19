@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	if ( (scale.y * Graphic.texture.get_size().y - CameraRef.global_position.y) ) / screenSize.y < -screensToCatch:
 		scale.y += screenToStormMult
 		
-	stormSpeed += trueAccel * delta
+	stormSpeed -= trueAccel * delta
 
 func _on_body_enter(body: Node2D):
 	if body is Player:
