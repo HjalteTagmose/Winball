@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qvxvfdgeerlt"
-path="res://.godot/imported/red_bumper_triangle.png-ed60a28baf80f87c472f0c60b119a3f1.ctex"
+path="res://.godot/imported/slingshot_red_triangle.png-63830b2a9400aa4add8392eaaf92c0b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Bumpers/red_bumper_triangle.png"
-dest_files=["res://.godot/imported/red_bumper_triangle.png-ed60a28baf80f87c472f0c60b119a3f1.ctex"]
+source_file="res://art/Bumpers/slingshot_red_triangle.png"
+dest_files=["res://.godot/imported/slingshot_red_triangle.png-63830b2a9400aa4add8392eaaf92c0b1.ctex"]
 
 [params]
 
