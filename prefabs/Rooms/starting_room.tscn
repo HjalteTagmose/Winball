@@ -201,43 +201,36 @@ enabled = true
 
 [node name="AmmoBumper" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(148, -346)
-enabled = true
 Power = 50.0
 BiasPower = 15.0
 
 [node name="AmmoBumper4" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(-165, -346)
-enabled = true
 Power = 50.0
 BiasPower = 15.0
 
 [node name="AmmoBumper5" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(388, -634)
-enabled = true
 Power = 50.0
 BiasPower = 15.0
 
 [node name="AmmoBumper9" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(-400, -625)
-enabled = true
 Power = 50.0
 BiasPower = 15.0
 
 [node name="AmmoBumper11" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(-366, -989)
-enabled = true
 Power = 50.0
 BiasPower = 15.0
 
 [node name="AmmoBumper12" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(364, -1017)
-enabled = true
 Power = 50.0
 BiasPower = 15.0
 
 [node name="AmmoBumper8" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(-3, -727)
-enabled = true
 Power = 50.0
 BiasPower = 15.0
 
