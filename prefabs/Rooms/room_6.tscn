@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwyb6r5co8tml"]
+[gd_scene load_steps=18 format=3 uid="uid://dwyb6r5co8tml"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_ctsm2"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_88puv"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_shallowTriangle_ammo.tscn" id="12_1qdxl"]
 [ext_resource type="PackedScene" uid="uid://rr7syj21fsh8" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="13_hy01o"]
 [ext_resource type="PackedScene" uid="uid://dc228ykvmvaux" path="res://prefabs/Room props/trap_sticker.tscn" id="14_xpq1i"]
+[ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="15_7aoiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(4.81928, 18)
@@ -174,10 +175,6 @@ scale = Vector2(-2, -2)
 position = Vector2(58, -633)
 rotation = -1.57066
 
-[node name="FlatBumper Walls14" parent="Props/CornerSquares" instance=ExtResource("6_07w8u")]
-position = Vector2(897, -1017)
-rotation = -1.57066
-
 [node name="WallCorners" type="Node2D" parent="Props"]
 
 [node name="Slide" parent="Props" instance=ExtResource("7_tmua4")]
@@ -307,3 +304,53 @@ Enabled = true
 
 [node name="TrapSticker" parent="Props/BreakableBumpers" instance=ExtResource("14_xpq1i")]
 position = Vector2(-1399, -1837)
+
+[node name="Foregrounds" type="Node2D" parent="."]
+
+[node name="Foreground" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(2048, -353)
+scale = Vector2(7.53125, 1.34766)
+
+[node name="Foreground3" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-3901, -1920)
+scale = Vector2(7.57031, 7.44531)
+
+[node name="Foreground4" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-1051, -2968)
+scale = Vector2(3.5625, 3.35156)
+
+[node name="Foreground5" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-1914.21, -186.386)
+rotation = 0.785398
+scale = Vector2(0.710844, 0.368772)
+
+[node name="Foreground11" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-3783.51, -68.2972)
+scale = Vector2(8.02925, 0.303527)
+
+[node name="Foreground6" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-589.452, -2147.45)
+rotation = 0.785398
+scale = Vector2(0.99395, 1.30064)
+
+[node name="Foreground9" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-453.607, -1735)
+rotation = 0.785398
+scale = Vector2(0.520531, 1.21057)
+
+[node name="Foreground10" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(792.917, -872.7)
+rotation = 0.785398
+scale = Vector2(1.36358, 2.4359)
+
+[node name="Foreground7" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-453.5, -2158.71)
+scale = Vector2(1.22852, 1.25667)
+
+[node name="Foreground8" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-644.75, -1775)
+scale = Vector2(0.475586, 1.25667)
+
+[node name="Foreground2" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(2895, -2181.5)
+scale = Vector2(7.53125, 6.42383)

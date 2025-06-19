@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2ushoen5gt8y"]
+[gd_scene load_steps=21 format=3 uid="uid://d2ushoen5gt8y"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_56mfi"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_bxq5b"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://rr7syj21fsh8" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="13_bxq5b"]
 [ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="13_lm8vp"]
 [ext_resource type="PackedScene" uid="uid://dty1lc8lqyalq" path="res://prefabs/Room props/speed_sticker.tscn" id="14_c7can"]
+[ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="18_qi612"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(4.81928, 18)
@@ -354,3 +355,49 @@ position = Vector2(560, -2516)
 rotation = -1.22173
 scale = Vector2(4, 4)
 Power = 200.0
+
+[node name="Foregrounds" type="Node2D" parent="."]
+
+[node name="Foreground" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(1939, -85)
+scale = Vector2(3.88281, 0.332031)
+
+[node name="Foreground5" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(2921.5, -563)
+scale = Vector2(6.77539, 1.86719)
+
+[node name="Foreground6" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(-2921.5, -563)
+scale = Vector2(6.77539, 1.86719)
+
+[node name="Foreground2" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(-1939, -85)
+scale = Vector2(3.88281, 0.332031)
+
+[node name="Foreground7" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(-1135.66, -211.675)
+rotation = 0.785398
+scale = Vector2(0.676089, 0.348633)
+
+[node name="Foreground8" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(1135.66, -211.675)
+rotation = -0.785398
+scale = Vector2(0.676089, 0.348633)
+
+[node name="Foreground9" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(-1130, -751)
+rotation = -0.785398
+scale = Vector2(0.676089, 0.348633)
+
+[node name="Foreground10" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(1130, -751)
+rotation = 0.785398
+scale = Vector2(0.676089, 0.348633)
+
+[node name="Foreground3" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(-2280.5, -2310)
+scale = Vector2(5.16211, 5.91797)
+
+[node name="Foreground4" parent="Foregrounds" instance=ExtResource("18_qi612")]
+position = Vector2(2283, -2310)
+scale = Vector2(5.15234, 5.91797)
