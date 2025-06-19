@@ -1,6 +1,7 @@
-extends Button
+class_name SubmitScoreButton extends TextureButton
 
 @export var player_name : TextEdit
+@export var gameover_screen : GameOverScreen
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,3 +10,4 @@ func _ready() -> void:
 
 func _button_pressed():
 	ScoreManager.AddHighScore(ScoreManager.score, player_name.text)
+	gameover_screen.show_restart_button()
