@@ -286,7 +286,6 @@ position = Vector2(0, -1475)
 rotation = 0.0
 scale = Vector2(4, 4)
 Power = 200.0
-OneTimeUse = false
 
 [node name="ScoreLightRoot" parent="." instance=ExtResource("13_a4lfk")]
 position = Vector2(-660, -2920)
