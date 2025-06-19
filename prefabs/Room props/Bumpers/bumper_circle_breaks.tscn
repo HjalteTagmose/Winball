@@ -17,6 +17,7 @@ extraVisual = NodePath("Sprite2D/Sprite2D")
 CanDie = true
 Life = 1
 Power = 40.0
+Score = Array[int]([200, 50, 5])
 BiasPower = 0.0
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("3_3eklx")

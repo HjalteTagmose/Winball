@@ -35,11 +35,11 @@ collision_mask = 2
 physics_material_override = ExtResource("1_pu8ip")
 script = ExtResource("1_ubyfy")
 Power = 30.0
-Score = 10
-AudioPlayer = NodePath("AudioPlayer")
-ParticleOnHit = ExtResource("2_pu8ip")
+Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
 BiasPower = 0.0
+AudioPlayer = NodePath("AudioPlayer")
+ParticleOnHit = ExtResource("2_pu8ip")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]

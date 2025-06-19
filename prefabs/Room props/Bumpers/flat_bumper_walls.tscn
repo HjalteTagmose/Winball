@@ -36,6 +36,7 @@ collision_mask = 2
 physics_material_override = ExtResource("1_g2cpd")
 script = ExtResource("1_y5uss")
 Power = 40.0
+Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
 BiasPower = 40.0
 AudioPlayer = NodePath("AudioPlayer")
