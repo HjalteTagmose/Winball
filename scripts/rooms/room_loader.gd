@@ -4,7 +4,6 @@ class_name RoomLoaderNode extends Node2D
 @export var firstRoom : PackedScene
 @export var roomToSpawns : Array[PackedScene] = []
 
-
 var triggeredExitsSet: Dictionary = {}
 var _nextSpawnPoint : Vector2 = Vector2.ZERO
 var _spawnedRooms : int = 0

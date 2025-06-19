@@ -9,9 +9,9 @@ var digits : Array[ScoreDigit]
 var cur_number = -1
 
 func _process(_delta: float) -> void:
-	if Global.score == cur_number:
+	if ScoreManager.score == cur_number:
 		return
-	set_number(Global.score)
+	set_number(ScoreManager.score)
 
 func set_number(number : int) -> void:
 	cur_number = number
