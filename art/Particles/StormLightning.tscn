@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://bgjbqg74jada0"]
+
+[ext_resource type="Texture2D" uid="uid://yr1s2rdji8q2" path="res://art/P_Textures/T_Lightning_3x3.png" id="1_jlgf8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bmogt"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 3
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_2wubw"]
+_data = [Vector2(0, 0.795714), 0.0, 0.0, 0, 0, Vector2(0.639241, 0.795714), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.62393, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bmogt"]
+curve = SubResource("Curve_2wubw")
+
+[sub_resource type="Curve" id="Curve_exd8y"]
+_data = [Vector2(0, 0), 0.0, 2.19854, 0, 0, Vector2(0.302215, 0.366686), 0.0, 0.0, 0, 0, Vector2(0.636076, 0.707993), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_pqj4g"]
+curve = SubResource("Curve_exd8y")
+
+[sub_resource type="Gradient" id="Gradient_r410x"]
+offsets = PackedFloat32Array(0, 0.181373, 0.836601, 1)
+colors = PackedColorArray(0, 1, 0.953074, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0.869893, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0vy6j"]
+gradient = SubResource("Gradient_r410x")
+
+[sub_resource type="Curve" id="Curve_g6ija"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.232595, 100), 0.0, 0.0, 0, 0, Vector2(1, 0), -259.227, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xiub3"]
+curve = SubResource("Curve_g6ija")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_exd8y"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(151.785, 73.195, 1)
+angle_min = 1.07288e-05
+angle_max = 360.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+color_ramp = SubResource("GradientTexture1D_0vy6j")
+alpha_curve = SubResource("CurveTexture_bmogt")
+emission_curve = SubResource("CurveTexture_xiub3")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_speed_curve = SubResource("CurveTexture_pqj4g")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_bmogt")
+texture = ExtResource("1_jlgf8")
+lifetime = 0.6
+randomness = 0.56
+process_material = SubResource("ParticleProcessMaterial_exd8y")
