@@ -87,6 +87,7 @@ func AddScore(collisionInfo: KinematicCollision2D):
 	
 	var scoreIndex = clamp(_scoreIndex, 0, Score.size()-1)
 	var scoreToGive = Score[scoreIndex]
+	$Sprite2D.material.set("shader_parameter/saturation",.5);
 	
 	_scoreIndex += 1
 

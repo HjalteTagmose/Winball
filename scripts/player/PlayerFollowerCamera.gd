@@ -5,14 +5,18 @@ extends Camera2D
 @export var camera_speed : float = 5.0
 var override_target_pos : Vector2
 
-func _ready():
-	await get_tree().create_timer(0.1).timeout
-	var bumpers = get_tree().get_nodes_in_group("bumper")
-	for bumper in bumpers:
-		bumper.bumped_impulse.connect(_on_bumped)
+#func _ready():
+	#await get_tree().create_timer(0.1).timeout
+	#var bumpers = get_tree().get_nodes_in_group("bumper")
+	#for bumper in bumpers:
+		#bumper.bumped_impulse.connect(_on_bumped)
 
 func _process(delta: float) -> void:
 	var target_pos : Vector2 = player.global_position
+	
+	#debug
+	global_position = target_pos
+	return
 	
 	if override_target_pos:
 		target_pos = override_target_pos
@@ -21,9 +25,9 @@ func _process(delta: float) -> void:
 	
 	global_position = lerp(global_position, target_pos, delta * camera_speed)
 
-func _on_bumped(impulse :  Vector2) -> void:
-	override_target(player.global_position)# - impulse.normalized() * 200)
-	print("bump impulse: ", impulse)
+#func _on_bumped(impulse :  Vector2) -> void:
+	#override_target(player.global_position)# - impulse.normalized() * 200)
+	#print("bump impulse: ", impulse)
 
 func override_target(override_pos : Vector2) -> void:
 	override_target_pos = override_pos
