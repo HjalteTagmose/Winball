@@ -1,12 +1,20 @@
 class_name Player extends RigidBody2D
 
 
-@export var slowdownPower : float = 0.35
+@export_category("Launch")
 @export var minLaunchPower : float = 100
 @export var maxLaunchPower : float = 1000
 @export var launchChargeDuration : float = 1
-
 @export var killVelocityBeforeLaunch : bool = true
+
+@export_category("Slowdown")
+@export var slowdownPower : float = 0.35
+@export var max_slowdown_duration: float = 5.0
+@export var SlowdownEndBehaviour: SlowdownEndBehaviourEnum = SlowdownEndBehaviourEnum.AmmoWasted
+
+enum SlowdownEndBehaviourEnum { AmmoWasted, Launch }
+
+@export_category("Setup")
 @export var showLog : bool = false
 
 @export var shootParticle : PackedScene
@@ -17,6 +25,7 @@ class_name Player extends RigidBody2D
 
 
 var locked : bool = false
+var _slowdownCounter = 0.0
 
 func _getInputDirection() -> Vector2:
 	return Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down").normalized()
@@ -32,7 +41,7 @@ func _ready() -> void:
 func onBodyEntered(_body: Node):
 	handleBumpParticle()	
 
-func handleLaunch() -> void:
+func handleLaunch(delta: float) -> void:
 
 	if locked or Global.gameState == Global.GameStateEnum.GameOver:
 		return
@@ -43,43 +52,57 @@ func handleLaunch() -> void:
 		if(Global.currentAmmo > 0):
 			_launchClickTime = timeNow
 			_isCharging = true
-		
-	var difference: float = timeNow - _launchClickTime
-	
-	var percent= clamp(difference / launchChargeDuration, 0, 1)
-	var currentPower = lerp(minLaunchPower, maxLaunchPower, percent)		
+			_slowdownCounter = 0
 
 	if _isCharging:
 		Engine.time_scale = slowdownPower
+		_slowdownCounter += u.to_unscaled_delta_time(delta)
+		var slow_percent = clamp(_slowdownCounter / max_slowdown_duration, 0, 1)
+		Global.player_charge_duration_percent_changed.emit(slow_percent * 100)
+		
+		if(_slowdownCounter > max_slowdown_duration):
+			if SlowdownEndBehaviour == SlowdownEndBehaviourEnum.AmmoWasted:
+				_isCharging = false
+				Global.currentAmmo -= 1
+				Global.bullet_fired.emit()
+			if SlowdownEndBehaviour == SlowdownEndBehaviourEnum.Launch:
+				launch()
+			Engine.time_scale = 1.0
+			Global.player_charge_duration_percent_changed.emit(-1)
+			return
+		
 	else:
 		Engine.time_scale = 1.0
 
 	if(Input.is_action_just_released("launch")):
+		launch()
 		
-		if(!_isCharging):
-			return
-		_isCharging = false
-		Global.currentAmmo -= 1
-		Global.bullet_fired.emit()
-		if(showLog):
-			print("============== LAUNCHING ==============")
-			print("difference ", difference)
-			print("percent ", percent)
-			print("currentPower ", currentPower)
-			print("=======================================")
-		#PARTICLE
-		var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
-		
-		if(killVelocityBeforeLaunch):
-			linear_velocity = Vector2.ZERO
-		var impulse = direction * currentPower
-		
-		if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
-			impulse = -impulse
 			
-		apply_central_impulse(impulse)
-		handleShootParticle(direction)
-			
+func launch():
+	if(!_isCharging):
+		return
+		
+	var timeNow = Time.get_unix_time_from_system()
+	var difference: float = timeNow - _launchClickTime
+	var percent= clamp(difference / launchChargeDuration, 0, 1)
+	var currentPower = lerp(minLaunchPower, maxLaunchPower, percent)
+	
+	_isCharging = false
+	Global.currentAmmo -= 1
+	Global.bullet_fired.emit()
+	#PARTICLE
+	var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
+	
+	if(killVelocityBeforeLaunch):
+		linear_velocity = Vector2.ZERO
+	var impulse = direction * currentPower
+	
+	if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
+		impulse = -impulse
+		
+	apply_central_impulse(impulse)
+	handleShootParticle(direction)
+	Global.player_charge_duration_percent_changed.emit(-1)
 
 func handleBumpParticle():
 	if(bumpAnythingParticle == null):
@@ -106,6 +129,6 @@ func handleShootParticle(direction: Vector2):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	handleLaunch()
+func _process(delta: float) -> void:
+	handleLaunch(delta)
 	pass
