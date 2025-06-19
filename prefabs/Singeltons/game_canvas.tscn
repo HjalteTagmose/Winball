@@ -1,27 +1,34 @@
-[gd_scene load_steps=21 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=25 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
 [ext_resource type="PackedScene" uid="uid://baeyuf6utr2j6" path="res://prefabs/ui/ammo_cartrige.tscn" id="4_8ph68"]
 [ext_resource type="PackedScene" uid="uid://b82knrsfc5qcx" path="res://prefabs/ui/bullet_display.tscn" id="5_hfij3"]
 [ext_resource type="PackedScene" uid="uid://dalsv3kwfrg3b" path="res://prefabs/Score.tscn" id="6_1kxbb"]
-[ext_resource type="Script" uid="uid://b0mch3eq6kaue" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
+[ext_resource type="Script" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
 [ext_resource type="Script" uid="uid://cmbduliw3rk1l" path="res://scripts/player_charge_slider.gd" id="7_ibp3j"]
-[ext_resource type="Script" uid="uid://lfq6sif4xuex" path="res://scripts/restart_button.gd" id="8_a4mgm"]
+[ext_resource type="Script" path="res://scripts/restart_button.gd" id="8_a4mgm"]
 [ext_resource type="Texture2D" uid="uid://cqee6vy2745rv" path="res://art/highscore/input.png" id="8_adaae"]
 [ext_resource type="Script" uid="uid://bfqqbyox8pftx" path="res://scripts/player_name_input.gd" id="8_fg6ww"]
-[ext_resource type="Script" uid="uid://lbw7xq7em5ux" path="res://scripts/game_over_canvas.gd" id="8_fxx35"]
+[ext_resource type="Script" path="res://scripts/game_over_canvas.gd" id="8_fxx35"]
 [ext_resource type="Script" uid="uid://oa0n0h3a88rj" path="res://scripts/submit_score_button.gd" id="9_0lgbs"]
 [ext_resource type="Texture2D" uid="uid://doqh5gqfwp4el" path="res://art/highscore/input_button_normal.png" id="10_3jh4y"]
 [ext_resource type="Texture2D" uid="uid://bab86hj400f02" path="res://art/highscore/highscore_bg.png" id="11_a8n0t"]
 [ext_resource type="Texture2D" uid="uid://c37mdt7vrp8i4" path="res://art/highscore/input_button_pressed.png" id="11_fxx35"]
 [ext_resource type="Texture2D" uid="uid://pqq40qug0phv" path="res://art/highscore/input_button_hover.png" id="12_f4mre"]
-[ext_resource type="Script" uid="uid://cjfjv1awvicgp" path="res://scripts/scorelist.gd" id="12_h6shr"]
+[ext_resource type="Script" path="res://scripts/scorelist.gd" id="12_h6shr"]
 [ext_resource type="PackedScene" uid="uid://bk3vfgpinyeio" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
+[ext_resource type="FontFile" uid="uid://b5bowh1itlrtx" path="res://fonts/NotoSerif-BoldItalic.ttf" id="14_f4mre"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ibp3j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4mre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoafv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxx35"]
 
 [node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
 script = ExtResource("1_oe5df")
@@ -123,28 +130,28 @@ texture_pressed = ExtResource("11_fxx35")
 texture_hover = ExtResource("12_f4mre")
 stretch_mode = 0
 script = ExtResource("9_0lgbs")
-player_name = NodePath("../TextEdit")
+player_name = NodePath("../PlayerNameInput")
 gameover_screen = NodePath("../..")
-metadata/_custom_type_script = "uid://oa0n0h3a88rj"
 
-[node name="TextEdit" type="TextEdit" parent="GameOverCanvas/ScoreSubmission"]
+[node name="PlayerNameInput" type="LineEdit" parent="GameOverCanvas/ScoreSubmission"]
+self_modulate = Color(0.101961, 0.101961, 0.12549, 1)
 layout_mode = 0
 offset_left = 435.0
 offset_top = 196.0
 offset_right = 694.0
 offset_bottom = 250.0
-theme_override_colors/word_highlighted_color = Color(0, 0, 0, 0)
-theme_override_colors/current_line_color = Color(0, 0, 0, 0)
-theme_override_colors/background_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0)
-theme_override_colors/font_readonly_color = Color(0, 0, 0, 0)
 theme_override_colors/selection_color = Color(0, 0, 0, 0)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 0)
-theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
 theme_override_colors/caret_color = Color(0, 0, 0, 0)
-theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
-theme_override_colors/search_result_color = Color(0, 0, 0, 0)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("14_f4mre")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f4mre")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_hoafv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fxx35")
+placeholder_text = "enter name..."
+alignment = 1
+max_length = 25
 script = ExtResource("8_fg6ww")
 
 [node name="RestartButton" type="Button" parent="GameOverCanvas"]
@@ -168,4 +175,3 @@ offset_right = 156.0
 offset_bottom = 144.0
 script = ExtResource("12_h6shr")
 highScoreRow = ExtResource("13_a8n0t")
-metadata/_custom_type_script = "uid://cjfjv1awvicgp"
