@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://da4jw8s8ebsdu"]
+
+[ext_resource type="Script" uid="uid://bj2i2vom5jo3d" path="res://scripts/score_lights.gd" id="1_y00py"]
+[ext_resource type="PackedScene" uid="uid://5jm3kowwsw2p" path="res://prefabs/Room props/score_light.tscn" id="2_qo7uj"]
+
+[node name="ScoreLightRoot" type="Node2D" node_paths=PackedStringArray("lights")]
+script = ExtResource("1_y00py")
+lights = [NodePath("ScoreLight"), NodePath("ScoreLight2"), NodePath("ScoreLight3")]
+
+[node name="ScoreLight" parent="." instance=ExtResource("2_qo7uj")]
+
+[node name="ScoreLight2" parent="." instance=ExtResource("2_qo7uj")]
+position = Vector2(-100, 0)
+
+[node name="ScoreLight3" parent="." instance=ExtResource("2_qo7uj")]
+position = Vector2(100, 0)

@@ -1,72 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://da4jw8s8ebsdu"]
+[gd_scene load_steps=4 format=3 uid="uid://5jm3kowwsw2p"]
 
-[ext_resource type="Script" uid="uid://bj2i2vom5jo3d" path="res://scripts/score_lights.gd" id="1_o77rn"]
 [ext_resource type="Script" uid="uid://denshrkm87h7a" path="res://scripts/score_light.gd" id="2_2vxxh"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="3_3fxyb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3bafk"]
 
-[node name="ScoreLightRoot" type="Node2D" node_paths=PackedStringArray("lights")]
-script = ExtResource("1_o77rn")
-lights = [NodePath("ScoreLight"), NodePath("ScoreLight2"), NodePath("ScoreLight3")]
-
-[node name="ScoreLight3" type="Node2D" parent="." node_paths=PackedStringArray("collider", "sprite")]
-position = Vector2(111, -1)
-scale = Vector2(2, 2)
-script = ExtResource("2_2vxxh")
-collider = NodePath("Area2D")
-sprite = NodePath("Sprite2D")
-offColor = Color(0.10748, 0.10748, 0.10748, 1)
-onColor = Color(1, 1, 1, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="ScoreLight3"]
-self_modulate = Color(0.118581, 0.118581, 0.118581, 1)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_3fxyb")
-
-[node name="Area2D" type="Area2D" parent="ScoreLight3"]
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreLight3/Area2D"]
-shape = SubResource("CircleShape2D_3bafk")
-
-[node name="ScoreLight2" type="Node2D" parent="." node_paths=PackedStringArray("collider", "sprite")]
-position = Vector2(-108, -1)
-scale = Vector2(2, 2)
-script = ExtResource("2_2vxxh")
-collider = NodePath("Area2D")
-sprite = NodePath("Sprite2D")
-offColor = Color(0.0383972, 0.0383972, 0.0383972, 1)
-onColor = Color(1, 1, 1, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="ScoreLight2"]
-self_modulate = Color(0.118581, 0.118581, 0.118581, 1)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_3fxyb")
-
-[node name="Area2D" type="Area2D" parent="ScoreLight2"]
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreLight2/Area2D"]
-shape = SubResource("CircleShape2D_3bafk")
-
-[node name="ScoreLight" type="Node2D" parent="." node_paths=PackedStringArray("collider", "sprite")]
+[node name="ScoreLight" type="Node2D" node_paths=PackedStringArray("collider", "sprite")]
 scale = Vector2(2, 2)
 script = ExtResource("2_2vxxh")
 collider = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
 onColor = Color(1, 1, 1, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="ScoreLight"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.118581, 0.118581, 0.118581, 1)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_3fxyb")
 
-[node name="Area2D" type="Area2D" parent="ScoreLight"]
+[node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreLight/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_3bafk")
