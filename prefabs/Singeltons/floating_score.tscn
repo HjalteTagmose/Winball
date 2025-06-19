@@ -8,3 +8,4 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("1_ynorx")
 Lifetime = 0.3
 digit_prefab = ExtResource("2_844fo")
+is_centered = true
