@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	if CameraRef:
 		position.x = CameraRef.global_position.x
 	
-	print( (scale.y * Graphic.texture.get_size().y + CameraRef.global_position.y ) / screenSize.y, " storm distance") 
+	#print( (scale.y * Graphic.texture.get_size().y + CameraRef.global_position.y ) / screenSize.y, " storm distance") 
 	if ( (scale.y * Graphic.texture.get_size().y - CameraRef.global_position.y) ) / screenSize.y < -screensToCatch:
 		scale.y += screenToStormMult
 		

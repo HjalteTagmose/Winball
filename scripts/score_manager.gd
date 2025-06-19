@@ -1,12 +1,9 @@
 class_name _ScoreManager extends Node
 
-class HighScoreValue:
-	var Name: String
-	var Score: int
+
+var HighScores: Array[HighScoreResource] = []
 
 signal highscores_changed
-
-var HighScores: Array[HighScoreValue] = []
 
 var score : int : 
 	get: return _score
@@ -22,8 +19,14 @@ var _score : int = 0
 func _ready() -> void:
 	_score = 0
 	Global.game_started.connect(_on_start)
+	load_scores()
 	pass # Replace with function body.
 
+func load_scores():
+	var loaded_scores :HighScoreSaveResource = ResourceLoader.load("user://save/savegame.tres")
+	if loaded_scores != null:
+		HighScores = loaded_scores.Highscores
+	
 func _on_start():
 	_score = 0
 	
@@ -36,7 +39,7 @@ func AddScore(amount : int) -> void:
 	print("current score, ", score)
 	
 func AddHighScore(score: int, name: String):
-	var newScore = HighScoreValue.new()
+	var newScore = HighScoreResource.new()
 	newScore.Score = score
 	newScore.Name = name
 	
@@ -60,5 +63,11 @@ func AddHighScore(score: int, name: String):
 	print(HighScores)
 	highscores_changed.emit()
 	
-func _compare_high_scores(a: HighScoreValue, b: HighScoreValue) -> int:
+	var saveResource = HighScoreSaveResource.new()
+	saveResource.Highscores = HighScores
+	ResourceSaver.save(saveResource, "user://save/savegame.tres")
+	prints("Saved", JSON.stringify(HighScores))
+	
+	
+func _compare_high_scores(a: HighScoreResource, b: HighScoreResource) -> int:
 	return a.Score > b.Score
