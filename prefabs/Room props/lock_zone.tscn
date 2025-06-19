@@ -15,7 +15,7 @@ PlayerBindPivot = NodePath("Sprite2D")
 metadata/_custom_type_script = "uid://dtgtxoyr4xxn3"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1.15514e-06, 0.737118, 0.86514, 0.380392)
+self_modulate = Color(0, 0.737255, 0.866667, 0.639216)
 texture = ExtResource("2_jhr8w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
