@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddnxaky5ipt7q"]
+[gd_scene load_steps=19 format=3 uid="uid://ddnxaky5ipt7q"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_pphsx"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_cjjgn"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_shallowTriangle_ammo.tscn" id="10_2afm3"]
 [ext_resource type="PackedScene" uid="uid://c5cyrktek0kn" path="res://prefabs/Room props/Bumpers/bumper_circle_breaks.tscn" id="10_cjjgn"]
 [ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_esbdh"]
+[ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="14_dnc6s"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="15_njbnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
@@ -335,6 +336,39 @@ position = Vector2(-441, -469)
 
 [node name="CircleAmmoBumper7" parent="Props/BreakableBumpers" instance=ExtResource("10_cjjgn")]
 position = Vector2(-597, -459)
+
+[node name="BasicSticker" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(-700, -26)
+
+[node name="BasicSticker2" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(-1107, -20)
+
+[node name="BasicSticker3" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(-1148, -127)
+
+[node name="BasicSticker4" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(-1059, -207)
+
+[node name="BasicSticker5" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(-960, -70)
+
+[node name="BasicSticker6" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(667, -216)
+
+[node name="BasicSticker7" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(872, -154)
+
+[node name="BasicSticker8" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(1010, -286)
+
+[node name="BasicSticker9" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(1101, -577)
+
+[node name="BasicSticker10" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(875, -651)
+
+[node name="BasicSticker11" parent="Props" instance=ExtResource("14_dnc6s")]
+position = Vector2(1106, -684)
 
 [node name="LockZone" parent="." instance=ExtResource("9_efx1w")]
 position = Vector2(0, -1950)

@@ -191,6 +191,20 @@ enabled = true
 CanDie = false
 Life = 3
 
+[node name="AmmoBumper21" parent="Props/AmmoBumpers" instance=ExtResource("8_0tk08")]
+position = Vector2(-139, -2224)
+Enabled = true
+enabled = true
+CanDie = false
+Life = 3
+
+[node name="AmmoBumper22" parent="Props/AmmoBumpers" instance=ExtResource("8_0tk08")]
+position = Vector2(916, -1837)
+Enabled = true
+enabled = true
+CanDie = false
+Life = 3
+
 [node name="AmmoBumper16" parent="Props/AmmoBumpers" instance=ExtResource("8_0tk08")]
 position = Vector2(-408, -543)
 Enabled = true
@@ -244,6 +258,9 @@ enabled = true
 
 [node name="CircleAmmoBumper4" parent="Props/AmmoBumpers" instance=ExtResource("10_qibul")]
 position = Vector2(-1399, -195)
+
+[node name="CircleAmmoBumper5" parent="Props/AmmoBumpers" instance=ExtResource("10_qibul")]
+position = Vector2(595, -3468)
 
 [node name="ShallowTriangleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("12_1qdxl")]
 position = Vector2(-282, -31)
@@ -335,7 +352,7 @@ CanDie = false
 Life = 3
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("11_42ad3")]
-position = Vector2(865, -1657)
+position = Vector2(885, -1676)
 scale = Vector2(-2, 2)
 CanDie = false
 Life = 3

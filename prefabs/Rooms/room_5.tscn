@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2ushoen5gt8y"]
+[gd_scene load_steps=23 format=3 uid="uid://d2ushoen5gt8y"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_56mfi"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_bxq5b"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cba70d4k5jb2n" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="13_bxq5b"]
 [ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="13_lm8vp"]
 [ext_resource type="PackedScene" uid="uid://dty1lc8lqyalq" path="res://prefabs/Room props/speed_sticker.tscn" id="14_c7can"]
+[ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="16_tpvyb"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="18_qi612"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
@@ -400,6 +401,36 @@ Life = 3
 
 [node name="TrapSticker" parent="Props/BreakableBumpers" instance=ExtResource("13_56mfi")]
 position = Vector2(0, -1301)
+
+[node name="BasicSticker" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(-1263, -487)
+
+[node name="BasicSticker2" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(-1315, -673)
+
+[node name="BasicSticker3" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(-1348, -795)
+
+[node name="BasicSticker4" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(-1246, -967)
+
+[node name="BasicSticker5" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(-1118, -1115)
+
+[node name="BasicSticker6" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(1016, -1150)
+
+[node name="BasicSticker7" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(1165, -1080)
+
+[node name="BasicSticker8" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(1288, -883)
+
+[node name="BasicSticker9" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(1320, -672)
+
+[node name="BasicSticker10" parent="Props" instance=ExtResource("16_tpvyb")]
+position = Vector2(1251, -486)
 
 [node name="Rail2" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("12_ylvwx")]
 position = Vector2(-739, -790.375)
