@@ -32,7 +32,7 @@ func _spawnRoom(roomToSpawn: PackedScene) -> void:
 	var spawned : Room = roomToSpawn.instantiate()
 	spawned.name = spawned.name + "_" + str(_spawnedRooms)
 	_spawnedRooms += 1
-	add_child(spawned)
+	call_deferred("add_child", spawned)
 	spawned.global_position = _nextSpawnPoint
 	var exit : RoomExit = spawned.roomExit
 	exit.exit_triggered.connect(roomExitHit)

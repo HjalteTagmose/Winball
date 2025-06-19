@@ -3,7 +3,7 @@ class_name _GlobalNode
 
 var score : int : 
 	get: return _score
-	set(value):
+	set(value):	
 		if(gameState != GameStateEnum.Gameplay):
 			push_warning("Trying to change score while not in gameplay state")
 			return
@@ -12,10 +12,12 @@ var score : int :
 var _score : int = 0
 
 @export var maxAmmo : int = 10
-var currentAmmo : int = 10
 @export var gameplay_scene: PackedScene
 @export var player_direction: PlayerDirection
+@export var floating_score : PackedScene
 
+
+var currentAmmo : int = 10
 enum PlayerDirection { TowardsMouse, AwayFromMouse }
 enum GameStateEnum {Setup, Gameplay, GameOver }
 
@@ -71,3 +73,12 @@ func trigger_game_over() -> void:
 func AddScore(amount : int) -> void:
 	score += amount
 	print("current score, ", score)
+
+func DisplayFloatingScore(score:int, pos:Vector2):
+	if gameState != GameStateEnum.Gameplay:
+		return
+
+	var floater : FloatingScore = floating_score.instantiate()
+	get_tree().root.add_child(floater)
+	floater.SetPos(pos)
+	floater.set_number(score)
