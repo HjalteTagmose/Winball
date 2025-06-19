@@ -30,33 +30,34 @@ shader_parameter/Mult_Color = Vector4(10, 100, 0, 1)
 size = Vector2(360, 150)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n77mx"]
+size = Vector2(360, 160)
 
 [node name="Storm" type="Area2D" node_paths=PackedStringArray("CollisionArea", "Graphic", "Line")]
 z_index = 10
+scale = Vector2(1.2, 1e-05)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_hmgbu")
 CollisionArea = NodePath("CollisionShape2D")
 Graphic = NodePath("Shape")
 Line = NodePath("Line")
-Speed = 60.0
 metadata/_custom_type_script = "uid://bagx158bqhie"
 
 [node name="Shape" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0.141176, 0.0941176)
 material = SubResource("ShaderMaterial_fs1pa")
-position = Vector2(1, 0)
+position = Vector2(1.27157e-05, -80)
 texture = SubResource("PlaceholderTexture2D_nb1wl")
 
 [node name="Line" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_p1dam")
-position = Vector2(0, -0.874999)
+position = Vector2(0, -160)
 scale = Vector2(1, 0.0283333)
 texture = SubResource("PlaceholderTexture2D_p1dam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(1.27157e-05, -80)
 shape = SubResource("RectangleShape2D_n77mx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_enter"]

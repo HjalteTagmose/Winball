@@ -6,23 +6,28 @@ class_name Storm
 @export var Line: Sprite2D
 @export var CameraRef: Camera2D
 @export var TimeToKill: float = 3.0
-@export var Speed: float = 4.0
+@export var TimeToCoverScreenSize: float = 4.0
+@export var screensToCatch : int = 3
 
-var player: Player
+var player: Player	
 var currentTIme: float
+var screenSize : Vector2
+var screenToStormMult : float
+var stormSpeed
+var lineBaseScale : float
 
-
-func _ready() -> void:
+func _ready() -> void:	
 	var size = get_window().size
-	size.y *= 4
-
-	Graphic.texture.size = size
-	CollisionArea.shape.size = size
-	position.x = CameraRef.global_position.x
-	position.y = size.y/1.5
+	Graphic.texture.size.x = size.x
+	CollisionArea.shape.size.x = size.x
 	Line.texture.size.x = size.x
-	Line.position.y = -Graphic.texture.size.y/2
-	Line.position.x = CameraRef.global_position.x
+
+	global_position.y = size.y
+	screenSize = size
+
+	screenToStormMult = size.y / Graphic.texture.get_size().y
+	stormSpeed = screenToStormMult / TimeToCoverScreenSize
+	lineBaseScale = Line.scale.y
 	
 
 func _process(delta: float) -> void:
@@ -43,14 +48,17 @@ func _process(delta: float) -> void:
 		currentTIme = 0.0
 		Global.storm_charge_duration_percent_changed.emit(-1)
 
-func _physics_process(delta: float) -> void:
-	move_local_y(-Speed * delta)
+func _physics_process(delta: float) -> void:	
+	scale.y += (stormSpeed * delta)
+	Line.scale.y = lineBaseScale/scale.y
 	
-	if !CameraRef:
-		return
+	if CameraRef:
+		position.x = CameraRef.global_position.x
+	
+	print( (scale.y * Graphic.texture.get_size().y + CameraRef.global_position.y ) / screenSize.y, " storm distance") 
+	if ( (scale.y * Graphic.texture.get_size().y - CameraRef.global_position.y) ) / screenSize.y < -screensToCatch:
+		scale.y += screenToStormMult
 		
-	position.x = CameraRef.global_position.x
-	pass
 
 func _on_body_enter(body: Node2D):
 	if body is Player:
