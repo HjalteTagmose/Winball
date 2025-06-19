@@ -5,6 +5,7 @@
 
 [node name="ScoreLightRoot" type="Node2D" node_paths=PackedStringArray("lights")]
 script = ExtResource("1_y00py")
+score = 1000
 lights = [NodePath("ScoreLight"), NodePath("ScoreLight2"), NodePath("ScoreLight3")]
 
 [node name="ScoreLight" parent="." instance=ExtResource("2_qo7uj")]
