@@ -8,3 +8,7 @@ func find_parent_with_type(node, type):
 		if is_instance_of(cursor, type):
 			return cursor
 	return null
+
+func to_unscaled_delta_time(delta_time: float):
+	var multiplyer = 1 / Engine.time_scale
+	return delta_time * multiplyer

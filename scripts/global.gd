@@ -30,6 +30,9 @@ signal game_started
 signal bullet_fired
 signal reload
 
+signal player_charge_duration_percent_changed(percent: float)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
