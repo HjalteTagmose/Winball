@@ -9,4 +9,5 @@ script = ExtResource("1_a484y")
 maxAmmo = 5
 gameplay_scene = ExtResource("2_tlasj")
 floating_score = ExtResource("3_k5nus")
+playerWeapon = 0
 metadata/_custom_type_script = "uid://be4h7kuufm7dl"
