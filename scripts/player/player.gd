@@ -26,6 +26,7 @@ enum SlowdownEndBehaviourEnum { AmmoWasted, Launch }
 @export var bumpAnythingParticle : PackedScene
 @export var stormParticle : GPUParticles2D
 @export var playerGun : Node2D
+@export var slowmoSprite: Node2D
 
 var InStorm: bool:
 	set(value):
@@ -61,12 +62,23 @@ func handleLaunch(delta: float) -> void:
 			_launchClickTime = timeNow
 			_isCharging = true
 			_slowdownCounter = 0
+			slowmoSprite.visible = true
+			slowmoSprite.global_rotation = 0
+			
+			var direction = get_direction()
+			slowmoSprite.global_position = global_position
+			slowmoSprite.global_rotation = direction.angle()
 
 	if _isCharging:
 		Engine.time_scale = slowdownPower
 		_slowdownCounter += u.to_unscaled_delta_time(delta)
 		var slow_percent = clamp(_slowdownCounter / max_slowdown_duration, 0, 1)
 		Global.player_charge_duration_percent_changed.emit(slow_percent * 100)
+		
+		# Rotate slowmoSprite to look at direction
+		var direction = get_direction()
+		slowmoSprite.global_position = global_position
+		slowmoSprite.global_rotation = direction.angle()
 		
 		if(_slowdownCounter > max_slowdown_duration):
 			if SlowdownEndBehaviour == SlowdownEndBehaviourEnum.AmmoWasted:
@@ -111,6 +123,8 @@ func launch():
 	apply_central_impulse(impulse)
 	handleShootParticle(direction)
 	Global.player_charge_duration_percent_changed.emit(-1)
+	
+	slowmoSprite.visible = false
 
 func get_direction() -> Vector2:
 	var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
