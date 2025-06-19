@@ -12,7 +12,6 @@ func _ready():
 		bumper.bumped_impulse.connect(_on_bumped)
 
 func _process(delta: float) -> void:
-	queue_redraw()
 	var target_pos : Vector2 = player.global_position
 	
 	if override_target_pos:
@@ -28,7 +27,7 @@ func _on_bumped(impulse :  Vector2) -> void:
 
 func override_target(override_pos : Vector2) -> void:
 	override_target_pos = override_pos
-
-func _draw() -> void:
-	draw_circle(Vector2.ZERO, 5, Color(Color.WHITE, 0.4))
-	draw_circle(override_target_pos - global_position, 10, Color(Color.RED, 0.8))
+#
+#func _draw() -> void:
+	#draw_circle(Vector2.ZERO, 5, Color(Color.WHITE, 0.4))
+	#draw_circle(override_target_pos - global_position, 10, Color(Color.RED, 0.8))
