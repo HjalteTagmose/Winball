@@ -5,7 +5,7 @@ class_name BasicBumper extends StaticBody2D
 @export var Life : int = 3
 @export var Power : float = 35
 @export var Score : Array[int] = [100, 50, 10]
-@export var Saturation : Array[float] = [.8, .6, .4]
+@export var Saturation : Array[float] = [.75, .5, .35]
 
 @export_category("Bias")
 @export var Bias : Vector2 = Vector2.ZERO
