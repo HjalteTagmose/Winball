@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk3vfgpinyeio"]
+
+[ext_resource type="Script" uid="uid://blwu4ekfnbphl" path="res://scripts/score_row.gd" id="1_5x25q"]
+
+[node name="ScoreRow" type="HBoxContainer" node_paths=PackedStringArray("name_text", "score_text")]
+custom_minimum_size = Vector2(50, 25)
+offset_right = 435.0
+offset_bottom = 25.0
+alignment = 1
+script = ExtResource("1_5x25q")
+name_text = NodePath("NameText")
+score_text = NodePath("ScoreText")
+
+[node name="NameText" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "asd asd"
+
+[node name="ScoreText" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "asd"

@@ -20,7 +20,7 @@ func _on_body_enter(body:Node2D):
 		boundPlayer = body
 		CenterPlayer()
 		LockPlayer()
-		Global.AddScore(Score)
+		ScoreManager.AddScore(Score)
 
 func _on_body_exit(_body:Node2D):
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=15 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dalsv3kwfrg3b" path="res://prefabs/Score.tscn" id="6_1kxbb"]
 [ext_resource type="Script" uid="uid://b0mch3eq6kaue" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
 [ext_resource type="Script" uid="uid://cmbduliw3rk1l" path="res://scripts/player_charge_slider.gd" id="7_ibp3j"]
+[ext_resource type="Script" uid="uid://lfq6sif4xuex" path="res://scripts/restart_button.gd" id="8_a4mgm"]
+[ext_resource type="Script" uid="uid://bfqqbyox8pftx" path="res://scripts/player_name_input.gd" id="8_fg6ww"]
+[ext_resource type="Script" uid="uid://oa0n0h3a88rj" path="res://scripts/submit_score_button.gd" id="9_0lgbs"]
+[ext_resource type="Script" uid="uid://cjfjv1awvicgp" path="res://scripts/scorelist.gd" id="12_h6shr"]
+[ext_resource type="PackedScene" uid="uid://bk3vfgpinyeio" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
 
@@ -18,6 +23,7 @@ gameplay_canvas = NodePath("GameplayGroup")
 game_over_canvas = NodePath("GameOverCanvas")
 
 [node name="GameplayGroup" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="Score" parent="GameplayGroup" instance=ExtResource("6_1kxbb")]
 position = Vector2(34, 49)
@@ -82,27 +88,39 @@ text = "The Storm consumes all..."
 horizontal_alignment = 1
 
 [node name="GameOverCanvas" type="CanvasGroup" parent="."]
-visible = false
-
-[node name="GameOver" type="RichTextLabel" parent="GameOverCanvas"]
-offset_left = 369.0
-offset_top = 84.0
-offset_right = 854.0
-offset_bottom = 298.0
-theme_override_font_sizes/normal_font_size = 50
-text = "Game Over"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Press R to Restart" type="RichTextLabel" parent="GameOverCanvas"]
-offset_left = 378.0
-offset_top = 423.0
-offset_right = 863.0
-offset_bottom = 536.0
-theme_override_font_sizes/normal_font_size = 50
-text = "Press R To Restart"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Score" parent="GameOverCanvas" instance=ExtResource("6_1kxbb")]
-position = Vector2(568, 334)
+position = Vector2(448, 92)
+
+[node name="TextEdit" type="TextEdit" parent="GameOverCanvas"]
+offset_left = 395.0
+offset_top = 203.0
+offset_right = 696.0
+offset_bottom = 259.0
+script = ExtResource("8_fg6ww")
+
+[node name="AddScoreBUtton" type="Button" parent="GameOverCanvas" node_paths=PackedStringArray("player_name")]
+offset_left = 704.0
+offset_top = 202.0
+offset_right = 779.0
+offset_bottom = 257.0
+text = "Restart"
+script = ExtResource("9_0lgbs")
+player_name = NodePath("../TextEdit")
+
+[node name="Button" type="Button" parent="GameOverCanvas"]
+offset_left = 455.0
+offset_top = 157.0
+offset_right = 716.0
+offset_bottom = 188.0
+text = "Restart"
+script = ExtResource("8_a4mgm")
+
+[node name="HighScoreDisplay" type="VBoxContainer" parent="GameOverCanvas"]
+offset_left = 305.0
+offset_top = 287.0
+offset_right = 826.0
+offset_bottom = 619.0
+script = ExtResource("12_h6shr")
+highScoreRow = ExtResource("13_a8n0t")
+metadata/_custom_type_script = "uid://cjfjv1awvicgp"

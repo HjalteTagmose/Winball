@@ -26,9 +26,9 @@ func _on_body_enter(body:Node2D):
 
 func Interact(_player : Player):
 	PlayAnimation()
-	Global.score += score
+	ScoreManager.score += score
 	Global.DisplayFloatingScore(score, global_position)
-	print("current score ", Global.score)
+	print("current score ", ScoreManager.score)
 
 
 func PlayAnimation():

@@ -92,13 +92,11 @@ func AddScore(collisionInfo: KinematicCollision2D):
 
 	# coud be nicer here 
 	if isInStrom:
-		Global.AddScore(scoreToGive*2)
+		ScoreManager.AddScore(scoreToGive*2)
 		Global.DisplayFloatingScore(scoreToGive*2, collisionInfo.get_position())
 	else:
-		Global.AddScore(scoreToGive)
+		ScoreManager.AddScore(scoreToGive)
 		Global.DisplayFloatingScore(scoreToGive, collisionInfo.get_position())
-
-
 
 func Die():
 	if _isDead:

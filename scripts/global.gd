@@ -1,15 +1,7 @@
 extends Node
 class_name _GlobalNode
 
-var score : int : 
-	get: return _score
-	set(value):	
-		if(gameState != GameStateEnum.Gameplay):
-			push_warning("Trying to change score while not in gameplay state")
-			return
-		_score = value
 
-var _score : int = 0
 
 @export var maxAmmo : int = 10
 @export var gameplay_scene: PackedScene
@@ -60,7 +52,6 @@ func start_game() -> void:
 	add_child(scene)
 	
 	currentAmmo = maxAmmo
-	score = 0
 	
 	game_started.emit()
 	
@@ -71,9 +62,7 @@ func trigger_game_over() -> void:
 	gameState = GameStateEnum.GameOver
 	Engine.time_scale = 1.0
 
-func AddScore(amount : int) -> void:
-	score += amount
-	print("current score, ", score)
+
 
 func DisplayFloatingScore(score:int, pos:Vector2):
 	if gameState != GameStateEnum.Gameplay:
