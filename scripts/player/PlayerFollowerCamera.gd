@@ -27,7 +27,7 @@ func _on_bumped(impulse :  Vector2) -> void:
 
 func override_target(override_pos : Vector2) -> void:
 	override_target_pos = override_pos
-#
+
 #func _draw() -> void:
 	#draw_circle(Vector2.ZERO, 5, Color(Color.WHITE, 0.4))
 	#draw_circle(override_target_pos - global_position, 10, Color(Color.RED, 0.8))

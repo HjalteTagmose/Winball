@@ -35,8 +35,8 @@ size = Vector2(360, 160)
 [node name="Storm" type="Area2D" node_paths=PackedStringArray("CollisionArea", "Graphic", "Line")]
 z_index = 10
 scale = Vector2(1.2, 1e-05)
-collision_layer = 4
-collision_mask = 2
+collision_layer = 0
+collision_mask = 6
 script = ExtResource("1_hmgbu")
 CollisionArea = NodePath("CollisionShape2D")
 Graphic = NodePath("Shape")
