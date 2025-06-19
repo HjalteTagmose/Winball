@@ -270,41 +270,33 @@ position = Vector2(-995, -3125)
 
 [node name="FlipperAmmoBumper3" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(262, -411)
-Enabled = true
 
 [node name="FlipperAmmoBumper9" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(718, -644)
-Enabled = true
 
 [node name="FlipperAmmoBumper5" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-890, -2407)
-Enabled = true
 
 [node name="FlipperAmmoBumper7" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-890, -4079)
 rotation = 0.174533
-Enabled = true
 
 [node name="FlipperAmmoBumper4" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-268, -411)
 scale = Vector2(-2, 2)
-Enabled = true
 
 [node name="FlipperAmmoBumper10" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-721, -644)
 scale = Vector2(-2, 2)
-Enabled = true
 
 [node name="FlipperAmmoBumper6" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(877, -2407)
 scale = Vector2(-2, 2)
-Enabled = true
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(888, -4079)
 rotation = -0.174533
 scale = Vector2(-2, 2)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(0, -989)
@@ -312,24 +304,31 @@ Enabled = true
 
 [node name="ShallowTriangleAmmoBumper2" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(-655, -2052)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper3" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(432, -1745)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper5" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(630, -2052)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper6" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(367, -2365)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper7" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(-362, -2365)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper8" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(0, -2691)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper4" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(-399, -1745)
+Enabled = true
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 

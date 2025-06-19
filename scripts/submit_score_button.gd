@@ -1,6 +1,6 @@
 class_name SubmitScoreButton extends TextureButton
 
-@export var player_name : TextEdit
+@export var player_name : LineEdit
 @export var gameover_screen : GameOverScreen
 
 # Called when the node enters the scene tree for the first time.

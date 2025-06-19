@@ -191,6 +191,7 @@ position = Vector2(-376, -767)
 
 [node name="ShallowTriangleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("10_sw1kq")]
 position = Vector2(0, -1967)
+Enabled = true
 
 [node name="AmmoBumper_Diamond11" parent="Props/AmmoBumpers" instance=ExtResource("10_xplgr")]
 position = Vector2(312, -2391)
@@ -207,30 +208,24 @@ Enabled = true
 
 [node name="FlipperAmmoBumper" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(425, -544)
-Enabled = true
 
 [node name="FlipperAmmoBumper5" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(-589, -1652)
-Enabled = true
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(-271, -3159)
-Enabled = true
 
 [node name="FlipperAmmoBumper2" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(-425, -543)
 scale = Vector2(-2, 2)
-Enabled = true
 
 [node name="FlipperAmmoBumper6" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(589, -1652)
 scale = Vector2(-2, 2)
-Enabled = true
 
 [node name="FlipperAmmoBumper7" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(274, -3164)
 scale = Vector2(-2, 2)
-Enabled = true
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 

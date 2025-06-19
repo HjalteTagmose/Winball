@@ -142,7 +142,7 @@ shape = SubResource("RectangleShape2D_n6cen")
 debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
 [node name="TopWall" type="Node2D" parent="Walls"]
-position = Vector2(0, -2437)
+position = Vector2(0, -2577)
 
 [node name="WallPiece2" type="Node2D" parent="Walls/TopWall"]
 position = Vector2(560, -1)
@@ -177,7 +177,7 @@ shape = SubResource("RectangleShape2D_cguwc")
 debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
 [node name="Exit" parent="Walls" instance=ExtResource("3_3bafk")]
-position = Vector2(0, -2437)
+position = Vector2(0, -2577)
 
 [node name="Props" type="Node2D" parent="."]
 
@@ -195,11 +195,11 @@ position = Vector2(516, -1532)
 [node name="Corners" type="Node2D" parent="Props"]
 
 [node name="FlatBumper Walls11" parent="Props/Corners" instance=ExtResource("4_hg5bj")]
-position = Vector2(707, -2356)
+position = Vector2(707, -2496)
 rotation = 3.14159
 
 [node name="FlatBumper Walls10" parent="Props/Corners" instance=ExtResource("4_hg5bj")]
-position = Vector2(-714, -2364)
+position = Vector2(-714, -2504)
 rotation = 1.5708
 
 [node name="CornerSquares" type="Node2D" parent="Props"]
@@ -236,12 +236,10 @@ Enabled = true
 
 [node name="FlipperAmmoBumper" parent="Props" instance=ExtResource("7_4ie43")]
 position = Vector2(236, -2065)
-Enabled = true
 
 [node name="FlipperAmmoBumper2" parent="Props" instance=ExtResource("7_4ie43")]
 position = Vector2(-236, -2065)
 scale = Vector2(-2, 2)
-Enabled = true
 
 [node name="DiamondAmmoBumper2" parent="Props" instance=ExtResource("8_gg6m2")]
 position = Vector2(-317, -1535)
