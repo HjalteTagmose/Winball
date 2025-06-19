@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuojghgo6alvw"]
+[gd_scene load_steps=5 format=3 uid="uid://cuojghgo6alvw"]
 
 [ext_resource type="PackedScene" uid="uid://dedwl18kckfdd" path="res://prefabs/player.tscn" id="1_ocj2s"]
+[ext_resource type="Script" uid="uid://cgl3nhd7yn4pp" path="res://scripts/player/PlayerFollowerCamera.gd" id="2_ct7aa"]
 [ext_resource type="Texture2D" uid="uid://dl1e41mj4x5kl" path="res://art/ph_tileable_bg_V2.png" id="3_l1v76"]
 [ext_resource type="PackedScene" uid="uid://8b3hfhqgnwil" path="res://prefabs/storm.tscn" id="5_101mb"]
 
@@ -36,12 +37,16 @@ offset_right = 642.0
 offset_bottom = 1800.0
 texture = ExtResource("3_l1v76")
 
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(0, -400)
+scale = Vector2(1.01255, 1.04547)
+script = ExtResource("2_ct7aa")
+player = NodePath("../Player")
+camera_speed = 10.0
+
 [node name="Player" parent="." instance=ExtResource("1_ocj2s")]
 position = Vector2(0, -400)
 mass = 0.1
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-scale = Vector2(1.01255, 1.04547)
-
 [node name="Storm" parent="." node_paths=PackedStringArray("CameraRef") instance=ExtResource("5_101mb")]
-CameraRef = NodePath("../Player/Camera2D")
+CameraRef = NodePath("../Camera2D")

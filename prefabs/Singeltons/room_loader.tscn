@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dd3vn06qgwyhq" path="res://prefabs/Rooms/room_3.tscn" id="2_11qar"]
 [ext_resource type="PackedScene" uid="uid://1pkpdh08nxve" path="res://prefabs/Rooms/room_2.tscn" id="2_rwupa"]
 [ext_resource type="PackedScene" uid="uid://ddnxaky5ipt7q" path="res://prefabs/Rooms/room_1.tscn" id="3_j3dd7"]
-[ext_resource type="PackedScene" uid="uid://ymp75w13kfm4" path="res://prefabs/Rooms/room_4.tscn" id="6_xqepk"]
+[ext_resource type="PackedScene" path="res://prefabs/Rooms/room_4.tscn" id="6_xqepk"]
 
 [node name="RoomLoader" type="Node2D"]
 script = ExtResource("1_rwupa")
