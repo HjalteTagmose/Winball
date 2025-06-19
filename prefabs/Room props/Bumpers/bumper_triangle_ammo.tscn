@@ -23,6 +23,7 @@ physics_material_override = ExtResource("1_wcu5m")
 script = ExtResource("2_6wk2o")
 extraVisual = NodePath("Sprite2D/Sprite2D")
 Power = 40.0
+Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
 BiasPower = 20.0
 AudioPlayer = NodePath("AudioPlayer")

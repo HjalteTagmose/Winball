@@ -3,6 +3,9 @@ class_name FloatingScore
 
 @export var Lifetime : float
 
+func _ready() -> void:
+	is_centered = true
+
 func _process(_delta: float) -> void:
 	return
 
