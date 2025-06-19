@@ -97,6 +97,9 @@ func handleLaunch(delta: float) -> void:
 	if(Input.is_action_just_released("launch")):
 		launch()
 		
+	rotate_gun()
+
+func rotate_gun():
 	var direction = get_direction()
 	slowmoSprite.global_position = global_position
 	slowmoSprite.global_rotation = direction.angle()
@@ -114,7 +117,6 @@ func launch():
 	Global.currentAmmo -= 1
 	Global.bullet_fired.emit()
 	#PARTICLE
-	
 	
 	
 	if(killVelocityBeforeLaunch):
@@ -160,7 +162,7 @@ func handleShootParticle(direction: Vector2):
 	get_tree().root.add_child(instance)
 
 func handleFlameThrower(delta: float) -> void:
-	if Global.gameState == Global.GameStateEnum.GameOver:		
+	if locked or Global.gameState == Global.GameStateEnum.GameOver:		
 		return
 		
 	if !Input.is_action_pressed("launch"):
@@ -168,6 +170,8 @@ func handleFlameThrower(delta: float) -> void:
 			currentlyPlayerParticle.StopEmitting()
 			currentlyPlayerParticle = null
 		return
+	
+	rotate_gun()
 	
 	if flame_thrower_counter < flame_thrower_delay:
 		return
@@ -178,15 +182,13 @@ func handleFlameThrower(delta: float) -> void:
 	dot /= 2
 	dot += 2
 	
-	if(linear_velocity.length() > 1000):
-		linear_velocity = linear_velocity.normalized() * 1000
+	if(linear_velocity.length() > 500):
+		linear_velocity = linear_velocity.normalized() * 500
 		
 	flame_thrower_counter = 0
 	var impulse = direction * flame_thrower_power * dot
 	apply_central_impulse(impulse)
 	handleFlameParticle(direction)
-	
-
 
 func handleFlameParticle(direction: Vector2):
 	if currentlyPlayerParticle == null:
