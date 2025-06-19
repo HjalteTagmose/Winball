@@ -3,6 +3,7 @@ class_name Storm
 
 @export var CollisionArea: CollisionShape2D
 @export var Graphic: Sprite2D
+@export var Line: Sprite2D
 @export var CameraRef: Camera2D
 @export var TimeToKill: float = 3.0
 @export var Speed: float = 4.0
@@ -19,7 +20,8 @@ func _ready() -> void:
 	CollisionArea.shape.size = size
 	position.x = CameraRef.global_position.x
 	position.y = size.y/1.5
-
+	Line.position.y = position.y + Graphic.texture.size.y/2
+	
 func _process(delta: float) -> void:
 	if Global.gameState != Global.GameStateEnum.Gameplay:
 		return
@@ -38,7 +40,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	move_local_y(-Speed * delta)
-
+	
 	if !CameraRef:
 		return
 		
