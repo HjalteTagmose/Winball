@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dedwl18kckfdd"]
+[gd_scene load_steps=10 format=3 uid="uid://dedwl18kckfdd"]
 
-[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://c75e2ue6ieuwy" path="res://art/Particles/MuzzleFlash.tscn" id="2_g2jcq"]
 [ext_resource type="PackedScene" uid="uid://bxhiscfk4buxn" path="res://art/Particles/BumpDistortionParticles.tscn" id="3_g2jcq"]
-[ext_resource type="Script" uid="uid://ctv7yapi47nbu" path="res://scripts/player/gun.gd" id="3_r66lb"]
 [ext_resource type="Texture2D" uid="uid://buvaskjvhonse" path="res://art/armadillo/armadillo_ball.png" id="5_kbsxf"]
+[ext_resource type="Texture2D" uid="uid://bxvquo7i0vgfo" path="res://art/armadillo/armadillo_gun.png" id="6_rgeog"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="7_u51tk"]
 [ext_resource type="PackedScene" path="res://art/Particles/FlameThrower.tscn" id="8_kbsxf"]
 
@@ -15,7 +14,7 @@ bounce = 0.4
 [sub_resource type="CircleShape2D" id="CircleShape2D_mncer"]
 radius = 16.15
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("stormParticle", "playerGun")]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("stormParticle", "playerGun", "slowmoSprite")]
 collision_layer = 2
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_1txc5")
@@ -32,24 +31,26 @@ SlowdownEndBehaviour = 1
 shootParticle = ExtResource("2_g2jcq")
 bumpAnythingParticle = ExtResource("3_g2jcq")
 stormParticle = NodePath("Storm Particles")
-playerGun = NodePath("Gun")
+playerGun = NodePath("SlowmoSprite/Gun")
+slowmoSprite = NodePath("SlowmoSprite")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 rotation = 8.47668e-05
 texture = ExtResource("5_kbsxf")
 
+[node name="SlowmoSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.0078125, -0.0078125)
+rotation = 0.000169534
+texture = ExtResource("6_rgeog")
+offset = Vector2(-8.99219, 0.00933698)
+
+[node name="Gun" type="Node2D" parent="SlowmoSprite"]
+position = Vector2(-31.9903, 11.0132)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mncer")
 debug_color = Color(0.9833, 0, 0.358624, 0.301961)
-
-[node name="Gun" type="Sprite2D" parent="." node_paths=PackedStringArray("playerRef")]
-z_index = 100
-position = Vector2(30, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_4flbx")
-script = ExtResource("3_r66lb")
-distanceToPlayer = 30.0
-playerRef = NodePath("..")
 
 [node name="Storm Particles" parent="." instance=ExtResource("7_u51tk")]
 z_index = 50
