@@ -32,6 +32,7 @@ Enabled = true
 enabled = true
 Power = 40.0
 Score = Array[int]([100, 50, 5])
+Saturation = null
 Bias = Vector2(0, -1)
 BiasPower = 20.0
 AudioPlayer = NodePath("AudioPlayer")
