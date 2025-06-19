@@ -142,18 +142,23 @@ points = PackedVector2Array(0, 0, -3, 96, -165, 122, -412, 117, -451, 10, -371, 
 
 [node name="AmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
 position = Vector2(-246, 0)
+Enabled = true
 
 [node name="AmmoBumper5" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
 position = Vector2(242, 0)
+Enabled = true
 
 [node name="AmmoBumper9" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
 position = Vector2(-758, -582)
+Enabled = true
 
 [node name="AmmoBumper15" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
 position = Vector2(0, -2040)
+Enabled = true
 
 [node name="AmmoBumper10" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
 position = Vector2(758, -582)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("9_gx2u3")]
 position = Vector2(0, -1057)
@@ -166,28 +171,35 @@ position = Vector2(232, -1756)
 
 [node name="AmmoBumper_Diamond" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-560, -285)
+Enabled = true
 
 [node name="AmmoBumper_Diamond2" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(245, -841)
+Enabled = true
 
 [node name="AmmoBumper_Diamond6" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(714, -1129)
+Enabled = true
 
 [node name="AmmoBumper_Diamond3" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(560, -285)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="AmmoBumper_Diamond4" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-249, -822)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="AmmoBumper_Diamond5" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-717, -1129)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="AmmoBumper_Diamond7" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-312, -2391)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="CircleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("10_1bron")]
 position = Vector2(198, -2604)
@@ -203,55 +215,70 @@ position = Vector2(526, -841)
 
 [node name="AmmoBumper_Diamond11" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(312, -2391)
+Enabled = true
 
 [node name="AmmoBumper_Diamond14" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(312, -2811)
+Enabled = true
 
 [node name="AmmoBumper_Diamond12" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-75, -2391)
+Enabled = true
 
 [node name="AmmoBumper_Diamond16" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-75, -2798)
+Enabled = true
 
 [node name="AmmoBumper_Diamond13" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(75, -2391)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="AmmoBumper_Diamond15" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(75, -2798)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="AmmoBumper_Diamond17" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-308, -2798)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="FlipperAmmoBumper" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(242, -1175)
+Enabled = true
 
 [node name="FlipperAmmoBumper5" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(-589, -1652)
+Enabled = true
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(-271, -3159)
+Enabled = true
 
 [node name="FlipperAmmoBumper3" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(-166, -1579)
+Enabled = true
 
 [node name="FlipperAmmoBumper2" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(-246, -1175)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="FlipperAmmoBumper4" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(166, -1579)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="FlipperAmmoBumper6" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(589, -1652)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="FlipperAmmoBumper7" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(274, -3164)
 scale = Vector2(-2, 2)
+Enabled = true
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 
