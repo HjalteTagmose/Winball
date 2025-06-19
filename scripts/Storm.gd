@@ -8,6 +8,7 @@ class_name Storm
 @export var TimeToKill: float = 3.0
 @export var TimeToCoverScreenSize: float = 4.0
 @export var screensToCatch : int = 3
+@export var acceleration : float = 0.5;
 
 var player: Player	
 var currentTIme: float
@@ -15,6 +16,7 @@ var screenSize : Vector2
 var screenToStormMult : float
 var stormSpeed
 var lineBaseScale : float
+var trueAccel : float
 
 func _ready() -> void:	
 	var size = get_window().size
@@ -28,7 +30,7 @@ func _ready() -> void:
 	screenToStormMult = size.y / Graphic.texture.get_size().y
 	stormSpeed = screenToStormMult / TimeToCoverScreenSize
 	lineBaseScale = Line.scale.y
-	
+	trueAccel = acceleration / 60
 
 func _process(delta: float) -> void:
 	if Global.gameState != Global.GameStateEnum.Gameplay:
@@ -59,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	if ( (scale.y * Graphic.texture.get_size().y - CameraRef.global_position.y) ) / screenSize.y < -screensToCatch:
 		scale.y += screenToStormMult
 		
+	stormSpeed += trueAccel * delta
 
 func _on_body_enter(body: Node2D):
 	if body is Player:
