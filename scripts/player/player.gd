@@ -143,6 +143,9 @@ func handleShootParticle(direction: Vector2):
 	get_tree().root.add_child(instance)
 
 func handleFlameThrower(delta: float) -> void:
+	if Global.gameState == Global.GameStateEnum.GameOver:		
+		return
+		
 	if !Input.is_action_pressed("launch"):
 		if currentlyPlayerParticle:
 			currentlyPlayerParticle.StopEmitting()
@@ -171,8 +174,7 @@ func handleFlameParticle(direction: Vector2):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	flame_thrower_counter += delta
-	if(Global.playerWeapon == Global.PlayerWeapon.Flamethrower):
-		
+	if(Global.playerWeapon == Global.PlayerWeapon.Flamethrower):		
 		handleFlameThrower(delta)
 	if(Global.playerWeapon == Global.PlayerWeapon.Regular):
 		handleLaunch(delta)
