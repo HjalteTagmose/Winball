@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be4h7kuufm7dl" path="res://scripts/global.gd" id="1_a484y"]
 [ext_resource type="PackedScene" uid="uid://cuojghgo6alvw" path="res://scenes/gameplay.tscn" id="2_tlasj"]
-[ext_resource type="PackedScene" uid="uid://b7pysjc4ifhjj" path="res://prefabs/Singeltons/floating_score.tscn" id="3_k5nus"]
+[ext_resource type="PackedScene" path="res://prefabs/Singeltons/floating_score.tscn" id="3_k5nus"]
 
 [node name="GlobalNode" type="Node"]
 script = ExtResource("1_a484y")
