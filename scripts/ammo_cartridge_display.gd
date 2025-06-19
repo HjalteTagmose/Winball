@@ -2,10 +2,22 @@ extends Sprite2D
 
 @export var bulletPrefab: PackedScene
 
+@export_category("Reload Animation")
+@export var reload_animation_duration : float = 1.0
+@export var reload_curve_y : Curve
+@export var reload_curve_x : Curve
+
+@export_category("Shot Animation")
+@export var shot_animation_duration : float = 1.0
+@export var shot_curve_y : Curve
+@export var shot_curve_x : Curve
+
 var _bullets : Array[BulletDisplay] = []
+var _start_pos : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_start_pos = position
 	for node: Node in get_children():
 		if node is BulletDisplay:
 			_bullets.append(node)
@@ -20,10 +32,16 @@ func on_bullet_fired():
 	
 	var firstBullet = _bullets.pop_back()
 	firstBullet.fire()
+	shot_anim()
 	return
 
 func reload():
-	print("Reloading")
+	
+	# No need to reload if we are on full ammo
+	if _bullets.size() >= Global.maxAmmo:
+		return
+		
+	reload_anim()
 	# Instantiate a new bullet from the prefab and add it to the array until the array is full.
 	while _bullets.size() < Global.maxAmmo:
 		var bullet: BulletDisplay = bulletPrefab.instantiate()
@@ -36,6 +54,27 @@ func reload():
 		bullet.position = position
 		print("Loading " + bullet.name)
 		
+func reload_anim():
+	var reload_tween = create_tween()
+	reload_tween.set_loops(1)
+	reload_tween.tween_method(reload_tween_function, 0, 100, reload_animation_duration)
+
+func reload_tween_function(value: float):
+	var percent = value / 100.0
+	var x = reload_curve_x.sample(percent)
+	var y = reload_curve_y.sample(percent)
+	position = _start_pos + Vector2(x, y)
+	
+func shot_anim():
+	var shot_tween = create_tween()
+	shot_tween.set_loops(1)
+	shot_tween.tween_method(shot_tween_function, 0, 100, shot_animation_duration)
+
+func shot_tween_function(value: float):
+	var percent = value / 100.0
+	var x = shot_curve_y.sample(percent)
+	var y = shot_curve_y.sample(percent)
+	position = _start_pos + Vector2(x, y)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

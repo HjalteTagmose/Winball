@@ -1,9 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://baeyuf6utr2j6"]
+[gd_scene load_steps=7 format=3 uid="uid://baeyuf6utr2j6"]
 
 [ext_resource type="Texture2D" uid="uid://mv52i5qbfx4t" path="res://art/ammo_bg.png" id="1_02uuw"]
 [ext_resource type="Script" uid="uid://cvbb5idewo262" path="res://scripts/ammo_cartridge_display.gd" id="2_t8qpn"]
+
+[sub_resource type="Curve" id="Curve_02uuw"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 0.819459), 0.0, 0.0, 0, 0, Vector2(0.1, 75), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_t8qpn"]
+_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_g8exe"]
+_limits = [-50.0, 50.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 10), 0.0, 0.0, 0, 0, Vector2(0.5, -10), 0.0, 0.0, 0, 0, Vector2(0.75, 10), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_j2c7c"]
+_limits = [-50.0, 50.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 10), 0.0, 0.0, 0, 0, Vector2(0.5, -10), 0.0, 0.0, 0, 0, Vector2(0.75, 10), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [node name="Ammo_Cartrige" type="Sprite2D"]
 scale = Vector2(1.85, 1.85)
 texture = ExtResource("1_02uuw")
 script = ExtResource("2_t8qpn")
+reload_animation_duration = 0.2
+reload_curve_y = SubResource("Curve_02uuw")
+reload_curve_x = SubResource("Curve_t8qpn")
+shot_animation_duration = 0.1
+shot_curve_y = SubResource("Curve_g8exe")
+shot_curve_x = SubResource("Curve_j2c7c")
