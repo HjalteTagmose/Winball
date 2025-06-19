@@ -113,6 +113,7 @@ scale = Vector2(1.52119, 1.52119)
 texture = ExtResource("8_adaae")
 
 [node name="SubmitScoreButton" type="TextureButton" parent="GameOverCanvas/ScoreSubmission" node_paths=PackedStringArray("player_name", "gameover_screen")]
+layout_mode = 0
 offset_left = 699.0
 offset_top = 189.0
 offset_right = 767.0
@@ -127,6 +128,7 @@ gameover_screen = NodePath("../..")
 metadata/_custom_type_script = "uid://oa0n0h3a88rj"
 
 [node name="TextEdit" type="TextEdit" parent="GameOverCanvas/ScoreSubmission"]
+layout_mode = 0
 offset_left = 435.0
 offset_top = 196.0
 offset_right = 694.0

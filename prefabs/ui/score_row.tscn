@@ -16,6 +16,8 @@ score_text = NodePath("ScoreText")
 self_modulate = Color(0.933333, 0.866667, 0.227451, 1)
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = -1
 theme_override_fonts/normal_font = ExtResource("2_lou18")
 text = "asd asd"
 
@@ -23,5 +25,7 @@ text = "asd asd"
 self_modulate = Color(0.933333, 0.866667, 0.227451, 1)
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = -1
 theme_override_fonts/normal_font = ExtResource("2_lou18")
 text = "asd"
