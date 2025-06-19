@@ -223,6 +223,7 @@ position = Vector2(-495, -1916)
 
 [node name="ShallowTriangleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("10_2afm3")]
 position = Vector2(-714, -1071)
+Enabled = true
 
 [node name="AmmoBumper_Diamond" parent="Props/AmmoBumpers" instance=ExtResource("8_pphsx")]
 position = Vector2(697, -469)
