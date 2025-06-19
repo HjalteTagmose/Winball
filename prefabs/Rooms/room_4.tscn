@@ -28,17 +28,21 @@ roomExit = NodePath("Walls/Exit")
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="Wall_Right" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(780, -892)
-
 [node name="Wall_Right2" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(-780, -892)
+position = Vector2(-777, -1210)
+scale = Vector2(3.81066, 0.999985)
+
+[node name="Wall_Right5" parent="Walls" instance=ExtResource("2_dlvlk")]
+position = Vector2(777, -1210)
+scale = Vector2(3.81066, 0.999985)
 
 [node name="Wall_Right3" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(-1343, -3289)
+position = Vector2(-1343, -3019)
+scale = Vector2(4.01066, 0.999985)
 
 [node name="Wall_Right4" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(1343, -3289)
+position = Vector2(1343, -3019)
+scale = Vector2(4.01066, 0.999985)
 
 [node name="Wall_RightBottom2" parent="Walls" instance=ExtResource("2_dlvlk")]
 position = Vector2(-528, 0)
@@ -46,9 +50,14 @@ rotation = 0.0
 scale = Vector2(2.557, 1)
 
 [node name="Wall_RightBottom4" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(-539, -405)
+position = Vector2(-528, -390)
 rotation = 0.785398
-scale = Vector2(2.557, 1)
+scale = Vector2(2.1893, 1)
+
+[node name="Wall_RightBottom5" parent="Walls" instance=ExtResource("2_dlvlk")]
+position = Vector2(528, -390)
+rotation = -0.785398
+scale = Vector2(2.1893, 1)
 
 [node name="Wall_RightBottom11" parent="Walls" instance=ExtResource("2_dlvlk")]
 position = Vector2(-1064, -2094)
@@ -68,11 +77,6 @@ scale = Vector2(2.557, 1)
 [node name="Wall_RightBottom14" parent="Walls" instance=ExtResource("2_dlvlk")]
 position = Vector2(1064, -3936.39)
 rotation = 0.785398
-scale = Vector2(2.557, 1)
-
-[node name="Wall_RightBottom5" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(539, -405)
-rotation = -0.785398
 scale = Vector2(2.557, 1)
 
 [node name="Wall_RightBottom3" parent="Walls" instance=ExtResource("2_dlvlk")]
