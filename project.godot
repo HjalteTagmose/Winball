@@ -13,7 +13,7 @@ config_version=5
 config/name="Winball"
 run/main_scene="uid://ca2wlgq7g67ht"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bv3n1ytpl7g71"
 
 [autoload]
 
