@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_n3c57"]
 [ext_resource type="PackedScene" uid="uid://p5c72b14kda" path="res://prefabs/Room props/exit.tscn" id="3_3bafk"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="3_gg6m2"]
-[ext_resource type="PackedScene" uid="uid://cubywxgl8t7t2" path="res://prefabs/Room props/Bumpers/flat_bumper_ground.tscn" id="4_3bafk"]
+[ext_resource type="PackedScene" uid="uid://b4d4m1wtwru1i" path="res://prefabs/Room props/Bumpers/flat_bumper_ground.tscn" id="4_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/Bumpers/flat_bumper_walls.tscn" id="4_hg5bj"]
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="7_4ie43"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="7_p84ie"]
-[ext_resource type="PackedScene" uid="uid://rr7syj21fsh8" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="8_gg6m2"]
+[ext_resource type="PackedScene" uid="uid://cba70d4k5jb2n" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="8_gg6m2"]
 [ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_shallowTriangle_ammo.tscn" id="9_gg6m2"]
 [ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_sjl2v"]
 
@@ -131,11 +131,15 @@ rotation = -1.57066
 position = Vector2(-317, -1535)
 Enabled = true
 enabled = true
+CanDie = false
+Life = 3
 
 [node name="DiamondAmmoBumper3" parent="Props" instance=ExtResource("8_gg6m2")]
 position = Vector2(293, -1538)
 Enabled = true
 enabled = true
+CanDie = false
+Life = 3
 
 [node name="ShallowTriangleAmmoBumper" parent="Props" instance=ExtResource("9_gg6m2")]
 position = Vector2(0, -1953)
@@ -190,12 +194,14 @@ rotation = -1.5708
 
 [node name="FlipperAmmoBumper" parent="Props/WallCorners" instance=ExtResource("7_4ie43")]
 position = Vector2(555, -1946)
-enabled = true
+CanDie = false
+Life = 3
 
 [node name="FlipperAmmoBumper2" parent="Props/WallCorners" instance=ExtResource("7_4ie43")]
 position = Vector2(-555, -1946)
 scale = Vector2(-2, 2)
-enabled = true
+CanDie = false
+Life = 3
 
 [node name="AmmoBumpers" type="Node2D" parent="."]
 
