@@ -106,12 +106,14 @@ score_submit_section = NodePath("ScoreSubmission")
 restart_button = NodePath("RestartButton")
 
 [node name="Score" parent="GameOverCanvas" instance=ExtResource("6_1kxbb")]
-position = Vector2(448, 92)
+position = Vector2(598, 95)
+is_centered = true
 
 [node name="ScoreSubmission" type="Control" parent="GameOverCanvas"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -16.0
+offset_right = 24.0
 offset_bottom = 40.0
 
 [node name="Input" type="Sprite2D" parent="GameOverCanvas/ScoreSubmission"]
