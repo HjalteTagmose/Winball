@@ -6,6 +6,10 @@ var animation_t : float = 0
 
 func _ready() -> void:
 	var bumper : BasicBumper = u.find_parent_with_type(self, BasicBumper)
+	
+	if !bumper:
+		return
+
 	bumper.bumped.connect(_on_bumped)
 	scale_normal = scale
 
