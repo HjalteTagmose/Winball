@@ -8,8 +8,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fs1pa"]
 shader = ExtResource("2_fs1pa")
-shader_parameter/WP_Size = 100.0
-shader_parameter/WP_Size_Dots = 50.0
+shader_parameter/WP_Size = 200.0
+shader_parameter/WP_Size_Dots = 100.0
 shader_parameter/screen_texture = ExtResource("3_3o5j4")
 shader_parameter/paper_texture = ExtResource("3_p1dam")
 shader_parameter/noise_texture = ExtResource("3_2wubw")
