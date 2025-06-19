@@ -20,6 +20,7 @@ class_name BasicBumper extends StaticBody2D
 @export var CollisionShape : CollisionShape2D
 
 signal bumped
+signal bumped_impulse
 var timesHit : int
 var isInStrom : bool
 var _scoreIndex = 0
@@ -27,6 +28,7 @@ var _scoreIndex = 0
 var _isDead = false
 
 func _ready() -> void:
+	add_to_group("bumper")
 	AudioPlayer.stream = SoundOnHIt
 	timesHit = 0
 
@@ -51,6 +53,7 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 
 	timesHit += 1
 	bumped.emit()
+	bumped_impulse.emit(impulse)
 	
 	if CanDie && timesHit >= Life:
 		Die()

@@ -31,15 +31,17 @@ func _process(delta: float) -> void:
 	
 	if player:
 		currentTIme += delta
-
+		var percent = clamp(currentTIme / TimeToKill, 0, 1)
+		Global.storm_charge_duration_percent_changed.emit(percent * 100)
 		if currentTIme >= TimeToKill:
 			Global.trigger_game_over()
 			currentTIme = 0.0
+			Global.storm_charge_duration_percent_changed.emit(-1)
 			pass
 
 	else:
 		currentTIme = 0.0
-
+		Global.storm_charge_duration_percent_changed.emit(-1)
 
 func _physics_process(delta: float) -> void:
 	move_local_y(-Speed * delta)
