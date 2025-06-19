@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c46t0k0o6mlch"
-path="res://.godot/imported/blue_bumper_diamond_dots.png-1a95bc1b8c84b861ddf4e393ae5b524f.ctex"
+uid="uid://qvxvfdgeerlt"
+path="res://.godot/imported/slingshot_red_triangle.png-63830b2a9400aa4add8392eaaf92c0b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Bumpers/blue_bumper_diamond_dots.png"
-dest_files=["res://.godot/imported/blue_bumper_diamond_dots.png-1a95bc1b8c84b861ddf4e393ae5b524f.ctex"]
+source_file="res://art/Bumpers/slingshot_red_triangle.png"
+dest_files=["res://.godot/imported/slingshot_red_triangle.png-63830b2a9400aa4add8392eaaf92c0b1.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn18te142jop5"
-path="res://.godot/imported/bumper_slim.png-ad06323fdb69dd8405ba2671106b3d54.ctex"
+path="res://.godot/imported/slingshot_blue_slim.png-2f7492a296316aff52835fdbce47682f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Bumpers/bumper_slim.png"
-dest_files=["res://.godot/imported/bumper_slim.png-ad06323fdb69dd8405ba2671106b3d54.ctex"]
+source_file="res://art/Bumpers/slingshot_blue_slim.png"
+dest_files=["res://.godot/imported/slingshot_blue_slim.png-2f7492a296316aff52835fdbce47682f.ctex"]
 
 [params]
 
