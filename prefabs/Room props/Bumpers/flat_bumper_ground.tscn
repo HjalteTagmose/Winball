@@ -1,11 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4d4m1wtwru1i"]
+[gd_scene load_steps=15 format=3 uid="uid://b4d4m1wtwru1i"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chtck5wyxnxds" path="res://Material/Physic/Wall.tres" id="1_bod2i"]
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_pu8ip"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_ubyfy"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="2_pu8ip"]
 [ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_ydfnd"]
+[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="5_314lt"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_uptcw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj4d6"]
+resource_local_to_scene = true
+shader = ExtResource("5_314lt")
+shader_parameter/saturation = 1.0
 
 [sub_resource type="Curve" id="Curve_uptcw"]
 _limits = [0.0, 2.0, 0.0, 0.25]
@@ -50,6 +56,7 @@ metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]
 self_modulate = Color(0, 1, 1, 1)
+material = SubResource("ShaderMaterial_uj4d6")
 rotation = -3.14159
 texture = ExtResource("2_ydfnd")
 script = ExtResource("6_uptcw")

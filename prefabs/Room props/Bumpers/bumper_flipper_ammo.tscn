@@ -1,11 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsr6u6y0m5y0t"]
+[gd_scene load_steps=11 format=3 uid="uid://bsr6u6y0m5y0t"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_jm088"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_31t04"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_v4nol"]
 [ext_resource type="Texture2D" uid="uid://kwqeqyw10vt" path="res://art/Bumpers/slingshot_blue_triangle_dots.png" id="4_1jmuy"]
+[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_v4nol"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_31t04"]
 [ext_resource type="Texture2D" uid="uid://qvxvfdgeerlt" path="res://art/Bumpers/slingshot_red_triangle.png" id="5_bo2nq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1jmuy"]
+resource_local_to_scene = true
+shader = ExtResource("4_v4nol")
+shader_parameter/saturation = 1.0
 
 [sub_resource type="Curve" id="Curve_31t04"]
 _limits = [0.0, 2.0, 0.0, 0.25]
@@ -24,8 +30,6 @@ script = ExtResource("2_31t04")
 extraVisual = NodePath("Sprite2D/Sprite2D")
 Enabled = true
 enabled = true
-CanDie = null
-Life = null
 Power = 40.0
 Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
@@ -35,6 +39,7 @@ ParticleOnHit = ExtResource("3_v4nol")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1jmuy")
 texture = ExtResource("4_1jmuy")
 script = ExtResource("5_31t04")
 scale_curve = SubResource("Curve_31t04")
