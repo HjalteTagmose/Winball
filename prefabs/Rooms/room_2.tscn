@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://1pkpdh08nxve"]
+[gd_scene load_steps=18 format=3 uid="uid://1pkpdh08nxve"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_1rxak"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_hojoj"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="10_hojoj"]
 [ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="11_di54m"]
 [ext_resource type="PackedScene" uid="uid://dty1lc8lqyalq" path="res://prefabs/Room props/speed_sticker.tscn" id="12_crms2"]
-[ext_resource type="PackedScene" uid="uid://ttdbstumxur7" path="res://prefabs/Room props/score_light_group.tscn" id="13_a4lfk"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="17_epmcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
@@ -29,27 +28,31 @@ roomExit = NodePath("Walls/Exit")
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="Wall_Right" parent="Walls" instance=ExtResource("2_hojoj")]
-position = Vector2(780, -892)
-
 [node name="Wall_Right6" parent="Walls" instance=ExtResource("2_hojoj")]
-position = Vector2(-374, -2614)
-scale = Vector2(3.77065, 0.999985)
+position = Vector2(-374, -2535)
+scale = Vector2(3.216, 1)
 
-[node name="Wall_Right8" parent="Walls" instance=ExtResource("2_hojoj")]
-position = Vector2(374, -2614)
-scale = Vector2(3.77065, 0.999985)
+[node name="Wall_Right7" parent="Walls" instance=ExtResource("2_hojoj")]
+position = Vector2(374, -2535)
+scale = Vector2(3.216, 1)
 
 [node name="Wall_Right2" parent="Walls" instance=ExtResource("2_hojoj")]
-position = Vector2(-780, -892)
+position = Vector2(-779, -718)
+scale = Vector2(3.89066, 0.999985)
+
+[node name="Wall_Right5" parent="Walls" instance=ExtResource("2_hojoj")]
+position = Vector2(779, -718)
+scale = Vector2(3.89066, 0.999985)
 
 [node name="Wall_Right3" parent="Walls" instance=ExtResource("2_hojoj")]
-position = Vector2(-840, -1225)
+position = Vector2(-574, -1679)
 rotation = 2.0944
+scale = Vector2(2.54435, 0.999985)
 
 [node name="Wall_Right4" parent="Walls" instance=ExtResource("2_hojoj")]
-position = Vector2(840, -1225)
+position = Vector2(574, -1679)
 rotation = -2.0944
+scale = Vector2(2.54435, 0.999985)
 
 [node name="Wall_RightBottom" parent="Walls" instance=ExtResource("2_hojoj")]
 position = Vector2(526, 0)
@@ -116,11 +119,11 @@ debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 [node name="CornerSquares" type="Node2D" parent="Props"]
 
 [node name="FlatBumper Walls9" parent="Props/CornerSquares" instance=ExtResource("5_epmcq")]
-position = Vector2(-704, -80)
+position = Vector2(-715, -80)
 rotation = 0.000135183
 
 [node name="FlatBumper Walls10" parent="Props/CornerSquares" instance=ExtResource("5_epmcq")]
-position = Vector2(697, -80)
+position = Vector2(714, -80)
 rotation = -1.57066
 
 [node name="WallCorners" type="Node2D" parent="Props"]
@@ -301,9 +304,6 @@ rotation = 0.0
 scale = Vector2(4, 4)
 Power = 200.0
 
-[node name="ScoreLightRoot" parent="." instance=ExtResource("13_a4lfk")]
-position = Vector2(-660, -2920)
-
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foreground" instance=ExtResource("17_epmcq")]
@@ -319,12 +319,12 @@ position = Vector2(1397, -2673)
 scale = Vector2(3.96082, 2.56)
 
 [node name="Foreground7" parent="Foreground" instance=ExtResource("17_epmcq")]
-position = Vector2(383, -3200)
-scale = Vector2(0.5, 0.5)
+position = Vector2(384, -3185)
+scale = Vector2(0.496094, 0.558594)
 
 [node name="Foreground8" parent="Foreground" instance=ExtResource("17_epmcq")]
-position = Vector2(-383, -3200)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-383, -3184)
+scale = Vector2(0.5, 0.5625)
 
 [node name="Foreground9" parent="Foreground" instance=ExtResource("17_epmcq")]
 position = Vector2(-246, -3274)

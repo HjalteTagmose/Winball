@@ -8,9 +8,10 @@
 size = Vector2(32, 64)
 
 [node name="BasicSticker" type="Area2D" node_paths=PackedStringArray("AudioPlayer")]
+z_index = 2
 collision_mask = 2
 script = ExtResource("1_2smrg")
-score = 25
+score = 100
 AudioPlayer = NodePath("audioPlayer")
 metadata/_custom_type_script = "uid://o0wcl8l7p1uy"
 

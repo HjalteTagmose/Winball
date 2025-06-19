@@ -29,8 +29,8 @@ roomExit = NodePath("Walls/Exit")
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Wall_Right" parent="Walls" instance=ExtResource("2_88puv")]
-position = Vector2(964, -2408)
-scale = Vector2(8.96813, 1.00016)
+position = Vector2(964, -2679)
+scale = Vector2(7.20813, 1.00016)
 
 [node name="Wall_Right2" parent="Walls" instance=ExtResource("2_88puv")]
 position = Vector2(-135.225, -2836)
@@ -52,7 +52,7 @@ rotation = 0.785398
 scale = Vector2(1, 1)
 
 [node name="Wall_Right7" parent="Walls" instance=ExtResource("2_88puv")]
-position = Vector2(452, -1031)
+position = Vector2(510, -1089)
 rotation = -0.785398
 scale = Vector2(4, 1)
 
@@ -62,8 +62,8 @@ rotation = -0.785398
 scale = Vector2(1.8, 1)
 
 [node name="Wall_Right5" parent="Walls" instance=ExtResource("2_88puv")]
-position = Vector2(-1955, -1302)
-scale = Vector2(5.94, 1)
+position = Vector2(-1955, -1131)
+scale = Vector2(4.82, 1)
 
 [node name="Wall_Right10" parent="Walls" instance=ExtResource("2_88puv")]
 position = Vector2(-778, -1379)
@@ -74,9 +74,9 @@ position = Vector2(128, -274)
 scale = Vector2(1.78, 1)
 
 [node name="Wall_RightBottom2" parent="Walls" instance=ExtResource("2_88puv")]
-position = Vector2(-1086, 0)
+position = Vector2(-1084, 0)
 rotation = 0.0
-scale = Vector2(4.637, 1)
+scale = Vector2(3.997, 1)
 
 [node name="Wall_RightBottom4" parent="Walls" instance=ExtResource("2_88puv")]
 position = Vector2(655, 0)
@@ -89,9 +89,9 @@ rotation = 0.0
 scale = Vector2(4.68, 1)
 
 [node name="Wall_RightBottom5" parent="Walls" instance=ExtResource("2_88puv")]
-position = Vector2(-1507, -2110)
+position = Vector2(-1365, -2110)
 rotation = 0.0
-scale = Vector2(4.68, 1)
+scale = Vector2(2.32, 1)
 
 [node name="Wall_RightBottom6" parent="Walls" instance=ExtResource("2_88puv")]
 position = Vector2(-655, -1454)
@@ -316,6 +316,11 @@ scale = Vector2(8.02925, 0.303527)
 
 [node name="Foreground6" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
 position = Vector2(-589.452, -2147.45)
+rotation = 0.785398
+scale = Vector2(0.99395, 1.30064)
+
+[node name="Foreground12" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
+position = Vector2(-2006, -2189)
 rotation = 0.785398
 scale = Vector2(0.99395, 1.30064)
 

@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="10_xplgr"]
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="11_yka3c"]
 [ext_resource type="PackedScene" uid="uid://c5cyrktek0kn" path="res://prefabs/Room props/Bumpers/bumper_circle_breaks.tscn" id="12_ka02d"]
+[ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="14_dkkgw"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="14_tqwss"]
-[ext_resource type="PackedScene" uid="uid://ttdbstumxur7" path="res://prefabs/Room props/score_light_group.tscn" id="15_3skf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(4.81928, 18)
@@ -27,35 +27,41 @@ roomExit = NodePath("Walls/Exit")
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="Wall_Right" parent="Walls" instance=ExtResource("2_tqwss")]
-position = Vector2(694, -892)
-
 [node name="Wall_Right6" parent="Walls" instance=ExtResource("2_tqwss")]
-position = Vector2(-374, -2614)
-scale = Vector2(3.77065, 0.999985)
+position = Vector2(-375, -2526)
+scale = Vector2(3.21065, 0.999985)
 
 [node name="Wall_Right8" parent="Walls" instance=ExtResource("2_tqwss")]
-position = Vector2(374, -2614)
-scale = Vector2(3.77065, 0.999985)
+position = Vector2(375, -2526)
+scale = Vector2(3.21065, 0.999985)
 
 [node name="Wall_Right2" parent="Walls" instance=ExtResource("2_tqwss")]
-position = Vector2(-694, -899)
-
-[node name="Wall_Right3" parent="Walls" instance=ExtResource("2_tqwss")]
-position = Vector2(-886, -948)
-rotation = 0.785398
-
-[node name="Wall_Right5" parent="Walls" instance=ExtResource("2_tqwss")]
-position = Vector2(886, -948)
-rotation = -0.785398
+position = Vector2(-694, -1113)
+scale = Vector2(2.29066, 0.999985)
 
 [node name="Wall_Right4" parent="Walls" instance=ExtResource("2_tqwss")]
-position = Vector2(840, -1225)
-rotation = -2.0944
+position = Vector2(694, -1113)
+scale = Vector2(2.29066, 0.999985)
+
+[node name="Wall_Right3" parent="Walls" instance=ExtResource("2_tqwss")]
+position = Vector2(-440, -490)
+rotation = 0.785398
+scale = Vector2(2.26341, 0.999985)
+
+[node name="Wall_Right5" parent="Walls" instance=ExtResource("2_tqwss")]
+position = Vector2(440, -490)
+rotation = -0.785398
+scale = Vector2(2.26341, 0.999985)
 
 [node name="Wall_Right7" parent="Walls" instance=ExtResource("2_tqwss")]
-position = Vector2(-840, -1225)
+position = Vector2(535, -1742)
+rotation = -2.0944
+scale = Vector2(2.05794, 0.999985)
+
+[node name="Wall_Right9" parent="Walls" instance=ExtResource("2_tqwss")]
+position = Vector2(-535, -1742)
 rotation = 2.0944
+scale = Vector2(2.05794, 0.999985)
 
 [node name="Wall_RightBottom" parent="Walls" instance=ExtResource("2_tqwss")]
 position = Vector2(526, 0)
@@ -269,9 +275,6 @@ position = Vector2(375, -1781)
 [node name="CircleAmmoBumper13" parent="Props/Breakables" instance=ExtResource("12_ka02d")]
 position = Vector2(450, -1781)
 
-[node name="ScoreLightRoot" parent="." instance=ExtResource("15_3skf2")]
-position = Vector2(-660, -2920)
-
 [node name="Foregrounds" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foregrounds" instance=ExtResource("14_tqwss")]
@@ -320,9 +323,9 @@ rotation = 0.785398
 scale = Vector2(0.9, 1.22782)
 
 [node name="Foreground14" parent="Foregrounds" instance=ExtResource("14_tqwss")]
-position = Vector2(-617, -351)
+position = Vector2(-626.744, -360.743)
 rotation = -0.785398
-scale = Vector2(0.9, 1.22782)
+scale = Vector2(0.9, 1.28165)
 
 [node name="Foreground3" parent="Foregrounds" instance=ExtResource("14_tqwss")]
 position = Vector2(-1693, -1784)
@@ -333,3 +336,33 @@ scale = Vector2(3.48, 4)
 position = Vector2(1704, -1784)
 rotation = -2.0944
 scale = Vector2(3.48, 4)
+
+[node name="BasicSticker" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(-376, -265)
+
+[node name="BasicSticker6" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(355, -265)
+
+[node name="BasicSticker7" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(598, -209)
+
+[node name="BasicSticker8" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(612, -395)
+
+[node name="BasicSticker9" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(494, -300)
+
+[node name="BasicSticker10" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(738, -509)
+
+[node name="BasicSticker2" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(-576, -202)
+
+[node name="BasicSticker3" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(-606, -396)
+
+[node name="BasicSticker4" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(-484, -184)
+
+[node name="BasicSticker5" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(-746, -509)

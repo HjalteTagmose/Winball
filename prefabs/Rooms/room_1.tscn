@@ -29,8 +29,8 @@ roomExit = NodePath("Walls/Exit")
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Wall_Right" parent="Walls" instance=ExtResource("2_qropx")]
-position = Vector2(776, -1323)
-scale = Vector2(7.319, 0.805676)
+position = Vector2(776, -1374)
+scale = Vector2(6.999, 0.805676)
 
 [node name="Wall_Right6" parent="Walls" instance=ExtResource("2_qropx")]
 position = Vector2(360, -340)
@@ -38,7 +38,8 @@ rotation = 2.35619
 scale = Vector2(0.599, 0.806)
 
 [node name="Wall_Right2" parent="Walls" instance=ExtResource("2_qropx")]
-position = Vector2(-1133, -885)
+position = Vector2(-1133, -903)
+scale = Vector2(1.97066, 0.999985)
 
 [node name="Wall_Right7" parent="Walls" instance=ExtResource("2_qropx")]
 position = Vector2(-721, -3)
@@ -61,16 +62,17 @@ rotation = 0.0
 scale = Vector2(0.490659, 0.999985)
 
 [node name="Wall_Right4" parent="Walls" instance=ExtResource("2_qropx")]
-position = Vector2(-957, -1984)
-scale = Vector2(3.09066, 0.999985)
+position = Vector2(-957, -1681)
+scale = Vector2(1.37066, 0.999985)
 
 [node name="Wall_Right5" parent="Walls" instance=ExtResource("2_qropx")]
 position = Vector2(-790, -2297)
 scale = Vector2(1.21066, 0.999985)
 
 [node name="Wall_Right3" parent="Walls" instance=ExtResource("2_qropx")]
-position = Vector2(-1248, -769)
+position = Vector2(-997, -411)
 rotation = 0.959931
+scale = Vector2(1.41545, 0.999985)
 
 [node name="TopWall" type="Node2D" parent="Walls"]
 position = Vector2(0, -2484)
@@ -169,7 +171,7 @@ rotation = 3.14159
 [node name="Slide" parent="Props" instance=ExtResource("7_x47p5")]
 z_index = 1
 position = Vector2(-695, -138)
-points = PackedVector2Array(0, 0, -3, 96, -165, 122, -412, 117, -451, 10, -371, -80, -325, -36, -364, 67, -264, 77, -287, -100, -261, -262)
+points = PackedVector2Array(0, 0, -3, 96, -165, 122, -412, 117, -451, 10, -371, -80, -325, -36, -364, 67, -264, 77, -299, -107, -248, -287)
 
 [node name="Slide2" parent="Props" instance=ExtResource("7_x47p5")]
 z_index = 1
@@ -203,7 +205,7 @@ position = Vector2(422, -1178)
 Enabled = true
 
 [node name="AmmoBumper9" parent="Props/AmmoBumpers" instance=ExtResource("7_3xq05")]
-position = Vector2(-721, -662)
+position = Vector2(-682, -634)
 Enabled = true
 
 [node name="CircleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("12_esbdh")]
@@ -237,7 +239,7 @@ position = Vector2(697, -1836)
 Enabled = true
 
 [node name="AmmoBumper_Diamond2" parent="Props/AmmoBumpers" instance=ExtResource("8_pphsx")]
-position = Vector2(-1054, -411)
+position = Vector2(-1056, -433)
 scale = Vector2(-2, 2)
 Enabled = true
 
@@ -316,8 +318,8 @@ position = Vector2(-1401, -2351)
 scale = Vector2(-2.37651, 0.56078)
 
 [node name="Foreground5" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-position = Vector2(-1482, -2072)
-scale = Vector2(-2.37651, 0.56078)
+position = Vector2(-1482, -2055.89)
+scale = Vector2(-2.37651, 0.623691)
 
 [node name="Foreground6" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1398, -2169)
@@ -340,8 +342,8 @@ position = Vector2(881, -134.65)
 scale = Vector2(1.897, 0.562)
 
 [node name="Foreground15" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-position = Vector2(1556, -1246)
-scale = Vector2(2.977, 4.802)
+position = Vector2(1550.06, -1246)
+scale = Vector2(3.00022, 4.802)
 
 [node name="Foreground9" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1100, -272)
