@@ -12,6 +12,7 @@ lights = [NodePath("ScoreLight"), NodePath("ScoreLight2"), NodePath("ScoreLight3
 
 [node name="ScoreLight3" type="Node2D" parent="." node_paths=PackedStringArray("collider", "sprite")]
 position = Vector2(111, -1)
+scale = Vector2(2, 2)
 script = ExtResource("2_2vxxh")
 collider = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
@@ -32,6 +33,7 @@ shape = SubResource("CircleShape2D_3bafk")
 
 [node name="ScoreLight2" type="Node2D" parent="." node_paths=PackedStringArray("collider", "sprite")]
 position = Vector2(-108, -1)
+scale = Vector2(2, 2)
 script = ExtResource("2_2vxxh")
 collider = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
@@ -51,6 +53,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_3bafk")
 
 [node name="ScoreLight" type="Node2D" parent="." node_paths=PackedStringArray("collider", "sprite")]
+scale = Vector2(2, 2)
 script = ExtResource("2_2vxxh")
 collider = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
