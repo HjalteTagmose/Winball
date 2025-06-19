@@ -7,6 +7,10 @@ class_name Player extends RigidBody2D
 @export var launchChargeDuration : float = 1
 @export var killVelocityBeforeLaunch : bool = true
 
+@export_category("FlameThrower")
+@export var flame_thrower_power : float = 100
+@export var flame_thrower_delay : float = 0.1
+
 @export_category("Slowdown")
 @export var slowdownPower : float = 0.35
 @export var max_slowdown_duration: float = 5.0
@@ -22,7 +26,7 @@ enum SlowdownEndBehaviourEnum { AmmoWasted, Launch }
 
 @export var playerGun : Node2D
 
-
+var flame_thrower_counter = 0;
 
 var locked : bool = false
 var _slowdownCounter = 0.0
@@ -91,18 +95,24 @@ func launch():
 	Global.currentAmmo -= 1
 	Global.bullet_fired.emit()
 	#PARTICLE
-	var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
+	
+	
 	
 	if(killVelocityBeforeLaunch):
 		linear_velocity = Vector2.ZERO
-	var impulse = direction * currentPower
 	
-	if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
-		impulse = -impulse
+	var direction = get_direction()
+	var impulse = direction * currentPower
 		
 	apply_central_impulse(impulse)
 	handleShootParticle(direction)
 	Global.player_charge_duration_percent_changed.emit(-1)
+
+func get_direction() -> Vector2:
+	var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
+	if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
+		direction = -direction
+	return direction
 
 func handleBumpParticle():
 	if(bumpAnythingParticle == null):
@@ -127,8 +137,25 @@ func handleShootParticle(direction: Vector2):
 	instance.rotation = direction.angle()
 	get_tree().root.add_child(instance)
 
+func handleFlameThrower(delta: float) -> void:
+	if !Input.is_action_pressed("launch"):
+		return
+	
+	if flame_thrower_counter < flame_thrower_delay:
+		return
+	
+	flame_thrower_counter = 0
+	var direction = get_direction()
+	var impulse = direction * flame_thrower_power
+	apply_central_impulse(impulse)
+	handleShootParticle(direction)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	handleLaunch(delta)
+	flame_thrower_counter += delta
+	if(Global.playerWeapon == Global.PlayerWeapon.Flamethrower):
+		
+		handleFlameThrower(delta)
+	if(Global.playerWeapon == Global.PlayerWeapon.Regular):
+		handleLaunch(delta)
 	pass

@@ -1,17 +1,20 @@
 extends Node
 class_name _GlobalNode
 
-
-
+var currentAmmo : int = 10
 @export var maxAmmo : int = 10
 @export var gameplay_scene: PackedScene
 @export var player_direction: PlayerDirection
 @export var floating_score : PackedScene
 
+@export var playerWeapon : PlayerWeapon = PlayerWeapon.Flamethrower
 
-var currentAmmo : int = 10
+var flamethrower_ammo : int = 100
+@export var flamethrower_max_ammo : int = 100
+
 enum PlayerDirection { TowardsMouse, AwayFromMouse }
 enum GameStateEnum {Setup, Gameplay, GameOver }
+enum PlayerWeapon {Regular, Flamethrower }
 
 var scene : Node
 var gameState: GameStateEnum = GameStateEnum.Setup
