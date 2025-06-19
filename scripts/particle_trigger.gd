@@ -23,3 +23,7 @@ func _process(_delta: float) -> void:
 			return
 	
 	queue_free()
+
+func StopEmitting():
+	for particle in particles:
+		particle.emitting = false

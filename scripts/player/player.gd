@@ -10,6 +10,7 @@ class_name Player extends RigidBody2D
 @export_category("FlameThrower")
 @export var flame_thrower_power : float = 100
 @export var flame_thrower_delay : float = 0.1
+@export var flame_thrower_particles : PackedScene
 
 @export_category("Slowdown")
 @export var slowdownPower : float = 0.35
@@ -31,6 +32,7 @@ var InStorm: bool:
 		stormParticle.emitting = value
 
 var flame_thrower_counter = 0;
+var currentlyPlayerParticle : ParticleTrigger
 var locked : bool = false
 var _slowdownCounter = 0.0
 
@@ -39,7 +41,6 @@ func _getInputDirection() -> Vector2:
 
 
 var _launchClickTime : float
-
 var _isCharging : bool
 
 func _ready() -> void:
@@ -134,14 +135,18 @@ func handleShootParticle(direction: Vector2):
 		
 	if(showLog):
 		print("shooting particle")
+	
 	var instance: ParticleTrigger = shootParticle.instantiate()
 	instance.global_position = playerGun.global_position
-	
 	instance.rotation = direction.angle()
+
 	get_tree().root.add_child(instance)
 
 func handleFlameThrower(delta: float) -> void:
 	if !Input.is_action_pressed("launch"):
+		if currentlyPlayerParticle:
+			currentlyPlayerParticle.StopEmitting()
+			currentlyPlayerParticle = null
 		return
 	
 	if flame_thrower_counter < flame_thrower_delay:
@@ -151,7 +156,17 @@ func handleFlameThrower(delta: float) -> void:
 	var direction = get_direction()
 	var impulse = direction * flame_thrower_power
 	apply_central_impulse(impulse)
-	handleShootParticle(direction)
+	handleFlameParticle(direction)
+
+func handleFlameParticle(direction: Vector2):	
+	if currentlyPlayerParticle == null:
+		currentlyPlayerParticle = flame_thrower_particles.instantiate()
+		get_tree().root.add_child(currentlyPlayerParticle)
+	
+	currentlyPlayerParticle.global_position = playerGun.global_position
+	currentlyPlayerParticle.rotation = direction.angle()
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
