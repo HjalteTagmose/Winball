@@ -1,10 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpt746t74aua6"]
+[gd_scene load_steps=13 format=3 uid="uid://cpt746t74aua6"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chtck5wyxnxds" path="res://Material/Physic/Wall.tres" id="1_4p2nv"]
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_g2cpd"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_y5uss"]
 [ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_cd0wh"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="2_g2cpd"]
+[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_ibcqk"]
+
+[sub_resource type="Curve" id="Curve_ibcqk"]
+_limits = [0.0, 2.0, 0.0, 0.25]
+_data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0, 0.0, 0, 0, Vector2(0.21281, 1.0031), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cd0wh"]
 radius = 6.01282
@@ -46,6 +52,8 @@ metadata/_custom_type_script = "uid://lobwfmlxako"
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]
 rotation = -3.14159
 texture = ExtResource("2_cd0wh")
+script = ExtResource("6_ibcqk")
+scale_curve = SubResource("Curve_ibcqk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlatBumper Logic"]
 position = Vector2(0.59, -0.65)

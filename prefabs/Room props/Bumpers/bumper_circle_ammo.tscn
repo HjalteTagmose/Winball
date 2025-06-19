@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgq8uyrtdjs4b"]
+[gd_scene load_steps=8 format=3 uid="uid://bgq8uyrtdjs4b"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_lmwaj"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_ochcu"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_3j6bh"]
 [ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://art/Bumpers/bumper_round.png" id="4_66t0e"]
+[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_pp1k8"]
+
+[sub_resource type="Curve" id="Curve_pp1k8"]
+_limits = [0.0, 2.0, 0.0, 0.25]
+_data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0, 0.0, 0, 0, Vector2(0.21281, 1.0031), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
 radius = 33.0
@@ -17,8 +23,11 @@ script = ExtResource("2_ochcu")
 extraVisual = NodePath("Sprite2D/Sprite2D")
 Enabled = true
 enabled = true
+CanDie = null
+Life = null
 Power = 40.0
 Score = Array[int]([100, 50, 5])
+Bias = null
 BiasPower = 0.0
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("3_3j6bh")
@@ -28,6 +37,8 @@ metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 1, 1)
 texture = ExtResource("4_66t0e")
+script = ExtResource("5_pp1k8")
+scale_curve = SubResource("Curve_pp1k8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
 texture = ExtResource("4_66t0e")
