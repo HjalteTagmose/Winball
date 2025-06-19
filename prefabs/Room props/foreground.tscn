@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4cg4r76w15t4"]
+
+[ext_resource type="Texture2D" uid="uid://b06gvnh0du5ts" path="res://art/metal_wall_bg.png" id="1_bj1dw"]
+
+[node name="Foreground" type="Sprite2D"]
+z_index = -1
+texture = ExtResource("1_bj1dw")

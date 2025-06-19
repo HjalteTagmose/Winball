@@ -162,15 +162,23 @@ Enabled = true
 
 [node name="ShallowTriangleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("9_gx2u3")]
 position = Vector2(0, -1057)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("9_gx2u3")]
 position = Vector2(-232, -1756)
+Enabled = true
 
 [node name="ShallowTriangleAmmoBumper3" parent="Props/AmmoBumpers" instance=ExtResource("9_gx2u3")]
 position = Vector2(232, -1756)
+Enabled = true
 
 [node name="AmmoBumper_Diamond" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
-position = Vector2(-560, -285)
+position = Vector2(-475, -307)
+scale = Vector2(-2, 2)
+Enabled = true
+
+[node name="AmmoBumper_Diamond3" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
+position = Vector2(475, -307)
 Enabled = true
 
 [node name="AmmoBumper_Diamond2" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
@@ -179,11 +187,6 @@ Enabled = true
 
 [node name="AmmoBumper_Diamond6" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(714, -1129)
-Enabled = true
-
-[node name="AmmoBumper_Diamond3" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
-position = Vector2(560, -285)
-scale = Vector2(-2, 2)
 Enabled = true
 
 [node name="AmmoBumper_Diamond4" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
