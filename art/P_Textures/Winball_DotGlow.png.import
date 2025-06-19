@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1h6rjkrnhdei"
-path="res://.godot/imported/50x50_bullet_spin.png-81619e455486d768b304fcc06b8c6f62.ctex"
+uid="uid://bmjyhmxu52twp"
+path="res://.godot/imported/Winball_DotGlow.png-e23daa7f2ecf2948d813ed039c761831.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/50x50_bullet_spin.png"
-dest_files=["res://.godot/imported/50x50_bullet_spin.png-81619e455486d768b304fcc06b8c6f62.ctex"]
+source_file="res://art/P_Textures/Winball_DotGlow.png"
+dest_files=["res://.godot/imported/Winball_DotGlow.png-e23daa7f2ecf2948d813ed039c761831.ctex"]
 
 [params]
 

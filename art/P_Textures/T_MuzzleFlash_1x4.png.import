@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1h6rjkrnhdei"
-path="res://.godot/imported/50x50_bullet_spin.png-81619e455486d768b304fcc06b8c6f62.ctex"
+uid="uid://dhl2odi7575ck"
+path="res://.godot/imported/T_MuzzleFlash_1x4.png-21790d2b0016391d8d379c94dd8cc8f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/50x50_bullet_spin.png"
-dest_files=["res://.godot/imported/50x50_bullet_spin.png-81619e455486d768b304fcc06b8c6f62.ctex"]
+source_file="res://art/P_Textures/T_MuzzleFlash_1x4.png"
+dest_files=["res://.godot/imported/T_MuzzleFlash_1x4.png-21790d2b0016391d8d379c94dd8cc8f0.ctex"]
 
 [params]
 
