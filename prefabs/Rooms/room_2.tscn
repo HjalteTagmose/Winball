@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="10_hojoj"]
 [ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="11_di54m"]
 [ext_resource type="PackedScene" uid="uid://dty1lc8lqyalq" path="res://prefabs/Room props/speed_sticker.tscn" id="12_crms2"]
-[ext_resource type="PackedScene" uid="uid://da4jw8s8ebsdu" path="res://prefabs/Room props/score_light.tscn" id="13_a4lfk"]
+[ext_resource type="PackedScene" uid="uid://da4jw8s8ebsdu" path="res://prefabs/Room props/score_light_group.tscn" id="13_a4lfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(4.81928, 18)
