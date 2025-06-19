@@ -1,12 +1,13 @@
 extends Node2D
+class_name Score
 
-@export var digit_spacing = 50
+@export var digit_spacing : int = 50
 @export var digit_prefab : PackedScene
 
 var digits : Array[ScoreDigit]
 var cur_number = -1
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Global.score == cur_number:
 		return
 	set_number(Global.score)
@@ -14,7 +15,7 @@ func _process(delta: float) -> void:
 func set_number(number : int) -> void:
 	cur_number = number
 	var str = str(number)
-	var start = 0
+	# var start = 0
 		
 	for digit in digits:
 		digit.hide()

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgcnmju2c0r7w"]
+[gd_scene load_steps=11 format=3 uid="uid://bgcnmju2c0r7w"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_n3c57"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_n6cen"]
 [ext_resource type="PackedScene" uid="uid://p5c72b14kda" path="res://prefabs/Room props/exit.tscn" id="3_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cubywxgl8t7t2" path="res://prefabs/Room props/flat_bumper_ground.tscn" id="4_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/Bumpers/flat_bumper_walls.tscn" id="4_hg5bj"]
+[ext_resource type="PackedScene" uid="uid://dc228ykvmvaux" path="res://prefabs/Room props/trap_sticker.tscn" id="7_p84ie"]
 [ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_sjl2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
@@ -367,3 +368,6 @@ BiasPower = 15.0
 position = Vector2(-3, -727)
 Power = 50.0
 BiasPower = 15.0
+
+[node name="TrapSticker" parent="." instance=ExtResource("7_p84ie")]
+position = Vector2(-74, -569)

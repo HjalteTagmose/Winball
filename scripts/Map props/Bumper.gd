@@ -47,7 +47,7 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	player.apply_central_impulse(impulse)
 
 	PlayAnimation(collisionInfo)
-	AddScore()
+	AddScore(collisionInfo)
 
 	timesHit += 1
 	bumped.emit()
@@ -78,7 +78,7 @@ func PlayAnimation(collisionInfo: KinematicCollision2D):
 	AudioPlayer.play()
 	PlayParticle(collisionInfo)
 
-func AddScore():
+func AddScore(collisionInfo: KinematicCollision2D):
 	if(Score.size() <= 0):
 		return
 	
@@ -86,11 +86,16 @@ func AddScore():
 	var scoreToGive = Score[scoreIndex]
 	
 	_scoreIndex += 1
-	
-	Global.AddScore(scoreToGive)
 
+	# coud be nicer here 
 	if isInStrom:
+		Global.AddScore(scoreToGive*2)
+		Global.DisplayFloatingScore(scoreToGive*2, collisionInfo.get_position())
+	else:
 		Global.AddScore(scoreToGive)
+		Global.DisplayFloatingScore(scoreToGive, collisionInfo.get_position())
+
+
 
 func Die():
 	if _isDead:

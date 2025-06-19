@@ -18,6 +18,7 @@ func _process(_delta: float) -> void:
 			return
 	
 	Global.score += score
+	Global.DisplayFloatingScore(score, global_position)
 	
 	for light in lights:
 		light.turnOff()	

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7pysjc4ifhjj"]
+
+[ext_resource type="Script" uid="uid://df4f3ugqxawbc" path="res://scripts/ui/score/BumpScore.gd" id="1_ynorx"]
+[ext_resource type="PackedScene" uid="uid://c0mcd5tvrluew" path="res://prefabs/ScoreDigit.tscn" id="2_844fo"]
+
+[node name="FloatingScore" type="Node2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_ynorx")
+Lifetime = 0.8
+digit_prefab = ExtResource("2_844fo")
