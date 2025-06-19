@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dedwl18kckfdd"]
+[gd_scene load_steps=10 format=3 uid="uid://dedwl18kckfdd"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player/player.gd" id="1_onrkg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c75e2ue6ieuwy" path="res://art/Particles/MuzzleFlash.tscn" id="2_g2jcq"]
 [ext_resource type="PackedScene" uid="uid://bxhiscfk4buxn" path="res://art/Particles/BumpDistortionParticles.tscn" id="3_g2jcq"]
 [ext_resource type="Script" uid="uid://ctv7yapi47nbu" path="res://scripts/player/gun.gd" id="3_r66lb"]
+[ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="7_u51tk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1txc5"]
 bounce = 0.4
@@ -13,7 +14,7 @@ bounce = 0.4
 [sub_resource type="CircleShape2D" id="CircleShape2D_mncer"]
 radius = 16.15
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("playerGun")]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("stormParticle", "playerGun")]
 collision_layer = 2
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_1txc5")
@@ -28,6 +29,7 @@ max_slowdown_duration = 1.5
 SlowdownEndBehaviour = 1
 shootParticle = ExtResource("2_g2jcq")
 bumpAnythingParticle = ExtResource("3_g2jcq")
+stormParticle = NodePath("GPUParticles2D")
 playerGun = NodePath("Gun")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
@@ -46,3 +48,8 @@ texture = ExtResource("1_4flbx")
 script = ExtResource("3_r66lb")
 distanceToPlayer = 30.0
 playerRef = NodePath("..")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("7_u51tk")]
+z_index = 50
+emitting = false
+amount = 12

@@ -9,8 +9,9 @@ class_name AmmoBumper extends BasicBumper
 			extraVisual.visible = value
 		enabled = value
 	
+@export_category("No touchy")
+@export var enabled : bool
 
-var enabled : bool = true
 var _HasBeenUsed = false;
 
 func AdditionalBumpBehaviour(_collisionInfo:KinematicCollision2D, _player : Player) -> void:

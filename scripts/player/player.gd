@@ -23,11 +23,14 @@ enum SlowdownEndBehaviourEnum { AmmoWasted, Launch }
 
 @export var shootParticle : PackedScene
 @export var bumpAnythingParticle : PackedScene
-
+@export var stormParticle : GPUParticles2D
 @export var playerGun : Node2D
 
-var flame_thrower_counter = 0;
+var InStorm: bool:
+	set(value):
+		stormParticle.emitting = value
 
+var flame_thrower_counter = 0;
 var locked : bool = false
 var _slowdownCounter = 0.0
 

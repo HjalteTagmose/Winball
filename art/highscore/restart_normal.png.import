@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj3wo57ibqlo2"
-path="res://.godot/imported/45x33_speed_arrow_diagonal.png-f5d1999b145a672ca7491e430624acb5.ctex"
+uid="uid://bxotc57mlu33v"
+path="res://.godot/imported/restart_normal.png-4d2913d5c1e51464f2def0b239cf7670.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/45x33_speed_arrow_diagonal.png"
-dest_files=["res://.godot/imported/45x33_speed_arrow_diagonal.png-f5d1999b145a672ca7491e430624acb5.ctex"]
+source_file="res://art/highscore/restart_normal.png"
+dest_files=["res://.godot/imported/restart_normal.png-4d2913d5c1e51464f2def0b239cf7670.ctex"]
 
 [params]
 

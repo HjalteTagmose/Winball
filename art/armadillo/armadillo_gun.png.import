@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buvaskjvhonse"
-path="res://.godot/imported/armadillo_ball.png-3bb1a7e6d7304e030679be9da4ef39c5.ctex"
+uid="uid://bxvquo7i0vgfo"
+path="res://.godot/imported/armadillo_gun.png-31d8c76fe8d0f76edc1d6637d667df94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/armadillo_ball.png"
-dest_files=["res://.godot/imported/armadillo_ball.png-3bb1a7e6d7304e030679be9da4ef39c5.ctex"]
+source_file="res://art/armadillo/armadillo_gun.png"
+dest_files=["res://.godot/imported/armadillo_gun.png-31d8c76fe8d0f76edc1d6637d667df94.ctex"]
 
 [params]
 

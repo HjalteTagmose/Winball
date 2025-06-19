@@ -66,12 +66,14 @@ func _physics_process(delta: float) -> void:
 func _on_body_enter(body: Node2D):
 	if body is Player:
 		player = body
+		player.InStorm = true
 	
 	if body is BasicBumper:
 		body.isInStrom = true
 
 func _on_body_exit(body: Node2D):
 	if body is Player:
+		player.InStorm = false
 		player = null
 	
 	if body is BasicBumper:
