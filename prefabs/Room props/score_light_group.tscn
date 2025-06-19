@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://da4jw8s8ebsdu"]
+[gd_scene load_steps=3 format=3 uid="uid://ttdbstumxur7"]
 
 [ext_resource type="Script" uid="uid://bj2i2vom5jo3d" path="res://scripts/score_lights.gd" id="1_y00py"]
 [ext_resource type="PackedScene" uid="uid://5jm3kowwsw2p" path="res://prefabs/Room props/score_light.tscn" id="2_qo7uj"]
