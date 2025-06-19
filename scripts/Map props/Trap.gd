@@ -25,7 +25,7 @@ func FreezePlayer(player : Player):
 	player.set_deferred("freeze", true)
 	player.locked = true
 
-	boundPlayer = player 
+	boundPlayer = player
 
 # point = new Vector2(point.x + radius * Mathf.Cos(angle), point.y + radius * Mathf.Sin(angle));
 func SpawnBumpers():
@@ -48,11 +48,11 @@ func SpawnBumpers():
 
 		# print("angle ", i * angleStep, " step " , angleStep)
 		# print("pos ", global_position + Vector2(Radius * cos(i * angleStep) , Radius * sin(i * angleStep)))
-		positionsOnArrays.append( global_position + Vector2(Radius * cos(deg_to_rad(i * angleStep) ) , Radius * sin(deg_to_rad(i * angleStep) )))
+		positionsOnArrays.append(global_position + Vector2(Radius * cos(deg_to_rad(i * angleStep) ) , Radius * sin(deg_to_rad(i * angleStep) )))
 		spawnedBumpers.append(bumper)
 
 		self.get_parent().call_deferred("add_child", bumper)
-		bumper.global_position = global_position
+		bumper.position = position
 
 
 func AnimateSpawn(animatePos : bool) -> void:
@@ -67,7 +67,7 @@ func AnimateSpawn(animatePos : bool) -> void:
 		else:
 			time = 0.0
 
-		tween.tween_property(bumper, "position", pos, time)
+		tween.tween_property(bumper, "global_position", pos, time)
 	
 	if Animate:
 		print("tween callback")
