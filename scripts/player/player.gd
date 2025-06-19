@@ -97,7 +97,10 @@ func handleLaunch(delta: float) -> void:
 	if(Input.is_action_just_released("launch")):
 		launch()
 		
-			
+	var direction = get_direction()
+	slowmoSprite.global_position = global_position
+	slowmoSprite.global_rotation = direction.angle()
+
 func launch():
 	if(!_isCharging):
 		return
@@ -168,14 +171,24 @@ func handleFlameThrower(delta: float) -> void:
 	
 	if flame_thrower_counter < flame_thrower_delay:
 		return
-	
-	flame_thrower_counter = 0
 	var direction = get_direction()
-	var impulse = direction * flame_thrower_power
+	
+	var dot = linear_velocity.normalized().dot(direction)
+	dot = -dot
+	dot /= 2
+	dot += 2
+	
+	if(linear_velocity.length() > 1000):
+		linear_velocity = linear_velocity.normalized() * 1000
+		
+	flame_thrower_counter = 0
+	var impulse = direction * flame_thrower_power * dot
 	apply_central_impulse(impulse)
 	handleFlameParticle(direction)
+	
 
-func handleFlameParticle(direction: Vector2):	
+
+func handleFlameParticle(direction: Vector2):
 	if currentlyPlayerParticle == null:
 		currentlyPlayerParticle = flame_thrower_particles.instantiate()
 		get_tree().root.add_child(currentlyPlayerParticle)
@@ -183,12 +196,10 @@ func handleFlameParticle(direction: Vector2):
 	currentlyPlayerParticle.global_position = playerGun.global_position
 	currentlyPlayerParticle.rotation = direction.angle()
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	flame_thrower_counter += delta
-	if(Global.playerWeapon == Global.PlayerWeapon.Flamethrower):		
+	if(Global.playerWeapon == Global.PlayerWeapon.Flamethrower):
 		handleFlameThrower(delta)
 	if(Global.playerWeapon == Global.PlayerWeapon.Regular):
 		handleLaunch(delta)
