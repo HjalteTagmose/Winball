@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_n3c57"]
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_n6cen"]
 [ext_resource type="PackedScene" uid="uid://p5c72b14kda" path="res://prefabs/Room props/exit.tscn" id="3_3bafk"]
+[ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="3_gg6m2"]
 [ext_resource type="PackedScene" uid="uid://cubywxgl8t7t2" path="res://prefabs/Room props/Bumpers/flat_bumper_ground.tscn" id="4_3bafk"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/Bumpers/flat_bumper_walls.tscn" id="4_hg5bj"]
-[ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="6_604h0"]
-[ext_resource type="PackedScene" uid="uid://c5clxm8i6clwg" path="res://prefabs/Room props/Bumpers/bumper_diamond_ammo.tscn" id="6_l7i82"]
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="7_4ie43"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="7_p84ie"]
 [ext_resource type="PackedScene" uid="uid://rr7syj21fsh8" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="8_gg6m2"]
+[ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_shallowTriangle_ammo.tscn" id="9_gg6m2"]
 [ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_sjl2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
@@ -142,7 +142,7 @@ shape = SubResource("RectangleShape2D_n6cen")
 debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
 [node name="TopWall" type="Node2D" parent="Walls"]
-position = Vector2(0, -2577)
+position = Vector2(0, -2741.57)
 
 [node name="WallPiece2" type="Node2D" parent="Walls/TopWall"]
 position = Vector2(560, -1)
@@ -176,8 +176,28 @@ scale = Vector2(26.56, 1)
 shape = SubResource("RectangleShape2D_cguwc")
 debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
+[node name="Wall" parent="Walls" instance=ExtResource("3_gg6m2")]
+position = Vector2(-466, -2587.57)
+rotation = 0.0
+scale = Vector2(1.2, 1)
+
+[node name="Wall5" parent="Walls" instance=ExtResource("3_gg6m2")]
+position = Vector2(466, -2587.57)
+rotation = 0.0
+scale = Vector2(1.2, 1)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("3_gg6m2")]
+position = Vector2(-207, -2663.57)
+rotation = -0.785398
+scale = Vector2(0.7, 1)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("3_gg6m2")]
+position = Vector2(207, -2663.57)
+rotation = 0.785398
+scale = Vector2(0.7, 1)
+
 [node name="Exit" parent="Walls" instance=ExtResource("3_3bafk")]
-position = Vector2(0, -2577)
+position = Vector2(0, -2741.57)
 
 [node name="Props" type="Node2D" parent="."]
 
@@ -195,11 +215,11 @@ position = Vector2(516, -1532)
 [node name="Corners" type="Node2D" parent="Props"]
 
 [node name="FlatBumper Walls11" parent="Props/Corners" instance=ExtResource("4_hg5bj")]
-position = Vector2(707, -2496)
+position = Vector2(707, -2519.57)
 rotation = 3.14159
 
 [node name="FlatBumper Walls10" parent="Props/Corners" instance=ExtResource("4_hg5bj")]
-position = Vector2(-714, -2504)
+position = Vector2(-714, -2512.57)
 rotation = 1.5708
 
 [node name="CornerSquares" type="Node2D" parent="Props"]
@@ -230,42 +250,18 @@ rotation = -1.57066
 
 [node name="CircleBumpers" type="Node2D" parent="Props"]
 
-[node name="DiamondAmmoBumper" parent="Props" instance=ExtResource("6_l7i82")]
-position = Vector2(0, -1905)
-Enabled = true
-enabled = true
-
-[node name="FlipperAmmoBumper" parent="Props" instance=ExtResource("7_4ie43")]
-position = Vector2(236, -2065)
-enabled = true
-
-[node name="FlipperAmmoBumper2" parent="Props" instance=ExtResource("7_4ie43")]
-position = Vector2(-236, -2065)
-scale = Vector2(-2, 2)
-enabled = true
-
 [node name="DiamondAmmoBumper2" parent="Props" instance=ExtResource("8_gg6m2")]
 position = Vector2(-317, -1535)
 Enabled = true
-enabled = true
 
 [node name="DiamondAmmoBumper3" parent="Props" instance=ExtResource("8_gg6m2")]
 position = Vector2(293, -1538)
 Enabled = true
-enabled = true
+
+[node name="ShallowTriangleAmmoBumper" parent="Props" instance=ExtResource("9_gg6m2")]
+position = Vector2(0, -1953)
 
 [node name="WallCorners" type="Node2D" parent="Props"]
-
-[node name="TriangleAmmoBumper" parent="Props/WallCorners" instance=ExtResource("6_604h0")]
-position = Vector2(697, -1976)
-Enabled = true
-enabled = true
-
-[node name="TriangleAmmoBumper2" parent="Props/WallCorners" instance=ExtResource("6_604h0")]
-position = Vector2(-697, -1976)
-scale = Vector2(-2, 2)
-Enabled = true
-enabled = true
 
 [node name="FlatBumper Walls7" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
 position = Vector2(-694, -770)
@@ -313,12 +309,17 @@ metadata/_edit_group_ = true
 position = Vector2(695, -1608)
 rotation = -1.5708
 
+[node name="FlipperAmmoBumper" parent="Props/WallCorners" instance=ExtResource("7_4ie43")]
+position = Vector2(555, -1946)
+
+[node name="FlipperAmmoBumper2" parent="Props/WallCorners" instance=ExtResource("7_4ie43")]
+position = Vector2(-555, -1946)
+scale = Vector2(-2, 2)
+
 [node name="AmmoBumpers" type="Node2D" parent="."]
 
 [node name="AmmoBumper" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(148, -346)
-Enabled = false
-enabled = false
 Power = 50.0
 BiasPower = 15.0
 
@@ -358,13 +359,48 @@ BiasPower = 15.0
 position = Vector2(0, 790)
 scale = Vector2(15.32, 3.04)
 
-[node name="Foreground2" parent="Foregrounds" instance=ExtResource("7_p84ie")]
-position = Vector2(4716, -1094)
-scale = Vector2(15.32, 5.24)
-
 [node name="Foreground3" parent="Foregrounds" instance=ExtResource("7_p84ie")]
-position = Vector2(-4716, -1094)
-scale = Vector2(15.32, 5.24)
+position = Vector2(-4716, -1175.1)
+scale = Vector2(15.32, 6.1168)
+
+[node name="Foreground9" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(-581, -2669.57)
+scale = Vector2(1.15234, 0.3)
+
+[node name="Foreground13" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(-515, -2723.97)
+scale = Vector2(1.41016, 0.0875001)
+
+[node name="Foreground15" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(-290.5, -2693.07)
+scale = Vector2(0.291016, 0.126953)
+
+[node name="Foreground14" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(511.25, -2724.28)
+scale = Vector2(1.3916, 0.092579)
+
+[node name="Foreground10" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(583, -2669.57)
+scale = Vector2(1.16016, 0.3)
+
+[node name="Foreground11" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(260.209, -2662.37)
+rotation = 0.785398
+scale = Vector2(0.353883, 0.122225)
+
+[node name="Foreground16" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(277, -2684.57)
+rotation = 0.785398
+scale = Vector2(0.163044, 0.119714)
+
+[node name="Foreground12" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(-248.69, -2662.47)
+rotation = -0.785398
+scale = Vector2(0.375883, 0.113178)
+
+[node name="Foreground8" parent="Foregrounds" instance=ExtResource("7_p84ie")]
+position = Vector2(4716, -1175.1)
+scale = Vector2(15.32, 6.1168)
 
 [node name="Foreground4" parent="Foregrounds" instance=ExtResource("7_p84ie")]
 position = Vector2(-652, -199)
@@ -372,7 +408,7 @@ rotation = 0.785398
 scale = Vector2(2.81019, 1)
 
 [node name="Foreground5" parent="Foregrounds" instance=ExtResource("7_p84ie")]
-position = Vector2(643, -174)
+position = Vector2(652, -199)
 rotation = -0.785398
 scale = Vector2(2.81019, 1)
 

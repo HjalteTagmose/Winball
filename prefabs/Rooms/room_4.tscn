@@ -300,35 +300,27 @@ scale = Vector2(-2, 2)
 
 [node name="ShallowTriangleAmmoBumper" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(0, -989)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper2" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(-655, -2052)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper3" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(432, -1745)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper5" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(630, -2052)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper6" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(367, -2365)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper7" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(-362, -2365)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper8" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(0, -2691)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper4" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(-399, -1745)
-Enabled = true
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 
