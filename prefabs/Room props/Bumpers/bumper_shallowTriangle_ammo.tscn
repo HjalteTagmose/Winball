@@ -36,6 +36,7 @@ script = ExtResource("5_gfxd0")
 scale_curve = SubResource("Curve_6wk2o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+visible = false
 texture = ExtResource("6_nprpl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
