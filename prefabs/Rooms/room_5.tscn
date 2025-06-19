@@ -255,15 +255,12 @@ Enabled = true
 
 [node name="ShallowTriangleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("11_bxq5b")]
 position = Vector2(-282, -31)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper3" parent="Props/AmmoBumpers" instance=ExtResource("11_bxq5b")]
 position = Vector2(0, -987)
-Enabled = true
 
 [node name="ShallowTriangleAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("11_bxq5b")]
 position = Vector2(282, -31)
-Enabled = true
 
 [node name="DiamondAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("13_bxq5b")]
 position = Vector2(-282, -2334)
