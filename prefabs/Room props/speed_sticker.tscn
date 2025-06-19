@@ -14,6 +14,7 @@ script = ExtResource("1_7acym")
 ForwardPoint = NodePath("PointUp")
 Power = 100.0
 OverridesVelocity = true
+OneTimeUse = false
 AudioPlayer = NodePath("audioPlayer")
 metadata/_custom_type_script = "uid://o0wcl8l7p1uy"
 
