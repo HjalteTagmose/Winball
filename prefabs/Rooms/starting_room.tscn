@@ -233,32 +233,39 @@ rotation = -1.57066
 [node name="DiamondAmmoBumper" parent="Props" instance=ExtResource("6_l7i82")]
 position = Vector2(0, -1905)
 Enabled = true
+enabled = true
 
 [node name="FlipperAmmoBumper" parent="Props" instance=ExtResource("7_4ie43")]
 position = Vector2(236, -2065)
+enabled = true
 
 [node name="FlipperAmmoBumper2" parent="Props" instance=ExtResource("7_4ie43")]
 position = Vector2(-236, -2065)
 scale = Vector2(-2, 2)
+enabled = true
 
 [node name="DiamondAmmoBumper2" parent="Props" instance=ExtResource("8_gg6m2")]
 position = Vector2(-317, -1535)
 Enabled = true
+enabled = true
 
 [node name="DiamondAmmoBumper3" parent="Props" instance=ExtResource("8_gg6m2")]
 position = Vector2(293, -1538)
 Enabled = true
+enabled = true
 
 [node name="WallCorners" type="Node2D" parent="Props"]
 
 [node name="TriangleAmmoBumper" parent="Props/WallCorners" instance=ExtResource("6_604h0")]
 position = Vector2(697, -1976)
 Enabled = true
+enabled = true
 
 [node name="TriangleAmmoBumper2" parent="Props/WallCorners" instance=ExtResource("6_604h0")]
 position = Vector2(-697, -1976)
 scale = Vector2(-2, 2)
 Enabled = true
+enabled = true
 
 [node name="FlatBumper Walls7" parent="Props/WallCorners" instance=ExtResource("4_hg5bj")]
 position = Vector2(-694, -770)
@@ -310,6 +317,8 @@ rotation = -1.5708
 
 [node name="AmmoBumper" parent="AmmoBumpers" instance=ExtResource("12_sjl2v")]
 position = Vector2(148, -346)
+Enabled = false
+enabled = false
 Power = 50.0
 BiasPower = 15.0
 
@@ -363,7 +372,7 @@ rotation = 0.785398
 scale = Vector2(2.81019, 1)
 
 [node name="Foreground5" parent="Foregrounds" instance=ExtResource("7_p84ie")]
-position = Vector2(652, -199)
+position = Vector2(643, -174)
 rotation = -0.785398
 scale = Vector2(2.81019, 1)
 
