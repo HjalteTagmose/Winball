@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv22ptl7yjca6"
-path="res://.godot/imported/red_bumper_diamond.png-04f64bdd54dfbc8c39b0d6713a84aba5.ctex"
+uid="uid://5mfpymbhhgsk"
+path="res://.godot/imported/Winball_Dots.png-b3baa321cde8bd30fb54ab22e8891a5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Bumpers/red_bumper_diamond.png"
-dest_files=["res://.godot/imported/red_bumper_diamond.png-04f64bdd54dfbc8c39b0d6713a84aba5.ctex"]
+source_file="res://art/P_Textures/Winball_Dots.png"
+dest_files=["res://.godot/imported/Winball_Dots.png-b3baa321cde8bd30fb54ab22e8891a5d.ctex"]
 
 [params]
 

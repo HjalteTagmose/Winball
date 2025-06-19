@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1jv5d4t6o8xw"
-path="res://.godot/imported/blue_bumper_wall_triangle_xs.png-f562d3b3d88eebf6e6240f46cd5bef5c.ctex"
+uid="uid://d1h6rjkrnhdei"
+path="res://.godot/imported/50x50_bullet_spin.png-81619e455486d768b304fcc06b8c6f62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Bumpers/blue_bumper_wall_triangle_xs.png"
-dest_files=["res://.godot/imported/blue_bumper_wall_triangle_xs.png-f562d3b3d88eebf6e6240f46cd5bef5c.ctex"]
+source_file="res://art/50x50_bullet_spin.png"
+dest_files=["res://.godot/imported/50x50_bullet_spin.png-81619e455486d768b304fcc06b8c6f62.ctex"]
 
 [params]
 

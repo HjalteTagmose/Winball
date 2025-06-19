@@ -1,13 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=10 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
 [ext_resource type="PackedScene" uid="uid://baeyuf6utr2j6" path="res://prefabs/ui/ammo_cartrige.tscn" id="4_8ph68"]
 [ext_resource type="PackedScene" uid="uid://b82knrsfc5qcx" path="res://prefabs/ui/bullet_display.tscn" id="5_hfij3"]
 [ext_resource type="PackedScene" uid="uid://dalsv3kwfrg3b" path="res://prefabs/Score.tscn" id="6_1kxbb"]
+[ext_resource type="Script" uid="uid://b0mch3eq6kaue" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
 [ext_resource type="Script" uid="uid://cmbduliw3rk1l" path="res://scripts/player_charge_slider.gd" id="7_ibp3j"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ibp3j"]
 
 [node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
 script = ExtResource("1_oe5df")
@@ -35,7 +38,7 @@ bulletPrefab = ExtResource("5_hfij3")
 
 [node name="PlayerChargeSlider" type="HSlider" parent="GameplayGroup"]
 visible = false
-modulate = Color(0.912269, 1.50649e-05, 5.77569e-06, 1)
+self_modulate = Color(0.913725, 0, 0, 1)
 offset_left = 444.0
 offset_top = 499.0
 offset_right = 707.0
@@ -47,6 +50,36 @@ value = 50.0
 editable = false
 scrollable = false
 script = ExtResource("7_ibp3j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameplayGroup/PlayerChargeSlider"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 486.0
+offset_bottom = 22.0
+scale = Vector2(0.541, 0.541)
+theme_override_font_sizes/normal_font_size = 15
+text = "Charging..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StormDeathSlider" type="HSlider" parent="GameplayGroup"]
+visible = false
+offset_left = 293.0
+offset_top = 139.0
+offset_right = 869.0
+offset_bottom = 155.0
+theme_override_icons/grabber_disabled = SubResource("CanvasTexture_ibp3j")
+editable = false
+scrollable = false
+script = ExtResource("7_a4mgm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameplayGroup/StormDeathSlider"]
+layout_mode = 0
+offset_top = -35.0
+offset_right = 574.0
+offset_bottom = 5.0
+text = "The Storm consumes all..."
+horizontal_alignment = 1
 
 [node name="GameOverCanvas" type="CanvasGroup" parent="."]
 visible = false

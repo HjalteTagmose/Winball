@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy012fy7skxkx"]
+[gd_scene load_steps=9 format=3 uid="uid://dy012fy7skxkx"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_extvh"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_vaf4u"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_nprpl"]
-[ext_resource type="Texture2D" uid="uid://b88erlon5vn4i" path="res://art/test_shallow_bumper.png" id="4_o6u2a"]
+[ext_resource type="Texture2D" uid="uid://bn18te142jop5" path="res://art/Bumpers/slingshot_blue_slim.png" id="4_vaf4u"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_gfxd0"]
+[ext_resource type="Texture2D" uid="uid://cqeok331goj14" path="res://art/Bumpers/slingshot_red_slim.png" id="6_nprpl"]
 
 [sub_resource type="Curve" id="Curve_6wk2o"]
 _limits = [0.0, 2.0, 0.0, 0.25]
@@ -12,7 +13,7 @@ _data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0,
 point_count = 3
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
-points = PackedVector2Array(81, 13, 78.5, 16.5, -77.5, 16.5, -81, 13, 0, -18)
+points = PackedVector2Array(81, 6.5, 81, 23, -81, 23, -81, 6.5, 0, -24.5)
 
 [node name="ShallowTriangleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer")]
 scale = Vector2(2, 2)
@@ -24,18 +25,18 @@ extraVisual = NodePath("Sprite2D/Sprite2D")
 Power = 40.0
 Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
-BiasPower = 20.0
+BiasPower = 120.0
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("3_nprpl")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("4_o6u2a")
+texture = ExtResource("4_vaf4u")
 script = ExtResource("5_gfxd0")
 scale_curve = SubResource("Curve_6wk2o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-texture = ExtResource("4_o6u2a")
+texture = ExtResource("6_nprpl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("ConvexPolygonShape2D_oegki")
