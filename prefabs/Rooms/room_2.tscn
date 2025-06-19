@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="4_gx2u3"]
 [ext_resource type="PackedScene" uid="uid://p5c72b14kda" path="res://prefabs/Room props/exit.tscn" id="4_hojoj"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/Bumpers/flat_bumper_walls.tscn" id="5_epmcq"]
-[ext_resource type="PackedScene" uid="uid://b54fnp64tfkvf" path="res://prefabs/Room props/slide.tscn" id="6_fotbk"]
 [ext_resource type="PackedScene" uid="uid://c5clxm8i6clwg" path="res://prefabs/Room props/Bumpers/bumper_diamond_ammo.tscn" id="7_kmduu"]
 [ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="8_oxqq0"]
 [ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_shallowTriangle_ammo.tscn" id="9_gx2u3"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="11_di54m"]
 [ext_resource type="PackedScene" uid="uid://dty1lc8lqyalq" path="res://prefabs/Room props/speed_sticker.tscn" id="12_crms2"]
 [ext_resource type="PackedScene" uid="uid://ttdbstumxur7" path="res://prefabs/Room props/score_light_group.tscn" id="13_a4lfk"]
+[ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="17_epmcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
 size = Vector2(4.81928, 18)
@@ -132,11 +132,6 @@ rotation = 1.5708
 [node name="FlatBumper Walls12" parent="Props/WallCorners" instance=ExtResource("5_epmcq")]
 position = Vector2(-79, -468)
 rotation = 3.14159
-
-[node name="Slide" parent="Props" instance=ExtResource("6_fotbk")]
-z_index = 1
-position = Vector2(-1459, -662)
-points = PackedVector2Array(0, 0, -3, 96, -165, 122, -412, 117, -451, 10, -371, -80, -325, -36, -364, 67, -264, 77, -287, -100, -261, -262)
 
 [node name="AmmoBumpers" type="Node2D" parent="Props"]
 
@@ -319,3 +314,47 @@ Power = 200.0
 
 [node name="ScoreLightRoot" parent="." instance=ExtResource("13_a4lfk")]
 position = Vector2(-660, -2920)
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Foreground" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(-1793, -910)
+scale = Vector2(3.96082, 3.56)
+
+[node name="Foreground2" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(1793, -910)
+scale = Vector2(3.96082, 3.56)
+
+[node name="Foreground5" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(1397, -2673)
+scale = Vector2(3.96082, 2.56)
+
+[node name="Foreground7" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(383, -3200)
+scale = Vector2(0.5, 0.5)
+
+[node name="Foreground8" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(-383, -3200)
+scale = Vector2(0.5, 0.5)
+
+[node name="Foreground9" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(-246, -3274)
+scale = Vector2(0.2, 0.2)
+
+[node name="Foreground10" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(242, -3274)
+scale = Vector2(0.2, 0.2)
+
+[node name="Foreground6" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(-1397, -2673)
+scale = Vector2(3.96082, 2.56)
+
+[node name="Foreground3" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(1663, -1613)
+rotation = -2.0944
+scale = Vector2(3.96082, 3.56)
+
+[node name="Foreground4" parent="Foreground" instance=ExtResource("17_epmcq")]
+position = Vector2(-1663, -1613)
+rotation = 2.0944
+scale = Vector2(3.96082, 3.56)

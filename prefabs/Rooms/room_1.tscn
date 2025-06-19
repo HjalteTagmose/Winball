@@ -315,77 +315,62 @@ position = Vector2(0, -1950)
 [node name="Foregrounds" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1611, -1226)
 scale = Vector2(1.863, 4.92)
 
 [node name="Foreground2" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1483, -1839)
 scale = Vector2(1.75051, 2.28)
 
 [node name="Foreground3" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1412, -1750)
 scale = Vector2(1.75051, 1.48)
 
 [node name="Foreground4" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1401, -2351)
 scale = Vector2(-2.37651, 0.56078)
 
 [node name="Foreground5" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1482, -2072)
 scale = Vector2(-2.37651, 0.56078)
 
 [node name="Foreground6" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1398, -2169)
 scale = Vector2(-2.37651, 0.56078)
 
 [node name="Foreground7" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-764, -45)
 scale = Vector2(-2.37651, 0.119312)
 
 [node name="Foreground8" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-390, -146)
 scale = Vector2(-0.49299, 0.441552)
 
 [node name="Foreground13" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(392, -112)
 scale = Vector2(-0.49299, 0.441552)
 
 [node name="Foreground14" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(881, -134.65)
 scale = Vector2(1.897, 0.562)
 
 [node name="Foreground15" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(1556, -1246)
 scale = Vector2(2.977, 4.802)
 
 [node name="Foreground9" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1100, -272)
 scale = Vector2(-0.49299, 0.441552)
 
 [node name="Foreground10" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1042, -222)
 scale = Vector2(-0.49299, 0.441552)
 
 [node name="Foreground11" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(-1015, -147)
 scale = Vector2(-0.49299, 0.441552)
 
 [node name="Foreground12" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-z_index = -1
 position = Vector2(443, -236)
 rotation = 0.748746
 scale = Vector2(-0.49299, 0.441552)
