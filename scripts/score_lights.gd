@@ -23,8 +23,11 @@ func _process(_delta: float) -> void:
 		if(!light.isOn):
 			return
 	
+	var sortedLights : Array[ScoreLight] = lights.duplicate()
+	sortedLights.sort_custom(func(a, b): return a.completionTime > b.completionTime)	
+	
 	ScoreManager.score += score
-	Global.DisplayFloatingScore(score, global_position)
+	Global.DisplayFloatingScore(score, sortedLights[0].global_position)
 	completed = true
 
 	if !OneShot:
