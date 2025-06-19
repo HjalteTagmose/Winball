@@ -11,6 +11,7 @@ class_name Player extends RigidBody2D
 @export var flame_thrower_power : float = 100
 @export var flame_thrower_delay : float = 0.1
 @export var flame_thrower_particles : PackedScene
+@export var flame_thrower_max_linear_velocity : float = 500
 
 @export_category("Slowdown")
 @export var slowdownPower : float = 0.35
@@ -65,9 +66,7 @@ func handleLaunch(delta: float) -> void:
 			slowmoSprite.visible = true
 			slowmoSprite.global_rotation = 0
 			
-			var direction = get_direction()
-			slowmoSprite.global_position = global_position
-			slowmoSprite.global_rotation = direction.angle()
+			rotate_gun()
 
 	if _isCharging:
 		Engine.time_scale = slowdownPower
@@ -76,9 +75,7 @@ func handleLaunch(delta: float) -> void:
 		Global.player_charge_duration_percent_changed.emit(slow_percent * 100)
 		
 		# Rotate slowmoSprite to look at direction
-		var direction = get_direction()
-		slowmoSprite.global_position = global_position
-		slowmoSprite.global_rotation = direction.angle()
+		rotate_gun()
 		
 		if(_slowdownCounter > max_slowdown_duration):
 			if SlowdownEndBehaviour == SlowdownEndBehaviourEnum.AmmoWasted:
@@ -169,7 +166,12 @@ func handleFlameThrower(delta: float) -> void:
 		if currentlyPlayerParticle:
 			currentlyPlayerParticle.StopEmitting()
 			currentlyPlayerParticle = null
+			slowmoSprite.visible = false
+			slowmoSprite.global_rotation = 0
 		return
+	
+	slowmoSprite.visible = true
+	slowmoSprite.global_rotation = 0
 	
 	rotate_gun()
 	
@@ -178,12 +180,12 @@ func handleFlameThrower(delta: float) -> void:
 	var direction = get_direction()
 	
 	var dot = linear_velocity.normalized().dot(direction)
-	dot = -dot
-	dot /= 2
-	dot += 2
+	dot = -dot # Reverse dot product, so a vector going against me will be positive
+	dot /= 2 # go from -1 to 1, to -0.5 to 0.5 
+	dot += 1.5 # go from -0.5 to 0.5, to 1 to 2
 	
-	if(linear_velocity.length() > 500):
-		linear_velocity = linear_velocity.normalized() * 500
+	if(linear_velocity.length() > flame_thrower_max_linear_velocity):
+		linear_velocity = linear_velocity.normalized() * flame_thrower_max_linear_velocity
 		
 	flame_thrower_counter = 0
 	var impulse = direction * flame_thrower_power * dot
