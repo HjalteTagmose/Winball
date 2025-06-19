@@ -23,6 +23,11 @@ RoomLoader="*res://prefabs/Singeltons/room_loader.tscn"
 u="*res://scripts/utils.gd"
 ScoreManager="*res://scripts/score_manager.gd"
 
+[display]
+
+mouse_cursor/custom_image="uid://c2ogw2rnsps32"
+mouse_cursor/custom_image_hotspot=Vector2(42, 42)
+
 [input]
 
 launch={
