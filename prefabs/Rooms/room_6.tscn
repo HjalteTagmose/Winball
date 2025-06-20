@@ -140,7 +140,11 @@ rotation = -1.57066
 [node name="Slide" parent="Props" instance=ExtResource("7_tmua4")]
 z_index = 1
 position = Vector2(-1874, -395)
-points = PackedVector2Array(0, 0, -197, -6, -187, -1615, 144, -1828, 865, -1820, 1327, -1557, 1297, -989)
+points = PackedVector2Array(-37, -2, -174, -4, -197, -6, -212, -29, -208, -298, -198, -1585, -186, -1608, 128, -1818, 233, -1836, 787, -1835, 865, -1820, 1277, -1579, 1306, -1527, 1301, -996)
+
+[node name="Sprite2D" parent="Props/Slide/Area2D" index="0"]
+position = Vector2(-8.5, -4.76837e-07)
+rotation = -6.25517
 
 [node name="AmmoBumpers" type="Node2D" parent="Props"]
 
@@ -337,3 +341,5 @@ position = Vector2(-730, -598)
 
 [node name="ShallowTriangleAmmoBumper2" parent="." instance=ExtResource("12_1qdxl")]
 position = Vector2(-280, -39)
+
+[editable path="Props/Slide"]
