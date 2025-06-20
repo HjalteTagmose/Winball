@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://b52n564ptayx7"]
 
-[ext_resource type="Shader" uid="uid://bxg1otkb0ignt" path="res://Shaders/Background.gdshader" id="1_5eisd"]
-[ext_resource type="Texture2D" uid="uid://dl1e41mj4x5kl" path="res://art/ph_tileable_bg_V2.png" id="2_yqs6y"]
+[ext_resource type="Shader" path="res://Shaders/Background.gdshader" id="1_5eisd"]
+[ext_resource type="Texture2D" uid="uid://d0e8aj471q18v" path="res://art/BG_pattern.png" id="2_5eisd"]
 [ext_resource type="Texture2D" uid="uid://b06gvnh0du5ts" path="res://art/metal_wall_bg.png" id="3_tyvk6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_efx1w"]
 shader = ExtResource("1_5eisd")
-shader_parameter/WP_Size = 1000.0
-shader_parameter/paper_texture = ExtResource("2_yqs6y")
+shader_parameter/WP_Size = 2000.0
+shader_parameter/paper_texture = ExtResource("2_5eisd")
 shader_parameter/Panning_Speed = Vector2(0.1, 0.1)
 shader_parameter/Mult_Color = Vector4(1.5, 0.1, 3, 1)
 
