@@ -15,5 +15,5 @@ func play_sound(sound: AudioStream, shiftPitch: bool = true):
 	oneShotSound.name = "OneShotSound_" + str(sound.resource_name)
 	if shiftPitch:
 		oneShotSound.pitch_scale = randf_range(minPitch, maxPitch)
-	get_tree().root.add_child(oneShotSound)
-	oneShotSound.play_sound(sound)
+	oneShotSound.sound = sound
+	get_tree().root.add_child.call_deferred(oneShotSound)

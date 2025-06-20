@@ -4,6 +4,12 @@ class_name Slide
 @export var SlideSpeed : float = 15
 @export var EndShotPower : float = 1400
 
+@export_category("Sounds")
+@export var SoundPlayer: AudioStreamPlayer2D
+@export var enterSoundEffect: AudioStream
+@export var exitSoundEffect: AudioStream
+@export var onRailSoundEffects: Array[AudioStream] = []
+
 
 var boundPlayer : Player
 var currentNode : int
@@ -11,7 +17,13 @@ var currentLerpTime : float = 0
 
 func _process(delta: float) -> void:
 	if !boundPlayer:
+		if SoundPlayer.playing:
+			SoundPlayer.stop()
 		return
+
+	if !SoundPlayer.playing:
+		SoundPlayer.stream = onRailSoundEffects.pick_random()
+		SoundPlayer.play()
 	
 	var firstPoint = to_global(points[currentNode])
 	var secondPoint = to_global(points[currentNode + 1])
@@ -38,6 +50,7 @@ func _on_body_entered(body:Node2D) -> void:
 		CenterPlayer()
 		LockPlayer()
 		PrepSlide()
+		OneShotSoundManager.play_sound(enterSoundEffect)
 
 func LockPlayer() -> void:
 	boundPlayer.set_deferred("freeze", true)
@@ -61,3 +74,4 @@ func ShootPlayer(direction : Vector2) -> void:
 	UnlockPlayer()
 	boundPlayer.linear_velocity = direction * EndShotPower
 	boundPlayer = null
+	OneShotSoundManager.play_sound(exitSoundEffect)
