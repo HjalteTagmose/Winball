@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://baeyuf6utr2j6"]
+[gd_scene load_steps=14 format=3 uid="uid://baeyuf6utr2j6"]
 
 [ext_resource type="Texture2D" uid="uid://mv52i5qbfx4t" path="res://art/ammo_bg.png" id="1_02uuw"]
 [ext_resource type="Script" uid="uid://cvbb5idewo262" path="res://scripts/ammo_cartridge_display.gd" id="2_t8qpn"]
 [ext_resource type="PackedScene" uid="uid://b82knrsfc5qcx" path="res://prefabs/ui/bullet_display.tscn" id="3_g8exe"]
 [ext_resource type="Script" uid="uid://bdfa52834rd0i" path="res://scripts/FlameThrowerAmmoDisplay.gd" id="3_t8qpn"]
+[ext_resource type="PackedScene" uid="uid://dv2n7ocbopaao" path="res://prefabs/sounds/one_shot_sound_player.tscn" id="4_kn5ue"]
+[ext_resource type="AudioStream" uid="uid://b8l0xax0dsyuj" path="res://Sounds/Reload01.wav" id="5_7nrg4"]
 
 [sub_resource type="Curve" id="Curve_02uuw"]
 _limits = [0.0, 200.0, 0.0, 1.0]
@@ -46,6 +48,8 @@ reload_curve_x = SubResource("Curve_t8qpn")
 shot_animation_duration = 0.1
 shot_curve_y = SubResource("Curve_g8exe")
 shot_curve_x = SubResource("Curve_j2c7c")
+oneShotSoundPrefab = ExtResource("4_kn5ue")
+ScoreSound = ExtResource("5_7nrg4")
 bullet_spawn_point = NodePath("CartridgeSpawn")
 
 [node name="CartridgeSpawn" type="Node2D" parent="."]
