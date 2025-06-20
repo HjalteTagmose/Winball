@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://do5hdn7w0evwi"]
+[gd_scene load_steps=9 format=3 uid="uid://do5hdn7w0evwi"]
 
 [ext_resource type="Script" uid="uid://dtgtxoyr4xxn3" path="res://scripts/Map props/LockZone.gd" id="1_a0i64"]
 [ext_resource type="Texture2D" uid="uid://4ukiok2dgp2w" path="res://art/lock_in_cannon.png" id="2_a0i64"]
 [ext_resource type="PackedScene" uid="uid://c75e2ue6ieuwy" path="res://art/Particles/MuzzleFlash.tscn" id="2_jhr8w"]
+[ext_resource type="AudioStream" uid="uid://b2us8f3m4cbsq" path="res://Sounds/Canon Slide Entered01.wav" id="3_jel60"]
+[ext_resource type="AudioStream" uid="uid://c27xnywchdrkd" path="res://Sounds/Slide Deplozed01.wav" id="4_ew20f"]
+[ext_resource type="AudioStream" uid="uid://blikmm7ne1sk0" path="res://Sounds/Slide Exit01.wav" id="4_k5kv1"]
+[ext_resource type="AudioStream" uid="uid://dd806yqw2bqnd" path="res://Sounds/Slide Deplozed02.wav" id="5_k5kv1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ie43"]
 radius = 32.0
 
-[node name="LockZone" type="Area2D" node_paths=PackedStringArray("PlayerBindPivot", "Front")]
+[node name="LockZone" type="Area2D" node_paths=PackedStringArray("PlayerBindPivot", "Front", "SoundPlayer")]
 scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_a0i64")
@@ -15,11 +19,16 @@ Power = 1600.0
 PlayerBindPivot = NodePath("Rotation pivot/Canon")
 Front = NodePath("Rotation pivot/Canon/Front")
 shootParticle = ExtResource("2_jhr8w")
+SoundPlayer = NodePath("AudioStreamPlayer2D")
+enterSoundEffect = ExtResource("3_jel60")
+exitSoundEffect = ExtResource("4_k5kv1")
+onRailSoundEffects = Array[AudioStream]([ExtResource("4_ew20f"), ExtResource("5_k5kv1")])
 metadata/_custom_type_script = "uid://dtgtxoyr4xxn3"
 
 [node name="Rotation pivot" type="Node2D" parent="."]
 
 [node name="Canon" type="Sprite2D" parent="Rotation pivot"]
+visibility_layer = 17
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("2_a0i64")
 
@@ -29,6 +38,8 @@ position = Vector2(47.619, 3.8147e-06)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4ie43")
 debug_color = Color(0.88036, 0.245937, 0.589125, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_enter"]
 [connection signal="body_exited" from="." to="." method="_on_body_exit"]
