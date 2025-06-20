@@ -87,19 +87,19 @@ rotation = 0.0
 scale = Vector2(1.5, 1)
 
 [node name="Wall_RightBottom7" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(50, -1639)
+position = Vector2(64, -1639)
 scale = Vector2(1.25, 1)
 
 [node name="Wall_RightBottom8" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(-50, -1639)
+position = Vector2(-62, -1639)
 scale = Vector2(1.25, 1)
 
 [node name="Wall_RightBottom10" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(157, -1940)
+position = Vector2(171, -1940)
 rotation = -0.785398
 
 [node name="Wall_RightBottom17" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(-161, -1940)
+position = Vector2(-173, -1940)
 rotation = 0.785398
 
 [node name="TopWall" type="Node2D" parent="Walls"]
@@ -219,7 +219,7 @@ position = Vector2(-1349, -3056)
 rotation = -0.567232
 
 [node name="FlipperAmmoBumper13" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(88, -1643)
+position = Vector2(102, -1643)
 rotation = -0.596481
 
 [node name="FlipperAmmoBumper12" parent="Props" instance=ExtResource("10_iuf6u")]
@@ -228,7 +228,7 @@ rotation = 0.567232
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper14" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(-86, -1643)
+position = Vector2(-98, -1643)
 rotation = 0.567232
 scale = Vector2(-2, 2)
 
@@ -245,7 +245,7 @@ position = Vector2(1089, -2150)
 rotation = 0.218166
 
 [node name="FlipperAmmoBumper17" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(214, -1948)
+position = Vector2(228, -1948)
 rotation = 0.218166
 
 [node name="FlipperAmmoBumper16" parent="Props" instance=ExtResource("10_iuf6u")]
@@ -259,7 +259,7 @@ rotation = -0.218166
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper18" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(-219, -1948)
+position = Vector2(-231, -1948)
 rotation = -0.218166
 scale = Vector2(-2, 2)
 
@@ -323,6 +323,7 @@ position = Vector2(0, -3417)
 [node name="Background" parent="." instance=ExtResource("14_0kwgi")]
 position = Vector2(413, -1699)
 scale = Vector2(17.8398, 11.8691)
+metadata/_edit_lock_ = true
 
 [node name="Foregrounds" type="Node2D" parent="."]
 

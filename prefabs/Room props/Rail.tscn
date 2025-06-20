@@ -23,6 +23,7 @@ metadata/_custom_type_script = "uid://d1jvrfwsuk2s3"
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+visible = false
 position = Vector2(14, -10)
 rotation = -3.68788
 scale = Vector2(1.215, -1.215)
