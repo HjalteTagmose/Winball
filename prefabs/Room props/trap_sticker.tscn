@@ -8,7 +8,7 @@
 size = Vector2(125.5, 82.5)
 
 [node name="TrapSticker" type="Area2D" node_paths=PackedStringArray("AudioPlayer")]
-collision_layer = 4
+collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_g0v2o")
 BumperToSpawn = ExtResource("2_g0v2o")
