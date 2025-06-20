@@ -76,6 +76,7 @@ force_gameover={
 2d_physics/layer_1="Default"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Bumper"
+2d_physics/layer_4="Sticker"
 
 [physics]
 

@@ -2,10 +2,8 @@ extends Node2D
 class_name ScoreLight
 
 @export var collider : Area2D
-@export var sprite : Sprite2D
-
-@export var offColor : Color
-@export var onColor : Color
+@export var spriteOn : Sprite2D
+@export var spriteOff : Sprite2D
 
 var scoreLightRoot: ScoreLightRoot
 var completionTime: float = 0
@@ -14,11 +12,9 @@ var _isOn = false;
 var isOn : bool : 
 	get: return _isOn
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	collider.body_entered.connect(onEnter)
-	sprite.self_modulate = offColor
-	pass # Replace with function body.
+	turnOff()
 
 func onEnter(_body: Node2D):
 	print("OnEnter")
@@ -26,9 +22,11 @@ func onEnter(_body: Node2D):
 
 func turnOn():
 	_isOn = true;
-	sprite.self_modulate = onColor
+	spriteOff.hide()
+	spriteOn.show()
 	completionTime = Time.get_unix_time_from_system()
 	
 func turnOff():
 	_isOn = false;
-	sprite.self_modulate = offColor
+	spriteOff.show()
+	spriteOn.hide()
