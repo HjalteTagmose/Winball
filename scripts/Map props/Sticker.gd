@@ -37,4 +37,4 @@ func PlayAnimation():
 	AudioPlayer.play()
 
 func Despawn() -> void:
-	pass
+	queue_free()
