@@ -61,6 +61,10 @@ func onBodyEntered(_body: Node):
 func handleLaunch(delta: float) -> void:
 
 	if locked or Global.gameState == Global.GameStateEnum.GameOver:
+		Engine.time_scale = 1.0 #little hacky
+		_isCharging = false
+		slowmoSprite.visible = false
+		Global.player_charge_duration_percent_changed.emit(0)
 		return
 
 	if Global.currentAmmo == 0:

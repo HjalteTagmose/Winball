@@ -14,6 +14,11 @@ var currentAmmo : int = 10
 var flamethrower_ammo : int = 0
 @export var flamethrower_max_ammo : int = 100
 
+@export_category("Music")
+@export var musicPlayer : AudioStreamPlayer
+@export var regularMusic : AudioStream
+@export var flameThrowerMusic: AudioStream
+
 enum PlayerDirection { TowardsMouse, AwayFromMouse }
 enum GameStateEnum {Setup, Gameplay, GameOver }
 enum PlayerWeapon {Regular, Flamethrower }
@@ -49,7 +54,11 @@ func start_game() -> void:
 	
 	if gameState == GameStateEnum.Gameplay:
 		return
-		
+	
+	if !musicPlayer.playing:
+		musicPlayer.stream = regularMusic
+		musicPlayer.play()
+	
 	if(scene != null):
 		scene.queue_free()
 		
@@ -73,10 +82,16 @@ func enable_flame_thrower():
 	flamethrower_ammo = flamethrower_max_ammo
 	weapon_change.emit(PlayerWeapon.Flamethrower)
 	playerWeapon = PlayerWeapon.Flamethrower
+	#musicPlayer.stop()
+	#musicPlayer.stream = flameThrowerMusic
+	#musicPlayer.play()
 	
 func enable_regular_weapon():
 	weapon_change.emit(PlayerWeapon.Regular)
 	playerWeapon = PlayerWeapon.Regular
+	#musicPlayer.stop()
+	#musicPlayer.stream = regularMusic
+	#musicPlayer.play()
 
 func DisplayFloatingScore(score:int, pos:Vector2):
 	if gameState != GameStateEnum.Gameplay:
