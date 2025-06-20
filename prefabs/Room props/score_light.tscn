@@ -15,10 +15,12 @@ spriteOff = NodePath("Off")
 
 [node name="Off" type="Sprite2D" parent="."]
 z_index = -1
+scale = Vector2(2, 2)
 texture = ExtResource("2_07os6")
 
 [node name="On" type="Sprite2D" parent="."]
 z_index = -1
+scale = Vector2(2, 2)
 texture = ExtResource("3_o77rn")
 
 [node name="Area2D" type="Area2D" parent="."]
