@@ -14,7 +14,7 @@ radius = 16.0
 [node name="Slide" type="Line2D" node_paths=PackedStringArray("SoundPlayer")]
 z_index = -1
 texture_repeat = 2
-points = PackedVector2Array(0, 0, 89, -56, 123, -149, 359, -308, 317, -484, 47, -707, -103, -648, -373, -567, -443, -673, -428, -736)
+points = PackedVector2Array(20, -14, 89, -56, 123, -149, 359, -308, 317, -484, 47, -707, -103, -648, -373, -567, -443, -673, -428, -736)
 width = 40.0
 texture = ExtResource("1_ax6yb")
 texture_mode = 1
