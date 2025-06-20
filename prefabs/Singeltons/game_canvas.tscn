@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=27 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cqee6vy2745rv" path="res://art/highscore/input.png" id="8_adaae"]
 [ext_resource type="Script" uid="uid://bfqqbyox8pftx" path="res://scripts/player_name_input.gd" id="8_fg6ww"]
 [ext_resource type="Script" uid="uid://lbw7xq7em5ux" path="res://scripts/game_over_canvas.gd" id="8_fxx35"]
-[ext_resource type="Script" uid="uid://bdfa52834rd0i" path="res://scripts/FlameThrowerAmmoDisplay.gd" id="8_hoafv"]
 [ext_resource type="Script" uid="uid://oa0n0h3a88rj" path="res://scripts/submit_score_button.gd" id="9_0lgbs"]
 [ext_resource type="Texture2D" uid="uid://doqh5gqfwp4el" path="res://art/highscore/input_button_normal.png" id="10_3jh4y"]
 [ext_resource type="Texture2D" uid="uid://bab86hj400f02" path="res://art/highscore/highscore_bg.png" id="11_a8n0t"]
@@ -26,17 +25,6 @@
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ibp3j"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_f4mre"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hoafv"]
-expand_margin_left = 6.0
-expand_margin_right = 6.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnict"]
-bg_color = Color(0.985734, 0.333546, 0.465424, 1)
-expand_margin_left = 6.0
-expand_margin_right = 6.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4mre"]
 
@@ -111,20 +99,6 @@ offset_right = 574.0
 offset_bottom = 5.0
 text = "The Storm consumes all..."
 horizontal_alignment = 1
-
-[node name="VSlider" type="VSlider" parent="GameplayGroup"]
-offset_left = 1051.0
-offset_top = 411.0
-offset_right = 1067.0
-offset_bottom = 615.0
-scale = Vector2(5.42838, 1.02039)
-theme_override_icons/grabber_disabled = SubResource("ImageTexture_f4mre")
-theme_override_styles/slider = SubResource("StyleBoxFlat_hoafv")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_dnict")
-value = 50.0
-editable = false
-scrollable = false
-script = ExtResource("8_hoafv")
 
 [node name="GameOverCanvas" type="CanvasGroup" parent="." node_paths=PackedStringArray("score_submit_section", "restart_button")]
 visible = false
