@@ -137,13 +137,21 @@ rotation = -1.57066
 [node name="Slide" parent="Props" instance=ExtResource("7_7e0g2")]
 z_index = 1
 position = Vector2(-1082, -487)
-points = PackedVector2Array(0, 0, -186, 2, -261, -309, -65, -612, 190, -714)
+points = PackedVector2Array(-32, 0, -168, -2, -206, -26, -260, -302, -229, -362, -113, -566, -74, -606, 190, -714)
+
+[node name="Sprite2D" parent="Props/Slide/Area2D" index="0"]
+position = Vector2(-8.5, 0.5)
+rotation = -6.28825
 
 [node name="Slide2" parent="Props" instance=ExtResource("7_7e0g2")]
 z_index = 1
 position = Vector2(1082, -487)
 scale = Vector2(-1, 1)
-points = PackedVector2Array(0, 0, -186, 2, -261, -309, -65, -612, 190, -714)
+points = PackedVector2Array(-30, 0, -186, 2, -203, -20, -261, -309, -254, -344, -104, -566, -46, -621, 190, -714)
+
+[node name="Sprite2D" parent="Props/Slide2/Area2D" index="0"]
+position = Vector2(1, 0.5)
+rotation = -6.28017
 
 [node name="AmmoBumpers" type="Node2D" parent="Props"]
 
@@ -342,7 +350,7 @@ scale = Vector2(4, 4)
 Power = 200.0
 
 [node name="Background" parent="." instance=ExtResource("17_tpvyb")]
-position = Vector2(833.503, -1066.5)
+position = Vector2(871, -1092)
 scale = Vector2(20.7519, 13.8223)
 
 [node name="Foregrounds" type="Node2D" parent="."]
@@ -405,3 +413,6 @@ position = Vector2(-616, -932)
 
 [node name="BreakableFlat2" parent="." instance=ExtResource("20_tpvyb")]
 position = Vector2(624, -932)
+
+[editable path="Props/Slide"]
+[editable path="Props/Slide2"]
