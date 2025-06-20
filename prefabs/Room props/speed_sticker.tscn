@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dty1lc8lqyalq"]
 
 [ext_resource type="Script" uid="uid://c0capew4ahiwh" path="res://scripts/Map props/SpeedSticker.gd" id="1_7acym"]
-[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="2_bc35r"]
+[ext_resource type="Texture2D" uid="uid://oigrr3yw813j" path="res://art/25x45_speed_arrow atlas.png" id="2_7acym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2r5dy"]
 size = Vector2(24.3749, 64.0983)
 
-[node name="Speed Sticker" type="Area2D" node_paths=PackedStringArray("ForwardPoint", "AudioPlayer")]
+[node name="Speed Sticker" type="Area2D" node_paths=PackedStringArray("ForwardPoint", "ArrowsToAnimate", "AudioPlayer")]
 rotation = -0.666716
 scale = Vector2(2, 2)
 collision_mask = 2
@@ -14,6 +14,8 @@ script = ExtResource("1_7acym")
 ForwardPoint = NodePath("PointUp")
 Power = 100.0
 OverridesVelocity = true
+ArrowsToAnimate = [NodePath("Arrows"), NodePath("Arrows/Arrow 2"), NodePath("Arrows/Arrow 3")]
+AnimationFPS = 60.0
 OneTimeUse = false
 AudioPlayer = NodePath("audioPlayer")
 metadata/_custom_type_script = "uid://o0wcl8l7p1uy"
@@ -22,9 +24,22 @@ metadata/_custom_type_script = "uid://o0wcl8l7p1uy"
 position = Vector2(-0.309219, -0.0491486)
 shape = SubResource("RectangleShape2D_2r5dy")
 
-[node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(0.26, 0.54)
-texture = ExtResource("2_bc35r")
+[node name="Arrows" type="Sprite2D" parent="."]
+position = Vector2(-0.405325, -21.3152)
+scale = Vector2(0.488, 0.488)
+texture = ExtResource("2_7acym")
+hframes = 2
+
+[node name="Arrow 2" type="Sprite2D" parent="Arrows"]
+position = Vector2(-0.042415, 44.9443)
+texture = ExtResource("2_7acym")
+hframes = 2
+frame = 1
+
+[node name="Arrow 3" type="Sprite2D" parent="Arrows"]
+position = Vector2(-0.239675, 89.7727)
+texture = ExtResource("2_7acym")
+hframes = 2
 
 [node name="audioPlayer" type="AudioStreamPlayer2D" parent="."]
 

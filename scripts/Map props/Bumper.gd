@@ -106,7 +106,8 @@ func AddScore(collisionInfo: KinematicCollision2D):
 		if saturationIndex < 0:
 			return
 	var saturation = Saturation[saturationIndex]
-	$Sprite2D.material.set("shader_parameter/saturation", saturation);
+	if $Sprite2D.material != null:
+		$Sprite2D.material.set("shader_parameter/saturation", saturation);
 
 func Die():
 	if _isDead:

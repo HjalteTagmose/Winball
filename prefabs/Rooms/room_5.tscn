@@ -327,9 +327,9 @@ RailFollower = NodePath("LockZone")
 [node name="LockZone" parent="Props/Rail2" instance=ExtResource("13_lm8vp")]
 
 [node name="Speed Sticker" parent="Props" instance=ExtResource("14_c7can")]
-position = Vector2(-1, -2622)
+position = Vector2(-1, -2664)
 rotation = 0.0
-scale = Vector2(2, 4)
+scale = Vector2(3.5, 3.5)
 Power = 200.0
 
 [node name="Speed Sticker2" parent="Props" instance=ExtResource("14_c7can")]
