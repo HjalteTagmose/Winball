@@ -188,6 +188,7 @@ func handleFlameThrower(delta: float) -> void:
 	if locked or Global.gameState == Global.GameStateEnum.GameOver:
 		return
 		
+	Engine.time_scale = 1.0
 	if !Input.is_action_pressed("launch"):
 		if currentlyPlayerParticle:
 			currentlyPlayerParticle.StopEmitting()

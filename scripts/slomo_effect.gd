@@ -1,4 +1,4 @@
-extends TextureRect
+class_name SlomoEffect extends TextureRect
 @export var enabled: bool = true
 @export var abbarationCurve : Curve
 
