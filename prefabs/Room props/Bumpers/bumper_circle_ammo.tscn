@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://art/Bumpers/bumper_round.png" id="4_66t0e"]
 [ext_resource type="Texture2D" uid="uid://d2061xxa28r45" path="res://art/Bumpers/bumper_blue_round.png" id="4_aty55"]
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_e0b8y"]
-[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_w7hrv"]
+[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_w7hrv"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_ika2j"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_pp1k8"]
 

@@ -251,12 +251,12 @@ position = Vector2(641, -1247)
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper6" parent="Props" instance=ExtResource("11_eraab")]
-position = Vector2(-889, -1643)
+position = Vector2(-910, -1722)
 rotation = 0.218166
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("11_eraab")]
-position = Vector2(889, -1643)
+position = Vector2(885, -1705)
 rotation = -0.218166
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
