@@ -6,3 +6,5 @@
 [node name="OneShotSoundPlayer" type="Node"]
 script = ExtResource("1_hpulb")
 oneShotSoundPrefab = ExtResource("2_ydt3e")
+minPitch = 0.25
+maxPitch = 3.0

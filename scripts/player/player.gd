@@ -22,7 +22,6 @@ class_name Player extends RigidBody2D
 enum SlowdownEndBehaviourEnum { AmmoWasted, Launch }
 
 @export_category("Sound")
-@export var AudioPlayer : AudioStreamPlayer2D
 @export var RegularShotSounds : Array[AudioStream] = []
 @export var FlameThrowerSounds : Array[AudioStream] = []
 
@@ -147,14 +146,9 @@ func launch():
 	Global.player_charge_duration_percent_changed.emit(-1)
 	
 	slowmoSprite.visible = false
-	play_sound(RegularShotSounds.pick_random())
+	OneShotSoundManager.play_sound(RegularShotSounds.pick_random())
 
-func play_sound(sound: AudioStream):
-	if AudioPlayer.playing or sound == null:
-		return
-		
-	AudioPlayer.stream = sound
-	AudioPlayer.play()
+	
 
 func get_direction() -> Vector2:
 	var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
@@ -219,7 +213,7 @@ func handleFlameThrower(delta: float) -> void:
 	var impulse = direction * flame_thrower_power * dot
 	apply_central_impulse(impulse)
 	handleFlameParticle(direction)
-	play_sound(FlameThrowerSounds.pick_random())
+	OneShotSoundManager.play_sound(FlameThrowerSounds.pick_random())
 	Global.flamethrower_ammo -= 1
 	
 	Global.flame_thrower_fired.emit()
