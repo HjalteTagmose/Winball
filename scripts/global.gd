@@ -1,7 +1,7 @@
 extends Node
 class_name _GlobalNode
 
-var currentAmmo : int = 10
+var currentAmmo : int = 5
 @export var maxAmmo : int = 10
 @export var gameplay_scene: PackedScene
 @export var player_direction: PlayerDirection
@@ -37,8 +37,18 @@ signal player_charge_duration_percent_changed(percent: float)
 signal storm_charge_duration_percent_changed(percent: float)
 signal weapon_change(weapon: PlayerWeapon)
 
+func _input(event):
+	if gameState != GameStateEnum.Setup:
+		return
+	if event is InputEventKey:
+		if event.pressed:
+			start_game()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	
+		
 	
 	if(Input.is_action_just_pressed("force_gameover")):
 		trigger_game_over()
@@ -48,7 +58,8 @@ func _process(_delta: float) -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start_game()
+	#start_game()
+	pass
 
 func start_game() -> void:
 	
@@ -67,7 +78,7 @@ func start_game() -> void:
 	add_child(scene)
 	
 	currentAmmo = maxAmmo
-	
+	reload.emit()
 	game_started.emit()
 	
 func trigger_game_over() -> void:

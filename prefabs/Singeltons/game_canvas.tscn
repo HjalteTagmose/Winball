@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=44 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://inoqjir103es" path="res://art/P_Textures/Tileable_Noises/Winball_GaussianNRM.png" id="24_jlaj1"]
 [ext_resource type="Texture2D" uid="uid://dnfgsq6gkqdcd" path="res://art/ph_tileable_bg.png" id="26_a2y7m"]
 [ext_resource type="Script" uid="uid://vdlkb5knjon8" path="res://scripts/slomo_effect.gd" id="26_jlaj1"]
+[ext_resource type="Texture2D" uid="uid://baxc1bsi1q6ru" path="res://art/main_screen.png" id="28_0o7nu"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
 
@@ -96,12 +97,14 @@ _limits = [0.0, 1.0, 0.0, 100.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(100, 3), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
+[node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas", "main_menu_canvas")]
 script = ExtResource("1_oe5df")
 gameplay_canvas = NodePath("GameplayGroup")
 game_over_canvas = NodePath("GameOverCanvas")
+main_menu_canvas = NodePath("MainMenu")
 
 [node name="GameplayGroup" type="CanvasGroup" parent="."]
+visible = false
 scale = Vector2(1.6, 1.6)
 
 [node name="Score" parent="GameplayGroup" instance=ExtResource("6_1kxbb")]
@@ -300,5 +303,17 @@ script = ExtResource("26_jlaj1")
 abbarationCurve = SubResource("Curve_jlaj1")
 abbarationPowerCurve = SubResource("Curve_0o7nu")
 abbarationOffsetCurve = SubResource("Curve_82iek")
+
+[node name="MainMenu" type="CanvasGroup" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_0o7nu")
 
 [connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]
