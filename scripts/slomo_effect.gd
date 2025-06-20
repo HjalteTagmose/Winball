@@ -26,4 +26,6 @@ func charge_changed(newValue: float):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var newSize = get_window().size
+	size = newSize	
 	pass
