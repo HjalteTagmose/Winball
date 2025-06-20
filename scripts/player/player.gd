@@ -33,6 +33,8 @@ enum SlowdownEndBehaviourEnum { AmmoWasted, Launch }
 @export var stormParticle : GPUParticles2D
 @export var playerGun : Node2D
 @export var slowmoSprite: Node2D
+@export var flameSprite: Node2D
+
 
 var _pityBulletCounter = 0
 
@@ -123,6 +125,9 @@ func rotate_gun():
 	var direction = get_direction()
 	slowmoSprite.global_position = global_position
 	slowmoSprite.global_rotation = direction.angle()
+	flameSprite.global_position = global_position
+	flameSprite.global_rotation = direction.angle()
+	
 
 func launch():
 	if(!_isCharging):
@@ -190,17 +195,11 @@ func handleFlameThrower(delta: float) -> void:
 		
 	Engine.time_scale = 1.0
 	if !Input.is_action_pressed("launch") || locked:
-		if currentlyPlayerParticle:
-			currentlyPlayerParticle.StopEmitting()
-			currentlyPlayerParticle = null
-
-		slowmoSprite.visible = false
-		slowmoSprite.global_rotation = 0
-		shootFlame = false
+		TurnOffFlame()
 		return
 	
-	slowmoSprite.visible = true
-	slowmoSprite.global_rotation = 0
+	flameSprite.visible = true
+	flameSprite.global_rotation = 0
 	
 	rotate_gun()
 	
@@ -227,7 +226,7 @@ func handleFlameThrower(delta: float) -> void:
 	
 	if Global.flamethrower_ammo <= 0:
 		Global.enable_regular_weapon()
-		slowmoSprite.visible = false
+		TurnOffFlame()
 
 func handleFlameParticle(direction: Vector2):
 	if currentlyPlayerParticle == null:
@@ -236,6 +235,15 @@ func handleFlameParticle(direction: Vector2):
 	
 	currentlyPlayerParticle.global_position = playerGun.global_position
 	currentlyPlayerParticle.rotation = direction.angle()
+
+func TurnOffFlame():
+	if currentlyPlayerParticle:
+		currentlyPlayerParticle.StopEmitting()
+		currentlyPlayerParticle = null
+
+	flameSprite.visible = false
+	flameSprite.global_rotation = 0
+	shootFlame = false
 
 var shootFlame : bool
 
