@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bab86hj400f02" path="res://art/highscore/highscore_bg.png" id="11_a8n0t"]
 [ext_resource type="Texture2D" uid="uid://c37mdt7vrp8i4" path="res://art/highscore/input_button_pressed.png" id="11_fxx35"]
 [ext_resource type="Texture2D" uid="uid://pqq40qug0phv" path="res://art/highscore/input_button_hover.png" id="12_f4mre"]
-[ext_resource type="Script" uid="uid://cjfjv1awvicgp" path="res://scripts/scorelist.gd" id="12_h6shr"]
+[ext_resource type="Script" path="res://scripts/scorelist.gd" id="12_h6shr"]
 [ext_resource type="PackedScene" uid="uid://bk3vfgpinyeio" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
 [ext_resource type="FontFile" uid="uid://b5bowh1itlrtx" path="res://fonts/NotoSerif-BoldItalic.ttf" id="14_f4mre"]
 [ext_resource type="Texture2D" uid="uid://bxotc57mlu33v" path="res://art/highscore/restart_normal.png" id="16_hoafv"]
@@ -44,8 +44,8 @@ expand_margin_bottom = 32.0
 modulate_color = Color(0.933333, 0.866667, 0.227451, 1)
 
 [sub_resource type="Curve" id="Curve_dnict"]
-_limits = [-500.0, 500.0, 0.0, 1.0]
-_data = [Vector2(0, 500), 0.0, -6120.43, 0, 0, Vector2(0.345679, 1.1806), 745.927, 0.0, 0, 0]
+_limits = [-500.0, 1000.0, 0.0, 1.0]
+_data = [Vector2(0.0154321, 1000), 0.0, -834.684, 0, 0, Vector2(0.391975, 555.179), 745.927, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_5jw6s"]
@@ -108,11 +108,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StormDeathSlider" type="HSlider" parent="GameplayGroup"]
-visible = false
-offset_left = 354.0
-offset_top = 177.0
-offset_right = 699.0
-offset_bottom = 193.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 416.0
+offset_top = 553.0
+offset_right = 761.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_icons/grabber_disabled = SubResource("CanvasTexture_ibp3j")
 theme_override_styles/slider = SubResource("StyleBoxTexture_l3vvl")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_jlaj1")
@@ -120,8 +126,10 @@ value = 59.0
 editable = false
 scrollable = false
 script = ExtResource("7_a4mgm")
+flyInCurve = SubResource("Curve_dnict")
 
 [node name="TextureRect" type="TextureRect" parent="GameplayGroup/StormDeathSlider"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -55.0
 offset_right = 365.0
