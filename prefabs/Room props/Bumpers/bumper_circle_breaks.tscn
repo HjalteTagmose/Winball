@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5cyrktek0kn"]
+[gd_scene load_steps=8 format=3 uid="uid://c5cyrktek0kn"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_qdi00"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_qdi00"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_3eklx"]
+[ext_resource type="Material" path="res://Material/bumper_material.tres" id="4_3eklx"]
 [ext_resource type="Texture2D" uid="uid://bv3m8mlchjhnm" path="res://art/Bumpers/bumper_breaking.png" id="4_f46lv"]
 [ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://art/Bumpers/bumper_round.png" id="4_nxlrn"]
 
@@ -25,6 +26,7 @@ CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("4_3eklx")
 texture = ExtResource("4_f46lv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]

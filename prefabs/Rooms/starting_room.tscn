@@ -131,15 +131,11 @@ rotation = -1.57066
 position = Vector2(-317, -1535)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="DiamondAmmoBumper3" parent="Props" instance=ExtResource("8_gg6m2")]
 position = Vector2(293, -1538)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="ShallowTriangleAmmoBumper" parent="Props" instance=ExtResource("9_gg6m2")]
 position = Vector2(0, -1953)
@@ -194,14 +190,10 @@ rotation = -1.5708
 
 [node name="FlipperAmmoBumper" parent="Props/WallCorners" instance=ExtResource("7_4ie43")]
 position = Vector2(555, -1946)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper2" parent="Props/WallCorners" instance=ExtResource("7_4ie43")]
 position = Vector2(-555, -1946)
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="AmmoBumpers" type="Node2D" parent="."]
 
