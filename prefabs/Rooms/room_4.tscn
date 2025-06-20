@@ -96,12 +96,10 @@ scale = Vector2(1.25, 1)
 [node name="Wall_RightBottom10" parent="Walls" instance=ExtResource("2_dlvlk")]
 position = Vector2(150, -1940)
 rotation = -0.785398
-scale = Vector2(1, 1)
 
 [node name="Wall_RightBottom17" parent="Walls" instance=ExtResource("2_dlvlk")]
 position = Vector2(-150, -1940)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="TopWall" type="Node2D" parent="Walls"]
 position = Vector2(0, -4221)
