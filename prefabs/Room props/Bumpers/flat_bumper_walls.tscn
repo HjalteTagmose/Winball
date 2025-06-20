@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cpt746t74aua6"]
+[gd_scene load_steps=20 format=3 uid="uid://cpt746t74aua6"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chtck5wyxnxds" path="res://Material/Physic/Wall.tres" id="1_4p2nv"]
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_g2cpd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="5_iicj8"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="6_g1anu"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_ibcqk"]
+[ext_resource type="PackedScene" path="res://art/Particles/BumperBumbing.tscn" id="8_g1anu"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="11_d7nj0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8g0tl"]
@@ -57,6 +58,7 @@ Bias = Vector2(0, -1)
 BiasPower = 40.0
 SoundOnHits = Array[AudioStream]([ExtResource("4_31ntc"), ExtResource("5_d7nj0"), ExtResource("6_g1anu")])
 ParticleOnHit = ExtResource("2_g2cpd")
+ParticleOnHit2 = ExtResource("8_g1anu")
 StormParticle = NodePath("../GPUParticles2D")
 CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://lobwfmlxako"
