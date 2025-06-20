@@ -276,8 +276,8 @@ position = Vector2(875, -651)
 [node name="BasicSticker11" parent="Props" instance=ExtResource("14_dnc6s")]
 position = Vector2(1106, -684)
 
-[node name="LockZone" parent="." instance=ExtResource("9_efx1w")]
-position = Vector2(0, -1950)
+[node name="LockZone" parent="Props" instance=ExtResource("9_efx1w")]
+position = Vector2(0, -1943)
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
