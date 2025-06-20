@@ -21,7 +21,7 @@ func charge_changed(newValue: float):
 	var offset = abbarationOffsetCurve.sample(newValue)
 	shaderMat.set_shader_parameter("radius", radius)
 	shaderMat.set_shader_parameter("chromatic_intesity", power)
-	shaderMat.set_shader_parameter("chromatic_offset", power)
+	shaderMat.set_shader_parameter("chromatic_offset", offset)
 	
 	if newValue > 0:
 		visible = true
