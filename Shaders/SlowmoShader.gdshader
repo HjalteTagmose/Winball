@@ -40,7 +40,7 @@ void fragment() {
     vec3 chromatic_aberration = vec3(r_val.r, g_val.g, b_val.b);
 
     // Apply the effect
-    COLOR.rgb = chromatic_aberration*;
+    COLOR.rgb = chromatic_aberration*chromatic_intesity;
 	
 	float dist = distance(UV, vec2(0.5, 0.5));
   	float alpha = smoothstep(radius - softness, radius + softness, dist);
