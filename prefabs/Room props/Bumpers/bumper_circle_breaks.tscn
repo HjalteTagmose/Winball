@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_qdi00"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_3eklx"]
 [ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="3_q4b7v"]
-[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_3eklx"]
+[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_3eklx"]
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_ea1bd"]
 [ext_resource type="Texture2D" uid="uid://bv3m8mlchjhnm" path="res://art/Bumpers/bumper_breaking.png" id="4_f46lv"]
 [ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://art/Bumpers/bumper_round.png" id="4_nxlrn"]
@@ -26,7 +26,7 @@ script = ExtResource("2_qdi00")
 CanDie = true
 Life = 1
 Power = 40.0
-Score = Array[int]([200, 50, 5])
+Score = Array[int]([100, 50, 5])
 BiasPower = 0.0
 SoundOnHits = Array[AudioStream]([ExtResource("3_q4b7v"), ExtResource("4_ea1bd"), ExtResource("5_vbfu3")])
 ParticleOnHit = ExtResource("3_3eklx")
