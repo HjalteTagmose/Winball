@@ -1,15 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://dedwl18kckfdd"]
+[gd_scene load_steps=13 format=3 uid="uid://dedwl18kckfdd"]
 
 [ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://c75e2ue6ieuwy" path="res://art/Particles/MuzzleFlash.tscn" id="2_g2jcq"]
 [ext_resource type="PackedScene" uid="uid://bxhiscfk4buxn" path="res://art/Particles/BumpDistortionParticles.tscn" id="3_g2jcq"]
 [ext_resource type="Texture2D" uid="uid://buvaskjvhonse" path="res://art/armadillo/armadillo_ball.png" id="5_kbsxf"]
+[ext_resource type="Shader" uid="uid://bckgqqv3oglct" path="res://Shaders/PlayerGlow.gdshader" id="5_opo22"]
 [ext_resource type="Texture2D" uid="uid://bxvquo7i0vgfo" path="res://art/armadillo/armadillo_gun.png" id="6_rgeog"]
+[ext_resource type="Texture2D" uid="uid://5mfpymbhhgsk" path="res://art/P_Textures/Winball_Dots.png" id="7_sd3sa"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="7_u51tk"]
 [ext_resource type="PackedScene" uid="uid://dkgvnttsdpspd" path="res://art/Particles/FlameThrower.tscn" id="8_kbsxf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1txc5"]
 bounce = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2qjg"]
+shader = ExtResource("5_opo22")
+shader_parameter/WP_Size = 200.0
+shader_parameter/Panning_Speed = Vector2(0, 0)
+shader_parameter/Mult_Color = Vector4(1.5, 0.1, 3, 1)
+shader_parameter/radius = 0.147
+shader_parameter/softness = 0.2
+shader_parameter/ScreenUV_AlphaMask_Size = Vector2(1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mncer"]
 radius = 16.15
@@ -35,6 +46,11 @@ bumpAnythingParticle = ExtResource("3_g2jcq")
 stormParticle = NodePath("Storm Particles")
 playerGun = NodePath("SlowmoSprite/Gun")
 slowmoSprite = NodePath("SlowmoSprite")
+
+[node name="PlayerGlow" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_m2qjg")
+scale = Vector2(15, 15)
+texture = ExtResource("7_sd3sa")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 rotation = 8.47668e-05
