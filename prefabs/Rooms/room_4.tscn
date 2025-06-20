@@ -96,12 +96,10 @@ scale = Vector2(1.25, 1)
 [node name="Wall_RightBottom10" parent="Walls" instance=ExtResource("2_dlvlk")]
 position = Vector2(150, -1940)
 rotation = -0.785398
-scale = Vector2(1, 1)
 
 [node name="Wall_RightBottom17" parent="Walls" instance=ExtResource("2_dlvlk")]
 position = Vector2(-150, -1940)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="TopWall" type="Node2D" parent="Walls"]
 position = Vector2(0, -4221)
@@ -218,14 +216,50 @@ rotation = -0.218166
 position = Vector2(-1349, -3056)
 rotation = -0.567232
 
+[node name="FlipperAmmoBumper13" parent="Props" instance=ExtResource("10_iuf6u")]
+position = Vector2(63, -1672)
+rotation = -0.567232
+
 [node name="FlipperAmmoBumper12" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(1349, -3056)
+rotation = 0.567232
+scale = Vector2(-2, 2)
+
+[node name="FlipperAmmoBumper14" parent="Props" instance=ExtResource("10_iuf6u")]
+position = Vector2(-71, -1658)
 rotation = 0.567232
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper7" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-890, -4079)
 rotation = 0.174533
+
+[node name="FlipperAmmoBumper15" parent="Props" instance=ExtResource("10_iuf6u")]
+position = Vector2(759, -1805)
+rotation = 0.218166
+
+[node name="FlipperAmmoBumper20" parent="Props" instance=ExtResource("10_iuf6u")]
+position = Vector2(1089, -2150)
+rotation = 0.218166
+
+[node name="FlipperAmmoBumper17" parent="Props" instance=ExtResource("10_iuf6u")]
+position = Vector2(219, -1985)
+rotation = 0.218166
+
+[node name="FlipperAmmoBumper16" parent="Props" instance=ExtResource("10_iuf6u")]
+position = Vector2(-755, -1795)
+rotation = -0.218166
+scale = Vector2(-2, 2)
+
+[node name="FlipperAmmoBumper19" parent="Props" instance=ExtResource("10_iuf6u")]
+position = Vector2(-1092, -2150)
+rotation = -0.218166
+scale = Vector2(-2, 2)
+
+[node name="FlipperAmmoBumper18" parent="Props" instance=ExtResource("10_iuf6u")]
+position = Vector2(-215, -1979)
+rotation = -0.218166
+scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper4" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-268, -411)
@@ -256,12 +290,6 @@ position = Vector2(783, -3061)
 
 [node name="ShallowTriangleAmmoBumper" parent="Props" instance=ExtResource("12_y72r1")]
 position = Vector2(0, -992)
-
-[node name="ShallowTriangleAmmoBumper2" parent="Props" instance=ExtResource("12_y72r1")]
-position = Vector2(613, -1745)
-
-[node name="ShallowTriangleAmmoBumper3" parent="Props" instance=ExtResource("12_y72r1")]
-position = Vector2(-631, -1726)
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 

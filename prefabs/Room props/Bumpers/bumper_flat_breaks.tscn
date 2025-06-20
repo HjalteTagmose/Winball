@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_w3xom"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_vlbui"]
 [ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_mllck"]
-[ext_resource type="Texture2D" uid="uid://ckojoepycf3u7" path="res://art/Bumpers/bumper_rectangle_breakable.png" id="5_dh376"]
+[ext_resource type="Texture2D" uid="uid://cfad8r8slmn5h" path="res://art/Bumpers/breakable_rectangle.png" id="5_dh376"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_oxy1h"]
 [ext_resource type="Texture2D" uid="uid://cqeok331goj14" path="res://art/Bumpers/slingshot_red_slim.png" id="7_qgh4c"]
 
@@ -19,7 +19,7 @@ _data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0,
 point_count = 3
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
-points = PackedVector2Array(81, -3, 81, 23, -81, 23, -81, -3)
+points = PackedVector2Array(81, -23, 81, 23, -81, 23, -81, -23)
 
 [node name="BreakableFlat" type="StaticBody2D" node_paths=PackedStringArray("AudioPlayer")]
 scale = Vector2(2, 2)

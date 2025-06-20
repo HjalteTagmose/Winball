@@ -12,5 +12,5 @@
 position = Vector2(0, -3)
 script = ExtResource("1_rwupa")
 roomCount = 1
-firstRoom = ExtResource("3_j3dd7")
+firstRoom = ExtResource("6_xqepk")
 roomToSpawns = Array[PackedScene]([ExtResource("3_j3dd7"), ExtResource("2_rwupa"), ExtResource("2_11qar"), ExtResource("6_xqepk"), ExtResource("2_xqepk"), ExtResource("2_8irt6")])

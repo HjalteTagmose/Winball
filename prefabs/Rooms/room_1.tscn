@@ -232,13 +232,13 @@ position = Vector2(-441, -469)
 position = Vector2(-597, -459)
 
 [node name="BreakableFlat" parent="Props/BreakableBumpers" instance=ExtResource("13_dnc6s")]
-position = Vector2(644, -1759)
+position = Vector2(644, -1705)
 
 [node name="BreakableFlat2" parent="Props/BreakableBumpers" instance=ExtResource("13_dnc6s")]
-position = Vector2(644, -1831)
+position = Vector2(644, -1819)
 
 [node name="BreakableFlat3" parent="Props/BreakableBumpers" instance=ExtResource("13_dnc6s")]
-position = Vector2(642, -2111)
+position = Vector2(642, -2081)
 
 [node name="BreakableFlat4" parent="Props/BreakableBumpers" instance=ExtResource("13_dnc6s")]
 position = Vector2(642, -2196)
