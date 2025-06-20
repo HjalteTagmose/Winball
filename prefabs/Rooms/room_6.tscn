@@ -266,6 +266,7 @@ position = Vector2(-1400, -1809)
 [node name="Background" parent="." instance=ExtResource("14_vfp5l")]
 position = Vector2(-697.5, -1992)
 scale = Vector2(25.5293, 15.1445)
+metadata/_edit_lock_ = true
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
