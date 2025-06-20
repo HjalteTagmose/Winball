@@ -189,5 +189,3 @@ offset_right = 156.0
 offset_bottom = 144.0
 script = ExtResource("12_h6shr")
 highScoreRow = ExtResource("13_a8n0t")
-
-[connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]

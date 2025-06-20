@@ -1,7 +1,7 @@
 class_name GameOverScreen extends CanvasGroup
 
 @export var score_submit_section : Node
-@export var restart_button: Node
+@export var restart_button: RestartButton
 @export var flyInCurve: Curve
 @export var flyInDuration : float = 1.0
 
@@ -21,7 +21,8 @@ func reset_display():
 	
 func show_restart_button():
 	score_submit_section.visible = false
-	restart_button.visible = true	
+	restart_button.visible = true
+	restart_button.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
