@@ -70,9 +70,9 @@ position = Vector2(128, -274)
 scale = Vector2(1.78, 1)
 
 [node name="Wall_RightBottom2" parent="Walls" instance=ExtResource("2_88puv")]
-position = Vector2(-1084, 0)
+position = Vector2(-1006, 0)
 rotation = 0.0
-scale = Vector2(3.997, 1)
+scale = Vector2(3.757, 1)
 
 [node name="Wall_RightBottom3" parent="Walls" instance=ExtResource("2_88puv")]
 position = Vector2(-611, -543)
@@ -292,17 +292,17 @@ rotation = 0.785398
 scale = Vector2(0.710844, 0.368772)
 
 [node name="Foreground11" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
-position = Vector2(-3783.51, -68.2972)
-scale = Vector2(8.02925, 0.303527)
+position = Vector2(-3783.51, -65.5001)
+scale = Vector2(8.02925, 0.314453)
 
 [node name="Foreground13" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
-position = Vector2(-1691.26, -13)
-scale = Vector2(0.301813, 0.0859375)
+position = Vector2(-1686.76, -10)
+scale = Vector2(0.319383, 0.0976563)
 
 [node name="Foreground14" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
-position = Vector2(-1710.65, -68.0103)
+position = Vector2(-1712.98, -65.6819)
 rotation = 0.785398
-scale = Vector2(0.269599, 0.127815)
+scale = Vector2(0.269599, 0.140678)
 
 [node name="Foreground6" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
 position = Vector2(-589.452, -2147.45)
