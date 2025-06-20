@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dwyb6r5co8tml" path="res://prefabs/Rooms/room_6.tscn" id="2_8irt6"]
 [ext_resource type="PackedScene" uid="uid://dd3vn06qgwyhq" path="res://prefabs/Rooms/room_3.tscn" id="2_11qar"]
 [ext_resource type="PackedScene" uid="uid://cin4l36rgwkl7" path="res://prefabs/Rooms/room_7.tscn" id="2_dr1tm"]
-[ext_resource type="PackedScene" uid="uid://bxhp86wtna1rx" path="res://prefabs/Rooms/starting_room_new.tscn" id="2_gc50j"]
+[ext_resource type="PackedScene" uid="uid://bo7xyuac6c2em" path="res://prefabs/Rooms/room_8.tscn" id="2_gc50j"]
 [ext_resource type="PackedScene" uid="uid://1pkpdh08nxve" path="res://prefabs/Rooms/room_2.tscn" id="2_rwupa"]
 [ext_resource type="PackedScene" uid="uid://d2ushoen5gt8y" path="res://prefabs/Rooms/room_5.tscn" id="2_xqepk"]
 [ext_resource type="PackedScene" uid="uid://ddnxaky5ipt7q" path="res://prefabs/Rooms/room_1.tscn" id="3_j3dd7"]
@@ -15,4 +15,4 @@ position = Vector2(0, -3)
 script = ExtResource("1_rwupa")
 roomCount = 1
 firstRoom = ExtResource("2_gc50j")
-roomToSpawns = Array[PackedScene]([ExtResource("3_j3dd7"), ExtResource("2_rwupa"), ExtResource("2_11qar"), ExtResource("6_xqepk"), ExtResource("2_xqepk"), ExtResource("2_8irt6"), ExtResource("2_dr1tm")])
+roomToSpawns = Array[PackedScene]([ExtResource("3_j3dd7"), ExtResource("2_rwupa"), ExtResource("2_11qar"), ExtResource("6_xqepk"), ExtResource("2_xqepk"), ExtResource("2_8irt6"), ExtResource("2_dr1tm"), ExtResource("2_gc50j")])
