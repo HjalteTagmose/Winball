@@ -15,7 +15,7 @@ class_name Player extends RigidBody2D
 @export var flame_thrower_max_linear_velocity : float = 500
 
 @export_category("Slowdown")
-@export var slowdownPower : float = 0.35
+@export var slowdownPower : Curve
 @export var max_slowdown_duration: float = 5.0
 @export var SlowdownEndBehaviour: SlowdownEndBehaviourEnum = SlowdownEndBehaviourEnum.AmmoWasted
 
@@ -92,9 +92,9 @@ func handleLaunch(delta: float) -> void:
 			rotate_gun()
 
 	if _isCharging:
-		Engine.time_scale = slowdownPower
 		_slowdownCounter += u.to_unscaled_delta_time(delta)
 		var slow_percent = clamp(_slowdownCounter / max_slowdown_duration, 0, 1)
+		Engine.time_scale = slowdownPower.sample(slow_percent * 100)
 		Global.player_charge_duration_percent_changed.emit(slow_percent * 100)
 		
 		# Rotate slowmoSprite to look at direction
