@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxhp86wtna1rx"]
+[gd_scene load_steps=14 format=3 uid="uid://coyc2dtje8tnp"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_5mnmw"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_qhk7u"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="8_oe6i8"]
 [ext_resource type="PackedScene" uid="uid://c5clxm8i6clwg" path="res://prefabs/Room props/Bumpers/bumper_diamond_ammo.tscn" id="9_5mnmw"]
 [ext_resource type="PackedScene" uid="uid://dc228ykvmvaux" path="res://prefabs/Room props/trap_sticker.tscn" id="9_caa1u"]
-[ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_flat.tscn" id="10_qhk7u"]
+[ext_resource type="PackedScene" path="res://prefabs/Room props/Bumpers/bumper_flat.tscn" id="10_qhk7u"]
 [ext_resource type="PackedScene" uid="uid://dxselqqn54dby" path="res://prefabs/Room props/foreground.tscn" id="10_u44wl"]
 [ext_resource type="PackedScene" uid="uid://b52n564ptayx7" path="res://prefabs/Room props/background.tscn" id="12_frujy"]
 
@@ -184,8 +184,8 @@ position = Vector2(-553, -1421)
 position = Vector2(553, -1421)
 
 [node name="ShallowTriangleAmmoBumper" parent="AmmoBumpers" instance=ExtResource("10_qhk7u")]
-position = Vector2(-1, -1389)
-scale = Vector2(1, 2)
+position = Vector2(-1, -1362)
+scale = Vector2(1, 1)
 
 [node name="TrapSticker" parent="." instance=ExtResource("9_caa1u")]
 position = Vector2(0, -2271)
@@ -193,6 +193,7 @@ position = Vector2(0, -2271)
 [node name="Background" parent="." instance=ExtResource("12_frujy")]
 position = Vector2(337, -644)
 scale = Vector2(28.2988, 16.3789)
+metadata/_edit_lock_ = true
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
