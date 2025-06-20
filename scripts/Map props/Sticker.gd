@@ -20,6 +20,8 @@ func _on_body_enter(body:Node2D):
 		Interact(body)
 	
 	hasBeenUsed = true
+	if OneTimeUse:
+		visible = false
 
 	if OneTimeUse:
 		Despawn()
