@@ -283,12 +283,12 @@ metadata/_edit_lock_ = true
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foreground" instance=ExtResource("17_epmcq")]
-position = Vector2(-1793, -910)
-scale = Vector2(3.96082, 3.56)
+position = Vector2(-2092.02, -1659.32)
+scale = Vector2(5.12885, 6.48703)
 
 [node name="Foreground2" parent="Foreground" instance=ExtResource("17_epmcq")]
-position = Vector2(1793, -910)
-scale = Vector2(3.96082, 3.56)
+position = Vector2(2131.02, -1659.32)
+scale = Vector2(5.28119, 6.48703)
 
 [node name="Foreground5" parent="Foreground" instance=ExtResource("17_epmcq")]
 position = Vector2(1397, -2673)

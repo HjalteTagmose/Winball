@@ -254,12 +254,12 @@ position = Vector2(-72, -1683)
 [node name="Foregrounds" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foregrounds" instance=ExtResource("14_tqwss")]
-position = Vector2(-1584, -1026)
-scale = Vector2(3.48, 4.00781)
+position = Vector2(-2104.56, -1660)
+scale = Vector2(5.51344, 6.48437)
 
 [node name="Foreground2" parent="Foregrounds" instance=ExtResource("14_tqwss")]
-position = Vector2(1587, -1026)
-scale = Vector2(3.48, 4.00781)
+position = Vector2(2034.06, -1660)
+scale = Vector2(5.22633, 6.48437)
 
 [node name="Foreground5" parent="Foregrounds" instance=ExtResource("14_tqwss")]
 position = Vector2(1273, -2677)

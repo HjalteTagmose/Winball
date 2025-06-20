@@ -40,7 +40,7 @@ signal weapon_change(weapon: PlayerWeapon)
 func _input(event):
 	if gameState != GameStateEnum.Setup:
 		return
-	if event is InputEventKey:
+	if event is InputEventKey or event is InputEventMouseButton:
 		if event.pressed:
 			start_game()
 
@@ -78,6 +78,8 @@ func start_game() -> void:
 	add_child(scene)
 	
 	currentAmmo = maxAmmo
+	flamethrower_ammo = 0
+	playerWeapon = PlayerWeapon.Regular
 	reload.emit()
 	game_started.emit()
 	
