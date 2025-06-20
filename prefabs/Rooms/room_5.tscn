@@ -329,11 +329,6 @@ points = PackedVector2Array(0, 0, 1510, 0)
 SlideSpeed = 1000.0
 RailFollower = NodePath("LockZone")
 
-[node name="Sprite2D" parent="Props/Rail2/Area2D" index="0"]
-visible = false
-position = Vector2(16, 0.374999)
-rotation = 3.14159
-
 [node name="LockZone" parent="Props/Rail2" instance=ExtResource("13_lm8vp")]
 
 [node name="Speed Sticker" parent="Props" instance=ExtResource("14_c7can")]
@@ -421,4 +416,3 @@ position = Vector2(624, -932)
 
 [editable path="Props/Slide"]
 [editable path="Props/Slide2"]
-[editable path="Props/Rail2"]

@@ -85,13 +85,6 @@ debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 
 [node name="Corners" type="Node2D" parent="Props"]
 
-[node name="FlatBumper Walls" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
-position = Vector2(199, -69)
-rotation = -1.5708
-
-[node name="FlatBumper Walls2" parent="Props/Corners" instance=ExtResource("5_dnc6s")]
-position = Vector2(-205, -70)
-
 [node name="CornerSquares" type="Node2D" parent="Props"]
 
 [node name="FlatBumper Walls13" parent="Props/CornerSquares" instance=ExtResource("5_dnc6s")]
@@ -290,6 +283,7 @@ position = Vector2(0, -1943)
 
 [node name="Background" parent="." instance=ExtResource("16_dthqe")]
 position = Vector2(339, -1104)
+metadata/_edit_lock_ = true
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
@@ -320,6 +314,7 @@ scale = Vector2(-2.37651, 0.56078)
 [node name="Foreground7" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-764, -31.69)
 scale = Vector2(-2.37651, 0.171304)
+metadata/_edit_lock_ = true
 
 [node name="Foreground8" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-390, -146)
@@ -332,6 +327,10 @@ scale = Vector2(-0.49299, 0.472747)
 [node name="Foreground14" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(830.316, -131.261)
 scale = Vector2(2.09498, 0.575238)
+
+[node name="Foreground16" parent="Foregrounds" instance=ExtResource("15_njbnk")]
+position = Vector2(286, -10)
+scale = Vector2(0.636719, 0.101562)
 
 [node name="Foreground15" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(1550.06, -1228.16)
