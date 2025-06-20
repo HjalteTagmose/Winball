@@ -268,6 +268,7 @@ Power = 200.0
 
 [node name="Background" parent="." instance=ExtResource("14_gx2u3")]
 position = Vector2(39, -1495)
+metadata/_edit_lock_ = true
 
 [node name="Foreground" type="Node2D" parent="."]
 

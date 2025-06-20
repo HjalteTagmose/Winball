@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bs51ub0dvq0t0" path="res://Sounds/Shot Sound02.wav" id="4_x0bak"]
 [ext_resource type="Texture2D" uid="uid://buvaskjvhonse" path="res://art/armadillo/armadillo_ball.png" id="5_kbsxf"]
 [ext_resource type="AudioStream" uid="uid://dyo8q0u28m5s6" path="res://Sounds/Shot Sound03.wav" id="5_lulei"]
-[ext_resource type="Shader" uid="uid://bckgqqv3oglct" path="res://Shaders/PlayerGlow.gdshader" id="5_opo22"]
+[ext_resource type="Shader" path="res://Shaders/PlayerGlow.gdshader" id="5_opo22"]
 [ext_resource type="AudioStream" uid="uid://cg7ov5kgs1r7j" path="res://Sounds/Flamethrower01.wav" id="6_edtk3"]
 [ext_resource type="Texture2D" uid="uid://bxvquo7i0vgfo" path="res://art/armadillo/armadillo_gun.png" id="6_rgeog"]
 [ext_resource type="AudioStream" uid="uid://4l11xq6em7te" path="res://Sounds/Flamethrower02.wav" id="7_q2wkl"]
