@@ -316,37 +316,30 @@ scale = Vector2(3.48, 4)
 [node name="BasicSticker6" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(355, -265)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker11" parent="." instance=ExtResource("14_dkkgw")]
-position = Vector2(-844, -1308)
+position = Vector2(-844, -1307)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker12" parent="." instance=ExtResource("14_dkkgw")]
-position = Vector2(-527, -1959)
+position = Vector2(-527, -1960)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker7" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(598, -209)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker8" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(612, -395)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker9" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(494, -300)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker10" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(738, -509)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BreakableFlat3" parent="." instance=ExtResource("14_68ikr")]
 position = Vector2(-182, -2561)

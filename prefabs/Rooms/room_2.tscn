@@ -78,27 +78,22 @@ position = Vector2(0, -3320)
 [node name="BasicSticker" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-233, -524)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker2" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-75, -622)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker3" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(83, -622)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker4" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(257, -530)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker5" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-1, -309)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="Exit" parent="Walls" instance=ExtResource("4_hojoj")]
 position = Vector2(0, -3321)

@@ -223,17 +223,14 @@ scale = Vector2(-2, 2)
 [node name="BasicSticker" parent="Props" instance=ExtResource("8_5q1pf")]
 position = Vector2(1293, -1537)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker2" parent="Props" instance=ExtResource("8_5q1pf")]
 position = Vector2(1400, -1637)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker3" parent="Props" instance=ExtResource("8_5q1pf")]
 position = Vector2(1479, -1778)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="Background" parent="." instance=ExtResource("9_8d2tm")]
 position = Vector2(301.003, -1483.5)
