@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyh3l0k8luydk"]
+[gd_scene load_steps=6 format=3 uid="uid://dyh3l0k8luydk"]
 
 [ext_resource type="Script" uid="uid://be4h7kuufm7dl" path="res://scripts/global.gd" id="1_a484y"]
 [ext_resource type="PackedScene" uid="uid://cuojghgo6alvw" path="res://scenes/gameplay.tscn" id="2_tlasj"]
 [ext_resource type="PackedScene" uid="uid://b7pysjc4ifhjj" path="res://prefabs/Singeltons/floating_score.tscn" id="3_k5nus"]
 [ext_resource type="AudioStream" uid="uid://bopllypj36ksu" path="res://Sounds/Lose01.wav" id="4_g0pg1"]
+[ext_resource type="AudioStream" uid="uid://ccjvdiq0jkth3" path="res://Sounds/WinballMusicMainLoop.wav" id="6_k7wu1"]
 
-[node name="GlobalNode" type="Node"]
+[node name="GlobalNode" type="Node" node_paths=PackedStringArray("musicPlayer")]
 script = ExtResource("1_a484y")
 maxAmmo = 5
 gameplay_scene = ExtResource("2_tlasj")
 floating_score = ExtResource("3_k5nus")
 game_over_sound = ExtResource("4_g0pg1")
+musicPlayer = NodePath("AudioStreamPlayer")
+regularMusic = ExtResource("6_k7wu1")
+flameThrowerMusic = ExtResource("6_k7wu1")
 metadata/_custom_type_script = "uid://be4h7kuufm7dl"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
