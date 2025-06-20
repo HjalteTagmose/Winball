@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b82knrsfc5qcx"]
+[gd_scene load_steps=4 format=3 uid="uid://b82knrsfc5qcx"]
 
-[ext_resource type="Texture2D" uid="uid://bb0fp2o8jijvd" path="res://art/ammo_bullet.png" id="1_mkxlh"]
+[ext_resource type="Texture2D" uid="uid://bb0fp2o8jijvd" path="res://art/ammo_bullet.png" id="1_n5hke"]
+[ext_resource type="Texture2D" uid="uid://d1h6rjkrnhdei" path="res://art/50x50_bullet_spin.png" id="2_lsqta"]
 [ext_resource type="Script" uid="uid://bav6pbluy0hed" path="res://scripts/bullet_display.gd" id="2_r32wy"]
 
 [node name="BulletDisplay" type="Sprite2D"]
-texture = ExtResource("1_mkxlh")
+texture = ExtResource("1_n5hke")
 script = ExtResource("2_r32wy")
+animationSheet = ExtResource("2_lsqta")
+animationFPS = 80
+animationTime = 0.5
