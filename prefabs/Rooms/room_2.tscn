@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://1pkpdh08nxve"]
+[gd_scene load_steps=17 format=3 uid="uid://1pkpdh08nxve"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_1rxak"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_hojoj"]
+[ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="3_1bron"]
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="4_gx2u3"]
 [ext_resource type="PackedScene" uid="uid://p5c72b14kda" path="res://prefabs/Room props/exit.tscn" id="4_hojoj"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/Bumpers/flat_bumper_walls.tscn" id="5_epmcq"]
@@ -72,6 +73,21 @@ scale = Vector2(0.277, 1)
 
 [node name="TopWall" type="Node2D" parent="Walls"]
 position = Vector2(0, -3320)
+
+[node name="BasicSticker" parent="Walls" instance=ExtResource("3_1bron")]
+position = Vector2(-233, -524)
+
+[node name="BasicSticker2" parent="Walls" instance=ExtResource("3_1bron")]
+position = Vector2(-75, -622)
+
+[node name="BasicSticker3" parent="Walls" instance=ExtResource("3_1bron")]
+position = Vector2(83, -622)
+
+[node name="BasicSticker4" parent="Walls" instance=ExtResource("3_1bron")]
+position = Vector2(257, -530)
+
+[node name="BasicSticker5" parent="Walls" instance=ExtResource("3_1bron")]
+position = Vector2(-1, -309)
 
 [node name="Exit" parent="Walls" instance=ExtResource("4_hojoj")]
 position = Vector2(0, -3321)
