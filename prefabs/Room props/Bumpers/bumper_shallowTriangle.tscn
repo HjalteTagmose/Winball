@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmxeqifshx4b5"]
+[gd_scene load_steps=15 format=3 uid="uid://dmxeqifshx4b5"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_nery0"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_kwqsy"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_pdjbo"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_2m780"]
 [ext_resource type="Texture2D" uid="uid://cqeok331goj14" path="res://art/Bumpers/slingshot_red_slim.png" id="7_px7pp"]
+[ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="11_g1nbh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o6u2a"]
 resource_local_to_scene = true
@@ -24,7 +25,7 @@ point_count = 3
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
 points = PackedVector2Array(81, 6.5, 81, 23, -81, 23, -81, 6.5, 0, -24.5)
 
-[node name="ShallowTriangleAmmoBumper" type="StaticBody2D"]
+[node name="ShallowTriangleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("StormParticle", "CollisionShape")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -36,6 +37,8 @@ Bias = Vector2(0, -1)
 BiasPower = -30.0
 SoundOnHits = Array[AudioStream]([ExtResource("3_wewlr"), ExtResource("4_g1nbh"), ExtResource("5_pdjbo")])
 ParticleOnHit = ExtResource("3_gpa2a")
+StormParticle = NodePath("GPUParticles2D")
+CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -52,3 +55,7 @@ texture = ExtResource("7_px7pp")
 shape = SubResource("ConvexPolygonShape2D_oegki")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("11_g1nbh")]
+scale = Vector2(0.5, 0.115)
+emitting = false

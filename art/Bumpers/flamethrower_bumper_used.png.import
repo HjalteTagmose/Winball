@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4o0of3rg0vr0"
-path="res://.godot/imported/flamethrower_bumper.png-52ca27c9112ee98b67f5072d8fba3213.ctex"
+uid="uid://datgvm06qdv07"
+path="res://.godot/imported/flamethrower_bumper_used.png-05445f00c0852d457f4040b55bd1a9a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/deathbar/flamethrower_bumper.png"
-dest_files=["res://.godot/imported/flamethrower_bumper.png-52ca27c9112ee98b67f5072d8fba3213.ctex"]
+source_file="res://art/Bumpers/flamethrower_bumper_used.png"
+dest_files=["res://.godot/imported/flamethrower_bumper_used.png-05445f00c0852d457f4040b55bd1a9a1.ctex"]
 
 [params]
 

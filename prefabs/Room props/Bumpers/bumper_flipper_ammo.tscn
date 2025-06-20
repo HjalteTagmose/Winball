@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsr6u6y0m5y0t"]
+[gd_scene load_steps=15 format=3 uid="uid://bsr6u6y0m5y0t"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_jm088"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_31t04"]
@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_v4nol"]
 [ext_resource type="Texture2D" uid="uid://kwqeqyw10vt" path="res://art/Bumpers/slingshot_blue_triangle_dots.png" id="4_1jmuy"]
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_3suqy"]
-[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_v4nol"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_v4nol"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_1xirp"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_31t04"]
 [ext_resource type="Texture2D" uid="uid://qvxvfdgeerlt" path="res://art/Bumpers/slingshot_red_triangle.png" id="5_bo2nq"]
+[ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="11_3suqy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1jmuy"]
 resource_local_to_scene = true
@@ -24,7 +25,7 @@ point_count = 3
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
 points = PackedVector2Array(46.5, -77.5, 50, -73.5, 27.5, 51, -37, 77.5, -47.5, 77.5, -50.5, 73, -49.5, 57, 38.5, -75, 42, -77.5)
 
-[node name="FlipperAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual")]
+[node name="FlipperAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "StormParticle", "CollisionShape")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -40,6 +41,8 @@ Bias = Vector2(0, -1)
 BiasPower = 20.0
 SoundOnHits = Array[AudioStream]([ExtResource("3_nex68"), ExtResource("4_3suqy"), ExtResource("5_1xirp")])
 ParticleOnHit = ExtResource("3_v4nol")
+StormParticle = NodePath("GPUParticles2D")
+CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -55,3 +58,10 @@ texture = ExtResource("5_bo2nq")
 shape = SubResource("ConvexPolygonShape2D_oegki")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("11_3suqy")]
+position = Vector2(9.5, 5.5)
+rotation = -2.64243
+scale = Vector2(0.235, 1.44)
+emitting = false
+amount = 12
