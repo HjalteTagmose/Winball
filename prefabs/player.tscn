@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dedwl18kckfdd"]
+[gd_scene load_steps=19 format=3 uid="uid://dedwl18kckfdd"]
 
 [ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://c75e2ue6ieuwy" path="res://art/Particles/MuzzleFlash.tscn" id="2_g2jcq"]
@@ -17,6 +17,11 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1txc5"]
 bounce = 0.4
+
+[sub_resource type="Curve" id="Curve_llb5v"]
+_limits = [0.0, 1.0, 0.0, 100.0]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(15, 0.35), -0.010626, -0.010626, 0, 0, Vector2(54.8837, 0.234278), 0.0, 0.0, 0, 0, Vector2(79.0698, 0.222764), -0.000476085, 0.000505235, 1, 0, Vector2(100, 0.0327724), -0.0271142, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m2qjg"]
 shader = ExtResource("5_opo22")
@@ -44,6 +49,7 @@ pityBulletDelay = 5.0
 flame_thrower_power = 25.0
 flame_thrower_delay = 0.075
 flame_thrower_particles = ExtResource("8_kbsxf")
+slowdownPower = SubResource("Curve_llb5v")
 max_slowdown_duration = 1.5
 SlowdownEndBehaviour = 1
 RegularShotSounds = Array[AudioStream]([ExtResource("3_llb5v"), ExtResource("4_x0bak"), ExtResource("5_lulei")])

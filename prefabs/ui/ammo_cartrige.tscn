@@ -51,11 +51,9 @@ ReloadSound = ExtResource("5_7nrg4")
 bullet_spawn_point = NodePath("Sprite2D/CartridgeSpawn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
 texture = ExtResource("1_02uuw")
 
 [node name="CartridgeSpawn" type="Node2D" parent="Sprite2D"]
-scale = Vector2(1, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false

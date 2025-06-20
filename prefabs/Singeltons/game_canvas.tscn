@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=40 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -22,9 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://bxotc57mlu33v" path="res://art/highscore/restart_normal.png" id="16_hoafv"]
 [ext_resource type="Texture2D" uid="uid://b7ybhf8juof0d" path="res://art/highscore/restart_pressed.png" id="17_5jw6s"]
 [ext_resource type="Texture2D" uid="uid://bet1kje15yi3l" path="res://art/highscore/restart_hover.png" id="18_e8pr3"]
-[ext_resource type="Shader" path="res://Shaders/SlowmoShader.gdshader" id="23_blhlv"]
+[ext_resource type="Shader" uid="uid://dm1l44rgjwjvp" path="res://Shaders/SlowmoShader.gdshader" id="23_blhlv"]
 [ext_resource type="Texture2D" uid="uid://inoqjir103es" path="res://art/P_Textures/Tileable_Noises/Winball_GaussianNRM.png" id="24_jlaj1"]
 [ext_resource type="Texture2D" uid="uid://bfji3hni5n5t6" path="res://art/Bumpers/bumper_rectangle.png" id="25_a2y7m"]
+[ext_resource type="Script" uid="uid://vdlkb5knjon8" path="res://scripts/slomo_effect.gd" id="26_jlaj1"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
 
@@ -77,6 +78,11 @@ shader_parameter/g_offset_x = 1.365
 shader_parameter/g_offset_y = 0.24
 shader_parameter/b_offset_x = 0.12
 shader_parameter/b_offset_y = 1.375
+
+[sub_resource type="Curve" id="Curve_jlaj1"]
+_limits = [0.0, 1.0, 0.0, 100.0]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(15, 0.64), 0.0, 0.0, 0, 0, Vector2(76.7442, 0.424269), 0.0, 0.0, 0, 0, Vector2(100, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
 script = ExtResource("1_oe5df")
@@ -267,5 +273,8 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("25_a2y7m")
+script = ExtResource("26_jlaj1")
+abbarationCurve = SubResource("Curve_jlaj1")
+metadata/_custom_type_script = "uid://vdlkb5knjon8"
 
 [connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]
