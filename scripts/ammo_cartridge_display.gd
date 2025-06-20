@@ -13,8 +13,7 @@ extends Sprite2D
 @export var shot_curve_x : Curve
 
 @export_category("Sound")
-@export var oneShotSoundPrefab : PackedScene
-@export var ScoreSound : AudioStream
+@export var ReloadSound : AudioStream
 
 @export var bullet_spawn_point: Node2D
 
@@ -48,8 +47,8 @@ func reload():
 	# No need to reload if we are on full ammo
 	if _bullets.size() >= Global.maxAmmo:
 		return
-	
-	play_sound(ScoreSound)
+		
+	OneShotSoundManager.play_sound(ReloadSound)
 	reload_anim()
 	# Instantiate a new bullet from the prefab and add it to the array until the array is full.
 	while _bullets.size() < Global.currentAmmo:
@@ -88,13 +87,3 @@ func shot_tween_function(value: float):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func play_sound(sound: AudioStream):
-	if sound == null:
-		return
-	
-	# instantiate the OneShotSound prefab
-	var oneShotSound: OneShotSound = oneShotSoundPrefab.instantiate()
-	oneShotSound.name = "OneShotSound_" + str(sound.resource_name)
-	get_tree().root.add_child(oneShotSound)
-	oneShotSound.play_sound(sound)

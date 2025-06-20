@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bivua2sjcvh42"]
+[gd_scene load_steps=5 format=3 uid="uid://bivua2sjcvh42"]
 
 [ext_resource type="Script" uid="uid://cu2j3n7m56d5n" path="res://scripts/score_manager.gd" id="1_utg7i"]
-[ext_resource type="PackedScene" uid="uid://dv2n7ocbopaao" path="res://prefabs/sounds/one_shot_sound_player.tscn" id="2_04kr6"]
 [ext_resource type="AudioStream" uid="uid://d4faobaq6sjgb" path="res://Sounds/Point Gathered01.wav" id="2_oa0xh"]
 [ext_resource type="AudioStream" uid="uid://bk3y0turvqdgb" path="res://Sounds/Point Gathered02.wav" id="3_04kr6"]
 [ext_resource type="AudioStream" uid="uid://cysw2xwy7m6yw" path="res://Sounds/Point Gathered03.wav" id="4_86ep6"]
 
 [node name="_ScoreManager" type="Node"]
 script = ExtResource("1_utg7i")
-oneShotSoundPrefab = ExtResource("2_04kr6")
 ScoreSounds = Array[AudioStream]([ExtResource("2_oa0xh"), ExtResource("3_04kr6"), ExtResource("4_86ep6")])
 metadata/_custom_type_script = "uid://cu2j3n7m56d5n"
