@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=38 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://bxotc57mlu33v" path="res://art/highscore/restart_normal.png" id="16_hoafv"]
 [ext_resource type="Texture2D" uid="uid://b7ybhf8juof0d" path="res://art/highscore/restart_pressed.png" id="17_5jw6s"]
 [ext_resource type="Texture2D" uid="uid://bet1kje15yi3l" path="res://art/highscore/restart_hover.png" id="18_e8pr3"]
+[ext_resource type="Shader" path="res://Shaders/SlowmoShader.gdshader" id="23_blhlv"]
+[ext_resource type="Texture2D" uid="uid://inoqjir103es" path="res://art/P_Textures/Tileable_Noises/Winball_GaussianNRM.png" id="24_jlaj1"]
+[ext_resource type="Texture2D" uid="uid://bfji3hni5n5t6" path="res://art/Bumpers/bumper_rectangle.png" id="25_a2y7m"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
 
@@ -44,8 +47,8 @@ expand_margin_bottom = 32.0
 modulate_color = Color(0.933333, 0.866667, 0.227451, 1)
 
 [sub_resource type="Curve" id="Curve_dnict"]
-_limits = [-500.0, 500.0, 0.0, 1.0]
-_data = [Vector2(0, 500), 0.0, -6120.43, 0, 0, Vector2(0.345679, 1.1806), 745.927, 0.0, 0, 0]
+_limits = [-500.0, 1000.0, 0.0, 1.0]
+_data = [Vector2(0.0154321, 1000), 0.0, -834.684, 0, 0, Vector2(0.391975, 555.179), 745.927, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_5jw6s"]
@@ -57,6 +60,23 @@ point_count = 3
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoafv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxx35"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o7nu"]
+shader = ExtResource("23_blhlv")
+shader_parameter/ScreenUV_AlphaMask_Size = Vector2(1, 1)
+shader_parameter/radius = 0.8
+shader_parameter/softness = 0.238
+shader_parameter/DistortionNRM = ExtResource("24_jlaj1")
+shader_parameter/Speed = 0.15
+shader_parameter/DistortionUV_Size = Vector2(0.1, 0.1)
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/DistortionIntensity = -1.62
+shader_parameter/r_offset_x = 1.21
+shader_parameter/r_offset_y = 0.965
+shader_parameter/g_offset_x = 1.365
+shader_parameter/g_offset_y = 0.24
+shader_parameter/b_offset_x = 0.12
+shader_parameter/b_offset_y = 1.375
 
 [node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
 script = ExtResource("1_oe5df")
@@ -108,11 +128,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StormDeathSlider" type="HSlider" parent="GameplayGroup"]
-visible = false
-offset_left = 354.0
-offset_top = 177.0
-offset_right = 699.0
-offset_bottom = 193.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 416.0
+offset_top = 553.0
+offset_right = 761.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_icons/grabber_disabled = SubResource("CanvasTexture_ibp3j")
 theme_override_styles/slider = SubResource("StyleBoxTexture_l3vvl")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_jlaj1")
@@ -120,8 +146,10 @@ value = 59.0
 editable = false
 scrollable = false
 script = ExtResource("7_a4mgm")
+flyInCurve = SubResource("Curve_dnict")
 
 [node name="TextureRect" type="TextureRect" parent="GameplayGroup/StormDeathSlider"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -55.0
 offset_right = 365.0
@@ -228,5 +256,16 @@ offset_right = 156.0
 offset_bottom = 144.0
 script = ExtResource("12_h6shr")
 highScoreRow = ExtResource("13_a8n0t")
+
+[node name="SlomoTexture" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_0o7nu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("25_a2y7m")
 
 [connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]

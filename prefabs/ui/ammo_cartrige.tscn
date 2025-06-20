@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://baeyuf6utr2j6"]
+[gd_scene load_steps=14 format=3 uid="uid://baeyuf6utr2j6"]
 
 [ext_resource type="Texture2D" uid="uid://mv52i5qbfx4t" path="res://art/ammo_bg.png" id="1_02uuw"]
 [ext_resource type="Script" uid="uid://cvbb5idewo262" path="res://scripts/ammo_cartridge_display.gd" id="2_t8qpn"]
 [ext_resource type="PackedScene" uid="uid://b82knrsfc5qcx" path="res://prefabs/ui/bullet_display.tscn" id="3_g8exe"]
 [ext_resource type="Script" uid="uid://bdfa52834rd0i" path="res://scripts/FlameThrowerAmmoDisplay.gd" id="3_t8qpn"]
 [ext_resource type="AudioStream" uid="uid://b8l0xax0dsyuj" path="res://Sounds/Reload01.wav" id="5_7nrg4"]
+[ext_resource type="Texture2D" uid="uid://bpfwacnyekpg5" path="res://art/Gas meter/gas_gauge.png" id="5_kn5ue"]
 
 [sub_resource type="Curve" id="Curve_02uuw"]
 _limits = [0.0, 200.0, 0.0, 1.0]
@@ -28,17 +29,16 @@ point_count = 5
 [sub_resource type="ImageTexture" id="ImageTexture_g8exe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2c7c"]
-expand_margin_left = 6.0
-expand_margin_right = 6.0
+expand_margin_left = 8.0
+expand_margin_right = 7.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn5ue"]
 bg_color = Color(0.985734, 0.333546, 0.465424, 1)
-expand_margin_left = 6.0
-expand_margin_right = 6.0
+expand_margin_left = 8.0
+expand_margin_right = 8.0
 
 [node name="Ammo_Cartrige" type="Sprite2D" node_paths=PackedStringArray("bullet_spawn_point")]
 scale = Vector2(1.85, 1.85)
-texture = ExtResource("1_02uuw")
 script = ExtResource("2_t8qpn")
 bulletPrefab = ExtResource("3_g8exe")
 reload_animation_duration = 0.2
@@ -48,20 +48,37 @@ shot_animation_duration = 0.1
 shot_curve_y = SubResource("Curve_g8exe")
 shot_curve_x = SubResource("Curve_j2c7c")
 ReloadSound = ExtResource("5_7nrg4")
-bullet_spawn_point = NodePath("CartridgeSpawn")
+bullet_spawn_point = NodePath("Sprite2D/CartridgeSpawn")
 
-[node name="CartridgeSpawn" type="Node2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 1)
+texture = ExtResource("1_02uuw")
 
-[node name="VSlider" type="VSlider" parent="."]
+[node name="CartridgeSpawn" type="Node2D" parent="Sprite2D"]
+scale = Vector2(1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+z_index = 10
+offset_left = -30.2703
+offset_top = -70.8108
+offset_right = 30.7297
+offset_bottom = 65.1892
+texture = ExtResource("5_kn5ue")
+
+[node name="VSlider" type="VSlider" parent="TextureRect" node_paths=PackedStringArray("flameDisplay", "regularDisplay")]
+z_index = -1
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.189
 anchor_top = 0.098
 anchor_right = 0.775
 anchor_bottom = 0.92
-offset_left = -27.0157
-offset_top = -75.7336
-offset_right = -46.1757
-offset_bottom = 52.8984
+offset_left = 6.84938
+offset_top = 7.75308
+offset_right = -11.8966
+offset_bottom = 104.961
+rotation = 0.103917
 scale = Vector2(2, 0.5)
 theme_override_icons/grabber_disabled = SubResource("ImageTexture_g8exe")
 theme_override_styles/slider = SubResource("StyleBoxFlat_j2c7c")
@@ -70,3 +87,5 @@ value = 50.0
 editable = false
 scrollable = false
 script = ExtResource("3_t8qpn")
+flameDisplay = NodePath("..")
+regularDisplay = NodePath("../../Sprite2D")
