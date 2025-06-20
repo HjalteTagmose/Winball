@@ -59,23 +59,13 @@ func AddHighScore(score: int, name: String):
 	newScore.Name = name
 	
 	HighScores.append(newScore)
-
-	print("================================================")
-	print("================================================")
-	
-	for i in range(0, HighScores.size()):
-		print("HighScore ", i, ": ", HighScores[i].Name, " - ", HighScores[i].Score)
 	
 	# Sort the high scores in descending order
 	HighScores.sort_custom(_compare_high_scores)
 
-	print("================================================")
 	for i in range(0, HighScores.size()):
 		print("HighScore ", i, ": ", HighScores[i].Name, " - ", HighScores[i].Score)
-	print("================================================")
-	print("================================================")
 	
-	print(HighScores)
 	highscores_changed.emit()
 	
 	var playerNames : Array[String] = []
@@ -90,8 +80,7 @@ func AddHighScore(score: int, name: String):
 	d.playerscores = playerScores
 	
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
-	save_file.store_var(d, true)
-	
+	save_file.store_var(d, true)	
 	
 func _compare_high_scores(a: HighScoreResource, b: HighScoreResource) -> int:
 	return a.Score > b.Score

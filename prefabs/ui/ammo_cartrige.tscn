@@ -49,7 +49,6 @@ shot_curve_x = SubResource("Curve_j2c7c")
 bullet_spawn_point = NodePath("CartridgeSpawn")
 
 [node name="CartridgeSpawn" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="VSlider" type="VSlider" parent="."]
 anchors_preset = -1
