@@ -118,14 +118,8 @@ position = Vector2(-246, 0)
 [node name="AmmoBumper5" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
 position = Vector2(242, 0)
 
-[node name="AmmoBumper9" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
-position = Vector2(-758, -582)
-
 [node name="AmmoBumper15" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
 position = Vector2(0, -2018)
-
-[node name="AmmoBumper10" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
-position = Vector2(758, -582)
 
 [node name="AmmoBumper_Diamond" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-475, -307)
@@ -190,6 +184,13 @@ scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(242, -1175)
+
+[node name="FlipperAmmoBumper9" parent="Props" instance=ExtResource("10_hojoj")]
+position = Vector2(-805, -561)
+
+[node name="FlipperAmmoBumper10" parent="Props" instance=ExtResource("10_hojoj")]
+position = Vector2(805, -561)
+scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper5" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(-589, -1652)
