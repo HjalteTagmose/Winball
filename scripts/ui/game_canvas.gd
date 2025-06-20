@@ -21,5 +21,11 @@ func _on_game_start() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:	
+func _process(_delta: float) -> void:
+	
+	var size = get_window().size
+	var defaultScreen = Vector2(1920, 1080)
+	
+	var newScale = Vector2(size.x, size.y) / defaultScreen
+	scale = newScale
 	pass
