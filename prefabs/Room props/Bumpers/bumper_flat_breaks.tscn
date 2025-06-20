@@ -1,15 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://blb2mrvjd8a6d"]
+[gd_scene load_steps=17 format=3 uid="uid://blb2mrvjd8a6d"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_dh376"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_w3xom"]
 [ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="3_mllck"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_vlbui"]
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_0i22n"]
-[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_mllck"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_mllck"]
 [ext_resource type="Texture2D" uid="uid://cfad8r8slmn5h" path="res://art/Bumpers/breakable_rectangle.png" id="5_dh376"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_oxy1h"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_oxy1h"]
+[ext_resource type="PackedScene" path="res://art/Particles/BumperBumbing.tscn" id="7_oxy1h"]
 [ext_resource type="Texture2D" uid="uid://cqeok331goj14" path="res://art/Bumpers/slingshot_red_slim.png" id="7_qgh4c"]
+[ext_resource type="PackedScene" uid="uid://d1evxrkekwbyb" path="res://art/Particles/p_square_bumper_breaking_new.tscn" id="8_qgh4c"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="11_0i22n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o6u2a"]
@@ -39,6 +41,8 @@ Bias = Vector2(0, -1)
 BiasPower = -40.0
 SoundOnHits = Array[AudioStream]([ExtResource("3_mllck"), ExtResource("4_0i22n"), ExtResource("5_oxy1h")])
 ParticleOnHit = ExtResource("3_vlbui")
+ParticleOnHit2 = ExtResource("7_oxy1h")
+OnDestroyParticle = ExtResource("8_qgh4c")
 StormParticle = NodePath("GPUParticles2D")
 CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://lobwfmlxako"

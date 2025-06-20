@@ -31,17 +31,17 @@ void fragment() {
     vec3 b_val;
 
     // Offset for red channel
-    r_val = texture(screen_texture, SCREEN_UV + vec2(r_offset_x, r_offset_y) * pixelSize).rgb;
+    r_val = texture(screen_texture, SCREEN_UV + vec2(r_offset_x*chromatic_offset, r_offset_y*chromatic_offset) * pixelSize).rgb;
     // Offset for green channel
-    g_val = texture(screen_texture, SCREEN_UV + vec2(g_offset_x, g_offset_y) * pixelSize).rgb;
+    g_val = texture(screen_texture, SCREEN_UV + vec2(g_offset_x*chromatic_offset, g_offset_y*chromatic_offset) * pixelSize).rgb;
     // Offset for blue channel
-    b_val = texture(screen_texture, SCREEN_UV + vec2(b_offset_x, b_offset_y) * pixelSize).rgb;
+    b_val = texture(screen_texture, SCREEN_UV + vec2(b_offset_x*chromatic_offset, b_offset_y*chromatic_offset) * pixelSize).rgb;
 
     // Combine the color channels
-    vec3 chromatic_aberration = vec3(r_val.r*chromatic_offset, g_val.g*chromatic_offset, b_val.b*chromatic_offset);
+    vec3 chromatic_aberration = vec3(r_val.r, g_val.g, b_val.b);
 
     // Apply the effect
-    COLOR.rgb = chromatic_aberration*chromatic_intesity;
+    COLOR.rgb = chromatic_aberration;
 	
 	float dist = distance(UV, vec2(0.5, 0.5));
   	float alpha = smoothstep(radius - softness, radius + softness, dist);
