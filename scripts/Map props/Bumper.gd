@@ -14,7 +14,7 @@ class_name BasicBumper extends StaticBody2D
 @export_category("Setup")
 @export var SoundOnHits : Array[AudioStream]
 @export var ParticleOnHit : PackedScene
-
+@export var StormParticle : GPUParticles2D
 
 @export_category("Helpers")
 @export var CollisionShape : CollisionShape2D
@@ -22,8 +22,15 @@ class_name BasicBumper extends StaticBody2D
 signal bumped
 signal bumped_impulse
 var timesHit : int
-var isInStrom : bool
 var _scoreIndex = 0
+
+var _isInStrom : bool
+var isInStrom : bool:
+	get: return _isInStrom
+	set(value):
+		_isInStrom = value
+		StormParticle.emitting = value
+
 
 var _isDead = false
 
