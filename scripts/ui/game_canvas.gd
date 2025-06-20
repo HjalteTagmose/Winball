@@ -24,8 +24,7 @@ func _on_game_start() -> void:
 func _process(_delta: float) -> void:
 	
 	var size = get_window().size
-	var defaultScreen = Vector2(1920, 1080)
-	
+	var defaultScreen = Vector2(1920, 1080)	
 	var newScale = Vector2(size.x, size.y) / defaultScreen
 	scale = newScale
 	pass

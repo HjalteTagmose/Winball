@@ -36,6 +36,11 @@ func _process(delta: float) -> void:
 	if Global.gameState != Global.GameStateEnum.Gameplay:
 		return
 	
+	var size = get_window().size
+	Graphic.texture.size.x = size.x
+	CollisionArea.shape.size.x = size.x
+	Line.texture.size.x = size.x
+	
 	if player:
 		currentTIme += delta
 		var percent = clamp(currentTIme / TimeToKill, 0, 1)
