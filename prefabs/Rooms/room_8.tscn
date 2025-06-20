@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bo7xyuac6c2em"]
+[gd_scene load_steps=12 format=3 uid="uid://bo7xyuac6c2em"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_8d2tm"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_ewl15"]
@@ -6,9 +6,8 @@
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="4_wm2w1"]
 [ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="7_itfdk"]
 [ext_resource type="PackedScene" uid="uid://da5l4mtg6gga2" path="res://prefabs/Room props/Bumpers/bumper_flamethrower.tscn" id="8_8d2tm"]
-[ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="8_76ues"]
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="9_ppwea"]
-[ext_resource type="PackedScene" uid="uid://dty1lc8lqyalq" path="res://prefabs/Room props/speed_sticker.tscn" id="12_8vv6l"]
+[ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_flat.tscn" id="11_eig4a"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="13_kxlwn"]
 [ext_resource type="PackedScene" uid="uid://cba70d4k5jb2n" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="15_ewl15"]
 
@@ -25,16 +24,12 @@ roomExit = NodePath("Walls/Exit")
 position = Vector2(-374, -2535)
 scale = Vector2(3.216, 1)
 
-[node name="Wall_Right7" parent="Walls" instance=ExtResource("2_ewl15")]
-position = Vector2(374, -2535)
-scale = Vector2(3.216, 1)
-
 [node name="Wall_Right2" parent="Walls" instance=ExtResource("2_ewl15")]
 position = Vector2(-136, -604)
 scale = Vector2(3.89066, 0.999985)
 
 [node name="Wall_Right4" parent="Walls" instance=ExtResource("2_ewl15")]
-position = Vector2(175, -1477)
+position = Vector2(47, -1334)
 scale = Vector2(3.89066, 0.999985)
 
 [node name="Wall_Right5" parent="Walls" instance=ExtResource("2_ewl15")]
@@ -51,10 +46,25 @@ position = Vector2(24, -709)
 rotation = -0.785398
 scale = Vector2(1.5, 1)
 
+[node name="Wall_Right11" parent="Walls" instance=ExtResource("2_ewl15")]
+position = Vector2(207, -1714)
+rotation = -0.785398
+scale = Vector2(1.5, 1)
+
 [node name="Wall_Right10" parent="Walls" instance=ExtResource("2_ewl15")]
-position = Vector2(1728, -1315)
+position = Vector2(1725, -1172)
 rotation = 0.785398
 scale = Vector2(1.5, 1)
+
+[node name="Wall_Right13" parent="Walls" instance=ExtResource("2_ewl15")]
+position = Vector2(-166, -1901)
+rotation = 0.785398
+scale = Vector2(1.5, 1)
+
+[node name="Wall_Right12" parent="Walls" instance=ExtResource("2_ewl15")]
+position = Vector2(1714, -1951)
+rotation = 0.785398
+scale = Vector2(12.6157, 1)
 
 [node name="Wall_RightBottom" parent="Walls" instance=ExtResource("2_ewl15")]
 position = Vector2(793, -310)
@@ -67,7 +77,7 @@ rotation = 0.0
 scale = Vector2(3.397, 1)
 
 [node name="Wall_RightBottom5" parent="Walls" instance=ExtResource("2_ewl15")]
-position = Vector2(1098, -1477)
+position = Vector2(1098, -1334)
 rotation = 0.0
 scale = Vector2(3, 1)
 
@@ -114,34 +124,16 @@ position = Vector2(511, -584)
 position = Vector2(1076, -584)
 scale = Vector2(-2, 2)
 
+[node name="AmmoBumper_Diamond9" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
+position = Vector2(134, -873)
+scale = Vector2(-2, 2)
+
+[node name="AmmoBumper_Diamond10" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
+position = Vector2(134, -1672)
+scale = Vector2(-2, 2)
+
 [node name="AmmoBumper_Diamond7" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
 position = Vector2(-312, -2391)
-scale = Vector2(-2, 2)
-
-[node name="CircleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("8_76ues")]
-position = Vector2(198, -2604)
-
-[node name="CircleAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("8_76ues")]
-position = Vector2(-204, -2604)
-
-[node name="AmmoBumper_Diamond11" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
-position = Vector2(312, -2391)
-
-[node name="AmmoBumper_Diamond14" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
-position = Vector2(312, -2811)
-
-[node name="AmmoBumper_Diamond12" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
-position = Vector2(-75, -2437)
-
-[node name="AmmoBumper_Diamond16" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
-position = Vector2(-75, -2798)
-
-[node name="AmmoBumper_Diamond13" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
-position = Vector2(75, -2437)
-scale = Vector2(-2, 2)
-
-[node name="AmmoBumper_Diamond15" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
-position = Vector2(75, -2798)
 scale = Vector2(-2, 2)
 
 [node name="AmmoBumper_Diamond17" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
@@ -150,6 +142,9 @@ scale = Vector2(-2, 2)
 
 [node name="DiamondAmmoBumper" parent="Props" instance=ExtResource("8_8d2tm")]
 position = Vector2(47, -504)
+
+[node name="DiamondAmmoBumper2" parent="Props" instance=ExtResource("8_8d2tm")]
+position = Vector2(1050, -1588)
 
 [node name="FlipperAmmoBumper10" parent="Props" instance=ExtResource("9_ppwea")]
 position = Vector2(191, -149)
@@ -163,6 +158,10 @@ rotation = 0.218166
 position = Vector2(1763, -783)
 rotation = 0.218166
 
+[node name="FlipperAmmoBumper13" parent="Props" instance=ExtResource("9_ppwea")]
+position = Vector2(342, -1842)
+rotation = 0.218166
+
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("9_ppwea")]
 position = Vector2(-271, -3159)
 
@@ -170,18 +169,7 @@ position = Vector2(-271, -3159)
 position = Vector2(274, -3164)
 scale = Vector2(-2, 2)
 
-[node name="FlipperAmmoBumper9" parent="Props" instance=ExtResource("9_ppwea")]
-position = Vector2(257, -1045)
-rotation = 0.218166
-scale = Vector2(-2, 2)
-
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
-
-[node name="Speed Sticker" parent="." instance=ExtResource("12_8vv6l")]
-position = Vector2(1034, -1110)
-rotation = -1.5708
-scale = Vector2(4, 4)
-Power = 200.0
 
 [node name="Foreground" type="Node2D" parent="."]
 
@@ -190,8 +178,8 @@ position = Vector2(-1793, -900)
 scale = Vector2(3.96082, 3.56)
 
 [node name="Foreground5" parent="Foreground" instance=ExtResource("13_kxlwn")]
-position = Vector2(1397, -2673)
-scale = Vector2(3.96082, 2.56)
+position = Vector2(1397, -3069.68)
+scale = Vector2(3.96082, 1.01047)
 
 [node name="Foreground7" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(384, -3185)
@@ -221,8 +209,20 @@ scale = Vector2(3.96082, 3.56)
 [node name="DiamondAmmoBumper2" parent="." instance=ExtResource("15_ewl15")]
 position = Vector2(795, -310)
 
+[node name="ShallowTriangleAmmoBumper" parent="." instance=ExtResource("11_eig4a")]
+position = Vector2(391, -918)
+
 [node name="DiamondAmmoBumper3" parent="." instance=ExtResource("15_ewl15")]
 position = Vector2(793, -873)
+
+[node name="DiamondAmmoBumper6" parent="." instance=ExtResource("15_ewl15")]
+position = Vector2(1050, -1094)
+
+[node name="DiamondAmmoBumper7" parent="." instance=ExtResource("15_ewl15")]
+position = Vector2(795, -1334)
+
+[node name="DiamondAmmoBumper8" parent="." instance=ExtResource("15_ewl15")]
+position = Vector2(1293, -1334)
 
 [node name="DiamondAmmoBumper4" parent="." instance=ExtResource("15_ewl15")]
 position = Vector2(1293, -873)
