@@ -38,19 +38,23 @@ slowmoSprite = NodePath("SlowmoSprite")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 rotation = 8.47668e-05
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_kbsxf")
 
 [node name="SlowmoSprite" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-0.0078125, -0.0078125)
 rotation = 0.000169534
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_rgeog")
 offset = Vector2(-8.99219, 0.00933698)
 
 [node name="Gun" type="Node2D" parent="SlowmoSprite"]
 position = Vector2(-31.9903, 11.0132)
+scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_mncer")
 debug_color = Color(0.9833, 0, 0.358624, 0.301961)
 
