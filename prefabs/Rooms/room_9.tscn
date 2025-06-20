@@ -225,7 +225,7 @@ position = Vector2(247, -2824)
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 
 [node name="ShallowTriangleAmmoBumper5" parent="Props" instance=ExtResource("12_2efq3")]
-position = Vector2(0, -3147)
+position = Vector2(0, -3289)
 
 [node name="DiamondAmmoBumper2" parent="Props" instance=ExtResource("9_vd861")]
 position = Vector2(0, -2281)

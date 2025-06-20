@@ -14,8 +14,7 @@ func charge_changed(newValue: float):
 		return
 	
 	var shaderMat = material as ShaderMaterial
-	
-	
+		
 	var radius = abbarationCurve.sample(newValue)
 	var power = abbarationPowerCurve.sample(newValue)
 	var offset = abbarationOffsetCurve.sample(newValue)
