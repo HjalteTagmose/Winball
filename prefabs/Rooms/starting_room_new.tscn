@@ -175,10 +175,10 @@ position = Vector2(724, -1549)
 position = Vector2(728, -2505)
 
 [node name="DiamondAmmoBumper2" parent="AmmoBumpers" instance=ExtResource("9_5mnmw")]
-position = Vector2(-425, -1421)
+position = Vector2(-553, -1421)
 
 [node name="DiamondAmmoBumper3" parent="AmmoBumpers" instance=ExtResource("9_5mnmw")]
-position = Vector2(425, -1421)
+position = Vector2(553, -1421)
 
 [node name="ShallowTriangleAmmoBumper" parent="AmmoBumpers" instance=ExtResource("10_qhk7u")]
 position = Vector2(0, -1667)

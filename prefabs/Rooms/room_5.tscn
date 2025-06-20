@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://d2ushoen5gt8y"]
+[gd_scene load_steps=21 format=3 uid="uid://d2ushoen5gt8y"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_56mfi"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_bxq5b"]
-[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="3_74smj"]
 [ext_resource type="PackedScene" uid="uid://p5c72b14kda" path="res://prefabs/Room props/exit.tscn" id="4_qi612"]
 [ext_resource type="Script" uid="uid://wolxght5xpxr" path="res://scripts/rooms/room_exit.gd" id="5_xtyd6"]
 [ext_resource type="PackedScene" uid="uid://cpt746t74aua6" path="res://prefabs/Room props/Bumpers/flat_bumper_walls.tscn" id="6_tpvyb"]
@@ -20,9 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="16_tpvyb"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="18_qi612"]
 [ext_resource type="PackedScene" uid="uid://blb2mrvjd8a6d" path="res://prefabs/Room props/Bumpers/bumper_flat_breaks.tscn" id="20_tpvyb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cguwc"]
-size = Vector2(4.81928, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njsij"]
 size = Vector2(80, 20)
@@ -74,6 +70,16 @@ position = Vector2(-669, 0)
 rotation = 0.0
 scale = Vector2(1.637, 1)
 
+[node name="Wall_RightBottom4" parent="Walls" instance=ExtResource("2_bxq5b")]
+position = Vector2(-546, -3826)
+rotation = 0.0
+scale = Vector2(2.637, 1)
+
+[node name="Wall_RightBottom5" parent="Walls" instance=ExtResource("2_bxq5b")]
+position = Vector2(546, -3826)
+rotation = 0.0
+scale = Vector2(2.637, 1)
+
 [node name="Wall_RightBottom3" parent="Walls" instance=ExtResource("2_bxq5b")]
 position = Vector2(669, 0)
 rotation = 0.0
@@ -81,38 +87,6 @@ scale = Vector2(1.637, 1)
 
 [node name="TopWall" type="Node2D" parent="Walls"]
 position = Vector2(0, -3825)
-
-[node name="WallPiece2" type="Node2D" parent="Walls/TopWall"]
-position = Vector2(560, -1)
-scale = Vector2(6.87159, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/TopWall/WallPiece2"]
-rotation = 8.47668e-05
-scale = Vector2(1, 0.15)
-texture = ExtResource("3_74smj")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/TopWall/WallPiece2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall/WallPiece2/StaticBody2D"]
-scale = Vector2(26.56, 1)
-shape = SubResource("RectangleShape2D_cguwc")
-debug_color = Color(0, 0.6, 0.701961, 0.294118)
-
-[node name="WallPiece3" type="Node2D" parent="Walls/TopWall"]
-position = Vector2(-560, -1)
-scale = Vector2(6.87159, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/TopWall/WallPiece3"]
-rotation = 8.47668e-05
-scale = Vector2(1, 0.15)
-texture = ExtResource("3_74smj")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/TopWall/WallPiece3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall/WallPiece3/StaticBody2D"]
-scale = Vector2(26.56, 1)
-shape = SubResource("RectangleShape2D_cguwc")
-debug_color = Color(0, 0.6, 0.701961, 0.294118)
 
 [node name="Exit" parent="Walls" instance=ExtResource("4_qi612")]
 position = Vector2(0, -3826)
