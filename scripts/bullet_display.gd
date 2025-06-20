@@ -20,7 +20,7 @@ func Animate():
 	position.tween_property(self, "position", self.position + Vector2(2, -1) * 80, animationTime).set_trans(Tween.TRANS_QUAD)
 	position.tween_callback(queue_free).set_delay(animationTime)
 
-var currentframe := 0
+var currentframe := -1
 
 func MoveAnimation():
 	currentframe += 1
