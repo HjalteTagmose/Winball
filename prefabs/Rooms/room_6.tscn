@@ -156,7 +156,13 @@ position = Vector2(916, -1837)
 position = Vector2(-408, -543)
 
 [node name="AmmoBumper18" parent="Props/AmmoBumpers" instance=ExtResource("8_0tk08")]
-position = Vector2(-689, 0)
+position = Vector2(-588, 0)
+
+[node name="AmmoBumper19" parent="Props/AmmoBumpers" instance=ExtResource("8_0tk08")]
+position = Vector2(-847, 0)
+
+[node name="AmmoBumper23" parent="Props/AmmoBumpers" instance=ExtResource("8_0tk08")]
+position = Vector2(-1106, 0)
 
 [node name="AmmoBumper17" parent="Props/AmmoBumpers" instance=ExtResource("8_0tk08")]
 position = Vector2(560, -2247)

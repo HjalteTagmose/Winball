@@ -1,17 +1,24 @@
 extends HSlider
 
-# Called when the node enters the scene tree for the first time.
+@export var flyInCurve: Curve
+@export var flyInDuration : float = 1.0
+var _flyInCounter :float = 0.0
+
 func _ready() -> void:
 	Global.storm_charge_duration_percent_changed.connect(charge_changed)
-	pass # Replace with function body.
+	visibility_changed.connect(_on_visibility_changed)
 
 func charge_changed(newValue: float):
 	value = newValue
 	if value > 0:
-		visible = true
+		show()
 	else:
-		visible = false
+		hide()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	_flyInCounter += delta
+	var percent = clamp(_flyInCounter / flyInDuration, 0, 1)
+	position.y = flyInCurve.sample(percent)
+	
+func _on_visibility_changed():
+	_flyInCounter = 0
