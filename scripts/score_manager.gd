@@ -1,5 +1,8 @@
 class_name _ScoreManager extends Node
 
+@export_category("Sound")
+@export var oneShotSoundPrefab : PackedScene
+@export var ScoreSounds : Array[AudioStream] = []
 
 var HighScores: Array[HighScoreResource] = []
 
@@ -11,6 +14,7 @@ var score : int :
 		if(Global.gameState != Global.GameStateEnum.Gameplay):
 			push_warning("Trying to change score while not in gameplay state")
 			return
+		play_sound(ScoreSounds.pick_random())
 		_score = value
 
 var _score : int = 0
@@ -84,3 +88,14 @@ func AddHighScore(score: int, name: String):
 	
 func _compare_high_scores(a: HighScoreResource, b: HighScoreResource) -> int:
 	return a.Score > b.Score
+	
+func play_sound(sound: AudioStream):
+	if sound == null:
+		return
+	
+	# instantiate the OneShotSound prefab
+	var oneShotSound: OneShotSound = oneShotSoundPrefab.instantiate()
+	oneShotSound.name = "OneShotSound_" + str(sound.resource_name)
+	get_tree().root.add_child(oneShotSound)
+	oneShotSound.play_sound(sound)
+	
