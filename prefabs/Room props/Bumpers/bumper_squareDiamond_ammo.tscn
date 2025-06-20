@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cba70d4k5jb2n"]
+[gd_scene load_steps=16 format=3 uid="uid://cba70d4k5jb2n"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_fryn2"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_iy1ly"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_mgk4s"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_mgk4s"]
 [ext_resource type="Texture2D" uid="uid://d2ru0eli8osum" path="res://art/Bumpers/slingshot_red_square.png" id="6_iy1ly"]
+[ext_resource type="PackedScene" path="res://art/Particles/BumperBumbing.tscn" id="7_epj1e"]
 [ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="8_6targ"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="11_ppnxs"]
 
@@ -41,6 +42,7 @@ Bias = Vector2(0, -1)
 BiasPower = 20.0
 SoundOnHits = Array[AudioStream]([ExtResource("8_6targ"), ExtResource("4_mgk4s"), ExtResource("3_fkt2n")])
 ParticleOnHit = ExtResource("3_6targ")
+ParticleOnHit2 = ExtResource("7_epj1e")
 StormParticle = NodePath("GPUParticles2D")
 CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
