@@ -8,6 +8,12 @@ class_name LockZone
 
 @export var shootParticle : PackedScene
 
+@export_category("Sounds")
+@export var SoundPlayer: AudioStreamPlayer2D
+@export var enterSoundEffect: AudioStream
+@export var exitSoundEffect: AudioStream
+@export var onRailSoundEffects: Array[AudioStream] = []
+
 var boundPlayer : Player
 
 func _process(_delta: float) -> void:
@@ -16,8 +22,14 @@ func _process(_delta: float) -> void:
 		Launch()
 		
 	if !boundPlayer:
+		if SoundPlayer.playing:
+			SoundPlayer.stop()
 		return
 
+	if !SoundPlayer.playing:
+		SoundPlayer.stream = onRailSoundEffects.pick_random()
+		SoundPlayer.play()
+		
 	turnCanonToPoint(get_global_mouse_position())
 	CenterPlayer()
 	# PlayerBindPivot.transform.
@@ -29,6 +41,7 @@ func _on_body_enter(body:Node2D):
 		CenterPlayer()
 		LockPlayer()
 		ScoreManager.AddScore(Score)
+		OneShotSoundManager.play_sound(enterSoundEffect)
 
 func _on_body_exit(_body:Node2D):
 	pass
@@ -37,6 +50,7 @@ func Launch() -> void:
 	if !boundPlayer:
 		return
 
+	OneShotSoundManager.play_sound(exitSoundEffect)
 	UnlockPlayer()
 	var direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
 	handleShootParticle(-direction)
