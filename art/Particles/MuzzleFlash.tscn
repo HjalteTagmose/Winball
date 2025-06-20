@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://c75e2ue6ieuwy"]
+[gd_scene load_steps=46 format=3 uid="uid://c75e2ue6ieuwy"]
 
 [ext_resource type="Script" uid="uid://cyy17hnp35i0w" path="res://scripts/particle_trigger.gd" id="1_w6gus"]
 [ext_resource type="Texture2D" uid="uid://dhl2odi7575ck" path="res://art/P_Textures/T_MuzzleFlash_1x4.png" id="2_ie12q"]
 [ext_resource type="Texture2D" uid="uid://bmjyhmxu52twp" path="res://art/P_Textures/Winball_DotGlow.png" id="3_21an2"]
 [ext_resource type="Texture2D" uid="uid://5mfpymbhhgsk" path="res://art/P_Textures/Winball_Dots.png" id="3_w6gus"]
+[ext_resource type="Texture2D" uid="uid://d1h6rjkrnhdei" path="res://art/50x50_bullet_spin.png" id="5_x2hnq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_euw8l"]
 blend_mode = 1
@@ -162,6 +163,56 @@ anim_speed_min = 1.0
 anim_speed_max = 1.0
 anim_speed_curve = SubResource("CurveTexture_x2hnq")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a8igy"]
+particles_animation = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_ffdym"]
+_limits = [0.0, 8.0, 0.0, 1.0]
+_data = [Vector2(0.294304, 8), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e6m8m"]
+curve = SubResource("Curve_ffdym")
+
+[sub_resource type="Curve" id="Curve_267eb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.490506, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_misn6"]
+curve = SubResource("Curve_267eb")
+
+[sub_resource type="Curve" id="Curve_eo51d"]
+_data = [Vector2(0.446203, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tn5sv"]
+curve = SubResource("Curve_eo51d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ghw3"]
+lifetime_randomness = 0.45
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+angle_min = 1.07288e-05
+angle_max = 360.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 292.41
+initial_velocity_max = 476.58
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -500.0
+linear_accel_max = -2.23517e-06
+damping_min = 1.0
+damping_max = 1.0
+damping_curve = SubResource("CurveTexture_misn6")
+scale_min = 0.6
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_tn5sv")
+anim_speed_min = 2.0
+anim_speed_max = 2.0
+anim_speed_curve = SubResource("CurveTexture_e6m8m")
+
 [node name="ParticleTrigger" type="Node2D"]
 script = ExtResource("1_w6gus")
 
@@ -209,3 +260,14 @@ interpolate = false
 local_coords = true
 trail_lifetime = 0.01
 process_material = SubResource("ParticleProcessMaterial_a8igy")
+
+[node name="Ammo" type="GPUParticles2D" parent="."]
+z_index = -2
+material = SubResource("CanvasItemMaterial_a8igy")
+emitting = false
+amount = 3
+texture = ExtResource("5_x2hnq")
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_6ghw3")
