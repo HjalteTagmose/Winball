@@ -154,6 +154,10 @@ scale = Vector2(-2, 2)
 position = Vector2(134, -1672)
 scale = Vector2(-2, 2)
 
+[node name="AmmoBumper_Diamond15" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
+position = Vector2(134, -1278)
+scale = Vector2(-2, 2)
+
 [node name="AmmoBumper_Diamond11" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
 position = Vector2(511, -2128)
 scale = Vector2(-2, 2)
@@ -230,12 +234,29 @@ position = Vector2(1479, -1778)
 position = Vector2(-1551.98, -900)
 scale = Vector2(4.90229, 3.56)
 
+[node name="Foreground2" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(-322.5, -144.32)
+scale = Vector2(0.736328, 0.608125)
+
+[node name="Foreground20" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(-271, -2187)
+rotation = 0.785398
+scale = Vector2(0.736328, 0.608125)
+
+[node name="Foreground3" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(1755.25, -141)
+scale = Vector2(5.84668, 0.608125)
+
 [node name="Foreground5" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(1625.48, -3069.68)
 scale = Vector2(3.0683, 1.01047)
 
 [node name="Foreground12" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(2361, -2140.16)
+scale = Vector2(3.0683, 3.12437)
+
+[node name="Foreground18" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(2678, -918)
 scale = Vector2(3.0683, 3.12437)
 
 [node name="Foreground7" parent="Foreground" instance=ExtResource("13_kxlwn")]
@@ -264,6 +285,16 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(1444.85, -2427.55)
 rotation = 0.785398
 scale = Vector2(4.24182, 0.620948)
+
+[node name="Foreground17" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(2074, -1094)
+rotation = 0.785398
+scale = Vector2(2.09688, 0.6971)
+
+[node name="Foreground19" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(1827.12, -500.695)
+rotation = 0.785398
+scale = Vector2(0.810893, 1.80756)
 
 [node name="Foreground15" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(-115.794, -758.795)
