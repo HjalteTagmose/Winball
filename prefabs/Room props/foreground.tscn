@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxselqqn54dby"]
 
 [ext_resource type="Texture2D" uid="uid://b06gvnh0du5ts" path="res://art/metal_wall_bg.png" id="1_bj1dw"]
-[ext_resource type="Shader" uid="uid://bxg1otkb0ignt" path="res://Shaders/Background.gdshader" id="1_y502u"]
+[ext_resource type="Shader" path="res://Shaders/Background.gdshader" id="1_y502u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7rbp1"]
 shader = ExtResource("1_y502u")

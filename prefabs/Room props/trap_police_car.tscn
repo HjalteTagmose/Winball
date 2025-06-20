@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://hquu36kmh2y2"]
+[gd_scene load_steps=5 format=3 uid="uid://dbswsnxgjwy7y"]
 
 [ext_resource type="Script" uid="uid://dahxn2b17a65k" path="res://scripts/Map props/Trap.gd" id="1_pyy84"]
-[ext_resource type="PackedScene" uid="uid://dp0ia7d12gsdk" path="res://prefabs/Room props/Bumpers/police_target.tscn" id="2_c3a2j"]
+[ext_resource type="PackedScene" path="res://prefabs/Room props/Bumpers/police_target.tscn" id="2_c3a2j"]
 [ext_resource type="Texture2D" uid="uid://bohyaoet3eh0f" path="res://art/car_target.png" id="3_0125p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7i82"]
