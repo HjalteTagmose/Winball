@@ -35,6 +35,12 @@ func Interact(_player : Player):
 
 func PlayAnimation():
 	AudioPlayer.play()
+	if(ParticleOnHit == null):
+		return
+	
+	var instance: ParticleTrigger = ParticleOnHit.instantiate()
+	instance.global_position = global_position
+	get_tree().root.add_child(instance)
 
 func Despawn() -> void:
 	queue_free()
