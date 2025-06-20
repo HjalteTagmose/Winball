@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddnxaky5ipt7q"]
+[gd_scene load_steps=19 format=3 uid="uid://ddnxaky5ipt7q"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_pphsx"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_qropx"]
@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bgq8uyrtdjs4b" path="res://prefabs/Room props/Bumpers/bumper_circle_ammo.tscn" id="12_esbdh"]
 [ext_resource type="PackedScene" uid="uid://blb2mrvjd8a6d" path="res://prefabs/Room props/Bumpers/bumper_flat_breaks.tscn" id="13_dnc6s"]
 [ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="14_dnc6s"]
-[ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="15_njbnk"]
+[ext_resource type="PackedScene" path="res://prefabs/Room props/foreground.tscn" id="15_njbnk"]
+[ext_resource type="PackedScene" uid="uid://b52n564ptayx7" path="res://prefabs/Room props/background.tscn" id="16_dthqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njsij"]
 size = Vector2(80, 20)
@@ -278,6 +279,10 @@ position = Vector2(1106, -684)
 
 [node name="LockZone" parent="Props" instance=ExtResource("9_efx1w")]
 position = Vector2(0, -1943)
+
+[node name="Background" parent="." instance=ExtResource("16_dthqe")]
+position = Vector2(339, -1104)
+scale = Vector2(13.4531, 8.83203)
 
 [node name="Foregrounds" type="Node2D" parent="."]
 

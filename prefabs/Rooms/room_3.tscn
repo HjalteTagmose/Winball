@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dd3vn06qgwyhq"]
+[gd_scene load_steps=18 format=3 uid="uid://dd3vn06qgwyhq"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_sw1kq"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_tqwss"]
@@ -9,11 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://dmxeqifshx4b5" path="res://prefabs/Room props/Bumpers/bumper_shallowTriangle.tscn" id="10_dkkgw"]
 [ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_flat.tscn" id="10_sw1kq"]
 [ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="10_xplgr"]
+[ext_resource type="PackedScene" uid="uid://b52n564ptayx7" path="res://prefabs/Room props/background.tscn" id="11_68ikr"]
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="11_yka3c"]
 [ext_resource type="PackedScene" uid="uid://c5cyrktek0kn" path="res://prefabs/Room props/Bumpers/bumper_circle_breaks.tscn" id="12_ka02d"]
 [ext_resource type="PackedScene" uid="uid://blb2mrvjd8a6d" path="res://prefabs/Room props/Bumpers/bumper_flat_breaks.tscn" id="14_68ikr"]
 [ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="14_dkkgw"]
-[ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="14_tqwss"]
+[ext_resource type="PackedScene" uid="uid://dxselqqn54dby" path="res://prefabs/Room props/foreground.tscn" id="14_tqwss"]
 [ext_resource type="PackedScene" uid="uid://cba70d4k5jb2n" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="15_68ikr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqwss"]
@@ -238,6 +239,9 @@ position = Vector2(375, -1781)
 
 [node name="CircleAmmoBumper13" parent="Props/Breakables" instance=ExtResource("12_ka02d")]
 position = Vector2(450, -1781)
+
+[node name="Background" parent="." instance=ExtResource("11_68ikr")]
+position = Vector2(-72, -1683)
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
