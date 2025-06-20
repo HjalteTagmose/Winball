@@ -126,7 +126,7 @@ rotation = 3.14159
 [node name="Slide" parent="Props" instance=ExtResource("7_x47p5")]
 z_index = 1
 position = Vector2(-695, -138)
-points = PackedVector2Array(0, 0, -3, 96, -165, 122, -412, 117, -451, 10, -371, -80, -325, -36, -364, 67, -264, 77, -299, -107, -248, -287)
+points = PackedVector2Array(0, 0, -3, 181, -177, 150, -412, 117, -517, 27, -449, -80, -360, -52, -364, 67, -294, 66, -325, -156, -245, -290)
 
 [node name="Slide2" parent="Props" instance=ExtResource("7_x47p5")]
 z_index = 1
@@ -172,11 +172,11 @@ position = Vector2(697, -994)
 position = Vector2(697, -1730)
 
 [node name="AmmoBumper_Diamond2" parent="Props/AmmoBumpers" instance=ExtResource("8_pphsx")]
-position = Vector2(-1056, -433)
+position = Vector2(-1059, -471)
 scale = Vector2(-2, 2)
 
 [node name="AmmoBumper_Diamond5" parent="Props/AmmoBumpers" instance=ExtResource("8_pphsx")]
-position = Vector2(-1055, -867)
+position = Vector2(-1059, -899)
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("9_cjjgn")]
@@ -206,7 +206,7 @@ scale = Vector2(-2, 2)
 position = Vector2(-495, -1868)
 
 [node name="DiamondAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("11_dnc6s")]
-position = Vector2(-845, -1098)
+position = Vector2(-790, -1098)
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 position = Vector2(-193, 1)
@@ -245,49 +245,73 @@ position = Vector2(642, -2081)
 position = Vector2(642, -2196)
 
 [node name="BasicSticker" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(-700, -26)
+position = Vector2(-700, -3)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker2" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(-1107, -20)
+position = Vector2(-1107, -26)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker3" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(-1148, -127)
+position = Vector2(-1206, -120)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker4" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(-1059, -207)
+position = Vector2(-1077, -216)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker5" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(-960, -70)
+position = Vector2(-990, -93)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker6" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(667, -216)
+position = Vector2(686, -233)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker7" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(872, -154)
+position = Vector2(842, -199)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker8" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(1010, -286)
+position = Vector2(980, -320)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker9" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(1101, -577)
+position = Vector2(1040, -525)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker10" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(875, -651)
+position = Vector2(872, -670)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker11" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(1106, -684)
+position = Vector2(1101, -732)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="LockZone" parent="Props" instance=ExtResource("9_efx1w")]
 position = Vector2(0, -1943)
 
 [node name="Background" parent="." instance=ExtResource("16_dthqe")]
 position = Vector2(339, -1104)
+metadata/_edit_lock_ = true
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1611, -1226)
 scale = Vector2(1.863, 4.92)
+metadata/_edit_lock_ = true
 
 [node name="Foreground2" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1483, -1839)
@@ -312,10 +336,17 @@ scale = Vector2(-2.37651, 0.56078)
 [node name="Foreground7" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-764, -31.69)
 scale = Vector2(-2.37651, 0.171304)
+metadata/_edit_lock_ = true
 
 [node name="Foreground8" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-390, -146)
 scale = Vector2(-0.49299, 0.441552)
+
+[node name="Foreground12" parent="Foregrounds" instance=ExtResource("15_njbnk")]
+position = Vector2(-1107, -338)
+rotation = 0.785398
+scale = Vector2(-0.49299, 0.441552)
+metadata/_edit_lock_ = true
 
 [node name="Foreground13" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(392, -104.014)
@@ -324,19 +355,24 @@ scale = Vector2(-0.49299, 0.472747)
 [node name="Foreground14" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(830.316, -131.261)
 scale = Vector2(2.09498, 0.575238)
+metadata/_edit_lock_ = true
 
 [node name="Foreground15" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(1550.06, -1228.16)
 scale = Vector2(3.00022, 4.8717)
+metadata/_edit_lock_ = true
 
 [node name="Foreground9" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-position = Vector2(-1100, -272)
-scale = Vector2(-0.49299, 0.441552)
+position = Vector2(-1113.31, -287.125)
+scale = Vector2(-0.440998, 0.500634)
+metadata/_edit_lock_ = true
 
 [node name="Foreground10" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1042, -222)
 scale = Vector2(-0.49299, 0.441552)
+metadata/_edit_lock_ = true
 
 [node name="Foreground11" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1015, -147)
 scale = Vector2(-0.49299, 0.441552)
+metadata/_edit_lock_ = true
