@@ -8,6 +8,7 @@ class_name ScoreLight
 @export var onColor : Color
 
 var scoreLightRoot: ScoreLightRoot
+var completionTime: float = 0
 
 var _isOn = false;
 var isOn : bool : 
@@ -26,6 +27,7 @@ func onEnter(_body: Node2D):
 func turnOn():
 	_isOn = true;
 	sprite.self_modulate = onColor
+	completionTime = Time.get_unix_time_from_system()
 	
 func turnOff():
 	_isOn = false;

@@ -9,7 +9,7 @@ var currentAmmo : int = 10
 
 @export var playerWeapon : PlayerWeapon = PlayerWeapon.Flamethrower
 
-var flamethrower_ammo : int = 100
+var flamethrower_ammo : int = 0
 @export var flamethrower_max_ammo : int = 100
 
 enum PlayerDirection { TowardsMouse, AwayFromMouse }
@@ -23,11 +23,12 @@ var gameState: GameStateEnum = GameStateEnum.Setup
 signal game_over
 signal game_started
 signal bullet_fired
+signal flame_thrower_fired
 signal reload
 
 signal player_charge_duration_percent_changed(percent: float)
 signal storm_charge_duration_percent_changed(percent: float)
-
+signal weapon_change(weapon: PlayerWeapon)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -64,8 +65,15 @@ func trigger_game_over() -> void:
 	game_over.emit()
 	gameState = GameStateEnum.GameOver
 	Engine.time_scale = 1.0
-
-
+	
+func enable_flame_thrower():
+	flamethrower_ammo = flamethrower_max_ammo
+	weapon_change.emit(PlayerWeapon.Flamethrower)
+	playerWeapon = PlayerWeapon.Flamethrower
+	
+func enable_regular_weapon():
+	weapon_change.emit(PlayerWeapon.Regular)
+	playerWeapon = PlayerWeapon.Regular
 
 func DisplayFloatingScore(score:int, pos:Vector2):
 	if gameState != GameStateEnum.Gameplay:

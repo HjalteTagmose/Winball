@@ -8,7 +8,8 @@
 [ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_w7hrv"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_pp1k8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pg665"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7hrv"]
+resource_local_to_scene = true
 shader = ExtResource("4_w7hrv")
 shader_parameter/saturation = 1.0
 
@@ -31,6 +32,7 @@ Enabled = true
 enabled = true
 Power = 40.0
 Score = Array[int]([100, 50, 5])
+Saturation = Array[float]([0.8, 0.6, 0.4])
 BiasPower = 0.0
 AudioPlayer = NodePath("AudioPlayer")
 ParticleOnHit = ExtResource("3_3j6bh")
@@ -38,7 +40,7 @@ CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_pg665")
+material = SubResource("ShaderMaterial_w7hrv")
 texture = ExtResource("4_aty55")
 script = ExtResource("5_pp1k8")
 scale_curve = SubResource("Curve_pp1k8")

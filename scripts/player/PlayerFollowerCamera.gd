@@ -14,9 +14,9 @@ var override_target_pos : Vector2
 func _process(delta: float) -> void:
 	var target_pos : Vector2 = player.global_position
 	
-	#debug
-	global_position = target_pos
-	return
+	if Global.playerWeapon == Global.PlayerWeapon.Flamethrower:
+		global_position = target_pos
+		return
 	
 	if override_target_pos:
 		target_pos = override_target_pos

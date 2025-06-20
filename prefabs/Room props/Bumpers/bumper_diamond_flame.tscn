@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://blh82vm8l117o"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_5ufde"]
+[ext_resource type="Script" uid="uid://vwae547mq65l" path="res://scripts/Map props/flamethrowerBumper.gd" id="2_5ufde"]
+[ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_7uina"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_lxx3k"]
+[ext_resource type="Texture2D" uid="uid://c46t0k0o6mlch" path="res://art/Bumpers/slingshot_blue_diamond_dots.png" id="5_7enls"]
+[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_4tgiw"]
+[ext_resource type="Texture2D" uid="uid://dv22ptl7yjca6" path="res://art/Bumpers/slingshot_red_diamond.png" id="7_e7ej3"]
+[ext_resource type="Texture2D" uid="uid://k6gr2bvaox11" path="res://art/Bumpers/Very_Professional_Flame_Sticker.png" id="8_0gdh2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4870c"]
+resource_local_to_scene = true
+shader = ExtResource("4_lxx3k")
+shader_parameter/saturation = 1.0
+
+[sub_resource type="Curve" id="Curve_h7j4w"]
+_limits = [0.0, 2.0, 0.0, 0.25]
+_data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0, 0.0, 0, 0, Vector2(0.21281, 1.0031), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
+points = PackedVector2Array(0, -40, 62, -8, 62, 8, 0, 40, -62, 8, -62, -8)
+
+[node name="DiamondAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer")]
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 2
+physics_material_override = ExtResource("1_5ufde")
+script = ExtResource("2_5ufde")
+extraVisual = NodePath("Sprite2D/Sprite2D")
+Enabled = true
+enabled = true
+Power = 40.0
+Score = Array[int]([100, 50, 5])
+Saturation = Array[float]([0.8, 0.6, 0.4])
+Bias = Vector2(0, -1)
+BiasPower = 20.0
+AudioPlayer = NodePath("AudioPlayer")
+ParticleOnHit = ExtResource("3_7uina")
+metadata/_custom_type_script = "uid://vwae547mq65l"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_4870c")
+texture = ExtResource("5_7enls")
+script = ExtResource("6_4tgiw")
+scale_curve = SubResource("Curve_h7j4w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("7_e7ej3")
+
+[node name="VeryProfessionalFlameSticker" type="Sprite2D" parent="Sprite2D/Sprite2D"]
+position = Vector2(0, -7.5)
+scale = Vector2(0.0506657, 0.0506657)
+texture = ExtResource("8_0gdh2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_oegki")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]

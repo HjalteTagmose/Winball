@@ -148,43 +148,31 @@ points = PackedVector2Array(0, 0, -73, 138, -323, 210, -383, 127, -330, 15, -199
 position = Vector2(0, -948)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="AmmoBumper11" parent="Props/AmmoBumpers" instance=ExtResource("8_5nfnv")]
 position = Vector2(-312, -1079)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="AmmoBumper13" parent="Props/AmmoBumpers" instance=ExtResource("8_5nfnv")]
 position = Vector2(-154, -1347)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="AmmoBumper14" parent="Props/AmmoBumpers" instance=ExtResource("8_5nfnv")]
 position = Vector2(150, -1347)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="AmmoBumper12" parent="Props/AmmoBumpers" instance=ExtResource("8_5nfnv")]
 position = Vector2(327, -1079)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="AmmoBumper10" parent="Props/AmmoBumpers" instance=ExtResource("8_5nfnv")]
 position = Vector2(-1, -644)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="AmmoBumper_Diamond6" parent="Props/AmmoBumpers" instance=ExtResource("10_xplgr")]
 position = Vector2(635, -948)
@@ -230,49 +218,33 @@ enabled = true
 
 [node name="FlipperAmmoBumper" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(425, -544)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper5" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(-589, -1652)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(-271, -3159)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper2" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(-425, -543)
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper3" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(-170, -167)
 rotation = 0.349066
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper4" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(170, -167)
 rotation = -0.349066
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper6" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(589, -1652)
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper7" parent="Props" instance=ExtResource("11_yka3c")]
 position = Vector2(274, -3164)
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 
