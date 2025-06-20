@@ -4,6 +4,9 @@ class_name LockZone
 @export var Score : int
 @export var Power : float
 @export var PlayerBindPivot : Sprite2D
+@export var Front : Node2D
+
+@export var shootParticle : PackedScene
 
 var boundPlayer : Player
 
@@ -36,6 +39,7 @@ func Launch() -> void:
 
 	UnlockPlayer()
 	var direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
+	handleShootParticle(-direction)
 	
 	# if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
 	# 	direction = -direction;
@@ -60,3 +64,14 @@ func CenterPlayer() -> void:
 func turnCanonToPoint(point : Vector2):
 	PlayerBindPivot.look_at(point)
 	pass
+	
+	
+func handleShootParticle(direction: Vector2):
+	if(shootParticle == null):
+		return
+		
+	var instance: ParticleTrigger = shootParticle.instantiate()
+	instance.global_position = Front.global_position
+	instance.rotation = direction.angle()
+
+	get_tree().root.add_child(instance)
