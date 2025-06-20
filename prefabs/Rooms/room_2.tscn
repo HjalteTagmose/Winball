@@ -246,7 +246,7 @@ scale = Vector2(-2, 2)
 
 [node name="Rail" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("10_1rxak")]
 position = Vector2(0, -325)
-points = PackedVector2Array(0, 17, 250, -218, 160, -297, -157, -297, -225, -201, 0, 19)
+points = PackedVector2Array(0, 17, 251, -190, 249, -236, 160, -297, -157, -297, -215, -239, -220, -201, 0, 19)
 SlideSpeed = 600.0
 RailFollower = NodePath("LockZone")
 railBehaviour = 0
