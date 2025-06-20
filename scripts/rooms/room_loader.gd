@@ -36,10 +36,10 @@ func _spawnRoom(roomToSpawn: PackedScene) -> void:
 	var exit : RoomExit = spawned.roomExit
 	exit.exit_triggered.connect(roomExitHit)
 	_nextSpawnPoint = exit.global_position
-	print("Spawned " + spawned.name)
+	#print("Spawned " + spawned.name)
 
 func roomExitHit(exit: RoomExit):
-	print(triggeredExitsSet)
+	#print(triggeredExitsSet)
 	if(triggeredExitsSet.has(exit)):
 		return
 	triggeredExitsSet[exit] = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cin4l36rgwkl7"]
+[gd_scene load_steps=20 format=3 uid="uid://cin4l36rgwkl7"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_hcbc6"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_1y8yf"]
@@ -16,7 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://blb2mrvjd8a6d" path="res://prefabs/Room props/Bumpers/bumper_flat_breaks.tscn" id="12_1y8yf"]
 [ext_resource type="PackedScene" uid="uid://c5cyrktek0kn" path="res://prefabs/Room props/Bumpers/bumper_circle_breaks.tscn" id="12_mesg3"]
 [ext_resource type="PackedScene" uid="uid://5jm3kowwsw2p" path="res://prefabs/Room props/score_light.tscn" id="12_wjc5m"]
-[ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="14_6pgvf"]
+[ext_resource type="PackedScene" uid="uid://dxselqqn54dby" path="res://prefabs/Room props/foreground.tscn" id="14_6pgvf"]
+[ext_resource type="PackedScene" uid="uid://b52n564ptayx7" path="res://prefabs/Room props/background.tscn" id="17_6bto7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njsij"]
 size = Vector2(80, 20)
@@ -355,10 +356,10 @@ rotation = 0.174533
 position = Vector2(1038, -1890)
 
 [node name="ShallowTriangleAmmoBumper5" parent="Props" instance=ExtResource("9_xu565")]
-position = Vector2(-170, -2800)
+position = Vector2(-170, -2787)
 
 [node name="ShallowTriangleAmmoBumper6" parent="Props" instance=ExtResource("9_xu565")]
-position = Vector2(170, -2800)
+position = Vector2(170, -2787)
 
 [node name="ShallowTriangleAmmoBumper4" parent="Props" instance=ExtResource("9_xu565")]
 position = Vector2(-1038, -1890)
@@ -550,6 +551,11 @@ scale = Vector2(0.238368, 0.29955)
 position = Vector2(-570.366, -297.118)
 rotation = 0.785398
 scale = Vector2(1.36666, 0.327858)
+
+[node name="Background" parent="." instance=ExtResource("17_6bto7")]
+position = Vector2(367.003, -1824)
+scale = Vector2(17.8164, 11.7969)
+metadata/_edit_lock_ = true
 
 [editable path="Props/ScoreLightRoot"]
 [editable path="Props/ScoreLightRoot2"]

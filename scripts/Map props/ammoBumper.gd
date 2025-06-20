@@ -16,7 +16,7 @@ class_name AmmoBumper extends BasicBumper
 var _HasBeenUsed = false;
 
 func AdditionalBumpBehaviour(_collisionInfo:KinematicCollision2D, _player : Player) -> void:
-	print("Ammo Bumper bumped")
+	#print("Ammo Bumper bumped")
 	if(_HasBeenUsed || !Enabled):
 		return
 	

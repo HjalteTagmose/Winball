@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1pkpdh08nxve"]
+[gd_scene load_steps=18 format=3 uid="uid://1pkpdh08nxve"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_1rxak"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_hojoj"]
@@ -13,8 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="10_hojoj"]
 [ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="11_di54m"]
 [ext_resource type="PackedScene" uid="uid://dty1lc8lqyalq" path="res://prefabs/Room props/speed_sticker.tscn" id="12_crms2"]
+[ext_resource type="PackedScene" uid="uid://b52n564ptayx7" path="res://prefabs/Room props/background.tscn" id="14_gx2u3"]
 [ext_resource type="PackedScene" uid="uid://blb2mrvjd8a6d" path="res://prefabs/Room props/Bumpers/bumper_flat_breaks.tscn" id="15_1bron"]
-[ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="17_epmcq"]
+[ext_resource type="PackedScene" uid="uid://dxselqqn54dby" path="res://prefabs/Room props/foreground.tscn" id="17_epmcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njsij"]
 size = Vector2(80, 20)
@@ -264,6 +265,9 @@ position = Vector2(0, -1175)
 rotation = 0.0
 scale = Vector2(4, 4)
 Power = 200.0
+
+[node name="Background" parent="." instance=ExtResource("14_gx2u3")]
+position = Vector2(39, -1495)
 
 [node name="Foreground" type="Node2D" parent="."]
 

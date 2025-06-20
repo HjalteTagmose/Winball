@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_og1gt"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="6_xsxlw"]
 [ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="7_2b531"]
-[ext_resource type="Texture2D" uid="uid://bv3m8mlchjhnm" path="res://art/Bumpers/bumper_breaking.png" id="8_kqf8d"]
+[ext_resource type="Texture2D" uid="uid://13wc1xta3hmh" path="res://art/Bumpers/bumper_police_breaking.png" id="8_15sn7"]
 [ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://art/Bumpers/bumper_round.png" id="9_apo56"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="10_rysk3"]
 
@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_nxlrn")
-texture = ExtResource("8_kqf8d")
+texture = ExtResource("8_15sn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
 visible = false

@@ -46,7 +46,7 @@ func SpawnBumpers():
 	var bumperCount : int = wheelLength / bumper2xRadius
 	var angleStep : int = 360 / bumperCount
 
-	print(" bumper 2 radius " , bumper2xRadius, " wheel ", wheelLength)
+	#print(" bumper 2 radius " , bumper2xRadius, " wheel ", wheelLength)
 	for i in range(0, bumperCount):
 		var bumper : BasicBumper
 
@@ -81,7 +81,7 @@ func AnimateSpawn(animatePos : bool) -> void:
 		tween.tween_property(bumper, "global_position", pos, time).set_trans(Tween.TRANS_BOUNCE)
 	
 	if Animate:
-		print("tween callback")
+		#print("tween callback")
 
 		var tween = get_tree().create_tween()
 		tween.tween_callback(UnfreezePlayer).set_delay(AnimTime)
@@ -90,7 +90,7 @@ func AnimateSpawn(animatePos : bool) -> void:
 		Despawn()
 
 func UnfreezePlayer() -> void:
-	print("unlock")
+	#print("unlock")
 	boundPlayer.linear_velocity = savedVelocity
 	boundPlayer.set_deferred("freeze", false)
 	boundPlayer.locked = false

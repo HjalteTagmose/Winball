@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bo7xyuac6c2em"]
+[gd_scene load_steps=16 format=3 uid="uid://bo7xyuac6c2em"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_8d2tm"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_ewl15"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="7_itfdk"]
 [ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="8_5q1pf"]
 [ext_resource type="PackedScene" uid="uid://da5l4mtg6gga2" path="res://prefabs/Room props/Bumpers/bumper_flamethrower.tscn" id="8_8d2tm"]
+[ext_resource type="PackedScene" uid="uid://b52n564ptayx7" path="res://prefabs/Room props/background.tscn" id="9_8d2tm"]
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="9_ppwea"]
 [ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_flat.tscn" id="11_eig4a"]
 [ext_resource type="PackedScene" uid="uid://c5cyrktek0kn" path="res://prefabs/Room props/Bumpers/bumper_circle_breaks.tscn" id="12_4qn8u"]
-[ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="13_kxlwn"]
+[ext_resource type="PackedScene" uid="uid://dxselqqn54dby" path="res://prefabs/Room props/foreground.tscn" id="13_kxlwn"]
 [ext_resource type="PackedScene" uid="uid://blb2mrvjd8a6d" path="res://prefabs/Room props/Bumpers/bumper_flat_breaks.tscn" id="14_dq3pd"]
 [ext_resource type="PackedScene" uid="uid://cba70d4k5jb2n" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="15_ewl15"]
 
@@ -227,6 +228,10 @@ position = Vector2(1400, -1637)
 
 [node name="BasicSticker3" parent="Props" instance=ExtResource("8_5q1pf")]
 position = Vector2(1479, -1778)
+
+[node name="Background" parent="." instance=ExtResource("9_8d2tm")]
+position = Vector2(301.003, -1483.5)
+scale = Vector2(16.9844, 11.7129)
 
 [node name="Foreground" type="Node2D" parent="."]
 
