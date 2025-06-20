@@ -67,6 +67,7 @@ offset = Vector2(-8.99219, 0.00933698)
 
 [node name="Gun" type="Node2D" parent="SlowmoSprite"]
 position = Vector2(-31.9903, 11.0132)
+scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.5, 1.5)
