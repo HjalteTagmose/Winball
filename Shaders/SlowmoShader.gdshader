@@ -16,6 +16,7 @@ uniform float g_offset_x = 0.0;
 uniform float g_offset_y = 0.0;
 uniform float b_offset_x = 0.2;
 uniform float b_offset_y = 0.0;
+uniform float chromatic_intesity = 1.0;
 
 
 void vertex() {
@@ -39,7 +40,7 @@ void fragment() {
     vec3 chromatic_aberration = vec3(r_val.r, g_val.g, b_val.b);
 
     // Apply the effect
-    COLOR.rgb = chromatic_aberration;
+    COLOR.rgb = chromatic_aberration*;
 	
 	float dist = distance(UV, vec2(0.5, 0.5));
   	float alpha = smoothstep(radius - softness, radius + softness, dist);
