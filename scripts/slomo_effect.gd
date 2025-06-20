@@ -16,8 +16,6 @@ func charge_changed(newValue: float):
 	
 	var evaluated = abbarationCurve.sample(newValue)
 	shaderMat.set_shader_parameter("radius", evaluated)
-	prints("newvalue", newValue)
-	prints("evaluated", evaluated) 
 	if newValue > 0:
 		visible = true
 	else:

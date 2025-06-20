@@ -30,7 +30,7 @@ func Interact(_player : Player):
 	PlayAnimation()
 	ScoreManager.score += score
 	Global.DisplayFloatingScore(score, global_position)
-	print("current score ", ScoreManager.score)
+	#print("current score ", ScoreManager.score)
 
 
 func PlayAnimation():
