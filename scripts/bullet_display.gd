@@ -13,7 +13,7 @@ func Animate():
 	texture = animationSheet
 	hframes = 8
 
-	var frames : Tween = get_tree().create_tween().set_loops(8)
+	var frames : Tween = get_tree().create_tween().set_loops(7)
 	frames.tween_callback(MoveAnimation).set_delay(0.1)
 
 	var position : Tween = get_tree().create_tween()
