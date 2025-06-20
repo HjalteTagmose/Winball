@@ -126,10 +126,12 @@ scale = Vector2(-2, 2)
 position = Vector2(250, -2062)
 
 [node name="FlipperAmmoBumper10" parent="Props/WallCorners" instance=ExtResource("8_aiong")]
-position = Vector2(724, -2062)
+position = Vector2(728, -2062)
+rotation = -0.218166
 
 [node name="FlipperAmmoBumper11" parent="Props/WallCorners" instance=ExtResource("8_aiong")]
-position = Vector2(-724, -2062)
+position = Vector2(-736, -2062)
+rotation = 0.218166
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper3" parent="Props/WallCorners" instance=ExtResource("8_aiong")]
@@ -181,7 +183,8 @@ position = Vector2(-553, -1421)
 position = Vector2(553, -1421)
 
 [node name="ShallowTriangleAmmoBumper" parent="AmmoBumpers" instance=ExtResource("10_qhk7u")]
-position = Vector2(0, -1667)
+position = Vector2(-1, -1389)
+scale = Vector2(1, 2)
 
 [node name="TrapSticker" parent="." instance=ExtResource("9_caa1u")]
 position = Vector2(0, -2271)
