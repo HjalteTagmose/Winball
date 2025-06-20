@@ -227,76 +227,95 @@ position = Vector2(98, -880)
 position = Vector2(0, -2040)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper16" parent="Props/AmmoBumpers" instance=ExtResource("8_2rbs7")]
 position = Vector2(-376, -1563)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper17" parent="Props/AmmoBumpers" instance=ExtResource("8_2rbs7")]
 position = Vector2(376, -1563)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper_Diamond6" parent="Props/AmmoBumpers" instance=ExtResource("9_is7tl")]
 position = Vector2(282, -548)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper_Diamond5" parent="Props/AmmoBumpers" instance=ExtResource("9_is7tl")]
 position = Vector2(-282, -548)
 scale = Vector2(-2, 2)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper_Diamond8" parent="Props/AmmoBumpers" instance=ExtResource("9_is7tl")]
 position = Vector2(-452, -1889)
 scale = Vector2(-2, 2)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper_Diamond10" parent="Props/AmmoBumpers" instance=ExtResource("9_is7tl")]
 position = Vector2(-868, -2286)
 scale = Vector2(-2, 2)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper_Diamond12" parent="Props/AmmoBumpers" instance=ExtResource("9_is7tl")]
 position = Vector2(-564, -2902)
 scale = Vector2(-2, 2)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper_Diamond9" parent="Props/AmmoBumpers" instance=ExtResource("9_is7tl")]
 position = Vector2(452, -1889)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper_Diamond11" parent="Props/AmmoBumpers" instance=ExtResource("9_is7tl")]
 position = Vector2(885, -2294)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="AmmoBumper_Diamond13" parent="Props/AmmoBumpers" instance=ExtResource("9_is7tl")]
 position = Vector2(688, -3103)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="CircleAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("10_4m6xk")]
 position = Vector2(-641, -587)
+Saturation = null
+Bias = null
 
 [node name="CircleAmmoBumper4" parent="Props/AmmoBumpers" instance=ExtResource("10_4m6xk")]
 position = Vector2(417, -3409)
+Saturation = null
+Bias = null
 
 [node name="CircleAmmoBumper3" parent="Props/AmmoBumpers" instance=ExtResource("10_4m6xk")]
 position = Vector2(624, -587)
+Saturation = null
+Bias = null
 
 [node name="FlipperAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("11_eraab")]
 position = Vector2(-694, -161)
+Saturation = null
 
 [node name="FlipperAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("11_eraab")]
 position = Vector2(694, -161)
 scale = Vector2(-2, 2)
+Saturation = null
 
 [node name="ShallowTriangleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("11_bxq5b")]
 position = Vector2(-282, -31)
@@ -311,53 +330,67 @@ position = Vector2(282, -31)
 position = Vector2(-282, -2334)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="DiamondAmmoBumper3" parent="Props/AmmoBumpers" instance=ExtResource("13_bxq5b")]
 position = Vector2(-282, -3158)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="DiamondAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("13_bxq5b")]
 position = Vector2(282, -2334)
 Enabled = true
 enabled = true
+Saturation = null
 
 [node name="FlipperAmmoBumper5" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(-641, -1247)
+Saturation = null
 
 [node name="FlipperAmmoBumper14" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(-669, -3346)
+Saturation = null
 
 [node name="FlipperAmmoBumper9" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(376, -1041)
+Saturation = null
 
 [node name="FlipperAmmoBumper11" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(3, -3409)
+Saturation = null
 
 [node name="FlipperAmmoBumper12" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(203, -2997)
+Saturation = null
 
 [node name="FlipperAmmoBumper13" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(-170, -2836)
+Saturation = null
 
 [node name="FlipperAmmoBumper10" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(-376, -1041)
 scale = Vector2(-2, 2)
+Saturation = null
 
 [node name="FlipperAmmoBumper15" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(504, -2836)
 scale = Vector2(-2, 2)
+Saturation = null
 
 [node name="FlipperAmmoBumper7" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(641, -1247)
 scale = Vector2(-2, 2)
+Saturation = null
 
 [node name="FlipperAmmoBumper6" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(-865, -1657)
+Saturation = null
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("11_eraab")]
 position = Vector2(865, -1657)
 scale = Vector2(-2, 2)
+Saturation = null
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 
