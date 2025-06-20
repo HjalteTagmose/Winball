@@ -19,7 +19,7 @@ _data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0,
 point_count = 3
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
-points = PackedVector2Array(81, -22, 81, 23, -81, 23, -81, -22)
+points = PackedVector2Array(81, -23, 81, 23, -81, 23, -81, -23)
 
 [node name="ShallowTriangleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("AudioPlayer")]
 scale = Vector2(2, 2)
