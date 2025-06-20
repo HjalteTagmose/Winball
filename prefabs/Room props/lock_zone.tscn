@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtgtxoyr4xxn3" path="res://scripts/Map props/LockZone.gd" id="1_a0i64"]
 [ext_resource type="Texture2D" uid="uid://4ukiok2dgp2w" path="res://art/lock_in_cannon.png" id="2_a0i64"]
-[ext_resource type="PackedScene" path="res://art/Particles/MuzzleFlash.tscn" id="2_jhr8w"]
+[ext_resource type="PackedScene" uid="uid://c75e2ue6ieuwy" path="res://art/Particles/MuzzleFlash.tscn" id="2_jhr8w"]
 [ext_resource type="AudioStream" uid="uid://b2us8f3m4cbsq" path="res://Sounds/Canon Slide Entered01.wav" id="3_jel60"]
 [ext_resource type="AudioStream" uid="uid://c27xnywchdrkd" path="res://Sounds/Slide Deplozed01.wav" id="4_ew20f"]
 [ext_resource type="AudioStream" uid="uid://blikmm7ne1sk0" path="res://Sounds/Slide Exit01.wav" id="4_k5kv1"]
@@ -30,6 +30,7 @@ metadata/_custom_type_script = "uid://dtgtxoyr4xxn3"
 [node name="Canon" type="Sprite2D" parent="Rotation pivot"]
 visibility_layer = 17
 z_index = 2
+rotation = 1.5708
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("2_a0i64")
 

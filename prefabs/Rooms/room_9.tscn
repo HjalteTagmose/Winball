@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkbqrfeh1a3sg"]
+[gd_scene load_steps=20 format=3 uid="uid://bkbqrfeh1a3sg"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_vd861"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_7dmeu"]
@@ -11,9 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://cba70d4k5jb2n" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="9_vd861"]
 [ext_resource type="PackedScene" uid="uid://dmxeqifshx4b5" path="res://prefabs/Room props/Bumpers/bumper_shallowTriangle.tscn" id="10_47n4x"]
 [ext_resource type="PackedScene" uid="uid://do5hdn7w0evwi" path="res://prefabs/Room props/lock_zone.tscn" id="10_c2k70"]
+[ext_resource type="PackedScene" uid="uid://dppffrgc2a1uo" path="res://prefabs/Room props/point_sticker.tscn" id="11_7dmeu"]
 [ext_resource type="PackedScene" uid="uid://ttdbstumxur7" path="res://prefabs/Room props/score_light_group.tscn" id="11_mljaq"]
+[ext_resource type="PackedScene" uid="uid://dy012fy7skxkx" path="res://prefabs/Room props/Bumpers/bumper_flat.tscn" id="12_2efq3"]
 [ext_resource type="PackedScene" uid="uid://5jm3kowwsw2p" path="res://prefabs/Room props/score_light.tscn" id="12_hcp4g"]
 [ext_resource type="PackedScene" uid="uid://b52n564ptayx7" path="res://prefabs/Room props/background.tscn" id="14_lqroi"]
+[ext_resource type="PackedScene" uid="uid://blb2mrvjd8a6d" path="res://prefabs/Room props/Bumpers/bumper_flat_breaks.tscn" id="15_2efq3"]
 [ext_resource type="PackedScene" uid="uid://dxselqqn54dby" path="res://prefabs/Room props/foreground.tscn" id="15_j8jjr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njsij"]
@@ -156,6 +159,22 @@ rotation = 0.174533
 position = Vector2(759, -1805)
 rotation = 0.218166
 
+[node name="FlipperAmmoBumper17" parent="Props" instance=ExtResource("8_5djsy")]
+position = Vector2(749, -3525)
+
+[node name="FlipperAmmoBumper18" parent="Props" instance=ExtResource("8_5djsy")]
+position = Vector2(-749, -3525)
+scale = Vector2(-2, 2)
+
+[node name="FlipperAmmoBumper23" parent="Props" instance=ExtResource("8_5djsy")]
+position = Vector2(-1279, -3865)
+rotation = 0.218166
+scale = Vector2(-2, 2)
+
+[node name="FlipperAmmoBumper24" parent="Props" instance=ExtResource("8_5djsy")]
+position = Vector2(1279, -3865)
+rotation = -0.218166
+
 [node name="FlipperAmmoBumper20" parent="Props" instance=ExtResource("8_5djsy")]
 position = Vector2(1089, -2150)
 rotation = 0.218166
@@ -191,6 +210,9 @@ scale = Vector2(-2, 2)
 [node name="ShallowTriangleAmmoBumper" parent="Props" instance=ExtResource("10_47n4x")]
 position = Vector2(-398, -1009)
 
+[node name="ShallowTriangleAmmoBumper6" parent="Props" instance=ExtResource("10_47n4x")]
+position = Vector2(0, -512)
+
 [node name="ShallowTriangleAmmoBumper3" parent="Props" instance=ExtResource("10_47n4x")]
 position = Vector2(-247, -2824)
 
@@ -198,12 +220,27 @@ position = Vector2(-247, -2824)
 position = Vector2(398, -1009)
 
 [node name="ShallowTriangleAmmoBumper4" parent="Props" instance=ExtResource("10_47n4x")]
-position = Vector2(209, -2824)
+position = Vector2(247, -2824)
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
 
+[node name="ShallowTriangleAmmoBumper5" parent="Props" instance=ExtResource("12_2efq3")]
+position = Vector2(0, -3147)
+
 [node name="DiamondAmmoBumper2" parent="Props" instance=ExtResource("9_vd861")]
 position = Vector2(0, -2281)
+
+[node name="DiamondAmmoBumper3" parent="Props" instance=ExtResource("9_vd861")]
+position = Vector2(-1129, -3347)
+
+[node name="DiamondAmmoBumper5" parent="Props" instance=ExtResource("9_vd861")]
+position = Vector2(-871, -4086)
+
+[node name="DiamondAmmoBumper6" parent="Props" instance=ExtResource("9_vd861")]
+position = Vector2(871, -4086)
+
+[node name="DiamondAmmoBumper4" parent="Props" instance=ExtResource("9_vd861")]
+position = Vector2(1078, -3347)
 
 [node name="LockZone2" parent="Props" instance=ExtResource("10_c2k70")]
 position = Vector2(0, -1946)
@@ -217,6 +254,24 @@ position = Vector2(0, -2631)
 [node name="LockZone5" parent="Props" instance=ExtResource("10_c2k70")]
 position = Vector2(398, -2281)
 
+[node name="LockZone6" parent="Props" instance=ExtResource("10_c2k70")]
+position = Vector2(1011, -2733)
+
+[node name="LockZone7" parent="Props" instance=ExtResource("10_c2k70")]
+position = Vector2(-1066, -2733)
+
+[node name="BasicSticker" parent="Props" instance=ExtResource("11_7dmeu")]
+position = Vector2(-1066, -2930)
+
+[node name="BasicSticker3" parent="Props" instance=ExtResource("11_7dmeu")]
+position = Vector2(1011, -2930)
+
+[node name="BasicSticker2" parent="Props" instance=ExtResource("11_7dmeu")]
+position = Vector2(-1066, -3146)
+
+[node name="BasicSticker4" parent="Props" instance=ExtResource("11_7dmeu")]
+position = Vector2(1011, -3146)
+
 [node name="Rail" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("9_s1pae")]
 position = Vector2(-568, -1518)
 points = PackedVector2Array(0, 0, 1069, 0)
@@ -224,6 +279,31 @@ SlideSpeed = 600.0
 RailFollower = NodePath("LockZone")
 
 [node name="LockZone" parent="Props/Rail" instance=ExtResource("10_c2k70")]
+
+[node name="Rail4" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("9_s1pae")]
+position = Vector2(-568, -3485)
+points = PackedVector2Array(0, 0, 1069, 0)
+SlideSpeed = 600.0
+RailFollower = NodePath("LockZone")
+
+[node name="LockZone" parent="Props/Rail4" instance=ExtResource("10_c2k70")]
+
+[node name="Rail6" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("9_s1pae")]
+position = Vector2(-568, -4575)
+points = PackedVector2Array(0, 0, 1069, 0)
+SlideSpeed = 600.0
+RailFollower = NodePath("LockZone")
+
+[node name="LockZone" parent="Props/Rail6" instance=ExtResource("10_c2k70")]
+
+[node name="Rail5" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("9_s1pae")]
+position = Vector2(577, -4058)
+scale = Vector2(-1, 1)
+points = PackedVector2Array(0, 0, 1069, 0)
+SlideSpeed = 600.0
+RailFollower = NodePath("LockZone")
+
+[node name="LockZone" parent="Props/Rail5" instance=ExtResource("10_c2k70")]
 
 [node name="Rail2" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("9_s1pae")]
 position = Vector2(749, -2307)
@@ -262,6 +342,78 @@ position = Vector2(399, -377)
 
 [node name="ScoreLight4" parent="ScoreLightRoot" instance=ExtResource("12_hcp4g")]
 position = Vector2(399, 0)
+
+[node name="ScoreLightRoot2" parent="." instance=ExtResource("11_mljaq")]
+position = Vector2(-359, -3485)
+
+[node name="ScoreLight2" parent="ScoreLightRoot2" index="1"]
+position = Vector2(359, 0)
+
+[node name="ScoreLight3" parent="ScoreLightRoot2" index="2"]
+position = Vector2(716, 0)
+
+[node name="ScoreLightRoot3" parent="." instance=ExtResource("11_mljaq")]
+position = Vector2(-350, -4065)
+
+[node name="ScoreLight2" parent="ScoreLightRoot3" index="1"]
+position = Vector2(359, 0)
+
+[node name="ScoreLight3" parent="ScoreLightRoot3" index="2"]
+position = Vector2(716, 0)
+
+[node name="ScoreLightRoot4" parent="." instance=ExtResource("11_mljaq")]
+position = Vector2(-359, -4575)
+
+[node name="ScoreLight2" parent="ScoreLightRoot4" index="1"]
+position = Vector2(359, 0)
+
+[node name="ScoreLight3" parent="ScoreLightRoot4" index="2"]
+position = Vector2(716, 0)
+
+[node name="BreakableFlat4" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(0, -4249)
+
+[node name="BreakableFlat5" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(-369, -4249)
+
+[node name="BreakableFlat6" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(366, -4249)
+
+[node name="BreakableFlat10" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(0, -4414)
+
+[node name="BreakableFlat11" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(-369, -4414)
+
+[node name="BreakableFlat12" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(366, -4414)
+
+[node name="BreakableFlat13" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(0, -3700)
+
+[node name="BreakableFlat14" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(-369, -3700)
+
+[node name="BreakableFlat15" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(366, -3700)
+
+[node name="BreakableFlat16" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(0, -3865)
+
+[node name="BreakableFlat17" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(-369, -3865)
+
+[node name="BreakableFlat18" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(366, -3865)
+
+[node name="BreakableFlat7" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(0, -4763)
+
+[node name="BreakableFlat8" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(-369, -4763)
+
+[node name="BreakableFlat9" parent="." instance=ExtResource("15_2efq3")]
+position = Vector2(366, -4763)
 
 [node name="Background" parent="." instance=ExtResource("14_lqroi")]
 position = Vector2(583, -1906)
@@ -364,3 +516,6 @@ rotation = 0.785398
 scale = Vector2(1.36666, 0.327858)
 
 [editable path="ScoreLightRoot"]
+[editable path="ScoreLightRoot2"]
+[editable path="ScoreLightRoot3"]
+[editable path="ScoreLightRoot4"]

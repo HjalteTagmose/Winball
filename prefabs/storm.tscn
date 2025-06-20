@@ -41,9 +41,9 @@ script = ExtResource("1_hmgbu")
 CollisionArea = NodePath("CollisionShape2D")
 Graphic = NodePath("Shape")
 Line = NodePath("Line")
-TimeToKill = 8.0
-TimeToCoverScreenSize = 10.0
-acceleration = 0.2
+TimeToKill = 10.0
+TimeToCoverScreenSize = 8.0
+acceleration = 0.25
 metadata/_custom_type_script = "uid://bagx158bqhie"
 
 [node name="Shape" type="Sprite2D" parent="."]
