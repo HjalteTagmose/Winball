@@ -14,6 +14,7 @@ class_name BasicBumper extends StaticBody2D
 @export_category("Setup")
 @export var SoundOnHits : Array[AudioStream]
 @export var ParticleOnHit : PackedScene
+@export var ParticleOnHit2 : PackedScene
 @export var StormParticle : GPUParticles2D
 
 @export_category("Helpers")
@@ -66,7 +67,19 @@ func BumpPlayer(collisionInfo:KinematicCollision2D, player : Player) -> void:
 	
 	AdditionalBumpBehaviour(collisionInfo, player)
 	
+func PlayParticle2(collisionInfo: KinematicCollision2D):
+	if(ParticleOnHit2 == null):
+		return
+		
+	var direction = collisionInfo.get_normal()
+	var impactPoint = collisionInfo.get_position()
 	
+	var instance: ParticleTrigger = ParticleOnHit2.instantiate()
+	instance.global_position = impactPoint
+	# var globalPoint = instance.to_global(direction)	
+	instance.rotation = direction.angle()
+	get_tree().root.add_child(instance)
+
 func PlayParticle(collisionInfo: KinematicCollision2D):
 	if(ParticleOnHit == null):
 		return
@@ -86,6 +99,7 @@ func AdditionalBumpBehaviour(_collisionInfo:KinematicCollision2D, _player : Play
 func PlayAnimation(collisionInfo: KinematicCollision2D):
 	OneShotSoundManager.play_sound(SoundOnHits.pick_random())
 	PlayParticle(collisionInfo)
+	PlayParticle2(collisionInfo)
 
 func AddScore(collisionInfo: KinematicCollision2D):
 	if(Score.size() <= 0):

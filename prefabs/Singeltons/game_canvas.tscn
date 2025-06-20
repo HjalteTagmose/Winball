@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=43 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -65,21 +65,21 @@ point_count = 3
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o7nu"]
 shader = ExtResource("23_blhlv")
 shader_parameter/ScreenUV_AlphaMask_Size = Vector2(1, 1)
-shader_parameter/radius = 0.8
+shader_parameter/radius = 0.365
 shader_parameter/softness = 0.238
 shader_parameter/DistortionNRM = ExtResource("24_jlaj1")
 shader_parameter/Speed = 0.15
 shader_parameter/DistortionUV_Size = Vector2(0.1, 0.1)
 shader_parameter/direction = Vector2(1, 0)
 shader_parameter/DistortionIntensity = -1.62
-shader_parameter/r_offset_x = 1.21
-shader_parameter/r_offset_y = 0.965
-shader_parameter/g_offset_x = 1.365
-shader_parameter/g_offset_y = 0.24
-shader_parameter/b_offset_x = 0.12
-shader_parameter/b_offset_y = 1.375
+shader_parameter/r_offset_x = 0.0
+shader_parameter/r_offset_y = 12.175
+shader_parameter/g_offset_x = -1.61
+shader_parameter/g_offset_y = -2.165
+shader_parameter/b_offset_x = 5.385
+shader_parameter/b_offset_y = -0.825
 shader_parameter/chromatic_intesity = 1.0
-shader_parameter/chromatic_offset = 10.0
+shader_parameter/chromatic_offset = 3.99
 
 [sub_resource type="Curve" id="Curve_jlaj1"]
 _limits = [0.0, 1.0, 0.0, 100.0]
@@ -89,6 +89,11 @@ point_count = 4
 [sub_resource type="Curve" id="Curve_0o7nu"]
 _limits = [0.0, 10.0, 0.0, 100.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(100, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_82iek"]
+_limits = [0.0, 1.0, 0.0, 100.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(100, 3), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
@@ -281,6 +286,7 @@ script = ExtResource("12_h6shr")
 highScoreRow = ExtResource("13_a8n0t")
 
 [node name="SlomoTexture" type="TextureRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_0o7nu")
 anchors_preset = 15
 anchor_right = 1.0
@@ -293,5 +299,6 @@ texture = ExtResource("26_a2y7m")
 script = ExtResource("26_jlaj1")
 abbarationCurve = SubResource("Curve_jlaj1")
 abbarationPowerCurve = SubResource("Curve_0o7nu")
+abbarationOffsetCurve = SubResource("Curve_82iek")
 
 [connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]
