@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
 [ext_resource type="PackedScene" uid="uid://baeyuf6utr2j6" path="res://prefabs/ui/ammo_cartrige.tscn" id="4_8ph68"]
 [ext_resource type="PackedScene" uid="uid://dalsv3kwfrg3b" path="res://prefabs/Score.tscn" id="6_1kxbb"]
-[ext_resource type="Script" uid="uid://b0mch3eq6kaue" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
+[ext_resource type="Script" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
 [ext_resource type="Script" uid="uid://cmbduliw3rk1l" path="res://scripts/player_charge_slider.gd" id="7_ibp3j"]
 [ext_resource type="Script" uid="uid://lfq6sif4xuex" path="res://scripts/restart_button.gd" id="8_a4mgm"]
 [ext_resource type="Texture2D" uid="uid://cqee6vy2745rv" path="res://art/highscore/input.png" id="8_adaae"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bab86hj400f02" path="res://art/highscore/highscore_bg.png" id="11_a8n0t"]
 [ext_resource type="Texture2D" uid="uid://c37mdt7vrp8i4" path="res://art/highscore/input_button_pressed.png" id="11_fxx35"]
 [ext_resource type="Texture2D" uid="uid://pqq40qug0phv" path="res://art/highscore/input_button_hover.png" id="12_f4mre"]
-[ext_resource type="Script" uid="uid://cjfjv1awvicgp" path="res://scripts/scorelist.gd" id="12_h6shr"]
+[ext_resource type="Script" path="res://scripts/scorelist.gd" id="12_h6shr"]
 [ext_resource type="PackedScene" uid="uid://bk3vfgpinyeio" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
 [ext_resource type="FontFile" uid="uid://b5bowh1itlrtx" path="res://fonts/NotoSerif-BoldItalic.ttf" id="14_f4mre"]
 [ext_resource type="Texture2D" uid="uid://bxotc57mlu33v" path="res://art/highscore/restart_normal.png" id="16_hoafv"]
@@ -28,7 +28,7 @@
 
 [sub_resource type="Curve" id="Curve_dnict"]
 _limits = [-500.0, 500.0, 0.0, 1.0]
-_data = [Vector2(0, 500), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 500), 0.0, -6120.43, 0, 0, Vector2(0.345679, 1.1806), 745.927, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4mre"]
