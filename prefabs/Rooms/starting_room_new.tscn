@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxhp86wtna1rx"]
+[gd_scene load_steps=11 format=3 uid="uid://bxhp86wtna1rx"]
 
 [ext_resource type="Script" uid="uid://bi5omso1g5t0g" path="res://scripts/rooms/room.gd" id="1_5mnmw"]
 [ext_resource type="PackedScene" uid="uid://c4biclr3oh58y" path="res://prefabs/Room props/wall.tscn" id="2_qhk7u"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cba70d4k5jb2n" path="res://prefabs/Room props/Bumpers/bumper_squareDiamond_ammo.tscn" id="6_ccqet"]
 [ext_resource type="PackedScene" uid="uid://bsr6u6y0m5y0t" path="res://prefabs/Room props/Bumpers/bumper_flipper_ammo.tscn" id="8_aiong"]
 [ext_resource type="PackedScene" uid="uid://bf3jqmlffoqv" path="res://prefabs/Room props/Bumpers/bumper_triangle_ammo.tscn" id="8_oe6i8"]
+[ext_resource type="PackedScene" uid="uid://dc228ykvmvaux" path="res://prefabs/Room props/trap_sticker.tscn" id="9_caa1u"]
 [ext_resource type="PackedScene" uid="uid://d4cg4r76w15t4" path="res://prefabs/Room props/foreground.tscn" id="10_u44wl"]
 
 [node name="StartRoom" type="Node2D" node_paths=PackedStringArray("roomExit")]
@@ -136,6 +137,13 @@ scale = Vector2(-2, 2)
 position = Vector2(353, -264)
 rotation = 0.218166
 
+[node name="FlipperAmmoBumper5" parent="Props/WallCorners" instance=ExtResource("8_aiong")]
+position = Vector2(-126, -1167)
+
+[node name="FlipperAmmoBumper6" parent="Props/WallCorners" instance=ExtResource("8_aiong")]
+position = Vector2(126, -1167)
+scale = Vector2(-2, 2)
+
 [node name="AmmoBumpers" type="Node2D" parent="."]
 
 [node name="DiamondAmmoBumper" parent="AmmoBumpers" instance=ExtResource("6_ccqet")]
@@ -147,6 +155,9 @@ position = Vector2(716, -862)
 [node name="TriangleAmmoBumper2" parent="AmmoBumpers" instance=ExtResource("8_oe6i8")]
 position = Vector2(-716, -862)
 scale = Vector2(-2, 2)
+
+[node name="TrapSticker" parent="." instance=ExtResource("9_caa1u")]
+position = Vector2(0, -2204)
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
