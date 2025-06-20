@@ -169,8 +169,6 @@ debug_color = Color(0.969563, 0.0144444, 0.451239, 0.42)
 position = Vector2(0, -2158)
 Enabled = true
 enabled = true
-CanDie = false
-Life = 3
 
 [node name="Corners" type="Node2D" parent="Props"]
 
@@ -285,49 +283,33 @@ position = Vector2(-995, -3125)
 
 [node name="FlipperAmmoBumper3" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(262, -411)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper9" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(718, -644)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper5" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-890, -2407)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper7" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-890, -4079)
 rotation = 0.174533
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper4" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-268, -411)
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper10" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(-721, -644)
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper6" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(877, -2407)
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(888, -4079)
 rotation = -0.174533
 scale = Vector2(-2, 2)
-CanDie = false
-Life = 3
 
 [node name="ShallowTriangleAmmoBumper" parent="Props" instance=ExtResource("11_kck6s")]
 position = Vector2(0, -989)

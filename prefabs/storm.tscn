@@ -43,6 +43,7 @@ Graphic = NodePath("Shape")
 Line = NodePath("Line")
 TimeToKill = 8.0
 TimeToCoverScreenSize = 8.0
+acceleration = 0.2
 metadata/_custom_type_script = "uid://bagx158bqhie"
 
 [node name="Shape" type="Sprite2D" parent="."]

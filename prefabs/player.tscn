@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://buvaskjvhonse" path="res://art/armadillo/armadillo_ball.png" id="5_kbsxf"]
 [ext_resource type="Texture2D" uid="uid://bxvquo7i0vgfo" path="res://art/armadillo/armadillo_gun.png" id="6_rgeog"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="7_u51tk"]
-[ext_resource type="PackedScene" path="res://art/Particles/FlameThrower.tscn" id="8_kbsxf"]
+[ext_resource type="PackedScene" uid="uid://dkgvnttsdpspd" path="res://art/Particles/FlameThrower.tscn" id="8_kbsxf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1txc5"]
 bounce = 0.4
