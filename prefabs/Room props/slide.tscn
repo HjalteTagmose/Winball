@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b54fnp64tfkvf"]
 
-[ext_resource type="Texture2D" uid="uid://tnck0b600ycf" path="res://art/Slides/straight_slide.png" id="1_ax6yb"]
+[ext_resource type="Texture2D" uid="uid://2jybw3mysrg" path="res://art/Slides/straight_slide_NEW.png" id="1_ax6yb"]
 [ext_resource type="Script" uid="uid://cbufsxmwng6bt" path="res://scripts/Map props/Slide.gd" id="2_b22ap"]
 [ext_resource type="AudioStream" uid="uid://b2us8f3m4cbsq" path="res://Sounds/Canon Slide Entered01.wav" id="3_ax6yb"]
 [ext_resource type="Texture2D" uid="uid://b3yk8xjtktkti" path="res://art/ph_pinball.png" id="3_mnf72"]
@@ -13,10 +13,13 @@ radius = 16.0
 
 [node name="Slide" type="Line2D" node_paths=PackedStringArray("SoundPlayer")]
 z_index = -1
+texture_repeat = 2
 points = PackedVector2Array(0, 0, 89, -56, 123, -149, 359, -308, 317, -484, 47, -707, -103, -648, -373, -567, -443, -673, -428, -736)
-width = 24.0
+width = 40.0
 texture = ExtResource("1_ax6yb")
 texture_mode = 1
+joint_mode = 2
+sharp_limit = 1.0
 script = ExtResource("2_b22ap")
 SlideSpeed = 1400.0
 SoundPlayer = NodePath("AudioStreamPlayer2D")
