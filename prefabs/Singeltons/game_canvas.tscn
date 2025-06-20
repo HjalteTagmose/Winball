@@ -121,6 +121,7 @@ value = 50.0
 editable = false
 scrollable = false
 script = ExtResource("7_ibp3j")
+enabled = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GameplayGroup/PlayerChargeSlider"]
 layout_mode = 0
