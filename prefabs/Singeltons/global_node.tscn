@@ -19,3 +19,4 @@ flameThrowerMusic = ExtResource("6_k7wu1")
 metadata/_custom_type_script = "uid://be4h7kuufm7dl"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
