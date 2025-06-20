@@ -87,19 +87,19 @@ rotation = 0.0
 scale = Vector2(1.5, 1)
 
 [node name="Wall_RightBottom7" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(43, -1639)
+position = Vector2(50, -1639)
 scale = Vector2(1.25, 1)
 
 [node name="Wall_RightBottom8" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(-43, -1639)
+position = Vector2(-50, -1639)
 scale = Vector2(1.25, 1)
 
 [node name="Wall_RightBottom10" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(150, -1940)
+position = Vector2(157, -1940)
 rotation = -0.785398
 
 [node name="Wall_RightBottom17" parent="Walls" instance=ExtResource("2_dlvlk")]
-position = Vector2(-150, -1940)
+position = Vector2(-161, -1940)
 rotation = 0.785398
 
 [node name="TopWall" type="Node2D" parent="Walls"]
@@ -162,6 +162,7 @@ rotation = -1.57066
 [node name="WallCorners" type="Node2D" parent="Props"]
 
 [node name="AmmoBumpers" type="Node2D" parent="Props"]
+position = Vector2(-1, 0)
 
 [node name="AmmoBumper_Diamond8" parent="Props/AmmoBumpers" instance=ExtResource("8_56ebm")]
 position = Vector2(-1263, -2543)
@@ -210,7 +211,7 @@ position = Vector2(262, -411)
 position = Vector2(718, -644)
 
 [node name="FlipperAmmoBumper5" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(-801, -2467)
+position = Vector2(-801, -2468)
 rotation = -0.218166
 
 [node name="FlipperAmmoBumper11" parent="Props" instance=ExtResource("10_iuf6u")]
@@ -218,8 +219,8 @@ position = Vector2(-1349, -3056)
 rotation = -0.567232
 
 [node name="FlipperAmmoBumper13" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(63, -1672)
-rotation = -0.567232
+position = Vector2(88, -1643)
+rotation = -0.596481
 
 [node name="FlipperAmmoBumper12" parent="Props" instance=ExtResource("10_iuf6u")]
 position = Vector2(1349, -3056)
@@ -227,7 +228,7 @@ rotation = 0.567232
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper14" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(-71, -1658)
+position = Vector2(-86, -1643)
 rotation = 0.567232
 scale = Vector2(-2, 2)
 
@@ -244,7 +245,7 @@ position = Vector2(1089, -2150)
 rotation = 0.218166
 
 [node name="FlipperAmmoBumper17" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(219, -1985)
+position = Vector2(214, -1948)
 rotation = 0.218166
 
 [node name="FlipperAmmoBumper16" parent="Props" instance=ExtResource("10_iuf6u")]
@@ -258,7 +259,7 @@ rotation = -0.218166
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper18" parent="Props" instance=ExtResource("10_iuf6u")]
-position = Vector2(-215, -1979)
+position = Vector2(-219, -1948)
 rotation = -0.218166
 scale = Vector2(-2, 2)
 
