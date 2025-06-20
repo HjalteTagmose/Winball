@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dppffrgc2a1uo"]
+[gd_scene load_steps=7 format=3 uid="uid://dppffrgc2a1uo"]
 
 [ext_resource type="Script" uid="uid://o0wcl8l7p1uy" path="res://scripts/Map props/Sticker.gd" id="1_2smrg"]
 [ext_resource type="Texture2D" uid="uid://253d33oxwwmc" path="res://art/policesticker.png" id="2_ao50h"]
+[ext_resource type="PackedScene" path="res://art/Particles/CoinCollected.tscn" id="2_khal5"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="3_khal5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2r5dy"]
@@ -15,11 +16,11 @@ point_count = 3
 [node name="BasicSticker" type="Area2D" node_paths=PackedStringArray("AudioPlayer")]
 z_index = 2
 scale = Vector2(3, 3)
-collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_2smrg")
 score = 100
 AudioPlayer = NodePath("audioPlayer")
+ParticleOnHit = ExtResource("2_khal5")
 metadata/_custom_type_script = "uid://o0wcl8l7p1uy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

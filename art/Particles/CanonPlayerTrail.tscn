@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cd34lkeqjqc6m"]
+[gd_scene load_steps=22 format=3 uid="uid://cdrgdt04hb35n"]
 
 [ext_resource type="Script" uid="uid://cyy17hnp35i0w" path="res://scripts/particle_trigger.gd" id="1_2evh0"]
 [ext_resource type="Texture2D" uid="uid://5mfpymbhhgsk" path="res://art/P_Textures/Winball_Dots.png" id="2_vktke"]
