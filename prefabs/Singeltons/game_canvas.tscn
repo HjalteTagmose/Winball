@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=42 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -17,16 +17,16 @@
 [ext_resource type="Texture2D" uid="uid://bab86hj400f02" path="res://art/highscore/highscore_bg.png" id="11_a8n0t"]
 [ext_resource type="Texture2D" uid="uid://c37mdt7vrp8i4" path="res://art/highscore/input_button_pressed.png" id="11_fxx35"]
 [ext_resource type="Texture2D" uid="uid://pqq40qug0phv" path="res://art/highscore/input_button_hover.png" id="12_f4mre"]
-[ext_resource type="Script" path="res://scripts/scorelist.gd" id="12_h6shr"]
+[ext_resource type="Script" uid="uid://cjfjv1awvicgp" path="res://scripts/scorelist.gd" id="12_h6shr"]
 [ext_resource type="PackedScene" uid="uid://bk3vfgpinyeio" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
 [ext_resource type="FontFile" uid="uid://b5bowh1itlrtx" path="res://fonts/NotoSerif-BoldItalic.ttf" id="14_f4mre"]
 [ext_resource type="Texture2D" uid="uid://bxotc57mlu33v" path="res://art/highscore/restart_normal.png" id="16_hoafv"]
 [ext_resource type="Texture2D" uid="uid://b7ybhf8juof0d" path="res://art/highscore/restart_pressed.png" id="17_5jw6s"]
 [ext_resource type="Texture2D" uid="uid://bet1kje15yi3l" path="res://art/highscore/restart_hover.png" id="18_e8pr3"]
-[ext_resource type="Shader" path="res://Shaders/SlowmoShader.gdshader" id="23_blhlv"]
+[ext_resource type="Shader" uid="uid://dm1l44rgjwjvp" path="res://Shaders/SlowmoShader.gdshader" id="23_blhlv"]
 [ext_resource type="Texture2D" uid="uid://inoqjir103es" path="res://art/P_Textures/Tileable_Noises/Winball_GaussianNRM.png" id="24_jlaj1"]
 [ext_resource type="Texture2D" uid="uid://bfji3hni5n5t6" path="res://art/Bumpers/bumper_rectangle.png" id="25_a2y7m"]
-[ext_resource type="Script" path="res://scripts/slomo_effect.gd" id="26_jlaj1"]
+[ext_resource type="Script" uid="uid://vdlkb5knjon8" path="res://scripts/slomo_effect.gd" id="26_jlaj1"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
 
@@ -78,11 +78,17 @@ shader_parameter/g_offset_x = 1.365
 shader_parameter/g_offset_y = 0.24
 shader_parameter/b_offset_x = 0.12
 shader_parameter/b_offset_y = 1.375
+shader_parameter/chromatic_intesity = 1.0
 
 [sub_resource type="Curve" id="Curve_jlaj1"]
 _limits = [0.0, 1.0, 0.0, 100.0]
 _data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(15, 0.64), 0.0, 0.0, 0, 0, Vector2(76.7442, 0.424269), 0.0, 0.0, 0, 0, Vector2(100, 0), 0.0, 0.0, 0, 0]
 point_count = 4
+
+[sub_resource type="Curve" id="Curve_0o7nu"]
+_limits = [0.0, 10.0, 0.0, 100.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(100, 10), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
 script = ExtResource("1_oe5df")
@@ -285,5 +291,6 @@ size_flags_vertical = 4
 texture = ExtResource("25_a2y7m")
 script = ExtResource("26_jlaj1")
 abbarationCurve = SubResource("Curve_jlaj1")
+abbarationPowerCurve = SubResource("Curve_0o7nu")
 
 [connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]
