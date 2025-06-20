@@ -5,8 +5,8 @@ class_name SubmitScoreButton extends TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pressed.connect(_button_pressed)
+	pressed.connect(on_button_pressed)
 
-func _button_pressed():
+func on_button_pressed():
 	ScoreManager.AddHighScore(ScoreManager.score, player_name.text)
 	gameover_screen.show_restart_button()

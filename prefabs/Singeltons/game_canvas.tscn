@@ -1,10 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=29 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
 [ext_resource type="PackedScene" uid="uid://baeyuf6utr2j6" path="res://prefabs/ui/ammo_cartrige.tscn" id="4_8ph68"]
 [ext_resource type="PackedScene" uid="uid://dalsv3kwfrg3b" path="res://prefabs/Score.tscn" id="6_1kxbb"]
-[ext_resource type="Script" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
+[ext_resource type="Script" uid="uid://b0mch3eq6kaue" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
 [ext_resource type="Script" uid="uid://cmbduliw3rk1l" path="res://scripts/player_charge_slider.gd" id="7_ibp3j"]
 [ext_resource type="Script" uid="uid://lfq6sif4xuex" path="res://scripts/restart_button.gd" id="8_a4mgm"]
 [ext_resource type="Texture2D" uid="uid://cqee6vy2745rv" path="res://art/highscore/input.png" id="8_adaae"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bab86hj400f02" path="res://art/highscore/highscore_bg.png" id="11_a8n0t"]
 [ext_resource type="Texture2D" uid="uid://c37mdt7vrp8i4" path="res://art/highscore/input_button_pressed.png" id="11_fxx35"]
 [ext_resource type="Texture2D" uid="uid://pqq40qug0phv" path="res://art/highscore/input_button_hover.png" id="12_f4mre"]
-[ext_resource type="Script" path="res://scripts/scorelist.gd" id="12_h6shr"]
+[ext_resource type="Script" uid="uid://cjfjv1awvicgp" path="res://scripts/scorelist.gd" id="12_h6shr"]
 [ext_resource type="PackedScene" uid="uid://bk3vfgpinyeio" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
 [ext_resource type="FontFile" uid="uid://b5bowh1itlrtx" path="res://fonts/NotoSerif-BoldItalic.ttf" id="14_f4mre"]
 [ext_resource type="Texture2D" uid="uid://bxotc57mlu33v" path="res://art/highscore/restart_normal.png" id="16_hoafv"]
@@ -30,6 +30,10 @@
 _limits = [-500.0, 500.0, 0.0, 1.0]
 _data = [Vector2(0, 500), 0.0, -6120.43, 0, 0, Vector2(0.345679, 1.1806), 745.927, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Curve" id="Curve_5jw6s"]
+_data = [Vector2(0, 0), 0.0, 11.7633, 0, 0, Vector2(0.37963, 1), 0.0, 0.0, 0, 0, Vector2(0.512346, 1), -0.061828, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4mre"]
 
@@ -105,12 +109,28 @@ offset_bottom = 5.0
 text = "The Storm consumes all..."
 horizontal_alignment = 1
 
+[node name="Cover" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -139.0
+offset_top = -65.0
+offset_right = 1321.0
+offset_bottom = 895.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.235294, 0.176471, 0.239216, 0)
+
 [node name="GameOverCanvas" type="CanvasGroup" parent="." node_paths=PackedStringArray("score_submit_section", "restart_button")]
 visible = false
 script = ExtResource("8_fxx35")
 score_submit_section = NodePath("ScoreSubmission")
 restart_button = NodePath("RestartButton2")
 flyInCurve = SubResource("Curve_dnict")
+colorCurve = SubResource("Curve_5jw6s")
+coverColor = Color(0.235294, 0.176471, 0.239216, 0.647059)
 
 [node name="Score" parent="GameOverCanvas" instance=ExtResource("6_1kxbb")]
 position = Vector2(598, 95)
@@ -142,7 +162,7 @@ script = ExtResource("9_0lgbs")
 player_name = NodePath("../PlayerNameInput")
 gameover_screen = NodePath("../..")
 
-[node name="PlayerNameInput" type="LineEdit" parent="GameOverCanvas/ScoreSubmission"]
+[node name="PlayerNameInput" type="LineEdit" parent="GameOverCanvas/ScoreSubmission" node_paths=PackedStringArray("scoreButton")]
 self_modulate = Color(0.101961, 0.101961, 0.12549, 1)
 layout_mode = 0
 offset_left = 435.0
@@ -163,6 +183,7 @@ max_length = 25
 caret_blink = true
 caret_force_displayed = true
 script = ExtResource("8_fg6ww")
+scoreButton = NodePath("../SubmitScoreButton")
 
 [node name="RestartButton2" type="TextureButton" parent="GameOverCanvas"]
 visible = false
@@ -188,3 +209,5 @@ offset_right = 156.0
 offset_bottom = 144.0
 script = ExtResource("12_h6shr")
 highScoreRow = ExtResource("13_a8n0t")
+
+[connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]
