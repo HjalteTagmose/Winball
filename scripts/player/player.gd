@@ -6,6 +6,7 @@ class_name Player extends RigidBody2D
 @export var maxLaunchPower : float = 1000
 @export var launchChargeDuration : float = 1
 @export var killVelocityBeforeLaunch : bool = true
+@export var pityBulletDelay : float = 3
 
 @export_category("FlameThrower")
 @export var flame_thrower_power : float = 100
@@ -28,6 +29,8 @@ enum SlowdownEndBehaviourEnum { AmmoWasted, Launch }
 @export var stormParticle : GPUParticles2D
 @export var playerGun : Node2D
 @export var slowmoSprite: Node2D
+
+var _pityBulletCounter = 0
 
 var InStorm: bool:
 	set(value):
@@ -56,6 +59,14 @@ func handleLaunch(delta: float) -> void:
 	if locked or Global.gameState == Global.GameStateEnum.GameOver:
 		return
 
+	if Global.currentAmmo == 0:
+		_pityBulletCounter += delta
+		if _pityBulletCounter > pityBulletDelay:
+			Global.currentAmmo += 1
+			Global.reload.emit()
+	else:
+		_pityBulletCounter = 0
+		
 	if currentlyPlayerParticle:
 		currentlyPlayerParticle.StopEmitting()
 		currentlyPlayerParticle = null
