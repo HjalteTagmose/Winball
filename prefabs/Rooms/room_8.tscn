@@ -290,8 +290,8 @@ position = Vector2(-383, -3184)
 scale = Vector2(0.5, 0.5625)
 
 [node name="Foreground9" parent="Foreground" instance=ExtResource("13_kxlwn")]
-position = Vector2(-246, -3274)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-246, -3275.4)
+scale = Vector2(0.2, 0.205469)
 
 [node name="Foreground10" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(1444.85, -2427.55)

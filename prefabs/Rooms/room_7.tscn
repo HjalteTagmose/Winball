@@ -462,8 +462,8 @@ position = Vector2(0, -2116)
 [node name="Foregrounds" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
-position = Vector2(1842, -904)
-scale = Vector2(4.16, 3.52)
+position = Vector2(1842, -898.56)
+scale = Vector2(4.16, 3.54125)
 
 [node name="Foreground5" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
 position = Vector2(1146.02, -1799.06)
@@ -475,20 +475,20 @@ rotation = 0.785398
 scale = Vector2(0.356785, 0.630744)
 
 [node name="Foreground2" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
-position = Vector2(-1842, -903.94)
-scale = Vector2(4.16, 3.51977)
+position = Vector2(-1842, -898.5)
+scale = Vector2(4.16, 3.54102)
 
 [node name="Foreground22" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
 position = Vector2(-1870.98, -1681.5)
 scale = Vector2(4.0468, 0.775391)
 
 [node name="Foreground3" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
-position = Vector2(-2414, -2763)
-scale = Vector2(4.16, 5.68359)
+position = Vector2(-2413.98, -2765)
+scale = Vector2(4.16008, 5.6914)
 
 [node name="Foreground4" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
-position = Vector2(2403, -2276.74)
-scale = Vector2(4.16, 7.66305)
+position = Vector2(2403, -2115.24)
+scale = Vector2(4.16, 8.29391)
 
 [node name="Foreground6" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
 position = Vector2(-2236.96, -1582.04)
@@ -501,8 +501,8 @@ rotation = -0.785398
 scale = Vector2(1.58288, 0.173594)
 
 [node name="Foreground8" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
-position = Vector2(-1135.77, -4118)
-scale = Vector2(1.17488, 0.4)
+position = Vector2(-1135.77, -4120.3)
+scale = Vector2(1.17488, 0.408984)
 
 [node name="Foreground9" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
 position = Vector2(-1225.88, -3912.36)
@@ -545,8 +545,8 @@ position = Vector2(558.029, -68.3153)
 scale = Vector2(1.15246, 0.29955)
 
 [node name="Foreground20" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
-position = Vector2(-567, -78)
-scale = Vector2(1.15246, 0.29955)
+position = Vector2(-567, -73.3424)
+scale = Vector2(1.15246, 0.317744)
 
 [node name="Foreground21" parent="Foregrounds" instance=ExtResource("14_6pgvf")]
 position = Vector2(-725, -249.842)
