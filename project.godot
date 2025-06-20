@@ -26,6 +26,7 @@ OneShotSoundManager="*res://prefabs/Singeltons/one_shot_sound_manager.tscn"
 
 [display]
 
+window/size/mode=3
 mouse_cursor/custom_image="uid://c2ogw2rnsps32"
 mouse_cursor/custom_image_hotspot=Vector2(42, 42)
 
