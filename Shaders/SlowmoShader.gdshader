@@ -17,6 +17,7 @@ uniform float g_offset_y = 0.0;
 uniform float b_offset_x = 0.2;
 uniform float b_offset_y = 0.0;
 uniform float chromatic_intesity = 1.0;
+uniform float chromatic_offset = 1.0;
 
 
 void vertex() {
@@ -37,10 +38,10 @@ void fragment() {
     b_val = texture(screen_texture, SCREEN_UV + vec2(b_offset_x, b_offset_y) * pixelSize).rgb;
 
     // Combine the color channels
-    vec3 chromatic_aberration = vec3(r_val.r, g_val.g, b_val.b);
+    vec3 chromatic_aberration = vec3(r_val.r*chromatic_offset, g_val.g*chromatic_offset, b_val.b*chromatic_offset);
 
     // Apply the effect
-    COLOR.rgb = chromatic_aberration;
+    COLOR.rgb = chromatic_aberration*chromatic_intesity;
 	
 	float dist = distance(UV, vec2(0.5, 0.5));
   	float alpha = smoothstep(radius - softness, radius + softness, dist);
