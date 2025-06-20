@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=41 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://p3wtr6psbdrd" path="res://art/deathbar/deathbar.png" id="7_5jw6s"]
 [ext_resource type="Script" uid="uid://b0mch3eq6kaue" path="res://scripts/StormDeathTime.gd" id="7_a4mgm"]
 [ext_resource type="Script" uid="uid://cmbduliw3rk1l" path="res://scripts/player_charge_slider.gd" id="7_ibp3j"]
-[ext_resource type="Texture2D" uid="uid://c62oxv3fyfnbg" path="res://art/deathbar/deathbar_bg.png" id="8_a2y7m"]
 [ext_resource type="Script" uid="uid://lfq6sif4xuex" path="res://scripts/restart_button.gd" id="8_a4mgm"]
 [ext_resource type="Texture2D" uid="uid://cqee6vy2745rv" path="res://art/highscore/input.png" id="8_adaae"]
 [ext_resource type="Script" uid="uid://bfqqbyox8pftx" path="res://scripts/player_name_input.gd" id="8_fg6ww"]
@@ -17,32 +16,43 @@
 [ext_resource type="Texture2D" uid="uid://bab86hj400f02" path="res://art/highscore/highscore_bg.png" id="11_a8n0t"]
 [ext_resource type="Texture2D" uid="uid://c37mdt7vrp8i4" path="res://art/highscore/input_button_pressed.png" id="11_fxx35"]
 [ext_resource type="Texture2D" uid="uid://pqq40qug0phv" path="res://art/highscore/input_button_hover.png" id="12_f4mre"]
-[ext_resource type="Script" path="res://scripts/scorelist.gd" id="12_h6shr"]
+[ext_resource type="Script" uid="uid://cjfjv1awvicgp" path="res://scripts/scorelist.gd" id="12_h6shr"]
 [ext_resource type="PackedScene" uid="uid://bk3vfgpinyeio" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
 [ext_resource type="FontFile" uid="uid://b5bowh1itlrtx" path="res://fonts/NotoSerif-BoldItalic.ttf" id="14_f4mre"]
 [ext_resource type="Texture2D" uid="uid://bxotc57mlu33v" path="res://art/highscore/restart_normal.png" id="16_hoafv"]
 [ext_resource type="Texture2D" uid="uid://b7ybhf8juof0d" path="res://art/highscore/restart_pressed.png" id="17_5jw6s"]
 [ext_resource type="Texture2D" uid="uid://bet1kje15yi3l" path="res://art/highscore/restart_hover.png" id="18_e8pr3"]
-[ext_resource type="Shader" path="res://Shaders/SlowmoShader.gdshader" id="23_blhlv"]
+[ext_resource type="Shader" uid="uid://dm1l44rgjwjvp" path="res://Shaders/SlowmoShader.gdshader" id="23_blhlv"]
 [ext_resource type="Texture2D" uid="uid://inoqjir103es" path="res://art/P_Textures/Tileable_Noises/Winball_GaussianNRM.png" id="24_jlaj1"]
 [ext_resource type="Texture2D" uid="uid://bfji3hni5n5t6" path="res://art/Bumpers/bumper_rectangle.png" id="25_a2y7m"]
-[ext_resource type="Script" path="res://scripts/slomo_effect.gd" id="26_jlaj1"]
+[ext_resource type="Script" uid="uid://vdlkb5knjon8" path="res://scripts/slomo_effect.gd" id="26_jlaj1"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_ibp3j"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ibp3j"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2y7m"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_e8pr3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l3vvl"]
+texture = SubResource("CanvasTexture_e8pr3")
+expand_margin_top = 50.0
+expand_margin_bottom = 32.0
+modulate_color = Color(0.392157, 0.0666667, 0.309804, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_blhlv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jlaj1"]
 texture = SubResource("CanvasTexture_blhlv")
-expand_margin_top = 47.0
+expand_margin_top = 50.0
 expand_margin_bottom = 32.0
 modulate_color = Color(0.933333, 0.866667, 0.227451, 1)
 
 [sub_resource type="Curve" id="Curve_dnict"]
+_limits = [-500.0, 1000.0, 0.0, 1.0]
+_data = [Vector2(0.0154321, 1000), 0.0, -834.684, 0, 0, Vector2(0.391975, 555.179), 745.927, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_a2y7m"]
 _limits = [-500.0, 1000.0, 0.0, 1.0]
 _data = [Vector2(0.0154321, 1000), 0.0, -834.684, 0, 0, Vector2(0.392, 0), 745.927, 0.0, 0, 0]
 point_count = 2
@@ -142,7 +152,7 @@ offset_bottom = 569.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_icons/grabber_disabled = SubResource("CanvasTexture_ibp3j")
-theme_override_styles/slider = SubResource("StyleBoxEmpty_a2y7m")
+theme_override_styles/slider = SubResource("StyleBoxTexture_l3vvl")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_jlaj1")
 value = 59.0
 editable = false
@@ -157,13 +167,6 @@ offset_top = -55.0
 offset_right = 365.0
 offset_bottom = 64.0
 texture = ExtResource("7_5jw6s")
-
-[node name="TextureRect2" type="TextureRect" parent="GameplayGroup/StormDeathSlider/TextureRect"]
-z_index = -1
-layout_mode = 0
-offset_right = 381.0
-offset_bottom = 119.0
-texture = ExtResource("8_a2y7m")
 
 [node name="Cover" type="ColorRect" parent="."]
 visible = false
@@ -184,7 +187,7 @@ visible = false
 script = ExtResource("8_fxx35")
 score_submit_section = NodePath("ScoreSubmission")
 restart_button = NodePath("RestartButton2")
-flyInCurve = SubResource("Curve_dnict")
+flyInCurve = SubResource("Curve_a2y7m")
 colorCurve = SubResource("Curve_5jw6s")
 coverColor = Color(0.235294, 0.176471, 0.239216, 0.647059)
 
@@ -278,5 +281,6 @@ size_flags_vertical = 4
 texture = ExtResource("25_a2y7m")
 script = ExtResource("26_jlaj1")
 abbarationCurve = SubResource("Curve_jlaj1")
+metadata/_custom_type_script = "uid://vdlkb5knjon8"
 
 [connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]
