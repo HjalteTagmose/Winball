@@ -53,8 +53,8 @@ func _on_body_entered(body:Node2D) -> void:
 		OneShotSoundManager.play_sound(enterSoundEffect)
 
 func LockPlayer() -> void:
-	boundPlayer.set_deferred("freeze", true)
-	boundPlayer.freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
+	# boundPlayer.set_deferred("freeze", true)
+	# boundPlayer.freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
 	boundPlayer.linear_velocity = Vector2.ZERO
 	boundPlayer.locked = true
 
@@ -63,9 +63,9 @@ func PrepSlide() -> void:
 	currentLerpTime = 0
 
 func UnlockPlayer() -> void:
-	boundPlayer.freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
+	# boundPlayer.set_deferred("freeze", false)
+	# boundPlayer.freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
 	boundPlayer.locked = false
-	boundPlayer.set_deferred("freeze", false)
 
 func CenterPlayer() -> void:
 	boundPlayer.global_position = to_global(points[currentNode])
