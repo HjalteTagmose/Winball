@@ -64,13 +64,13 @@ func Launch() -> void:
 
 
 func LockPlayer() -> void:
-	boundPlayer.set_deferred("freeze", true)
+	#boundPlayer.set_deferred("freeze", true)
 	boundPlayer.linear_velocity = Vector2.ZERO
 	boundPlayer.locked = true
 
 func UnlockPlayer() -> void:
 	boundPlayer.locked = false
-	boundPlayer.set_deferred("freeze", false)
+	#boundPlayer.set_deferred("freeze", false)
 
 func CenterPlayer() -> void:
 	boundPlayer.global_position = PlayerBindPivot.global_position

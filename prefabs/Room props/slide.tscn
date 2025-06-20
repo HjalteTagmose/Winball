@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://2jybw3mysrg" path="res://art/Slides/straight_slide_NEW.png" id="1_ax6yb"]
 [ext_resource type="Script" uid="uid://cbufsxmwng6bt" path="res://scripts/Map props/Slide.gd" id="2_b22ap"]
 [ext_resource type="AudioStream" uid="uid://b2us8f3m4cbsq" path="res://Sounds/Canon Slide Entered01.wav" id="3_ax6yb"]
-[ext_resource type="Texture2D" uid="uid://b3yk8xjtktkti" path="res://art/ph_pinball.png" id="3_mnf72"]
 [ext_resource type="AudioStream" uid="uid://blikmm7ne1sk0" path="res://Sounds/Slide Exit01.wav" id="4_stl8s"]
 [ext_resource type="AudioStream" uid="uid://c27xnywchdrkd" path="res://Sounds/Slide Deplozed01.wav" id="5_7qgkg"]
 [ext_resource type="AudioStream" uid="uid://dd806yqw2bqnd" path="res://Sounds/Slide Deplozed02.wav" id="6_b7q7f"]
+[ext_resource type="Texture2D" uid="uid://ddjde51gqbuwp" path="res://art/Slides/simple_slide_entrance.png" id="7_ax6yb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_604h0"]
 radius = 16.0
@@ -14,7 +14,7 @@ radius = 16.0
 [node name="Slide" type="Line2D" node_paths=PackedStringArray("SoundPlayer")]
 z_index = -1
 texture_repeat = 2
-points = PackedVector2Array(0, 0, 89, -56, 123, -149, 359, -308, 317, -484, 47, -707, -103, -648, -373, -567, -443, -673, -428, -736)
+points = PackedVector2Array(20, -14, 89, -56, 123, -149, 359, -308, 317, -484, 47, -707, -103, -648, -373, -567, -443, -673, -428, -736)
 width = 40.0
 texture = ExtResource("1_ax6yb")
 texture_mode = 1
@@ -32,8 +32,10 @@ scale = Vector2(2, 2)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-self_modulate = Color(0.141176, 0.141176, 0, 1)
-texture = ExtResource("3_mnf72")
+position = Vector2(6.5, -5)
+rotation = -3.70533
+scale = Vector2(0.605, -0.605)
+texture = ExtResource("7_ax6yb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_604h0")

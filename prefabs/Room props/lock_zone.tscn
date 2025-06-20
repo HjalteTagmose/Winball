@@ -30,6 +30,7 @@ metadata/_custom_type_script = "uid://dtgtxoyr4xxn3"
 [node name="Canon" type="Sprite2D" parent="Rotation pivot"]
 visibility_layer = 17
 z_index = 2
+rotation = 1.5708
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("2_a0i64")
 

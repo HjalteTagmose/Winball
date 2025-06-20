@@ -77,18 +77,28 @@ position = Vector2(0, -3320)
 
 [node name="BasicSticker" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-233, -524)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker2" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-75, -622)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker3" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(83, -622)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker4" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(257, -530)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker5" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-1, -309)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="Exit" parent="Walls" instance=ExtResource("4_hojoj")]
 position = Vector2(0, -3321)
@@ -236,7 +246,7 @@ scale = Vector2(-2, 2)
 
 [node name="Rail" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("10_1rxak")]
 position = Vector2(0, -325)
-points = PackedVector2Array(0, 17, 250, -218, 160, -297, -157, -297, -225, -201, 0, 19)
+points = PackedVector2Array(0, 17, 251, -190, 249, -236, 160, -297, -157, -297, -215, -239, -220, -201, 0, 19)
 SlideSpeed = 600.0
 RailFollower = NodePath("LockZone")
 railBehaviour = 0
@@ -268,6 +278,7 @@ Power = 200.0
 
 [node name="Background" parent="." instance=ExtResource("14_gx2u3")]
 position = Vector2(39, -1495)
+metadata/_edit_lock_ = true
 
 [node name="Foreground" type="Node2D" parent="."]
 

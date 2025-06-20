@@ -112,13 +112,21 @@ scale = Vector2(0.277, 1)
 z_index = 1
 position = Vector2(277, -411)
 scale = Vector2(-1, 1)
-points = PackedVector2Array(0, 0, -73, 138, -323, 210, -383, 127, -330, 15, -199, 28, -251, 242, -464, -93, -393, -271, -267, -343)
+points = PackedVector2Array(-20, 38, -73, 138, -323, 210, -383, 127, -330, 15, -199, 28, -255, 150, -317, 138, -443, -53, -453, -163, -393, -271, -267, -343)
+
+[node name="Sprite2D" parent="Props/Slide2/Area2D" index="0"]
+position = Vector2(-3, 7)
+rotation = -1.08746
 
 [node name="Slide3" parent="Props" instance=ExtResource("7_s7toq")]
 z_index = 1
 position = Vector2(-605, -1243)
 scale = Vector2(-1, 1)
-points = PackedVector2Array(0, 0, 229, -60, 175, -416, -110, -732, -288, -738)
+points = PackedVector2Array(24, -6, 229, -60, 175, -416, -110, -732, -288, -738)
+
+[node name="Sprite2D" parent="Props/Slide3/Area2D" index="0"]
+position = Vector2(7.5, -2.5)
+rotation = -3.40587
 
 [node name="AmmoBumpers" type="Node2D" parent="Props"]
 
@@ -307,24 +315,38 @@ scale = Vector2(3.48, 4)
 
 [node name="BasicSticker6" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(355, -265)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker11" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(-844, -1308)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker12" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(-527, -1959)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker7" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(598, -209)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker8" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(612, -395)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker9" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(494, -300)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker10" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(738, -509)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BreakableFlat3" parent="." instance=ExtResource("14_68ikr")]
 position = Vector2(-182, -2561)
@@ -343,3 +365,6 @@ position = Vector2(182, -2125)
 
 [node name="ShallowTriangleAmmoBumper2" parent="." instance=ExtResource("10_sw1kq")]
 position = Vector2(352, -1377)
+
+[editable path="Props/Slide2"]
+[editable path="Props/Slide3"]
