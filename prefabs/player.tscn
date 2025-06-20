@@ -1,11 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dedwl18kckfdd"]
+[gd_scene load_steps=18 format=3 uid="uid://dedwl18kckfdd"]
 
 [ext_resource type="Script" uid="uid://byb8gixbn2ikl" path="res://scripts/player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://c75e2ue6ieuwy" path="res://art/Particles/MuzzleFlash.tscn" id="2_g2jcq"]
 [ext_resource type="PackedScene" uid="uid://bxhiscfk4buxn" path="res://art/Particles/BumpDistortionParticles.tscn" id="3_g2jcq"]
+[ext_resource type="AudioStream" uid="uid://gvta6qcfjwr5" path="res://Sounds/Shot Sound01.wav" id="3_llb5v"]
+[ext_resource type="AudioStream" uid="uid://bs51ub0dvq0t0" path="res://Sounds/Shot Sound02.wav" id="4_x0bak"]
 [ext_resource type="Texture2D" uid="uid://buvaskjvhonse" path="res://art/armadillo/armadillo_ball.png" id="5_kbsxf"]
+[ext_resource type="AudioStream" uid="uid://dyo8q0u28m5s6" path="res://Sounds/Shot Sound03.wav" id="5_lulei"]
 [ext_resource type="Shader" path="res://Shaders/PlayerGlow.gdshader" id="5_opo22"]
+[ext_resource type="AudioStream" uid="uid://cg7ov5kgs1r7j" path="res://Sounds/Flamethrower01.wav" id="6_edtk3"]
 [ext_resource type="Texture2D" uid="uid://bxvquo7i0vgfo" path="res://art/armadillo/armadillo_gun.png" id="6_rgeog"]
+[ext_resource type="AudioStream" uid="uid://4l11xq6em7te" path="res://Sounds/Flamethrower02.wav" id="7_q2wkl"]
 [ext_resource type="Texture2D" uid="uid://5mfpymbhhgsk" path="res://art/P_Textures/Winball_Dots.png" id="7_sd3sa"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="7_u51tk"]
 [ext_resource type="PackedScene" uid="uid://dkgvnttsdpspd" path="res://art/Particles/FlameThrower.tscn" id="8_kbsxf"]
@@ -25,7 +30,7 @@ shader_parameter/ScreenUV_AlphaMask_Size = Vector2(1, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_mncer"]
 radius = 16.15
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("stormParticle", "playerGun", "slowmoSprite")]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("AudioPlayer", "stormParticle", "playerGun", "slowmoSprite")]
 collision_layer = 2
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_1txc5")
@@ -41,6 +46,9 @@ flame_thrower_delay = 0.075
 flame_thrower_particles = ExtResource("8_kbsxf")
 max_slowdown_duration = 1.5
 SlowdownEndBehaviour = 1
+AudioPlayer = NodePath("AudioStreamPlayer2D")
+RegularShotSounds = Array[AudioStream]([ExtResource("3_llb5v"), ExtResource("4_x0bak"), ExtResource("5_lulei")])
+FlameThrowerSounds = Array[AudioStream]([ExtResource("6_edtk3"), ExtResource("7_q2wkl")])
 shootParticle = ExtResource("2_g2jcq")
 bumpAnythingParticle = ExtResource("3_g2jcq")
 stormParticle = NodePath("Storm Particles")
@@ -78,3 +86,5 @@ debug_color = Color(0.9833, 0, 0.358624, 0.301961)
 z_index = 50
 emitting = false
 amount = 12
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

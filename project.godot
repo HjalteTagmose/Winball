@@ -21,7 +21,8 @@ Global="*res://prefabs/Singeltons/global_node.tscn"
 GameCanvas="*res://prefabs/Singeltons/game_canvas.tscn"
 RoomLoader="*res://prefabs/Singeltons/room_loader.tscn"
 u="*res://scripts/utils.gd"
-ScoreManager="*res://scripts/score_manager.gd"
+ScoreManager="*res://prefabs/Singeltons/_score_manager.tscn"
+OneShotSoundManager="*res://prefabs/Singeltons/one_shot_sound_manager.tscn"
 
 [display]
 

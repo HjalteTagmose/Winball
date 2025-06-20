@@ -9,6 +9,8 @@ var currentAmmo : int = 10
 
 @export var playerWeapon : PlayerWeapon = PlayerWeapon.Flamethrower
 
+@export var game_over_sound : AudioStream
+
 var flamethrower_ammo : int = 0
 @export var flamethrower_max_ammo : int = 100
 
@@ -63,6 +65,7 @@ func trigger_game_over() -> void:
 	if gameState == GameStateEnum.GameOver:
 		return
 	game_over.emit()
+	OneShotSoundManager.play_sound(game_over_sound)
 	gameState = GameStateEnum.GameOver
 	Engine.time_scale = 1.0
 	

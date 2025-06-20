@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpt746t74aua6"]
+[gd_scene load_steps=18 format=3 uid="uid://cpt746t74aua6"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chtck5wyxnxds" path="res://Material/Physic/Wall.tres" id="1_4p2nv"]
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_g2cpd"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_y5uss"]
 [ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_cd0wh"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="2_g2cpd"]
-[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="5_iicj8"]
+[ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="4_31ntc"]
+[ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="5_d7nj0"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="5_iicj8"]
+[ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="6_g1anu"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_ibcqk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8g0tl"]
@@ -52,6 +55,7 @@ Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
 BiasPower = 40.0
 AudioPlayer = NodePath("AudioPlayer")
+SoundOnHits = Array[AudioStream]([ExtResource("4_31ntc"), ExtResource("5_d7nj0"), ExtResource("6_g1anu")])
 ParticleOnHit = ExtResource("2_g2cpd")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
