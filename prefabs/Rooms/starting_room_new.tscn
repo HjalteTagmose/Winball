@@ -184,8 +184,8 @@ position = Vector2(-553, -1421)
 position = Vector2(553, -1421)
 
 [node name="ShallowTriangleAmmoBumper" parent="AmmoBumpers" instance=ExtResource("10_qhk7u")]
-position = Vector2(-1, -1389)
-scale = Vector2(1, 2)
+position = Vector2(-1, -1362)
+scale = Vector2(1, 1)
 
 [node name="TrapSticker" parent="." instance=ExtResource("9_caa1u")]
 position = Vector2(0, -2271)
@@ -193,6 +193,7 @@ position = Vector2(0, -2271)
 [node name="Background" parent="." instance=ExtResource("12_frujy")]
 position = Vector2(337, -644)
 scale = Vector2(28.2988, 16.3789)
+metadata/_edit_lock_ = true
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
