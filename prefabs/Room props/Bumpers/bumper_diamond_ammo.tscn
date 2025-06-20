@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5clxm8i6clwg"]
+[gd_scene load_steps=15 format=3 uid="uid://c5clxm8i6clwg"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_00l2q"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_h7j4w"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_h7j4w"]
 [ext_resource type="Texture2D" uid="uid://dv22ptl7yjca6" path="res://art/Bumpers/slingshot_red_diamond.png" id="5_j0ctt"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_wv0bo"]
+[ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="11_wv0bo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4870c"]
 resource_local_to_scene = true
@@ -24,7 +25,7 @@ point_count = 3
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
 points = PackedVector2Array(0, -40, 62, -8, 62, 8, 0, 40, -62, 8, -62, -8)
 
-[node name="DiamondAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual")]
+[node name="DiamondAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "StormParticle", "CollisionShape")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -40,6 +41,8 @@ Bias = Vector2(0, -1)
 BiasPower = 20.0
 SoundOnHits = Array[AudioStream]([ExtResource("3_6pw5t"), ExtResource("3_hyyvt"), ExtResource("5_wv0bo")])
 ParticleOnHit = ExtResource("3_4870c")
+StormParticle = NodePath("GPUParticles2D")
+CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -55,3 +58,8 @@ texture = ExtResource("5_j0ctt")
 shape = SubResource("ConvexPolygonShape2D_oegki")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("11_wv0bo")]
+scale = Vector2(0.585, 0.425)
+emitting = false
+amount = 12

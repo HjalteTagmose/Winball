@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4d4m1wtwru1i"]
+[gd_scene load_steps=19 format=3 uid="uid://b4d4m1wtwru1i"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chtck5wyxnxds" path="res://Material/Physic/Wall.tres" id="1_bod2i"]
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_pu8ip"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="5_kfpx8"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="6_6crnk"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_uptcw"]
+[ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="11_kfpx8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uj4d6"]
 resource_local_to_scene = true
@@ -43,7 +44,7 @@ rotation = -0.785398
 scale = Vector2(2, 2)
 physics_material_override = ExtResource("1_bod2i")
 
-[node name="FlatBumper Logic" type="StaticBody2D" parent="."]
+[node name="FlatBumper Logic" type="StaticBody2D" parent="." node_paths=PackedStringArray("StormParticle", "CollisionShape")]
 scale = Vector2(1.47, 1.47)
 collision_layer = 4
 collision_mask = 2
@@ -55,6 +56,8 @@ Bias = Vector2(0, -1)
 BiasPower = 0.0
 SoundOnHits = Array[AudioStream]([ExtResource("4_itww3"), ExtResource("5_kfpx8"), ExtResource("6_6crnk")])
 ParticleOnHit = ExtResource("2_pu8ip")
+StormParticle = NodePath("../GPUParticles2D")
+CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
 [node name="Sprite2D" type="Sprite2D" parent="FlatBumper Logic"]
@@ -88,3 +91,10 @@ shape = SubResource("RectangleShape2D_bod2i")
 [node name="Side Wall corner" type="CollisionShape2D" parent="."]
 position = Vector2(-33.234, -28.2843)
 shape = SubResource("CapsuleShape2D_y8ym3")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("11_kfpx8")]
+position = Vector2(-11.3137, 12.7279)
+rotation = -2.34921
+scale = Vector2(0.4, 0.4)
+emitting = false
+amount = 3

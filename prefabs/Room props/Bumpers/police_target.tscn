@@ -1,16 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp0ia7d12gsdk"]
+[gd_scene load_steps=11 format=3 uid="uid://dp0ia7d12gsdk"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_ohurt"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_ul0rn"]
+[ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="3_jwgts"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_ynwdd"]
+[ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_mwero"]
 [ext_resource type="Material" path="res://Material/bumper_material.tres" id="4_xigw1"]
 [ext_resource type="Texture2D" uid="uid://0nc0sgbknuyk" path="res://art/cop_target.png" id="5_jwgts"]
+[ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_vmxib"]
+[ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="6_ul0rn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vck4x"]
 radius = 17.0
 height = 70.0
 
-[node name="Police target" type="StaticBody2D" node_paths=PackedStringArray("AudioPlayer", "CollisionShape")]
+[node name="Police target" type="StaticBody2D" node_paths=PackedStringArray("StormParticle", "CollisionShape")]
 collision_layer = 4
 collision_mask = 2
 physics_material_override = ExtResource("1_ohurt")
@@ -20,8 +24,9 @@ Power = 55.0
 Score = Array[int]([75, 75, 75])
 Bias = Vector2(1, 0)
 BiasPower = 12.0
-AudioPlayer = NodePath("AudioPlayer")
+SoundOnHits = Array[AudioStream]([ExtResource("3_jwgts"), ExtResource("4_mwero"), ExtResource("5_vmxib")])
 ParticleOnHit = ExtResource("3_ynwdd")
+StormParticle = NodePath("GPUParticles2D")
 CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 
@@ -35,3 +40,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vck4x")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("6_ul0rn")]
+scale = Vector2(0.24, 0.24)
+emitting = false
+amount = 4

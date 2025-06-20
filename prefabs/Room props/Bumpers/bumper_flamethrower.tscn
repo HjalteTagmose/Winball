@@ -1,16 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://da5l4mtg6gga2"]
+[gd_scene load_steps=16 format=3 uid="uid://da5l4mtg6gga2"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_iw0rf"]
 [ext_resource type="Script" uid="uid://vwae547mq65l" path="res://scripts/Map props/flamethrowerBumper.gd" id="2_e8h4t"]
 [ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="3_bbb0j"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_qudm1"]
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_8g4r1"]
-[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_bbb0j"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_bbb0j"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_2stce"]
 [ext_resource type="Texture2D" uid="uid://c46t0k0o6mlch" path="res://art/Bumpers/slingshot_blue_diamond_dots.png" id="5_8g4r1"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_2stce"]
 [ext_resource type="Texture2D" uid="uid://dv22ptl7yjca6" path="res://art/Bumpers/slingshot_red_diamond.png" id="7_ebmct"]
 [ext_resource type="Texture2D" uid="uid://k6gr2bvaox11" path="res://art/Bumpers/Very_Professional_Flame_Sticker.png" id="8_qlvsi"]
+[ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="12_8g4r1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4870c"]
 resource_local_to_scene = true
@@ -25,7 +26,7 @@ point_count = 3
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
 points = PackedVector2Array(0, -40, 62, -8, 62, 8, 0, 40, -62, 8, -62, -8)
 
-[node name="DiamondAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual")]
+[node name="DiamondAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "StormParticle", "CollisionShape")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -41,7 +42,8 @@ Bias = Vector2(0, -1)
 BiasPower = 20.0
 SoundOnHits = Array[AudioStream]([ExtResource("3_bbb0j"), ExtResource("4_8g4r1"), ExtResource("5_2stce")])
 ParticleOnHit = ExtResource("3_qudm1")
-metadata/_custom_type_script = "uid://vwae547mq65l"
+StormParticle = NodePath("GPUParticles2D")
+CollisionShape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_4870c")
@@ -61,3 +63,8 @@ texture = ExtResource("8_qlvsi")
 shape = SubResource("ConvexPolygonShape2D_oegki")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("12_8g4r1")]
+scale = Vector2(0.585, 0.425)
+emitting = false
+amount = 12

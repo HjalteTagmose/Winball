@@ -1,4 +1,5 @@
 @tool
+
 class_name AmmoBumper extends BasicBumper
 
 @export var extraVisual: Sprite2D
