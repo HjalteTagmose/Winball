@@ -267,33 +267,53 @@ position = Vector2(0, -1301)
 
 [node name="BasicSticker" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(-1263, -487)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker2" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(-1315, -673)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker3" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(-1348, -795)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker4" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(-1246, -967)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker5" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(-1118, -1115)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker6" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(1016, -1150)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker7" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(1165, -1080)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker8" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(1288, -883)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker9" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(1320, -672)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="BasicSticker10" parent="Props" instance=ExtResource("16_tpvyb")]
 position = Vector2(1251, -486)
+collision_layer = 8
+ParticleOnHit = null
 
 [node name="Rail2" parent="Props" node_paths=PackedStringArray("RailFollower") instance=ExtResource("12_ylvwx")]
 position = Vector2(-739, -790.375)
