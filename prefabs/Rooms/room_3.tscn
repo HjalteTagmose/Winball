@@ -304,6 +304,12 @@ scale = Vector2(3.48, 4)
 [node name="BasicSticker6" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(355, -265)
 
+[node name="BasicSticker11" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(-844, -1308)
+
+[node name="BasicSticker12" parent="." instance=ExtResource("14_dkkgw")]
+position = Vector2(-527, -1959)
+
 [node name="BasicSticker7" parent="." instance=ExtResource("14_dkkgw")]
 position = Vector2(598, -209)
 
