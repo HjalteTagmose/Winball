@@ -3,6 +3,8 @@ extends Camera2D
 
 @export var player: Player
 @export var camera_speed : float = 5.0
+
+@export var slomoZoomCurve: Curve
 var override_target_pos : Vector2
 
 #func _ready():
@@ -28,9 +30,24 @@ func _process(delta: float) -> void:
 #func _on_bumped(impulse :  Vector2) -> void:
 	#override_target(player.global_position)# - impulse.normalized() * 200)
 	#print("bump impulse: ", impulse)
+	
+func _ready() -> void:
+	Global.player_charge_duration_percent_changed.connect(charge_changed)
 
 func override_target(override_pos : Vector2) -> void:
 	override_target_pos = override_pos
+	
+func charge_changed(newValue: float):
+	
+	if newValue <= 0:
+		zoom = Vector2.ONE
+	
+	var value = slomoZoomCurve.sample(newValue)
+	zoom = Vector2(value, value)
+	if newValue > 0:
+		visible = true
+	else:
+		visible = false
 
 #func _draw() -> void:
 	#draw_circle(Vector2.ZERO, 5, Color(Color.WHITE, 0.4))
