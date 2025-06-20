@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://baeyuf6utr2j6"]
+[gd_scene load_steps=12 format=3 uid="uid://baeyuf6utr2j6"]
 
 [ext_resource type="Texture2D" uid="uid://mv52i5qbfx4t" path="res://art/ammo_bg.png" id="1_02uuw"]
 [ext_resource type="Script" uid="uid://cvbb5idewo262" path="res://scripts/ammo_cartridge_display.gd" id="2_t8qpn"]
+[ext_resource type="PackedScene" uid="uid://b82knrsfc5qcx" path="res://prefabs/ui/bullet_display.tscn" id="3_g8exe"]
+[ext_resource type="Script" uid="uid://bdfa52834rd0i" path="res://scripts/FlameThrowerAmmoDisplay.gd" id="3_t8qpn"]
 
 [sub_resource type="Curve" id="Curve_02uuw"]
 _limits = [0.0, 200.0, 0.0, 1.0]
@@ -22,13 +24,48 @@ _limits = [-50.0, 50.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 10), 0.0, 0.0, 0, 0, Vector2(0.5, -10), 0.0, 0.0, 0, 0, Vector2(0.75, 10), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 5
 
-[node name="Ammo_Cartrige" type="Sprite2D"]
+[sub_resource type="ImageTexture" id="ImageTexture_g8exe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2c7c"]
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn5ue"]
+bg_color = Color(0.985734, 0.333546, 0.465424, 1)
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[node name="Ammo_Cartrige" type="Sprite2D" node_paths=PackedStringArray("bullet_spawn_point")]
 scale = Vector2(1.85, 1.85)
 texture = ExtResource("1_02uuw")
 script = ExtResource("2_t8qpn")
+bulletPrefab = ExtResource("3_g8exe")
 reload_animation_duration = 0.2
 reload_curve_y = SubResource("Curve_02uuw")
 reload_curve_x = SubResource("Curve_t8qpn")
 shot_animation_duration = 0.1
 shot_curve_y = SubResource("Curve_g8exe")
 shot_curve_x = SubResource("Curve_j2c7c")
+bullet_spawn_point = NodePath("CartridgeSpawn")
+
+[node name="CartridgeSpawn" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="VSlider" type="VSlider" parent="."]
+anchors_preset = -1
+anchor_left = 0.189
+anchor_top = 0.098
+anchor_right = 0.775
+anchor_bottom = 0.92
+offset_left = 1039.66
+offset_top = 396.888
+offset_right = 1020.5
+offset_bottom = 482.52
+scale = Vector2(5.42838, 1.02039)
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_g8exe")
+theme_override_styles/slider = SubResource("StyleBoxFlat_j2c7c")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_kn5ue")
+value = 50.0
+editable = false
+scrollable = false
+script = ExtResource("3_t8qpn")

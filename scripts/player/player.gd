@@ -56,6 +56,10 @@ func handleLaunch(delta: float) -> void:
 	if locked or Global.gameState == Global.GameStateEnum.GameOver:
 		return
 
+	if currentlyPlayerParticle:
+		currentlyPlayerParticle.StopEmitting()
+		currentlyPlayerParticle = null
+
 	var timeNow = Time.get_unix_time_from_system()
 	
 	if(Input.is_action_just_pressed("launch")):
@@ -159,7 +163,7 @@ func handleShootParticle(direction: Vector2):
 	get_tree().root.add_child(instance)
 
 func handleFlameThrower(delta: float) -> void:
-	if locked or Global.gameState == Global.GameStateEnum.GameOver:		
+	if locked or Global.gameState == Global.GameStateEnum.GameOver:
 		return
 		
 	if !Input.is_action_pressed("launch"):
@@ -191,6 +195,14 @@ func handleFlameThrower(delta: float) -> void:
 	var impulse = direction * flame_thrower_power * dot
 	apply_central_impulse(impulse)
 	handleFlameParticle(direction)
+	
+	Global.flamethrower_ammo -= 1
+	
+	Global.flame_thrower_fired.emit()
+	
+	if Global.flamethrower_ammo <= 0:
+		Global.enable_regular_weapon()
+		slowmoSprite.visible = false
 
 func handleFlameParticle(direction: Vector2):
 	if currentlyPlayerParticle == null:

@@ -12,16 +12,20 @@ extends Sprite2D
 @export var shot_curve_y : Curve
 @export var shot_curve_x : Curve
 
+@export var bullet_spawn_point: Node2D
+
 var _bullets : Array[BulletDisplay] = []
 var _start_pos : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_start_pos = position
-	for node: Node in get_children():
+	for node: Node in bullet_spawn_point.get_children():
 		if node is BulletDisplay:
 			_bullets.append(node)
+			
 	if(Global != null):
+		Global.flame_thrower_fired.connect(shot_anim)
 		Global.bullet_fired.connect(on_bullet_fired)
 		Global.reload.connect(reload)
 		reload()
@@ -43,11 +47,11 @@ func reload():
 		
 	reload_anim()
 	# Instantiate a new bullet from the prefab and add it to the array until the array is full.
-	while _bullets.size() < Global.maxAmmo:
+	while _bullets.size() < Global.currentAmmo:
 		var bullet: BulletDisplay = bulletPrefab.instantiate()
 		var currentIndex = _bullets.size()
 		bullet.name = "Bullet_" + str(currentIndex)
-		add_child(bullet)
+		bullet_spawn_point.add_child(bullet)
 		_bullets.append(bullet)
 		var position = Vector2(0, -45)
 		position.y += currentIndex * 22.5
