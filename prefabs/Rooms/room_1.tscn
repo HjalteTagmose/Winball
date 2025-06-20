@@ -261,7 +261,7 @@ position = Vector2(-1059, -207)
 position = Vector2(-960, -70)
 
 [node name="BasicSticker6" parent="Props" instance=ExtResource("14_dnc6s")]
-position = Vector2(667, -216)
+position = Vector2(667, -214)
 
 [node name="BasicSticker7" parent="Props" instance=ExtResource("14_dnc6s")]
 position = Vector2(872, -154)
@@ -327,14 +327,15 @@ scale = Vector2(-0.49299, 0.472747)
 [node name="Foreground14" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(830.316, -131.261)
 scale = Vector2(2.09498, 0.575238)
+metadata/_edit_lock_ = true
 
 [node name="Foreground16" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(286, -10)
 scale = Vector2(0.636719, 0.101562)
 
 [node name="Foreground15" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-position = Vector2(2282.5, -1228.16)
-scale = Vector2(5.86132, 4.8717)
+position = Vector2(2281.5, -1233.5)
+scale = Vector2(5.86523, 4.89257)
 
 [node name="Foreground9" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1100, -272)

@@ -275,8 +275,8 @@ metadata/_edit_lock_ = true
 [node name="Foregrounds" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
-position = Vector2(2048, -353)
-scale = Vector2(7.53125, 1.34766)
+position = Vector2(2052, -344.5)
+scale = Vector2(7.51563, 1.38086)
 
 [node name="Foreground3" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
 position = Vector2(-3901, -1920)

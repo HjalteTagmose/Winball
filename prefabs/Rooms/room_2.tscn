@@ -78,27 +78,22 @@ position = Vector2(0, -3320)
 [node name="BasicSticker" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-233, -524)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker2" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-75, -622)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker3" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(83, -622)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker4" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(257, -530)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="BasicSticker5" parent="Walls" instance=ExtResource("3_1bron")]
 position = Vector2(-1, -309)
 collision_layer = 8
-ParticleOnHit = null
 
 [node name="Exit" parent="Walls" instance=ExtResource("4_hojoj")]
 position = Vector2(0, -3321)
@@ -283,12 +278,12 @@ metadata/_edit_lock_ = true
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foreground" instance=ExtResource("17_epmcq")]
-position = Vector2(-2092.02, -1659.32)
-scale = Vector2(5.12885, 6.48703)
+position = Vector2(-2092.02, -1655.5)
+scale = Vector2(5.12885, 6.50195)
 
 [node name="Foreground2" parent="Foreground" instance=ExtResource("17_epmcq")]
-position = Vector2(2131.02, -1659.32)
-scale = Vector2(5.28119, 6.48703)
+position = Vector2(2131.02, -1654.5)
+scale = Vector2(5.28119, 6.50586)
 
 [node name="Foreground5" parent="Foreground" instance=ExtResource("17_epmcq")]
 position = Vector2(1397, -2673)
@@ -303,12 +298,12 @@ position = Vector2(-383, -3184)
 scale = Vector2(0.5, 0.5625)
 
 [node name="Foreground9" parent="Foreground" instance=ExtResource("17_epmcq")]
-position = Vector2(-246, -3274)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-246, -3275.4)
+scale = Vector2(0.2, 0.205469)
 
 [node name="Foreground10" parent="Foreground" instance=ExtResource("17_epmcq")]
-position = Vector2(242, -3274)
-scale = Vector2(0.2, 0.2)
+position = Vector2(242, -3275.4)
+scale = Vector2(0.2, 0.205469)
 
 [node name="Foreground6" parent="Foreground" instance=ExtResource("17_epmcq")]
 position = Vector2(-1397, -2673)
