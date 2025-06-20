@@ -356,10 +356,10 @@ rotation = 0.174533
 position = Vector2(1038, -1890)
 
 [node name="ShallowTriangleAmmoBumper5" parent="Props" instance=ExtResource("9_xu565")]
-position = Vector2(-170, -2800)
+position = Vector2(-170, -2787)
 
 [node name="ShallowTriangleAmmoBumper6" parent="Props" instance=ExtResource("9_xu565")]
-position = Vector2(170, -2800)
+position = Vector2(170, -2787)
 
 [node name="ShallowTriangleAmmoBumper4" parent="Props" instance=ExtResource("9_xu565")]
 position = Vector2(-1038, -1890)
@@ -443,10 +443,6 @@ position = Vector2(357, -2109)
 position = Vector2(0, -2116)
 
 [node name="BreakableBumpers" type="Node2D" parent="Props"]
-
-[node name="Background" parent="." instance=ExtResource("17_6bto7")]
-position = Vector2(367.003, -1824)
-scale = Vector2(17.8164, 11.7969)
 
 [node name="Foregrounds" type="Node2D" parent="."]
 
@@ -555,6 +551,11 @@ scale = Vector2(0.238368, 0.29955)
 position = Vector2(-570.366, -297.118)
 rotation = 0.785398
 scale = Vector2(1.36666, 0.327858)
+
+[node name="Background" parent="." instance=ExtResource("17_6bto7")]
+position = Vector2(367.003, -1824)
+scale = Vector2(17.8164, 11.7969)
+metadata/_edit_lock_ = true
 
 [editable path="Props/ScoreLightRoot"]
 [editable path="Props/ScoreLightRoot2"]
