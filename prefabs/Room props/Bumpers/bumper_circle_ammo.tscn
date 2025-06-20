@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgq8uyrtdjs4b"]
+[gd_scene load_steps=14 format=3 uid="uid://bgq8uyrtdjs4b"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_lmwaj"]
 [ext_resource type="Script" uid="uid://hs0iqsrumsxw" path="res://scripts/Map props/ammoBumper.gd" id="2_ochcu"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_3j6bh"]
+[ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="3_pg665"]
 [ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://art/Bumpers/bumper_round.png" id="4_66t0e"]
 [ext_resource type="Texture2D" uid="uid://d2061xxa28r45" path="res://art/Bumpers/bumper_blue_round.png" id="4_aty55"]
-[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_w7hrv"]
+[ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_e0b8y"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_w7hrv"]
+[ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_ika2j"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_pp1k8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7hrv"]
@@ -21,7 +24,7 @@ point_count = 3
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
 radius = 33.0
 
-[node name="CircleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer", "CollisionShape")]
+[node name="CircleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "CollisionShape")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -34,7 +37,7 @@ Power = 40.0
 Score = Array[int]([100, 50, 5])
 Saturation = Array[float]([0.8, 0.6, 0.4])
 BiasPower = 0.0
-AudioPlayer = NodePath("AudioPlayer")
+SoundOnHits = Array[AudioStream]([ExtResource("3_pg665"), ExtResource("4_e0b8y"), ExtResource("5_ika2j")])
 ParticleOnHit = ExtResource("3_3j6bh")
 CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
@@ -52,4 +55,5 @@ texture = ExtResource("4_66t0e")
 position = Vector2(0, -1.5)
 shape = SubResource("CircleShape2D_nb1wl")
 
-[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="BumpAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pg665")

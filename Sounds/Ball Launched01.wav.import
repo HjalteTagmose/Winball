@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dt776yx0h2bdj"
+path="res://.godot/imported/Ball Launched01.wav-18ac981b0c708fdf78e51a18f91f07cc.sample"
+
+[deps]
+
+source_file="res://Sounds/Ball Launched01.wav"
+dest_files=["res://.godot/imported/Ball Launched01.wav-18ac981b0c708fdf78e51a18f91f07cc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

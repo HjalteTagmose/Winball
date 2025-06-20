@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://nrsmsp1u20a7"]
+
+[ext_resource type="Script" uid="uid://cym26lawyj81" path="res://scripts/one_shot_sound_manager.gd" id="1_hpulb"]
+[ext_resource type="PackedScene" uid="uid://dv2n7ocbopaao" path="res://prefabs/sounds/one_shot_sound_player.tscn" id="2_ydt3e"]
+
+[node name="OneShotSoundPlayer" type="Node"]
+script = ExtResource("1_hpulb")
+oneShotSoundPrefab = ExtResource("2_ydt3e")
+minPitch = 0.25
+maxPitch = 3.0

@@ -170,7 +170,7 @@ position = Vector2(-308, -2798)
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper" parent="Props" instance=ExtResource("10_hojoj")]
-position = Vector2(242, -1175)
+position = Vector2(242, -1014)
 
 [node name="FlipperAmmoBumper9" parent="Props" instance=ExtResource("10_hojoj")]
 position = Vector2(-779, -491)
@@ -200,7 +200,7 @@ position = Vector2(-271, -3159)
 position = Vector2(-166, -1579)
 
 [node name="FlipperAmmoBumper2" parent="Props" instance=ExtResource("10_hojoj")]
-position = Vector2(-246, -1175)
+position = Vector2(-246, -1014)
 scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper4" parent="Props" instance=ExtResource("10_hojoj")]
@@ -244,7 +244,7 @@ RailFollower = NodePath("LockZone")
 [node name="LockZone" parent="Props/Rail3" instance=ExtResource("11_di54m")]
 
 [node name="Speed Sticker" parent="." instance=ExtResource("12_crms2")]
-position = Vector2(0, -1475)
+position = Vector2(0, -1175)
 rotation = 0.0
 scale = Vector2(4, 4)
 Power = 200.0
@@ -294,7 +294,7 @@ rotation = 2.0944
 scale = Vector2(3.96082, 3.56)
 
 [node name="BreakableFlat" parent="." instance=ExtResource("15_1bron")]
-position = Vector2(0, -1074)
+position = Vector2(0, -900)
 
 [node name="BreakableFlat2" parent="." instance=ExtResource("15_1bron")]
 position = Vector2(-233, -1740)

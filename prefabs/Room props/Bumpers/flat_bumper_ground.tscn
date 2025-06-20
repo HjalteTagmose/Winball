@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4d4m1wtwru1i"]
+[gd_scene load_steps=18 format=3 uid="uid://b4d4m1wtwru1i"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chtck5wyxnxds" path="res://Material/Physic/Wall.tres" id="1_bod2i"]
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_pu8ip"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_ubyfy"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="2_pu8ip"]
 [ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_ydfnd"]
-[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="5_314lt"]
+[ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="4_itww3"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="5_314lt"]
+[ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="5_kfpx8"]
+[ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="6_6crnk"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_uptcw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uj4d6"]
@@ -40,7 +43,7 @@ rotation = -0.785398
 scale = Vector2(2, 2)
 physics_material_override = ExtResource("1_bod2i")
 
-[node name="FlatBumper Logic" type="StaticBody2D" parent="." node_paths=PackedStringArray("AudioPlayer")]
+[node name="FlatBumper Logic" type="StaticBody2D" parent="."]
 scale = Vector2(1.47, 1.47)
 collision_layer = 4
 collision_mask = 2
@@ -50,7 +53,7 @@ Power = 30.0
 Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
 BiasPower = 0.0
-AudioPlayer = NodePath("AudioPlayer")
+SoundOnHits = Array[AudioStream]([ExtResource("4_itww3"), ExtResource("5_kfpx8"), ExtResource("6_6crnk")])
 ParticleOnHit = ExtResource("2_pu8ip")
 metadata/_custom_type_script = "uid://lobwfmlxako"
 

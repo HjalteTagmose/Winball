@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://do5hdn7w0evwi"]
+[gd_scene load_steps=5 format=3 uid="uid://do5hdn7w0evwi"]
 
 [ext_resource type="Script" uid="uid://dtgtxoyr4xxn3" path="res://scripts/Map props/LockZone.gd" id="1_a0i64"]
 [ext_resource type="Texture2D" uid="uid://4ukiok2dgp2w" path="res://art/lock_in_cannon.png" id="2_a0i64"]
+[ext_resource type="PackedScene" uid="uid://c75e2ue6ieuwy" path="res://art/Particles/MuzzleFlash.tscn" id="2_jhr8w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ie43"]
 radius = 32.0
 
-[node name="LockZone" type="Area2D" node_paths=PackedStringArray("PlayerBindPivot")]
+[node name="LockZone" type="Area2D" node_paths=PackedStringArray("PlayerBindPivot", "Front")]
 scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_a0i64")
 Power = 1600.0
 PlayerBindPivot = NodePath("Rotation pivot/Canon")
+Front = NodePath("Rotation pivot/Canon/Front")
+shootParticle = ExtResource("2_jhr8w")
 metadata/_custom_type_script = "uid://dtgtxoyr4xxn3"
 
 [node name="Rotation pivot" type="Node2D" parent="."]

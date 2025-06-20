@@ -12,8 +12,7 @@ class_name BasicBumper extends StaticBody2D
 @export var BiasPower : float = 15
 
 @export_category("Setup")
-@export var AudioPlayer : AudioStreamPlayer2D
-@export var SoundOnHIt : AudioStream
+@export var SoundOnHits : Array[AudioStream]
 @export var ParticleOnHit : PackedScene
 
 
@@ -30,7 +29,6 @@ var _isDead = false
 
 func _ready() -> void:
 	add_to_group("bumper")
-	AudioPlayer.stream = SoundOnHIt
 	timesHit = 0
 
 func _physics_process(_delta: float) -> void:
@@ -79,7 +77,7 @@ func AdditionalBumpBehaviour(_collisionInfo:KinematicCollision2D, _player : Play
 	return
 
 func PlayAnimation(collisionInfo: KinematicCollision2D):
-	AudioPlayer.play()
+	OneShotSoundManager.play_sound(SoundOnHits.pick_random())
 	PlayParticle(collisionInfo)
 
 func AddScore(collisionInfo: KinematicCollision2D):
@@ -116,4 +114,5 @@ func Die():
 	var tween: Tween = create_tween()
 	tween.tween_interval(0.1)
 	tween.tween_callback(queue_free)
+	
 	

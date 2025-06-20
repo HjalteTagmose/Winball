@@ -12,6 +12,9 @@ extends Sprite2D
 @export var shot_curve_y : Curve
 @export var shot_curve_x : Curve
 
+@export_category("Sound")
+@export var ReloadSound : AudioStream
+
 @export var bullet_spawn_point: Node2D
 
 var _bullets : Array[BulletDisplay] = []
@@ -45,6 +48,7 @@ func reload():
 	if _bullets.size() >= Global.maxAmmo:
 		return
 		
+	OneShotSoundManager.play_sound(ReloadSound)
 	reload_anim()
 	# Instantiate a new bullet from the prefab and add it to the array until the array is full.
 	while _bullets.size() < Global.currentAmmo:

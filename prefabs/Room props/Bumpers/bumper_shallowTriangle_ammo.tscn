@@ -1,0 +1,54 @@
+[gd_scene load_steps=14 format=3 uid="uid://colg34jvh7m1r"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_extvh"]
+[ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_vaf4u"]
+[ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="3_ax1h6"]
+[ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_nprpl"]
+[ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_5b4aa"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_nprpl"]
+[ext_resource type="Texture2D" uid="uid://bn18te142jop5" path="res://art/Bumpers/slingshot_blue_slim.png" id="4_vaf4u"]
+[ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_1h4m2"]
+[ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_gfxd0"]
+[ext_resource type="Texture2D" uid="uid://cqeok331goj14" path="res://art/Bumpers/slingshot_red_slim.png" id="6_nprpl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6u2a"]
+resource_local_to_scene = true
+shader = ExtResource("4_nprpl")
+shader_parameter/saturation = 1.0
+
+[sub_resource type="Curve" id="Curve_6wk2o"]
+_limits = [0.0, 2.0, 0.0, 0.25]
+_data = [Vector2(0, 0.469404), 0.0, 0.0, 0, 0, Vector2(0.0640496, 1.36561), 0.0, 0.0, 0, 0, Vector2(0.21281, 1.0031), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
+points = PackedVector2Array(81, 6.5, 81, 23, -81, 23, -81, 6.5, 0, -24.5)
+
+[node name="ShallowTriangleAmmoBumper" type="StaticBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 2
+physics_material_override = ExtResource("1_extvh")
+script = ExtResource("2_vaf4u")
+Power = 40.0
+Score = Array[int]([100, 50, 5])
+Bias = Vector2(0, -1)
+BiasPower = -30.0
+SoundOnHits = Array[AudioStream]([ExtResource("3_ax1h6"), ExtResource("4_5b4aa"), ExtResource("5_1h4m2")])
+ParticleOnHit = ExtResource("3_nprpl")
+metadata/_custom_type_script = "uid://lobwfmlxako"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_o6u2a")
+texture = ExtResource("4_vaf4u")
+script = ExtResource("5_gfxd0")
+scale_curve = SubResource("Curve_6wk2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+visible = false
+texture = ExtResource("6_nprpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_oegki")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
