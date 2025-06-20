@@ -57,11 +57,6 @@ position = Vector2(24, -709)
 rotation = -0.785398
 scale = Vector2(1.5, 1)
 
-[node name="Wall_Right11" parent="Walls" instance=ExtResource("2_ewl15")]
-position = Vector2(207, -1714)
-rotation = -0.785398
-scale = Vector2(1.5, 1)
-
 [node name="Wall_Right10" parent="Walls" instance=ExtResource("2_ewl15")]
 position = Vector2(1725, -1172)
 rotation = 0.785398
@@ -159,6 +154,10 @@ scale = Vector2(-2, 2)
 position = Vector2(134, -1672)
 scale = Vector2(-2, 2)
 
+[node name="AmmoBumper_Diamond15" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
+position = Vector2(134, -1278)
+scale = Vector2(-2, 2)
+
 [node name="AmmoBumper_Diamond11" parent="Props/AmmoBumpers" instance=ExtResource("7_itfdk")]
 position = Vector2(511, -2128)
 scale = Vector2(-2, 2)
@@ -181,6 +180,9 @@ position = Vector2(-181, -429)
 [node name="DiamondAmmoBumper2" parent="Props" instance=ExtResource("8_8d2tm")]
 position = Vector2(1050, -1537)
 
+[node name="DiamondAmmoBumper3" parent="Props" instance=ExtResource("8_8d2tm")]
+position = Vector2(225, -2018)
+
 [node name="FlipperAmmoBumper10" parent="Props" instance=ExtResource("9_ppwea")]
 position = Vector2(191, -149)
 rotation = -0.218166
@@ -194,7 +196,7 @@ position = Vector2(1763, -783)
 rotation = 0.218166
 
 [node name="FlipperAmmoBumper13" parent="Props" instance=ExtResource("9_ppwea")]
-position = Vector2(342, -1842)
+position = Vector2(321, -1823)
 rotation = 0.218166
 
 [node name="FlipperAmmoBumper8" parent="Props" instance=ExtResource("9_ppwea")]
@@ -207,6 +209,11 @@ scale = Vector2(-2, 2)
 
 [node name="FlipperAmmoBumper9" parent="Props" instance=ExtResource("9_ppwea")]
 position = Vector2(1457, -2187)
+rotation = -0.218166
+scale = Vector2(-2, 2)
+
+[node name="FlipperAmmoBumper14" parent="Props" instance=ExtResource("9_ppwea")]
+position = Vector2(-56.9999, -2206)
 rotation = -0.218166
 scale = Vector2(-2, 2)
 
@@ -224,8 +231,21 @@ position = Vector2(1479, -1778)
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foreground" instance=ExtResource("13_kxlwn")]
-position = Vector2(-1793, -900)
-scale = Vector2(3.96082, 3.56)
+position = Vector2(-1551.98, -900)
+scale = Vector2(4.90229, 3.56)
+
+[node name="Foreground2" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(-322.5, -144.32)
+scale = Vector2(0.736328, 0.608125)
+
+[node name="Foreground20" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(-271, -2187)
+rotation = 0.785398
+scale = Vector2(0.736328, 0.608125)
+
+[node name="Foreground3" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(1755.25, -141)
+scale = Vector2(5.84668, 0.608125)
 
 [node name="Foreground5" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(1625.48, -3069.68)
@@ -233,6 +253,10 @@ scale = Vector2(3.0683, 1.01047)
 
 [node name="Foreground12" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(2361, -2140.16)
+scale = Vector2(3.0683, 3.12437)
+
+[node name="Foreground18" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(2678, -918)
 scale = Vector2(3.0683, 3.12437)
 
 [node name="Foreground7" parent="Foreground" instance=ExtResource("13_kxlwn")]
@@ -262,9 +286,32 @@ position = Vector2(1444.85, -2427.55)
 rotation = 0.785398
 scale = Vector2(4.24182, 0.620948)
 
+[node name="Foreground17" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(2074, -1094)
+rotation = 0.785398
+scale = Vector2(2.09688, 0.6971)
+
+[node name="Foreground19" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(1827.12, -500.695)
+rotation = 0.785398
+scale = Vector2(0.810893, 1.80756)
+
+[node name="Foreground15" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(-115.794, -758.795)
+rotation = 0.785398
+scale = Vector2(0.451035, 0.620948)
+
+[node name="Foreground16" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(-249, -709)
+scale = Vector2(0.451035, 0.620948)
+
 [node name="Foreground6" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(-1397, -2673)
 scale = Vector2(3.96082, 2.56)
+
+[node name="Foreground14" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(-981, -1417.68)
+scale = Vector2(3.96082, 2.66672)
 
 [node name="Foreground4" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(-1663, -1613)

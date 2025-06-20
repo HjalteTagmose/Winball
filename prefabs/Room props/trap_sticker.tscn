@@ -18,7 +18,6 @@ AnimTime = 0.6
 AudioPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.352941)
 texture = ExtResource("3_g0v2o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
