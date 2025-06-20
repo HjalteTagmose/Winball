@@ -118,9 +118,6 @@ position = Vector2(-246, 0)
 [node name="AmmoBumper5" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
 position = Vector2(242, 0)
 
-[node name="AmmoBumper15" parent="Props/AmmoBumpers" instance=ExtResource("7_kmduu")]
-position = Vector2(0, -2018)
-
 [node name="AmmoBumper_Diamond" parent="Props/AmmoBumpers" instance=ExtResource("8_oxqq0")]
 position = Vector2(-475, -307)
 scale = Vector2(-2, 2)
@@ -141,6 +138,9 @@ scale = Vector2(-2, 2)
 
 [node name="CircleAmmoBumper" parent="Props/AmmoBumpers" instance=ExtResource("10_1bron")]
 position = Vector2(198, -2604)
+
+[node name="CircleAmmoBumper3" parent="Props/AmmoBumpers" instance=ExtResource("10_1bron")]
+position = Vector2(-1, -2018)
 
 [node name="CircleAmmoBumper2" parent="Props/AmmoBumpers" instance=ExtResource("10_1bron")]
 position = Vector2(-204, -2604)

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="3_v4nol"]
 [ext_resource type="Texture2D" uid="uid://kwqeqyw10vt" path="res://art/Bumpers/slingshot_blue_triangle_dots.png" id="4_1jmuy"]
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_3suqy"]
-[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="4_v4nol"]
+[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="4_v4nol"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_1xirp"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="5_31t04"]
 [ext_resource type="Texture2D" uid="uid://qvxvfdgeerlt" path="res://art/Bumpers/slingshot_red_triangle.png" id="5_bo2nq"]
