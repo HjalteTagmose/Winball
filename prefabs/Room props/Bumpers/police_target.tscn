@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp0ia7d12gsdk"]
+[gd_scene load_steps=11 format=3 uid="uid://btg6w6xpfea46"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_ohurt"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_ul0rn"]

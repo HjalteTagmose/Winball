@@ -185,16 +185,18 @@ func handleShootParticle(direction: Vector2):
 	get_tree().root.add_child(instance)
 
 func handleFlameThrower(delta: float) -> void:
-	if locked or Global.gameState == Global.GameStateEnum.GameOver:
+	if Global.gameState == Global.GameStateEnum.GameOver:
 		return
 		
 	Engine.time_scale = 1.0
-	if !Input.is_action_pressed("launch"):
+	if !Input.is_action_pressed("launch") || locked:
 		if currentlyPlayerParticle:
 			currentlyPlayerParticle.StopEmitting()
 			currentlyPlayerParticle = null
-			slowmoSprite.visible = false
-			slowmoSprite.global_rotation = 0
+
+		slowmoSprite.visible = false
+		slowmoSprite.global_rotation = 0
+		shootFlame = false
 		return
 	
 	slowmoSprite.visible = true
@@ -235,11 +237,18 @@ func handleFlameParticle(direction: Vector2):
 	currentlyPlayerParticle.global_position = playerGun.global_position
 	currentlyPlayerParticle.rotation = direction.angle()
 
+var shootFlame : bool
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	flame_thrower_counter += delta
-	if(Global.playerWeapon == Global.PlayerWeapon.Flamethrower):
+
+	if(Global.playerWeapon == Global.PlayerWeapon.Flamethrower && Input.is_action_just_pressed("launch") && !locked):
+		shootFlame = true
+
+	if shootFlame:
 		handleFlameThrower(delta)
+
 	if(Global.playerWeapon == Global.PlayerWeapon.Regular):
 		handleLaunch(delta)
 	pass
