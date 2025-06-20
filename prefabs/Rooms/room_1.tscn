@@ -288,8 +288,8 @@ metadata/_edit_lock_ = true
 [node name="Foregrounds" type="Node2D" parent="."]
 
 [node name="Foreground" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-position = Vector2(-1611, -1226)
-scale = Vector2(1.863, 4.92)
+position = Vector2(-2119.54, -1226)
+scale = Vector2(3.84947, 4.92)
 
 [node name="Foreground2" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1483, -1839)
@@ -333,8 +333,8 @@ position = Vector2(286, -10)
 scale = Vector2(0.636719, 0.101562)
 
 [node name="Foreground15" parent="Foregrounds" instance=ExtResource("15_njbnk")]
-position = Vector2(1550.06, -1228.16)
-scale = Vector2(3.00022, 4.8717)
+position = Vector2(2282.5, -1228.16)
+scale = Vector2(5.86132, 4.8717)
 
 [node name="Foreground9" parent="Foregrounds" instance=ExtResource("15_njbnk")]
 position = Vector2(-1100, -272)

@@ -258,13 +258,17 @@ scale = Vector2(0.736328, 0.608125)
 position = Vector2(1755.25, -141)
 scale = Vector2(5.84668, 0.608125)
 
+[node name="Foreground21" parent="Foreground" instance=ExtResource("13_kxlwn")]
+position = Vector2(241.375, -48.33)
+scale = Vector2(0.32959, 0.240898)
+
 [node name="Foreground5" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(1625.48, -3069.68)
 scale = Vector2(3.0683, 1.01047)
 
 [node name="Foreground12" parent="Foreground" instance=ExtResource("13_kxlwn")]
-position = Vector2(2361, -2140.16)
-scale = Vector2(3.0683, 3.12437)
+position = Vector2(2519.26, -2334.16)
+scale = Vector2(3.68649, 3.88218)
 
 [node name="Foreground18" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(2678, -918)
@@ -317,8 +321,8 @@ position = Vector2(-249, -709)
 scale = Vector2(0.451035, 0.620948)
 
 [node name="Foreground6" parent="Foreground" instance=ExtResource("13_kxlwn")]
-position = Vector2(-1397, -2673)
-scale = Vector2(3.96082, 2.56)
+position = Vector2(-1846.52, -1664.18)
+scale = Vector2(5.71674, 6.5007)
 
 [node name="Foreground14" parent="Foreground" instance=ExtResource("13_kxlwn")]
 position = Vector2(-981, -1417.68)

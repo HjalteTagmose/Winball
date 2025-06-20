@@ -333,8 +333,8 @@ position = Vector2(-644.75, -1775)
 scale = Vector2(0.475586, 1.25667)
 
 [node name="Foreground2" parent="Foregrounds" instance=ExtResource("15_7aoiv")]
-position = Vector2(2895, -2181.5)
-scale = Vector2(7.53125, 6.42383)
+position = Vector2(2895, -1920)
+scale = Vector2(7.53125, 7.44531)
 
 [node name="ShallowTriangleAmmoBumper" parent="." instance=ExtResource("12_1qdxl")]
 position = Vector2(-730, -598)
