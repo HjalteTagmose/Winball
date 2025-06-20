@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4biclr3oh58y"]
+[gd_scene load_steps=4 format=3 uid="uid://c4biclr3oh58y"]
 
 [ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="1_v0ieg"]
+[ext_resource type="Texture2D" uid="uid://bho5g0gp0pvf7" path="res://art/metal_walls/metal_wall_vert.png" id="2_pwadj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxit"]
 size = Vector2(319, 26)
 
 [node name="Wall" type="Node2D"]
+position = Vector2(1, -2.27374e-13)
 rotation = 1.5708
-scale = Vector2(5.77066, 0.999985)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 8.47668e-05
@@ -19,3 +20,12 @@ texture = ExtResource("1_v0ieg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.5, -4.57764e-05)
 shape = SubResource("RectangleShape2D_vmxit")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(2.43366, 14.1023)
+rotation = -1.5708
+texture = ExtResource("2_pwadj")
+texture_scale = Vector2(1, 6.38)
+polygon = PackedVector2Array(-2.02389, -161.514, 29.3408, -161.514, 29.3468, 157.513, -1.65363, 157.513)
+uv = PackedVector2Array(0.00106138, -0.0449171, 28.0641, -0.0828663, 27.9285, 59.55, -0.0145689, 59.4999)
