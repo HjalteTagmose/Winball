@@ -30,7 +30,7 @@ shader_parameter/ScreenUV_AlphaMask_Size = Vector2(1, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_mncer"]
 radius = 16.15
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("AudioPlayer", "stormParticle", "playerGun", "slowmoSprite")]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("stormParticle", "playerGun", "slowmoSprite")]
 collision_layer = 2
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_1txc5")
@@ -46,7 +46,6 @@ flame_thrower_delay = 0.075
 flame_thrower_particles = ExtResource("8_kbsxf")
 max_slowdown_duration = 1.5
 SlowdownEndBehaviour = 1
-AudioPlayer = NodePath("AudioStreamPlayer2D")
 RegularShotSounds = Array[AudioStream]([ExtResource("3_llb5v"), ExtResource("4_x0bak"), ExtResource("5_lulei")])
 FlameThrowerSounds = Array[AudioStream]([ExtResource("6_edtk3"), ExtResource("7_q2wkl")])
 shootParticle = ExtResource("2_g2jcq")

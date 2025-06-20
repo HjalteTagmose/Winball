@@ -18,7 +18,7 @@ shader_parameter/saturation = 1.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb1wl"]
 radius = 30.0
 
-[node name="CircleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("AudioPlayer", "CollisionShape")]
+[node name="CircleAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("CollisionShape")]
 collision_layer = 4
 collision_mask = 2
 physics_material_override = ExtResource("1_qdi00")
@@ -28,7 +28,6 @@ Life = 1
 Power = 40.0
 Score = Array[int]([200, 50, 5])
 BiasPower = 0.0
-AudioPlayer = NodePath("AudioPlayer")
 SoundOnHits = Array[AudioStream]([ExtResource("3_q4b7v"), ExtResource("4_ea1bd"), ExtResource("5_vbfu3")])
 ParticleOnHit = ExtResource("3_3eklx")
 CollisionShape = NodePath("CollisionShape2D")

@@ -24,7 +24,7 @@ point_count = 3
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
 points = PackedVector2Array(81, -23, 81, 23, -81, 23, -81, -23)
 
-[node name="BreakableFlat" type="StaticBody2D" node_paths=PackedStringArray("AudioPlayer")]
+[node name="BreakableFlat" type="StaticBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -36,7 +36,6 @@ Power = 40.0
 Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
 BiasPower = -40.0
-AudioPlayer = NodePath("AudioPlayer")
 SoundOnHits = Array[AudioStream]([ExtResource("3_mllck"), ExtResource("4_0i22n"), ExtResource("5_oxy1h")])
 ParticleOnHit = ExtResource("3_vlbui")
 metadata/_custom_type_script = "uid://lobwfmlxako"

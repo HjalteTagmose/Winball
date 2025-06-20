@@ -44,7 +44,7 @@ scale = Vector2(2, 2)
 collision_mask = 0
 physics_material_override = ExtResource("1_4p2nv")
 
-[node name="FlatBumper Logic" type="StaticBody2D" parent="." node_paths=PackedStringArray("AudioPlayer")]
+[node name="FlatBumper Logic" type="StaticBody2D" parent="."]
 scale = Vector2(1.47, 1.47)
 collision_layer = 4
 collision_mask = 2
@@ -54,7 +54,6 @@ Power = 40.0
 Score = Array[int]([100, 50, 5])
 Bias = Vector2(0, -1)
 BiasPower = 40.0
-AudioPlayer = NodePath("AudioPlayer")
 SoundOnHits = Array[AudioStream]([ExtResource("4_31ntc"), ExtResource("5_d7nj0"), ExtResource("6_g1anu")])
 ParticleOnHit = ExtResource("2_g2cpd")
 metadata/_custom_type_script = "uid://lobwfmlxako"

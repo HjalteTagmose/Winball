@@ -4,6 +4,7 @@ class_name TrapSticker
 @export var BumperToSpawn_Bottom : PackedScene
 @export var BumperToSpawn : PackedScene
 @export var Radius : float
+@export var CirclePlayer : bool
 @export var Animate : bool
 @export var AnimTime : float = 1.2
 
@@ -32,8 +33,16 @@ func SpawnBumpers():
 	var firstBumper : BasicBumper = BumperToSpawn.instantiate()
 
 	var wheelLength : float = 2 * PI * Radius
-	var bumperCircle : CircleShape2D = firstBumper.CollisionShape.shape
-	var bumper2xRadius : float = bumperCircle.radius * 2 * firstBumper.scale.x
+	var bumper2xRadius : float
+
+	if firstBumper.CollisionShape.shape is CircleShape2D:
+		var bumperCircle : CircleShape2D = firstBumper.CollisionShape.shape
+		bumper2xRadius = bumperCircle.radius * 2 * firstBumper.scale.x
+	elif firstBumper.CollisionShape.shape is CapsuleShape2D:
+		var bumpercapsule : CapsuleShape2D = firstBumper.CollisionShape.shape
+		bumper2xRadius = bumpercapsule.height * firstBumper.scale.x
+
+
 	var bumperCount : int = wheelLength / bumper2xRadius
 	var angleStep : int = 360 / bumperCount
 
@@ -48,7 +57,9 @@ func SpawnBumpers():
 
 		# print("angle ", i * angleStep, " step " , angleStep)
 		# print("pos ", global_position + Vector2(Radius * cos(i * angleStep) , Radius * sin(i * angleStep)))
-		positionsOnArrays.append(global_position + Vector2(Radius * cos(deg_to_rad(i * angleStep) ) , Radius * sin(deg_to_rad(i * angleStep) )))
+		var pos = boundPlayer.global_position if CirclePlayer else global_position
+
+		positionsOnArrays.append(pos + Vector2(Radius * cos(deg_to_rad(i * angleStep) ) , Radius * sin(deg_to_rad(i * angleStep) )))
 		spawnedBumpers.append(bumper)
 
 		self.get_parent().call_deferred("add_child", bumper)
@@ -67,7 +78,7 @@ func AnimateSpawn(animatePos : bool) -> void:
 		else:
 			time = 0.0
 
-		tween.tween_property(bumper, "global_position", pos, time)
+		tween.tween_property(bumper, "global_position", pos, time).set_trans(Tween.TRANS_BOUNCE)
 	
 	if Animate:
 		print("tween callback")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://hquu36kmh2y2"]
+
+[ext_resource type="Script" uid="uid://dahxn2b17a65k" path="res://scripts/Map props/Trap.gd" id="1_pyy84"]
+[ext_resource type="PackedScene" uid="uid://dp0ia7d12gsdk" path="res://prefabs/Room props/Bumpers/police_target.tscn" id="2_c3a2j"]
+[ext_resource type="Texture2D" uid="uid://bohyaoet3eh0f" path="res://art/car_target.png" id="3_0125p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7i82"]
+size = Vector2(119, 44)
+
+[node name="TrapSticker" type="Area2D" node_paths=PackedStringArray("AudioPlayer")]
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_pyy84")
+BumperToSpawn = ExtResource("2_c3a2j")
+Radius = 100.0
+CirclePlayer = true
+Animate = true
+AnimTime = 0.4
+AudioPlayer = NodePath("AudioStreamPlayer2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_0125p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4.5)
+shape = SubResource("RectangleShape2D_l7i82")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_enter"]

@@ -24,7 +24,7 @@ point_count = 3
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oegki"]
 points = PackedVector2Array(0, -40, 62, -8, 62, 8, 0, 40, -62, 8, -62, -8)
 
-[node name="DiamondAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual", "AudioPlayer")]
+[node name="DiamondAmmoBumper" type="StaticBody2D" node_paths=PackedStringArray("extraVisual")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
@@ -38,7 +38,6 @@ Score = Array[int]([100, 50, 5])
 Saturation = Array[float]([0.8, 0.6, 0.4])
 Bias = Vector2(0, -1)
 BiasPower = 20.0
-AudioPlayer = NodePath("AudioPlayer")
 SoundOnHits = Array[AudioStream]([ExtResource("3_6pw5t"), ExtResource("3_hyyvt"), ExtResource("5_wv0bo")])
 ParticleOnHit = ExtResource("3_4870c")
 metadata/_custom_type_script = "uid://hs0iqsrumsxw"
