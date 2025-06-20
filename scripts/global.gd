@@ -36,8 +36,8 @@ func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("force_gameover")):
 		trigger_game_over()
 	
-	if(gameState == GameStateEnum.GameOver && Input.is_action_just_pressed("restart_game")):
-		start_game()
+	#if(gameState == GameStateEnum.GameOver && Input.is_action_just_pressed("restart_game")):
+		#start_game()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
