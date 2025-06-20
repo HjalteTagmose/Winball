@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bv1e88epmgpbo"]
+[gd_scene load_steps=43 format=3 uid="uid://bv1e88epmgpbo"]
 
 [ext_resource type="Script" uid="uid://bstmxbklsqw1o" path="res://scripts/ui/game_canvas.gd" id="1_oe5df"]
 [ext_resource type="Script" uid="uid://pav6ewxq8tvh" path="res://scripts/ui/ammo_display.gd" id="2_ig5ml"]
@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bab86hj400f02" path="res://art/highscore/highscore_bg.png" id="11_a8n0t"]
 [ext_resource type="Texture2D" uid="uid://c37mdt7vrp8i4" path="res://art/highscore/input_button_pressed.png" id="11_fxx35"]
 [ext_resource type="Texture2D" uid="uid://pqq40qug0phv" path="res://art/highscore/input_button_hover.png" id="12_f4mre"]
-[ext_resource type="Script" path="res://scripts/scorelist.gd" id="12_h6shr"]
-[ext_resource type="PackedScene" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
+[ext_resource type="Script" uid="uid://cjfjv1awvicgp" path="res://scripts/scorelist.gd" id="12_h6shr"]
+[ext_resource type="PackedScene" uid="uid://bk3vfgpinyeio" path="res://prefabs/ui/score_row.tscn" id="13_a8n0t"]
 [ext_resource type="FontFile" uid="uid://b5bowh1itlrtx" path="res://fonts/NotoSerif-BoldItalic.ttf" id="14_f4mre"]
 [ext_resource type="Texture2D" uid="uid://bxotc57mlu33v" path="res://art/highscore/restart_normal.png" id="16_hoafv"]
 [ext_resource type="Texture2D" uid="uid://b7ybhf8juof0d" path="res://art/highscore/restart_pressed.png" id="17_5jw6s"]
@@ -89,6 +89,11 @@ point_count = 4
 [sub_resource type="Curve" id="Curve_0o7nu"]
 _limits = [0.0, 10.0, 0.0, 100.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(100, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_82iek"]
+_limits = [0.0, 1.0, 0.0, 100.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(100, 3), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="GameCanvas" type="CanvasLayer" node_paths=PackedStringArray("gameplay_canvas", "game_over_canvas")]
@@ -281,6 +286,7 @@ script = ExtResource("12_h6shr")
 highScoreRow = ExtResource("13_a8n0t")
 
 [node name="SlomoTexture" type="TextureRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_0o7nu")
 anchors_preset = 15
 anchor_right = 1.0
@@ -293,5 +299,6 @@ texture = ExtResource("26_a2y7m")
 script = ExtResource("26_jlaj1")
 abbarationCurve = SubResource("Curve_jlaj1")
 abbarationPowerCurve = SubResource("Curve_0o7nu")
+abbarationOffsetCurve = SubResource("Curve_82iek")
 
 [connection signal="text_submitted" from="GameOverCanvas/ScoreSubmission/PlayerNameInput" to="GameOverCanvas/ScoreSubmission/PlayerNameInput" method="_on_text_submitted"]

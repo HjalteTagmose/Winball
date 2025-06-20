@@ -39,7 +39,7 @@ radius = 16.15
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("stormParticle", "playerGun", "slowmoSprite", "flameSprite")]
 position = Vector2(3, -1)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 physics_material_override = SubResource("PhysicsMaterial_1txc5")
 can_sleep = false
 contact_monitor = true

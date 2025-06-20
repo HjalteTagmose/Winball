@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmr47b0yoi1vm"]
+[gd_scene load_steps=15 format=3 uid="uid://cmr47b0yoi1vm"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_15sn7"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="2_p8vam"]
@@ -6,8 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="4_446d1"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="5_og1gt"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="6_xsxlw"]
-[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="7_2b531"]
+[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="7_2b531"]
+[ext_resource type="PackedScene" path="res://art/Particles/BumperBumbing.tscn" id="7_p8vam"]
 [ext_resource type="Texture2D" uid="uid://13wc1xta3hmh" path="res://art/Bumpers/bumper_police_breaking.png" id="8_15sn7"]
+[ext_resource type="PackedScene" uid="uid://dsr14okmfk2qn" path="res://art/Particles/p_round_bumper_breaking_new.tscn" id="8_sec2e"]
 [ext_resource type="Texture2D" uid="uid://bosj7a08s10rx" path="res://art/Bumpers/bumper_round.png" id="9_apo56"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="10_rysk3"]
 
@@ -31,6 +33,8 @@ Score = Array[int]([100, 50, 5])
 BiasPower = 0.0
 SoundOnHits = Array[AudioStream]([ExtResource("3_sec2e"), ExtResource("4_446d1"), ExtResource("5_og1gt")])
 ParticleOnHit = ExtResource("6_xsxlw")
+ParticleOnHit2 = ExtResource("7_p8vam")
+OnDestroyParticle = ExtResource("8_sec2e")
 StormParticle = NodePath("GPUParticles2D")
 CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://lobwfmlxako"

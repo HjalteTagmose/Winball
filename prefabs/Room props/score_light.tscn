@@ -1,25 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://5jm3kowwsw2p"]
+[gd_scene load_steps=5 format=3 uid="uid://5jm3kowwsw2p"]
 
 [ext_resource type="Script" uid="uid://denshrkm87h7a" path="res://scripts/score_light.gd" id="2_2vxxh"]
-[ext_resource type="Texture2D" uid="uid://dvs1g26dl8p7o" path="res://icon.svg" id="3_3fxyb"]
+[ext_resource type="Texture2D" uid="uid://v36cilqbsh7j" path="res://art/Bumpers/point_light.png" id="2_07os6"]
+[ext_resource type="Texture2D" uid="uid://bpnddbmike5jq" path="res://art/Bumpers/point_light_pressed.png" id="3_o77rn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3bafk"]
 
-[node name="ScoreLight" type="Node2D" node_paths=PackedStringArray("collider", "sprite")]
+[node name="ScoreLight" type="Node2D" node_paths=PackedStringArray("collider", "spriteOn", "spriteOff")]
 scale = Vector2(2, 2)
 script = ExtResource("2_2vxxh")
 collider = NodePath("Area2D")
-sprite = NodePath("Sprite2D")
-onColor = Color(1, 1, 1, 1)
+spriteOn = NodePath("On")
+spriteOff = NodePath("Off")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.118581, 0.118581, 0.118581, 1)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_3fxyb")
+[node name="Off" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_07os6")
+
+[node name="On" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_o77rn")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_3bafk")

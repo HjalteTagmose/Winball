@@ -1,21 +1,24 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4d4m1wtwru1i"]
+[gd_scene load_steps=20 format=3 uid="uid://b4d4m1wtwru1i"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chtck5wyxnxds" path="res://Material/Physic/Wall.tres" id="1_bod2i"]
 [ext_resource type="PhysicsMaterial" uid="uid://h2b3l4uf0q5p" path="res://Material/Physic/BasicBumper.tres" id="1_pu8ip"]
 [ext_resource type="Script" uid="uid://lobwfmlxako" path="res://scripts/Map props/Bumper.gd" id="1_ubyfy"]
 [ext_resource type="PackedScene" uid="uid://d2nlkgcw21uwb" path="res://art/Particles/test_particles.tscn" id="2_pu8ip"]
-[ext_resource type="Texture2D" uid="uid://74yprmmp5mei" path="res://art/ph_bumper_1.png" id="2_ydfnd"]
 [ext_resource type="AudioStream" uid="uid://b0j58qjeyv30o" path="res://Sounds/Bounce Sound01.wav" id="4_itww3"]
-[ext_resource type="Shader" path="res://Shaders/saturation.gdshader" id="5_314lt"]
+[ext_resource type="Shader" uid="uid://drkse8q4jbyar" path="res://Shaders/saturation.gdshader" id="5_314lt"]
 [ext_resource type="AudioStream" uid="uid://cu8ld08d6bhhu" path="res://Sounds/Bounce Sound02.wav" id="5_kfpx8"]
 [ext_resource type="AudioStream" uid="uid://b7u0oq40fhkaa" path="res://Sounds/Bounce Sound03.wav" id="6_6crnk"]
 [ext_resource type="Script" uid="uid://cvvegl8w2yi4q" path="res://Test/bumper_animation.gd" id="6_uptcw"]
+[ext_resource type="PackedScene" uid="uid://cwh60xt43y27r" path="res://art/Particles/BumperBumbing.tscn" id="8_6crnk"]
 [ext_resource type="PackedScene" uid="uid://bgjbqg74jada0" path="res://art/Particles/StormLightning.tscn" id="11_kfpx8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uj4d6"]
 resource_local_to_scene = true
 shader = ExtResource("5_314lt")
 shader_parameter/saturation = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d7nj0"]
+load_path = "res://.godot/imported/neutral_bumper.png-14017f4a163685fe6eb5c6729b044739.ctex"
 
 [sub_resource type="Curve" id="Curve_uptcw"]
 _limits = [0.0, 2.0, 0.0, 0.25]
@@ -56,6 +59,7 @@ Bias = Vector2(0, -1)
 BiasPower = 0.0
 SoundOnHits = Array[AudioStream]([ExtResource("4_itww3"), ExtResource("5_kfpx8"), ExtResource("6_6crnk")])
 ParticleOnHit = ExtResource("2_pu8ip")
+ParticleOnHit2 = ExtResource("8_6crnk")
 StormParticle = NodePath("../GPUParticles2D")
 CollisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://lobwfmlxako"
@@ -64,7 +68,7 @@ metadata/_custom_type_script = "uid://lobwfmlxako"
 self_modulate = Color(0, 1, 1, 1)
 material = SubResource("ShaderMaterial_uj4d6")
 rotation = -3.14159
-texture = ExtResource("2_ydfnd")
+texture = SubResource("CompressedTexture2D_d7nj0")
 script = ExtResource("6_uptcw")
 scale_curve = SubResource("Curve_uptcw")
 
