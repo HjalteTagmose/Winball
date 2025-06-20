@@ -31,9 +31,7 @@ _limits = [-500.0, 500.0, 0.0, 1.0]
 _data = [Vector2(0, 500), 0.0, -6120.43, 0, 0, Vector2(0.345679, 1.1806), 745.927, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_5jw6s"]
-_data = [Vector2(0, 0), 0.0, 11.7633, 0, 0, Vector2(0.37963, 1), 0.0, 0.0, 0, 0, Vector2(0.512346, 1), -0.061828, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dnict"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4mre"]
 
@@ -109,8 +107,16 @@ offset_bottom = 5.0
 text = "The Storm consumes all..."
 horizontal_alignment = 1
 
-[node name="Cover" type="ColorRect" parent="."]
-visible = false
+[node name="GameOverCanvas" type="CanvasGroup" parent="." node_paths=PackedStringArray("score_submit_section", "restart_button")]
+script = ExtResource("8_fxx35")
+score_submit_section = NodePath("ScoreSubmission")
+restart_button = NodePath("RestartButton2")
+flyInCurve = SubResource("Curve_dnict")
+flyInDuration = null
+
+[node name="Panel" type="Panel" parent="GameOverCanvas"]
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("CanvasItemMaterial_dnict")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -121,16 +127,6 @@ offset_bottom = 895.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(0.235294, 0.176471, 0.239216, 0)
-
-[node name="GameOverCanvas" type="CanvasGroup" parent="." node_paths=PackedStringArray("score_submit_section", "restart_button")]
-visible = false
-script = ExtResource("8_fxx35")
-score_submit_section = NodePath("ScoreSubmission")
-restart_button = NodePath("RestartButton2")
-flyInCurve = SubResource("Curve_dnict")
-colorCurve = SubResource("Curve_5jw6s")
-coverColor = Color(0.235294, 0.176471, 0.239216, 0.647059)
 
 [node name="Score" parent="GameOverCanvas" instance=ExtResource("6_1kxbb")]
 position = Vector2(598, 95)
