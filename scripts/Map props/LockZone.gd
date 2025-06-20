@@ -51,14 +51,15 @@ func Launch() -> void:
 		return
 
 	OneShotSoundManager.play_sound(exitSoundEffect)
-	UnlockPlayer()
+
 	var direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
-	handleShootParticle(-direction)
+	handleShootParticle(direction)
 	
-	# if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
-	# 	direction = -direction;
+	if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
+		direction = -direction;
 	
-	boundPlayer.linear_velocity = (direction * Power)
+	boundPlayer.linear_velocity = (-direction * Power)
+	UnlockPlayer()
 	boundPlayer = null
 
 
@@ -76,7 +77,9 @@ func CenterPlayer() -> void:
 
 
 func turnCanonToPoint(point : Vector2):
-	PlayerBindPivot.look_at(point)
+	var dir = global_position - point
+
+	PlayerBindPivot.look_at(dir * global_position.distance_to(point) * 2 )
 	pass
 	
 	
