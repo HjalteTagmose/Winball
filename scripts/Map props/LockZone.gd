@@ -3,21 +3,26 @@ class_name LockZone
 
 @export var Score : int
 @export var Power : float
-@export var PlayerBindPivot : Node2D
+@export var PlayerBindPivot : Sprite2D
 
 var boundPlayer : Player
 
 func _process(_delta: float) -> void:
+	
 	if(Input.is_action_just_pressed("launch")):
 		Launch()
 		
 	if !boundPlayer:
 		return
+
+	turnCanonToPoint(get_global_mouse_position())
 	CenterPlayer()
+	# PlayerBindPivot.transform.
 
 func _on_body_enter(body:Node2D):
 	if body is Player:
 		boundPlayer = body
+		turnCanonToPoint(boundPlayer.global_position)
 		CenterPlayer()
 		LockPlayer()
 		ScoreManager.AddScore(Score)
@@ -30,10 +35,10 @@ func Launch() -> void:
 		return
 
 	UnlockPlayer()
-	var direction: Vector2 = (global_position - get_global_mouse_position()).normalized()
+	var direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
 	
-	if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
-		direction = -direction;
+	# if(Global.player_direction == Global.PlayerDirection.AwayFromMouse):
+	# 	direction = -direction;
 	
 	boundPlayer.linear_velocity = (direction * Power)
 	boundPlayer = null
@@ -50,3 +55,8 @@ func UnlockPlayer() -> void:
 
 func CenterPlayer() -> void:
 	boundPlayer.global_position = PlayerBindPivot.global_position
+
+
+func turnCanonToPoint(point : Vector2):
+	PlayerBindPivot.look_at(point)
+	pass
